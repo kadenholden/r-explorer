@@ -19,7 +19,7 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },
   'chain-end': { label: 'Chain end', position: [-0.85, 0.3, 0.55], target: [-0.2, 0.1, 0] },
   'exhaust-line': { label: 'Exhaust', position: [1.05, 0.2, -1.5], target: [0, -0.28, -0.8] },
-  'brake-corner': { label: 'Brake corner', position: [1.5, 0.32, 0.72], target: [0.85, 0.05, 0] },
+  'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
 }
 
 function CameraRig() {
@@ -67,7 +67,11 @@ export function Viewport() {
       />
       <ContactShadows position={[0, -0.255, 0]} opacity={0.5} scale={2.4} blur={2.4} far={0.9} resolution={512} />
       {ASSEMBLIES.map((a) => (
-        <group key={a.assembly.id} position={a.assembly.origin}>
+        <group
+          key={a.assembly.id}
+          position={a.assembly.origin}
+          rotation={a.assembly.rotationDeg.map((d) => (d * Math.PI) / 180) as [number, number, number]}
+        >
           {a.parts.map((p) => (
             <PartMesh key={p.id} part={p} />
           ))}

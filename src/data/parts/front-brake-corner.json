@@ -3,7 +3,8 @@
     "id": "front-brake-corner",
     "name": "Front brake corner (left)",
     "system": "brakes",
-    "origin": [0.85, 0, 0],
+    "origin": [0.95, 0, 0.05],
+    "rotationDeg": [0, 90, 0],
     "description": "Golf R Mk7 front brake: 340 × 30 mm ventilated disc with a single-piston floating (sliding) aluminium caliper, painted blue with the R script, on a cast carrier. Torque values are from the project dossier; OEM part numbers are not yet verified and are logged in docs/UNVERIFIED.md."
   },
   "parts": [

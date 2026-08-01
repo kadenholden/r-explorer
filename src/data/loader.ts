@@ -162,6 +162,7 @@ function parseAssemblyFile(file: string, data: unknown): AssemblyFile {
   const system = str(file, metaRaw, 'system')
   if (!isSystemId(system)) throw new DataError(file, `unknown system "${system}"`)
   const originRaw = metaRaw['origin']
+  const rotationRaw = metaRaw['rotationDeg']
   const meta: AssemblyMeta = {
     id: str(file, metaRaw, 'id'),
     name: str(file, metaRaw, 'name'),
@@ -171,6 +172,10 @@ function parseAssemblyFile(file: string, data: unknown): AssemblyFile {
       originRaw === null || originRaw === undefined
         ? [0, 0, 0]
         : vec3(file, originRaw, 'assembly.origin'),
+    rotationDeg:
+      rotationRaw === null || rotationRaw === undefined
+        ? [0, 0, 0]
+        : vec3(file, rotationRaw, 'assembly.rotationDeg'),
   }
   const partsRaw = data['parts']
   if (!Array.isArray(partsRaw) || partsRaw.length === 0)
