@@ -1,0 +1,616 @@
+/* R-Explorer — VW workshop-manual / ETKA-plate design language.
+   Dark neutral canvas, Lapiz-derived accent, engineering-drawing type. */
+
+:root {
+  --bg: #141619;
+  --panel: #1b1e24;
+  --panel-2: #21252d;
+  --line: #2e333d;
+  --line-strong: #3c4250;
+  --text: #dde3ec;
+  --text-dim: #98a1b1;
+  --text-faint: #6b7484;
+  --accent: #4d7fe3; /* Lapiz Blue, lifted for dark-canvas contrast */
+  --accent-soft: rgba(77, 127, 227, 0.16);
+  --display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --body: 'Barlow', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.45;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.app {
+  position: relative;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 52px;
+  padding: 0 14px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  z-index: 30;
+}
+
+.topbar-menu {
+  display: none;
+  font-size: 18px;
+  padding: 4px 8px;
+  color: var(--text-dim);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand-name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-sub {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.mode-toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  padding-right: 12px;
+  border-right: 1px solid var(--line);
+}
+
+.preset-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.preset-btn {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel-2);
+}
+
+.preset-btn:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.preset-btn.is-active {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ── Viewport ────────────────────────────────────────────────────────── */
+
+.viewport {
+  position: absolute;
+  inset: 52px 0 0 0;
+}
+
+.viewport canvas {
+  touch-action: none;
+}
+
+/* ── Shared panel chrome ─────────────────────────────────────────────── */
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.panel-header-meta {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+}
+
+.panel-close {
+  margin-left: auto;
+  color: var(--text-faint);
+  font-size: 13px;
+  padding: 2px 6px;
+}
+
+.panel-header-meta + .panel-close {
+  margin-left: 4px;
+}
+
+.panel-close:hover {
+  color: var(--text);
+}
+
+/* ── Tree panel ──────────────────────────────────────────────────────── */
+
+.tree-panel {
+  position: absolute;
+  top: 64px;
+  left: 12px;
+  bottom: 76px;
+  width: 302px;
+  display: flex;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.tree-panel .panel-close {
+  display: none;
+}
+
+.tree-scroll {
+  overflow-y: auto;
+  padding: 6px 0 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding-right: 6px;
+  border-left: 2px solid transparent;
+}
+
+.tree-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tree-row.is-selected {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+
+.tree-row.is-hidden .tree-label {
+  opacity: 0.4;
+}
+
+.tree-disclose {
+  width: 18px;
+  flex: none;
+  color: var(--text-faint);
+  font-size: 10px;
+  text-align: center;
+}
+
+.tree-disclose--leaf {
+  display: inline-block;
+}
+
+.tree-swatch {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.tree-label {
+  flex: 1;
+  text-align: left;
+  padding: 4px 0;
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tree-label > :first-child {
+  flex: none;
+}
+
+.tree-label--muted {
+  color: var(--text-faint);
+  cursor: default;
+}
+
+.tree-callout {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 11.5px;
+  color: var(--text-dim);
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  min-width: 16px;
+  text-align: center;
+  line-height: 1.3;
+  flex: none;
+}
+
+.tree-count,
+.tree-qty {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.tree-phase {
+  margin-left: auto;
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0 5px;
+}
+
+.tree-actions {
+  display: none;
+  gap: 2px;
+  flex: none;
+}
+
+.tree-row:hover .tree-actions,
+.tree-actions:has(.is-active) {
+  display: inline-flex;
+}
+
+.tree-action {
+  color: var(--text-faint);
+  padding: 3px;
+  border-radius: 3px;
+  display: inline-flex;
+}
+
+.tree-action:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tree-action.is-active {
+  color: var(--accent);
+}
+
+/* ── Info panel (ETKA plate) ─────────────────────────────────────────── */
+
+.info-panel {
+  position: absolute;
+  top: 64px;
+  right: 12px;
+  width: 330px;
+  max-height: calc(100dvh - 160px);
+  display: flex;
+  flex-direction: column;
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.plate-breadcrumb {
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plate-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.plate-title h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.plate-callout {
+  flex: none;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 26px;
+  text-align: center;
+  padding: 1px 0;
+  border: 1.5px solid var(--accent);
+  border-radius: 2px;
+  color: var(--accent);
+}
+
+.plate-body {
+  padding: 4px 12px 14px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.plate-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.plate-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  flex: none;
+  padding-top: 2px;
+}
+
+.plate-value {
+  text-align: right;
+  font-weight: 500;
+}
+
+.plate-value--mono {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+.plate-note {
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.plate-issues {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.plate-issues ul {
+  margin-top: 4px;
+  padding-left: 18px;
+  color: var(--text-dim);
+}
+
+.plate-description {
+  padding: 10px 0 4px;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.plate-hint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-faint);
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.plate-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.plate-tag {
+  font-size: 11px;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 1px 6px;
+}
+
+/* ── Callout chips (in-viewport) ─────────────────────────────────────── */
+
+.callout {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 13px;
+  min-width: 24px;
+  padding: 2px 4px;
+  text-align: center;
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
+  border: 1.5px solid var(--line-strong);
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+.callout:hover {
+  border-color: var(--text-dim);
+}
+
+.callout.is-selected {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+/* ── Explode control ─────────────────────────────────────────────────── */
+
+.explode-control {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  z-index: 20;
+}
+
+.explode-control label {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.explode-control input[type='range'] {
+  width: min(300px, 38vw);
+  accent-color: var(--accent);
+}
+
+.explode-value {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 40px;
+  text-align: right;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+  .topbar {
+    gap: 10px;
+  }
+
+  .topbar-menu {
+    display: block;
+  }
+
+  .preset-bar {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .tree-panel {
+    top: 52px;
+    left: 0;
+    bottom: 0;
+    width: min(320px, 86vw);
+    border-radius: 0;
+    transform: translateX(-105%);
+    transition: transform 0.22s ease;
+  }
+
+  .tree-panel.is-open {
+    transform: translateX(0);
+  }
+
+  .tree-panel .panel-close {
+    display: block;
+  }
+
+  .tree-actions {
+    display: inline-flex; /* no hover on touch — always show */
+  }
+
+  .info-panel {
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    max-height: 46dvh;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .explode-control {
+    bottom: auto;
+    top: 62px;
+    right: 10px;
+    left: auto;
+    transform: none;
+    padding: 6px 10px;
+  }
+
+  .explode-control input[type='range'] {
+    width: 34vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tree-panel {
+    transition: none;
+  }
+}
