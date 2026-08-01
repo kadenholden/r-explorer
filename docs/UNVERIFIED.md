@@ -17,6 +17,14 @@ JSON when confirmed.
 | Caliper guide bolts (`front-caliper-guide-bolts`) | OEM number, exact class/length | Torque 35 Nm is dossier-confirmed |
 | Carrier bolts (`front-carrier-bolts`) | OEM number, replace-after-use status | Torque 200 Nm is dossier-confirmed |
 
+## Remaining brake corners (operator-requested addition)
+
+Front-left mirrors the front-right (same missing items). Rear corners
+additionally need: **rear disc thickness** (modelled at a typical 22 mm
+— not in the dossier), rear caliper/carrier bolt torques (dossier
+states front only), EPB actuator part number, and the R-specific rear
+pad number (the one that is NOT the GTI Performance Pack pad).
+
 ## Engine — short block & head (Phase 1)
 
 The dossier gives materials and dimensions for these but no OEM part

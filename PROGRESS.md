@@ -19,6 +19,15 @@ longer passes through them (real cars route them side by side).
 DSG lever's S program) — mode list matches the dossier; DCC absence
 stands confirmed. CLAUDE.md updated.
 
+**Operator review additions:** all FOUR brake corners now modelled —
+front-left mirror, and both rears (310 mm discs, thickness typical/
+unverified; EPB motor-on-caliper actuators; R-specific pads with the
+not-GTI-Performance-Pack trap as a knownIssue). The original corner was
+relabelled front RIGHT (it's on the long-driveshaft side); rear
+driveshafts lengthened/angled to reach the new rear hubs. Confirmed to
+operator: ONE long + ONE short front driveshaft is correct (dossier §4
+unequal-length transverse layout).
+
 **Next:** Phase 5 — chassis: subframes, front struts (passive sport
 dampers — no DCC), rear multilink, EPS rack, ARBs, hubs, 19" Pretoria
 wheels; gives a rolling chassis.
