@@ -80,7 +80,9 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
     else damp3(g.position, target, 0.18, delta)
   })
 
-  const color = part.color ?? systemDef(part.system).color
+  const colorMode = useAppStore((s) => s.colorMode)
+  const color =
+    colorMode === 'system' ? systemDef(part.system).color : (part.color ?? '#8b929e')
   const rotation = useMemo(
     () =>
       new THREE.Euler(

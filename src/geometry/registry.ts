@@ -13,7 +13,8 @@ export type GeometryRecipe = (params: GeometryParams) => BufferGeometry
 const recipes = new Map<string, GeometryRecipe>()
 
 export function registerRecipe(name: string, recipe: GeometryRecipe): void {
-  if (recipes.has(name)) throw new Error(`Duplicate geometry recipe: ${name}`)
+  // Last registration wins — keeps Vite HMR re-evaluation of the recipe
+  // modules from throwing on an already-populated registry.
   recipes.set(name, recipe)
 }
 

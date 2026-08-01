@@ -41,8 +41,12 @@ describes.** Geometry upgrades must never require viewer-code changes.
   real GLB meshes for hero parts get swapped in later and must be picked up
   with zero code changes.
 - Procedural recipes live in `src/geometry/`, one file per recipe, built
-  from primitives/lathes/extrusions. Target look: clean cutaway technical
-  illustration, colour-coded by system — NOT photorealism.
+  from primitives/lathes/extrusions. Recipes mimic the real component's
+  form and interfaces (true dimensions from the dossier where given — e.g.
+  the disc's 5×112 PCD and 57.1 mm bore) while staying schematic, not
+  photoreal. Two colour modes, toggled in the top bar and persisted:
+  'real' (default — realistic part colours from each record's `color`) and
+  'system' (dossier system colour-coding for cross-system readability).
 - Shared fastener library: reusable bolt/washer/clamp/clip components
   parameterised by class (M6/M8/M10/M12, T30, triple-square, wheel bolt),
   each carrying its torque value as metadata. Assemblies reference these;

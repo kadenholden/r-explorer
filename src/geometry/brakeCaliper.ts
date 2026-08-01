@@ -1,33 +1,71 @@
 import * as THREE from 'three'
-import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import type { GeometryParams } from './registry'
+import { mergeParts, sectorGeometry } from './shapes'
 
 /**
- * Schematic single-piston floating caliper, authored straddling the disc
- * plane: disc axis along local Z, radially "up" along +Y. Outboard half at
- * +Z, inboard half (with piston boss) at −Z, joined by two bridge blocks.
+ * Single-piston floating caliper following the disc's curvature, like the
+ * real TRW-style unit: curved outboard face with a raised emblem plate,
+ * deeper inboard body carrying the piston boss, two bridge ribs arching
+ * over the disc rim (leaving the pad window between them), guide-pin ears
+ * at both ends, and a bleed nipple. Canonical frame: disc in the XY plane,
+ * axis +Z (outboard), caliper centred over the 90° (12 o'clock) position —
+ * assembly data rotates it into place.
  */
 export function brakeCaliper(_params: GeometryParams): THREE.BufferGeometry {
-  const outerHalf = new THREE.BoxGeometry(0.15, 0.09, 0.028)
-  outerHalf.translate(0, 0, 0.036)
+  const parts: THREE.BufferGeometry[] = []
 
-  const innerHalf = new THREE.BoxGeometry(0.15, 0.09, 0.028)
-  innerHalf.translate(0, 0, -0.036)
+  // outboard face plate
+  const outerFace = sectorGeometry(0.106, 0.178, 60, 120, 0.018)
+  outerFace.translate(0, 0, 0.028)
+  parts.push(outerFace)
 
-  const piston = new THREE.CylinderGeometry(0.027, 0.027, 0.022, 28)
+  // raised emblem plate on the outboard face (the "R" plate area)
+  const emblem = sectorGeometry(0.126, 0.16, 77, 103, 0.005)
+  emblem.translate(0, 0, 0.046)
+  parts.push(emblem)
+
+  // inboard body (hydraulic side)
+  const innerBody = sectorGeometry(0.1, 0.18, 62, 118, 0.03)
+  innerBody.translate(0, 0, -0.062)
+  parts.push(innerBody)
+
+  // piston boss on the inboard body
+  const piston = new THREE.CylinderGeometry(0.03, 0.03, 0.014, 28)
   piston.rotateX(Math.PI / 2)
-  piston.translate(0, -0.006, -0.06)
+  piston.translate(0, 0.138, -0.069)
+  parts.push(piston)
 
-  const bridgeLeft = new THREE.BoxGeometry(0.04, 0.03, 0.1)
-  bridgeLeft.translate(-0.048, 0.043, 0)
-  const bridgeRight = new THREE.BoxGeometry(0.04, 0.03, 0.1)
-  bridgeRight.translate(0.048, 0.043, 0)
+  // two bridge ribs over the disc rim — the window between them is the
+  // pad-inspection opening of the real caliper
+  for (const [a0, a1] of [
+    [77, 87],
+    [93, 103],
+  ] as const) {
+    const rib = sectorGeometry(0.148, 0.183, a0, a1, 0.06)
+    rib.translate(0, 0, -0.032)
+    parts.push(rib)
+  }
 
-  // bleed nipple on the inboard top edge
-  const bleed = new THREE.CylinderGeometry(0.004, 0.004, 0.018, 12)
-  bleed.translate(0.045, 0.052, -0.036)
+  // guide-pin ears at both ends of the inboard body
+  for (const aDeg of [57, 123]) {
+    const a = THREE.MathUtils.degToRad(aDeg)
+    const x = Math.cos(a) * 0.13
+    const y = Math.sin(a) * 0.13
+    const ear = new THREE.BoxGeometry(0.036, 0.026, 0.02)
+    ear.rotateZ(a - Math.PI / 2)
+    ear.translate(x, y, -0.044)
+    parts.push(ear)
+    const boss = new THREE.CylinderGeometry(0.009, 0.009, 0.024, 16)
+    boss.rotateX(Math.PI / 2)
+    boss.translate(x, y, -0.05)
+    parts.push(boss)
+  }
 
-  const merged = mergeGeometries([outerHalf, innerHalf, piston, bridgeLeft, bridgeRight, bleed])
-  if (!merged) throw new Error('brakeCaliper: merge failed')
-  return merged
+  // bleed nipple, inboard top edge
+  const bleed = new THREE.CylinderGeometry(0.0035, 0.0035, 0.016, 10)
+  bleed.rotateX(Math.PI / 2)
+  bleed.translate(0.054, 0.148, -0.058)
+  parts.push(bleed)
+
+  return mergeParts(parts)
 }

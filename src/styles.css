@@ -99,8 +99,15 @@ button {
   color: var(--text-faint);
 }
 
-.preset-bar {
+.mode-toggle {
   margin-left: auto;
+  display: flex;
+  gap: 4px;
+  padding-right: 12px;
+  border-right: 1px solid var(--line);
+}
+
+.preset-bar {
   display: flex;
   gap: 6px;
 }

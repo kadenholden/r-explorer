@@ -8,9 +8,15 @@ import { partNodePath } from '../data/loader'
  * preset) survive reloads; everything else is session state.
  */
 
+export type ColorMode = 'real' | 'system'
+
 interface AppState {
   selectedPartId: string | null
   select: (id: string | null) => void
+
+  /** 'real': realistic part colours; 'system': dossier system colour-coding. */
+  colorMode: ColorMode
+  setColorMode: (mode: ColorMode) => void
 
   /** Global explode factor, 0..1. */
   explode: number
@@ -44,6 +50,9 @@ export const useAppStore = create<AppState>()(
       selectedPartId: null,
       select: (id) => set({ selectedPartId: id }),
 
+      colorMode: 'real',
+      setColorMode: (mode) => set({ colorMode: mode }),
+
       explode: 0,
       setExplode: (v) => set({ explode: Math.min(1, Math.max(0, v)) }),
 
@@ -75,7 +84,11 @@ export const useAppStore = create<AppState>()(
     }),
     {
       name: 'r-explorer-ui',
-      partialize: (s) => ({ openNodes: s.openNodes, cameraPreset: s.cameraPreset }),
+      partialize: (s) => ({
+        openNodes: s.openNodes,
+        cameraPreset: s.cameraPreset,
+        colorMode: s.colorMode,
+      }),
     },
   ),
 )

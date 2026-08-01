@@ -67,7 +67,8 @@ export interface PartRecord {
   callout: number
   /** Where the callout label sits relative to the part, metres. */
   calloutOffset: Vec3 | null
-  /** Render hint overriding the system colour (e.g. the blue caliper). */
+  /** Realistic appearance colour, used in 'real' colour mode (the 'system'
+   *  mode colour-codes by system instead). Null falls back to neutral. */
   color: string | null
 }
 

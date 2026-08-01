@@ -26,6 +26,13 @@
 - GitHub Pages deployment workflow (`.github/workflows/deploy.yml`) —
   builds and deploys on every merge to main; Vite `base` set to
   `/r-explorer/`.
+- **Realistic-geometry pass (operator-requested):** recipes upgraded from
+  generic blocks to the real components' forms — disc with drilled hat
+  (true 5×112 PCD, 57.1 mm centre bore), radial cooling vanes, hat skirt;
+  arc-following caliper with pad window, bridge ribs, piston boss,
+  guide-pin ears, bleed nipple; H-form carrier with over-rim bridges and
+  mounting ears; pads with carrier-abutment lugs. Realistic material
+  colours with a persisted Real/System colour-mode toggle in the top bar.
 - `docs/UNVERIFIED.md` started (no OEM numbers invented — all seven Phase 0
   parts logged pending ETKA/erWin verification).
 
