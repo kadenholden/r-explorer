@@ -18,6 +18,7 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   intake: { label: 'Intake', position: [0.55, 0.5, 1.3], target: [0, 0.1, 0.22] },
   'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },
   'chain-end': { label: 'Chain end', position: [-0.85, 0.3, 0.55], target: [-0.2, 0.1, 0] },
+  transmission: { label: 'Gearbox', position: [-1.15, 0.22, 0.85], target: [-0.45, -0.08, 0] },
   'exhaust-line': { label: 'Exhaust', position: [1.05, 0.2, -1.5], target: [0, -0.28, -0.8] },
   'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
 }

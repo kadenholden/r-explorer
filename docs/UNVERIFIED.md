@@ -63,3 +63,13 @@ only sold inside the complete manifold (dossier §2).
 | Rail pressure sensor (`rail-pressure-sensor`) | OEM number |
 | Exhaust line (`downpipe-cat`, `link-pipe`, `resonator`, `rear-silencer`, `exhaust-flap-actuators`, `quad-tips`) | OEM numbers |
 | Lambda sensors (`lambda-sensors`) | OEM numbers |
+
+## Transmission — DQ250 (Phase 3)
+
+No OEM numbers or torque specs in the dossier for DSG internals; all 9
+records store `null`. Confirm the gearbox code (DQ250/0D9) from the
+bellhousing label.
+
+| Part (id) | Missing |
+| --- | --- |
+| All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |

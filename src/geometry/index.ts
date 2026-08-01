@@ -26,6 +26,16 @@ import {
   exhaustTwinTip,
   exhaustValveActuator,
 } from './exhaust'
+import {
+  dsgHousing,
+  dualMassDamper,
+  dualClutchPack,
+  mechatronicJ743,
+  inputShafts,
+  gearCluster,
+  finalDriveDiff,
+  ptoBevel,
+} from './dq250'
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
@@ -72,5 +82,13 @@ registerRecipe('resonator', resonator)
 registerRecipe('rearSilencer', rearSilencer)
 registerRecipe('exhaustTwinTip', exhaustTwinTip)
 registerRecipe('exhaustValveActuator', exhaustValveActuator)
+registerRecipe('dsgHousing', dsgHousing)
+registerRecipe('dualMassDamper', dualMassDamper)
+registerRecipe('dualClutchPack', dualClutchPack)
+registerRecipe('mechatronicJ743', mechatronicJ743)
+registerRecipe('inputShafts', inputShafts)
+registerRecipe('gearCluster', gearCluster)
+registerRecipe('finalDriveDiff', finalDriveDiff)
+registerRecipe('ptoBevel', ptoBevel)
 
 export { resolveRecipe }

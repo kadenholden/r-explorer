@@ -1,5 +1,29 @@
 # PROGRESS
 
+## Phase 3 — complete (2026-08-01)
+
+**Car spec confirmed by operator:** DSG → **DQ250** modelled; 19"
+Pretoria wheels; DCC reportedly absent (modes seen: Eco/Normal/Sport —
+dossier expects Eco/Normal/Individual/Race, re-verify in person).
+Recorded in CLAUDE.md.
+
+**What's done:** the DQ250 6-speed wet DSG (0D9 AWD) as a 9-part
+assembly bolted to the engine's flywheel end — housing/bellhousing,
+dual-mass damper, K1/K2 wet clutch pack (cold-launch warning), J743
+mechatronic (pressure-accumulator known issue), concentric input
+shafts, both output gear sets, integrated final drive/diff, and the
+AWD power take-off whose rear-facing flange is Phase 4's attachment
+point. New Gearbox camera preset. Verified in-browser assembled +
+exploded; build clean.
+
+**Merged earlier this session:** Phases 0–2 all live at
+https://kadenholden.github.io/r-explorer/ (PR #1 + PR #3; PR #2's
+content landed via #3 after a stacked-PR closure quirk). Brake corner
+reoriented onto the real wheel axis (operator-spotted).
+
+**Next:** Phase 4 — Haldex Gen 5 driveline (bevel box → propshaft →
+coupling with pump/filter service story → rear diff, driveshafts).
+
 ## Phase 2 — complete (2026-08-01)
 
 **What's done**
