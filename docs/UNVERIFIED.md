@@ -17,6 +17,14 @@ JSON when confirmed.
 | Caliper guide bolts (`front-caliper-guide-bolts`) | OEM number, exact class/length | Torque 35 Nm is dossier-confirmed |
 | Carrier bolts (`front-carrier-bolts`) | OEM number, replace-after-use status | Torque 200 Nm is dossier-confirmed |
 
+## Remaining brake corners (operator-requested addition)
+
+Front-left mirrors the front-right (same missing items). Rear corners
+additionally need: **rear disc thickness** (modelled at a typical 22 mm
+— not in the dossier), rear caliper/carrier bolt torques (dossier
+states front only), EPB actuator part number, and the R-specific rear
+pad number (the one that is NOT the GTI Performance Pack pad).
+
 ## Engine — short block & head (Phase 1)
 
 The dossier gives materials and dimensions for these but no OEM part
@@ -63,3 +71,37 @@ only sold inside the complete manifold (dossier §2).
 | Rail pressure sensor (`rail-pressure-sensor`) | OEM number |
 | Exhaust line (`downpipe-cat`, `link-pipe`, `resonator`, `rear-silencer`, `exhaust-flap-actuators`, `quad-tips`) | OEM numbers |
 | Lambda sensors (`lambda-sensors`) | OEM numbers |
+
+## Transmission — DQ250 (Phase 3)
+
+No OEM numbers or torque specs in the dossier for DSG internals; all 9
+records store `null`. Confirm the gearbox code (DQ250/0D9) from the
+bellhousing label.
+
+| Part (id) | Missing |
+| --- | --- |
+| All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |
+
+## Suspension, steering & wheels (Phase 5)
+
+Dossier-verified on their parts: wheel bolts 120 Nm; hub/axle bolt
+200 Nm +180°; geometry facts (8J×19 Pretoria, 235/35 R19, 5×112,
+57.1 mm, ride height −20 mm). Everything else `null`:
+
+| Part group | Missing |
+| --- | --- |
+| Struts, dampers, springs | OEM numbers; spring rates |
+| Arms/links (LCA, trailing, upper/spring/toe, tie rods) | OEM numbers; pinch/pivot bolt torques |
+| Subframes, ARBs, knuckles/carriers | OEM numbers; subframe bolt torques |
+| Pretoria wheels | OEM number; exact ET offset (dossier: ET45–50) |
+
+## Driveline — Haldex Gen 5 (Phase 4)
+
+Dossier-verified: the charge pump **0CQ598549** (recorded on its part).
+Everything else stores `null`.
+
+| Part (id) | Missing |
+| --- | --- |
+| Propshaft + centre bearing (`propshaft-front`, `-rear`, `center-bearing`) | OEM numbers |
+| RDU + Haldex internals (`rdu-housing`, `haldex-coupling`, `haldex-filter`, `haldex-controller`, `rear-diff-gears`) | OEM numbers; fluid part numbers + capacities |
+| Driveshafts (`rear-driveshafts`, `front-driveshaft-right`, `front-driveshaft-left`) | OEM numbers |

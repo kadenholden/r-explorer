@@ -18,6 +18,9 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   intake: { label: 'Intake', position: [0.55, 0.5, 1.3], target: [0, 0.1, 0.22] },
   'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },
   'chain-end': { label: 'Chain end', position: [-0.85, 0.3, 0.55], target: [-0.2, 0.1, 0] },
+  transmission: { label: 'Gearbox', position: [-1.15, 0.22, 0.85], target: [-0.45, -0.08, 0] },
+  driveline: { label: 'Driveline', position: [1.15, 0.05, -0.45], target: [-0.05, -0.28, -0.75] },
+  suspension: { label: 'Suspension', position: [1.6, 0.1, 1.15], target: [0.55, -0.08, 0.03] },
   'exhaust-line': { label: 'Exhaust', position: [1.05, 0.2, -1.5], target: [0, -0.28, -0.8] },
   'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
 }
@@ -54,7 +57,7 @@ export function Viewport() {
       <directionalLight position={[2.5, 3, 2]} intensity={1.5} />
       <directionalLight position={[-2, 1.5, -2.5]} intensity={0.55} />
       <Grid
-        position={[0, -0.26, 0]}
+        position={[0, -0.33, 0]}
         infiniteGrid
         cellSize={0.1}
         sectionSize={0.5}
@@ -65,7 +68,7 @@ export function Viewport() {
         fadeDistance={5}
         fadeStrength={2.5}
       />
-      <ContactShadows position={[0, -0.255, 0]} opacity={0.5} scale={2.4} blur={2.4} far={0.9} resolution={512} />
+      <ContactShadows position={[0, -0.325, 0]} opacity={0.5} scale={3.4} blur={2.4} far={0.9} resolution={512} />
       {ASSEMBLIES.map((a) => (
         <group
           key={a.assembly.id}

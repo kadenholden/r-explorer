@@ -1,6 +1,6 @@
 import { registerRecipe, resolveRecipe } from './registry'
 import { brakeDisc } from './brakeDisc'
-import { brakeCaliper } from './brakeCaliper'
+import { brakeCaliper, epbActuator } from './brakeCaliper'
 import { brakeCarrier } from './brakeCarrier'
 import { brakePad } from './brakePad'
 import { hexBolt } from './fasteners'
@@ -26,9 +26,48 @@ import {
   exhaustTwinTip,
   exhaustValveActuator,
 } from './exhaust'
+import {
+  dsgHousing,
+  dualMassDamper,
+  dualClutchPack,
+  mechatronicJ743,
+  inputShafts,
+  gearCluster,
+  finalDriveDiff,
+  ptoBevel,
+} from './dq250'
+import {
+  propshaftFront,
+  centerBearing,
+  propshaftRear,
+  rduHousing,
+  haldexCoupling,
+  haldexPump,
+  haldexFilter,
+  haldexController,
+  rearDiffGears,
+  driveshaft,
+} from './driveline'
+import {
+  coilSpring,
+  strutFront,
+  damperRear,
+  lowerControlArm,
+  steeringKnuckle,
+  wheelCarrier,
+  subframe,
+  antiRollBar,
+  dropLink,
+  epsRack,
+  tieRod,
+  lateralLink,
+  trailingLink,
+} from './suspension'
+import { pretoriaWheel, tyre, wheelBoltRing } from './wheels'
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
+registerRecipe('epbActuator', epbActuator)
 registerRecipe('brakeCarrier', brakeCarrier)
 registerRecipe('brakePad', brakePad)
 registerRecipe('hexBolt', hexBolt)
@@ -72,5 +111,39 @@ registerRecipe('resonator', resonator)
 registerRecipe('rearSilencer', rearSilencer)
 registerRecipe('exhaustTwinTip', exhaustTwinTip)
 registerRecipe('exhaustValveActuator', exhaustValveActuator)
+registerRecipe('dsgHousing', dsgHousing)
+registerRecipe('dualMassDamper', dualMassDamper)
+registerRecipe('dualClutchPack', dualClutchPack)
+registerRecipe('mechatronicJ743', mechatronicJ743)
+registerRecipe('inputShafts', inputShafts)
+registerRecipe('gearCluster', gearCluster)
+registerRecipe('finalDriveDiff', finalDriveDiff)
+registerRecipe('ptoBevel', ptoBevel)
+registerRecipe('propshaftFront', propshaftFront)
+registerRecipe('centerBearing', centerBearing)
+registerRecipe('propshaftRear', propshaftRear)
+registerRecipe('rduHousing', rduHousing)
+registerRecipe('haldexCoupling', haldexCoupling)
+registerRecipe('haldexPump', haldexPump)
+registerRecipe('haldexFilter', haldexFilter)
+registerRecipe('haldexController', haldexController)
+registerRecipe('rearDiffGears', rearDiffGears)
+registerRecipe('driveshaft', driveshaft)
+registerRecipe('coilSpring', coilSpring)
+registerRecipe('strutFront', strutFront)
+registerRecipe('damperRear', damperRear)
+registerRecipe('lowerControlArm', lowerControlArm)
+registerRecipe('steeringKnuckle', steeringKnuckle)
+registerRecipe('wheelCarrier', wheelCarrier)
+registerRecipe('subframe', subframe)
+registerRecipe('antiRollBar', antiRollBar)
+registerRecipe('dropLink', dropLink)
+registerRecipe('epsRack', epsRack)
+registerRecipe('tieRod', tieRod)
+registerRecipe('lateralLink', lateralLink)
+registerRecipe('trailingLink', trailingLink)
+registerRecipe('pretoriaWheel', pretoriaWheel)
+registerRecipe('tyre', tyre)
+registerRecipe('wheelBoltRing', wheelBoltRing)
 
 export { resolveRecipe }

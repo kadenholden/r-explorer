@@ -1,5 +1,88 @@
 # PROGRESS
 
+## Phase 5 — complete (2026-08-01)
+
+**Alignment audit (operator-requested) first:** checked every mechanical
+joint numerically. Fixed: front-right driveshaft was 21 cm short of its
+hub; front-left overshot and drooped 19 cm below its hub; rear shafts
+6 cm short. All four now land within ~5 mm of their hubs (and the short
+left shaft correctly runs a steeper CV angle — the real torque-steer
+geometry). Verified OK: diff flanges ↔ front shafts, PTO ↔ propshaft,
+propshaft ↔ Haldex nose, turbo ↔ downpipe.
+
+**Phase 5 — suspension, steering, wheels (23 records):**
+- Front: MacPherson struts with true helical coil springs + passive
+  sport dampers (no DCC), low-wishbone control arms, steering knuckles
+  (hub/axle bolt 200 Nm +180° recorded), subframe, ARB + drop links,
+  progressive-ratio EPS rack + tie rods.
+- Rear: four-link axle — trailing link + upper/spring/toe lateral links
+  per side, coil springs SEPARATE from the passive dampers (as on the
+  real axle), subframe, ARB, wheel carriers.
+- Wheels: 19" Pretoria five-twin-spoke alloys (8J×19) with 235/35 R19
+  tyres at all four corners, ball-seat wheel-bolt rings at the dossier's
+  120 Nm. Hide the Wheels branch in the tree to see the brakes.
+- Suspension camera preset; ground plane dropped to tyre-contact height.
+  The Overview now reads as a complete rolling chassis (119 parts).
+
+**Next:** Phase 6 — body-in-white + closures + R-specific exterior
+(needs: 3-door or 5-door?). Then Phase 7 electrics/cooling/interior.
+
+## Phase 4 — complete (2026-08-01)
+
+**What's done:** the 4MOTION driveline as a 12-part assembly (dossier
+§4): two-piece propshaft with centre bearing from the DQ250's bevel box
+to the rear final drive; the Haldex Gen 5 coupling (plates + annular
+piston) ahead of the rear diff; the **charge pump with its real dossier
+part number 0CQ598549** carrying the full service story (clogging
+screen → pump death → silent FWD, fix = pump + fluid + filter + VCDS
+pump-learn); the fine-mesh filter as its own part; Haldex controller;
+rear diff gear set (separate GL-5 oil noted); rear driveshafts ×2 and
+both unequal-length front driveshafts (right one with intermediate
+bearing, reaching the modelled brake corner). Driveline camera preset.
+Exhaust link pipe + resonator offset laterally so the propshaft no
+longer passes through them (real cars route them side by side).
+
+**Spec correction:** operator DOES have Race mode (the "Sport" was the
+DSG lever's S program) — mode list matches the dossier; DCC absence
+stands confirmed. CLAUDE.md updated.
+
+**Operator review additions:** all FOUR brake corners now modelled —
+front-left mirror, and both rears (310 mm discs, thickness typical/
+unverified; EPB motor-on-caliper actuators; R-specific pads with the
+not-GTI-Performance-Pack trap as a knownIssue). The original corner was
+relabelled front RIGHT (it's on the long-driveshaft side); rear
+driveshafts lengthened/angled to reach the new rear hubs. Confirmed to
+operator: ONE long + ONE short front driveshaft is correct (dossier §4
+unequal-length transverse layout).
+
+**Next:** Phase 5 — chassis: subframes, front struts (passive sport
+dampers — no DCC), rear multilink, EPS rack, ARBs, hubs, 19" Pretoria
+wheels; gives a rolling chassis.
+
+## Phase 3 — complete (2026-08-01)
+
+**Car spec confirmed by operator:** DSG → **DQ250** modelled; 19"
+Pretoria wheels; DCC reportedly absent (modes seen: Eco/Normal/Sport —
+dossier expects Eco/Normal/Individual/Race, re-verify in person).
+Recorded in CLAUDE.md.
+
+**What's done:** the DQ250 6-speed wet DSG (0D9 AWD) as a 9-part
+assembly bolted to the engine's flywheel end — housing/bellhousing,
+dual-mass damper, K1/K2 wet clutch pack (cold-launch warning), J743
+mechatronic (pressure-accumulator known issue), concentric input
+shafts, both output gear sets, integrated final drive/diff, and the
+AWD power take-off whose rear-facing flange is Phase 4's attachment
+point. New Gearbox camera preset. Verified in-browser assembled +
+exploded; build clean.
+
+**Merged earlier this session:** Phases 0–2 all live at
+https://kadenholden.github.io/r-explorer/ (PR #1 + PR #3; PR #2's
+content landed via #3 after a stacked-PR closure quirk). Brake corner
+reoriented onto the real wheel axis (operator-spotted).
+
+**Next:** Phase 4 — Haldex Gen 5 driveline (bevel box → propshaft →
+coupling with pump/filter service story → rear diff, driveshafts).
+
 ## Phase 2 — complete (2026-08-01)
 
 **What's done**

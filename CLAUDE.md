@@ -72,6 +72,16 @@ on every merge to `main`, using the official Pages actions
 `actions/deploy-pages`). Vite `base` must be `/r-explorer/`. The app must be
 live at a URL the operator can open on their phone.
 
+## The operator's car (confirmed 2026-08-01)
+
+- **Gearbox: DSG** → model the DQ250 6-speed wet dual-clutch (0D9 AWD),
+  NOT the MQ350 manual. Verify code on the bellhousing when possible.
+- **Wheels: 19" Pretoria** (8J×19, 235/35 R19) — use for Phase 5/6.
+- **DCC: not fitted** (confirmed — drive modes are Eco/Normal/Race; the
+  "Sport" the operator first mentioned is the DSG lever's S program) →
+  passive sport dampers in Phase 5.
+- Still open: 3-door or 5-door (matters in Phase 6).
+
 ## Phasing (dossier Section 10 build order)
 
 - **Phase 0 — IN PROGRESS:** scaffold, data schema + zustand store, viewer

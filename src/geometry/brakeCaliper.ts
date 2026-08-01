@@ -69,3 +69,20 @@ export function brakeCaliper(_params: GeometryParams): THREE.BufferGeometry {
 
   return mergeParts(parts)
 }
+
+/** Electronic-parking-brake actuator (motor-on-caliper, rear axle):
+ *  motor can + gear housing + connector. Canonical: can axis along Z
+ *  (pointing inboard when fitted on the caliper's piston side). */
+export function epbActuator(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const gearbox = new THREE.BoxGeometry(0.045, 0.04, 0.028)
+  parts.push(gearbox)
+  const can = new THREE.CylinderGeometry(0.017, 0.017, 0.04, 16)
+  can.rotateX(Math.PI / 2)
+  can.translate(0, -0.005, -0.032)
+  parts.push(can)
+  const connector = new THREE.BoxGeometry(0.018, 0.01, 0.014)
+  connector.translate(0, 0.024, -0.01)
+  parts.push(connector)
+  return mergeParts(parts)
+}
