@@ -22,6 +22,28 @@ function Row({ label, value, mono }: { label: string; value: string; mono?: bool
   )
 }
 
+function AvsToggle() {
+  const avsLargeLobe = useAppStore((s) => s.avsLargeLobe)
+  const toggleAvs = useAppStore((s) => s.toggleAvs)
+  return (
+    <div className="avs-toggle">
+      <span className="plate-label">AVS lift demo</span>
+      <button
+        type="button"
+        className={`avs-btn${avsLargeLobe ? ' is-large' : ''}`}
+        onClick={toggleAvs}
+        aria-pressed={avsLargeLobe}
+      >
+        {avsLargeLobe ? 'Large lobe (>~3,100 rpm)' : 'Small lobe (low rpm)'}
+      </button>
+      <p className="plate-note">
+        Toggling slides the elements axially, exactly what the electromagnetic
+        actuators do on the real cam.
+      </p>
+    </div>
+  )
+}
+
 function PartPlate({ part }: { part: PartRecord }) {
   const select = useAppStore((s) => s.select)
   const sys = systemDef(part.system)
@@ -54,6 +76,7 @@ function PartPlate({ part }: { part: PartRecord }) {
         <Row label="Material" value={part.material ?? '—'} />
         <Row label="Quantity" value={`${part.transforms.length}`} />
         <Row label="Geometry" value={part.geometryRef} mono />
+        {part.tags.includes('avs') && <AvsToggle />}
         {part.knownIssues.length > 0 && (
           <div className="plate-issues">
             <span className="plate-label">Known issues</span>
@@ -102,7 +125,7 @@ export function InfoPanel() {
         <p className="plate-description">{first.assembly.description}</p>
         <p className="plate-hint">
           Drag to orbit · scroll to zoom · click any part (or its numbered callout) for its data ·
-          pull the EXPLODE slider to take the corner apart.
+          pull the EXPLODE slider to take it apart.
         </p>
       </div>
     </section>

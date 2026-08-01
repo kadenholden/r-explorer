@@ -13,10 +13,11 @@ interface CameraPreset {
 }
 
 export const CAMERA_PRESETS: Record<string, CameraPreset> = {
-  'front-three-quarter': { label: 'Front ¾', position: [0.62, 0.44, 0.76], target: [-0.04, 0.05, 0] },
-  top: { label: 'Top', position: [0, 1.1, 0.03], target: [-0.04, 0, 0] },
-  outboard: { label: 'Outboard', position: [0.03, 0.12, 1.05], target: [-0.04, 0.05, 0] },
-  inboard: { label: 'Inboard', position: [-0.28, 0.18, -0.95], target: [-0.04, 0.05, 0] },
+  'front-three-quarter': { label: 'Overview', position: [1.3, 0.7, 1.45], target: [0.3, 0.15, 0] },
+  engine: { label: 'Engine', position: [0.7, 0.42, 0.95], target: [0, 0.12, 0] },
+  'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },
+  'chain-end': { label: 'Chain end', position: [-0.85, 0.3, 0.55], target: [-0.2, 0.1, 0] },
+  'brake-corner': { label: 'Brake corner', position: [1.5, 0.32, 0.72], target: [0.85, 0.05, 0] },
 }
 
 function CameraRig() {
@@ -64,7 +65,7 @@ export function Viewport() {
       />
       <ContactShadows position={[0, -0.255, 0]} opacity={0.5} scale={2.4} blur={2.4} far={0.9} resolution={512} />
       {ASSEMBLIES.map((a) => (
-        <group key={a.assembly.id}>
+        <group key={a.assembly.id} position={a.assembly.origin}>
           {a.parts.map((p) => (
             <PartMesh key={p.id} part={p} />
           ))}

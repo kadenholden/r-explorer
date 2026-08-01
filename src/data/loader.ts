@@ -161,11 +161,16 @@ function parseAssemblyFile(file: string, data: unknown): AssemblyFile {
   if (!isRecord(metaRaw)) throw new DataError(file, '"assembly" metadata object is required')
   const system = str(file, metaRaw, 'system')
   if (!isSystemId(system)) throw new DataError(file, `unknown system "${system}"`)
+  const originRaw = metaRaw['origin']
   const meta: AssemblyMeta = {
     id: str(file, metaRaw, 'id'),
     name: str(file, metaRaw, 'name'),
     system,
     description: str(file, metaRaw, 'description'),
+    origin:
+      originRaw === null || originRaw === undefined
+        ? [0, 0, 0]
+        : vec3(file, originRaw, 'assembly.origin'),
   }
   const partsRaw = data['parts']
   if (!Array.isArray(partsRaw) || partsRaw.length === 0)

@@ -77,6 +77,8 @@ export interface AssemblyMeta {
   name: string
   system: SystemId
   description: string
+  /** Where this assembly sits in the world scene, metres. */
+  origin: Vec3
 }
 
 export interface AssemblyFile {

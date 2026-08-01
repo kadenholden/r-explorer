@@ -42,6 +42,10 @@ interface AppState {
   /** Mobile drawer for the tree panel. */
   treeDrawerOpen: boolean
   setTreeDrawerOpen: (open: boolean) => void
+
+  /** AVS demo: false = small-lift lobes, true = large-lift (>~3,100 rpm). */
+  avsLargeLobe: boolean
+  toggleAvs: () => void
 }
 
 export const useAppStore = create<AppState>()(
@@ -81,6 +85,9 @@ export const useAppStore = create<AppState>()(
 
       treeDrawerOpen: false,
       setTreeDrawerOpen: (open) => set({ treeDrawerOpen: open }),
+
+      avsLargeLobe: false,
+      toggleAvs: () => set((s) => ({ avsLargeLobe: !s.avsLargeLobe })),
     }),
     {
       name: 'r-explorer-ui',

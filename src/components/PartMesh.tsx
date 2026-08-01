@@ -71,11 +71,19 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
   )
   const target = useMemo(() => new THREE.Vector3(), [])
 
+  // AVS sliding elements shift axially (along the cam, +X) when toggled
+  const avsShift = useMemo(() => {
+    if (!part.tags.includes('avs-element')) return 0
+    const raw = part.geometryParams?.['avsShiftMm']
+    return (typeof raw === 'number' ? raw : 14) / 1000
+  }, [part])
+
   useFrame((_, delta) => {
     const g = group.current
     if (!g) return
-    const factor = useAppStore.getState().explode
-    target.copy(dir).multiplyScalar(part.explodeVector.distance * factor).add(base)
+    const state = useAppStore.getState()
+    target.copy(dir).multiplyScalar(part.explodeVector.distance * state.explode).add(base)
+    if (avsShift > 0 && state.avsLargeLobe) target.x += avsShift
     if (prefersReducedMotion) g.position.copy(target)
     else damp3(g.position, target, 0.18, delta)
   })

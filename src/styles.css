@@ -199,7 +199,7 @@ button {
   backdrop-filter: blur(6px);
   border: 1px solid var(--line);
   border-radius: 4px;
-  z-index: 20;
+  z-index: 25; /* above the info panel so the mobile drawer isn't covered */
   overflow: hidden;
 }
 
@@ -473,6 +473,35 @@ button {
   border: 1px solid var(--line);
   border-radius: 2px;
   padding: 1px 6px;
+}
+
+/* ── AVS demo toggle ─────────────────────────────────────────────────── */
+
+.avs-toggle {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.avs-btn {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 7px 10px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+}
+
+.avs-btn.is-large {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 /* ── Callout chips (in-viewport) ─────────────────────────────────────── */
