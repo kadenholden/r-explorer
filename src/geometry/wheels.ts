@@ -17,22 +17,23 @@ export function pretoriaWheel(params: GeometryParams): THREE.BufferGeometry {
   const barrel = new THREE.CylinderGeometry(rimR, rimR, width, 32, 1, true)
   barrel.rotateZ(Math.PI / 2)
   parts.push(barrel)
-  // outer lip
-  const lip = new THREE.CylinderGeometry(rimR + 0.008, rimR + 0.008, 0.012, 32)
+  // outer lip — open-ended ring, NOT a capped cylinder (a cap here would
+  // wall off the whole wheel face)
+  const lip = new THREE.CylinderGeometry(rimR + 0.008, rimR + 0.008, 0.012, 32, 1, true)
   lip.rotateZ(Math.PI / 2)
   lip.translate(width / 2, 0, 0)
   parts.push(lip)
 
-  // Pretoria's five twin-spoke pairs
+  // Pretoria's five twin-spoke pairs, radiating in the face plane:
+  // box along +Y at face depth, twinned with a tangential offset, then
+  // spun about the wheel axis (X) into position
+  const spokeLen = rimR - 0.075
   for (let i = 0; i < 5; i++) {
     const a = (i / 5) * Math.PI * 2
-    for (const off of [-0.02, 0.02]) {
-      const spoke = new THREE.BoxGeometry(0.018, rimR - 0.05, 0.02)
-      spoke.translate(0, (rimR - 0.05) / 2 + 0.045, off)
+    for (const off of [-0.014, 0.014]) {
+      const spoke = new THREE.BoxGeometry(0.016, spokeLen, 0.024)
+      spoke.translate(width / 2 - 0.01, spokeLen / 2 + 0.06, off)
       spoke.rotateX(a)
-      spoke.translate(width / 2 - 0.012, 0, 0)
-      spoke.rotateZ(-Math.PI / 2)
-      spoke.rotateY(Math.PI / 2)
       parts.push(spoke)
     }
   }
@@ -50,31 +51,35 @@ export function pretoriaWheel(params: GeometryParams): THREE.BufferGeometry {
   return mergeParts(parts)
 }
 
-/** 235/35 R19 tyre: sidewall profile 35% of 235 mm section. */
+/** 235/35 R19 tyre: an OPEN ring (hole through the middle for the alloy)
+ *  — a lathed cross-section running bead → bulged sidewall → flat tread
+ *  → sidewall → bead, so the rim and spokes stay visible inside it. */
 export function tyre(params: GeometryParams): THREE.BufferGeometry {
   const rimR = mm(params, 'rimDiameterMm', 482.6) / 2
   const section = mm(params, 'sectionMm', 235)
   const outerR = rimR + section * 0.35
-  const parts: THREE.BufferGeometry[] = []
+  const w2 = (section * 0.86) / 2
+  const mid = (rimR + outerR) / 2
 
-  const carcass = new THREE.CylinderGeometry(outerR, outerR, section * 0.86, 40)
-  carcass.rotateZ(Math.PI / 2)
+  // profile in (radius, axial) — lathed about the axis
+  const profile = [
+    new THREE.Vector2(rimR, -w2),
+    new THREE.Vector2(mid, -w2 + 0.004),
+    new THREE.Vector2(outerR - 0.006, -w2 + 0.022),
+    new THREE.Vector2(outerR, -w2 + 0.045),
+    new THREE.Vector2(outerR, w2 - 0.045),
+    new THREE.Vector2(outerR - 0.006, w2 - 0.022),
+    new THREE.Vector2(mid, w2 - 0.004),
+    new THREE.Vector2(rimR, w2),
+  ]
+  const parts: THREE.BufferGeometry[] = []
+  const carcass = new THREE.LatheGeometry(profile, 48)
+  carcass.rotateZ(Math.PI / 2) // lathe axis Y → wheel axis X
   parts.push(carcass)
-  // shoulder chamfers
-  for (const s of [-1, 1]) {
-    const shoulder = new THREE.CylinderGeometry(
-      s > 0 ? outerR - 0.004 : outerR,
-      s > 0 ? outerR : outerR - 0.004,
-      0.014,
-      40,
-    )
-    shoulder.rotateZ(Math.PI / 2)
-    shoulder.translate((s * section * 0.9) / 2, 0, 0)
-    parts.push(shoulder)
-  }
-  // circumferential groove hints
+
+  // circumferential groove hints as open tube shells (no end caps)
   for (const dx of [-0.028, 0, 0.028]) {
-    const groove = new THREE.CylinderGeometry(outerR + 0.001, outerR + 0.001, 0.004, 40)
+    const groove = new THREE.CylinderGeometry(outerR + 0.001, outerR + 0.001, 0.004, 40, 1, true)
     groove.rotateZ(Math.PI / 2)
     groove.translate(dx, 0, 0)
     parts.push(groove)
