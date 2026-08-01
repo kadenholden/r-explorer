@@ -200,7 +200,7 @@
       "knownIssues": [],
       "explodeVector": { "direction": [0, -0.5, -1], "distance": 0.3 },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 760 },
+      "geometryParams": { "lengthMm": 815 },
       "transforms": [
         { "position": [0.12, -0.27, -1.13], "rotationDeg": [0, 0, 19] },
         { "position": [-0.12, -0.27, -1.13], "rotationDeg": [0, 180, 19] }
@@ -223,7 +223,7 @@
       "knownIssues": [],
       "explodeVector": { "direction": [0.3, -0.6, 1], "distance": 0.3 },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 1150, "intermediateBearing": 1 },
+      "geometryParams": { "lengthMm": 1340, "intermediateBearing": 1 },
       "transforms": [{ "position": [-0.44, -0.14, 0.05], "rotationDeg": [0, 0, 6] }],
       "callout": 11,
       "calloutOffset": [0.2, -0.14, 0.14],
@@ -243,8 +243,8 @@
       "knownIssues": [],
       "explodeVector": { "direction": [-0.3, -0.6, 1], "distance": 0.3 },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 400 },
-      "transforms": [{ "position": [-0.58, -0.14, 0.05], "rotationDeg": [0, 180, -6] }],
+      "geometryParams": { "lengthMm": 340 },
+      "transforms": [{ "position": [-0.58, -0.14, 0.05], "rotationDeg": [0, 180, 21] }],
       "callout": 12,
       "calloutOffset": [-0.18, -0.14, 0.14],
       "color": "#9aa0a8",

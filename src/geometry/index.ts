@@ -48,6 +48,22 @@ import {
   rearDiffGears,
   driveshaft,
 } from './driveline'
+import {
+  coilSpring,
+  strutFront,
+  damperRear,
+  lowerControlArm,
+  steeringKnuckle,
+  wheelCarrier,
+  subframe,
+  antiRollBar,
+  dropLink,
+  epsRack,
+  tieRod,
+  lateralLink,
+  trailingLink,
+} from './suspension'
+import { pretoriaWheel, tyre, wheelBoltRing } from './wheels'
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
@@ -113,5 +129,21 @@ registerRecipe('haldexFilter', haldexFilter)
 registerRecipe('haldexController', haldexController)
 registerRecipe('rearDiffGears', rearDiffGears)
 registerRecipe('driveshaft', driveshaft)
+registerRecipe('coilSpring', coilSpring)
+registerRecipe('strutFront', strutFront)
+registerRecipe('damperRear', damperRear)
+registerRecipe('lowerControlArm', lowerControlArm)
+registerRecipe('steeringKnuckle', steeringKnuckle)
+registerRecipe('wheelCarrier', wheelCarrier)
+registerRecipe('subframe', subframe)
+registerRecipe('antiRollBar', antiRollBar)
+registerRecipe('dropLink', dropLink)
+registerRecipe('epsRack', epsRack)
+registerRecipe('tieRod', tieRod)
+registerRecipe('lateralLink', lateralLink)
+registerRecipe('trailingLink', trailingLink)
+registerRecipe('pretoriaWheel', pretoriaWheel)
+registerRecipe('tyre', tyre)
+registerRecipe('wheelBoltRing', wheelBoltRing)
 
 export { resolveRecipe }

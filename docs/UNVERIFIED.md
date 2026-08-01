@@ -82,6 +82,19 @@ bellhousing label.
 | --- | --- |
 | All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |
 
+## Suspension, steering & wheels (Phase 5)
+
+Dossier-verified on their parts: wheel bolts 120 Nm; hub/axle bolt
+200 Nm +180°; geometry facts (8J×19 Pretoria, 235/35 R19, 5×112,
+57.1 mm, ride height −20 mm). Everything else `null`:
+
+| Part group | Missing |
+| --- | --- |
+| Struts, dampers, springs | OEM numbers; spring rates |
+| Arms/links (LCA, trailing, upper/spring/toe, tie rods) | OEM numbers; pinch/pivot bolt torques |
+| Subframes, ARBs, knuckles/carriers | OEM numbers; subframe bolt torques |
+| Pretoria wheels | OEM number; exact ET offset (dossier: ET45–50) |
+
 ## Driveline — Haldex Gen 5 (Phase 4)
 
 Dossier-verified: the charge pump **0CQ598549** (recorded on its part).
