@@ -42,6 +42,17 @@ interface AppState {
   /** Mobile drawer for the tree panel. */
   treeDrawerOpen: boolean
   setTreeDrawerOpen: (open: boolean) => void
+
+  /** AVS demo: false = small-lift lobes, true = large-lift (>~3,100 rpm). */
+  avsLargeLobe: boolean
+  toggleAvs: () => void
+
+  /** Runner-flap demo: commanded flap state (0% closed ↔ ~99% open). */
+  flapsOpen: boolean
+  toggleFlaps: () => void
+  /** P2015 fault simulation: flaps jam and G336 reads implausible. */
+  p2015: boolean
+  toggleP2015: () => void
 }
 
 export const useAppStore = create<AppState>()(
@@ -81,6 +92,14 @@ export const useAppStore = create<AppState>()(
 
       treeDrawerOpen: false,
       setTreeDrawerOpen: (open) => set({ treeDrawerOpen: open }),
+
+      avsLargeLobe: false,
+      toggleAvs: () => set((s) => ({ avsLargeLobe: !s.avsLargeLobe })),
+
+      flapsOpen: false,
+      toggleFlaps: () => set((s) => ({ flapsOpen: !s.flapsOpen })),
+      p2015: false,
+      toggleP2015: () => set((s) => ({ p2015: !s.p2015 })),
     }),
     {
       name: 'r-explorer-ui',

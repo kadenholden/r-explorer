@@ -77,6 +77,10 @@ export interface AssemblyMeta {
   name: string
   system: SystemId
   description: string
+  /** Where this assembly sits in the world scene, metres. */
+  origin: Vec3
+  /** World orientation of the whole assembly, Euler degrees XYZ. */
+  rotationDeg: Vec3
 }
 
 export interface AssemblyFile {

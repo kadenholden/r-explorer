@@ -199,7 +199,7 @@ button {
   backdrop-filter: blur(6px);
   border: 1px solid var(--line);
   border-radius: 4px;
-  z-index: 20;
+  z-index: 25; /* above the info panel so the mobile drawer isn't covered */
   overflow: hidden;
 }
 
@@ -473,6 +473,143 @@ button {
   border: 1px solid var(--line);
   border-radius: 2px;
   padding: 1px 6px;
+}
+
+/* ── AVS demo toggle ─────────────────────────────────────────────────── */
+
+.avs-toggle {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.avs-btn {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 7px 10px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+}
+
+.avs-btn.is-large {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.avs-btn--fault {
+  margin-top: 6px;
+  color: var(--text-dim);
+}
+
+.avs-btn--fault.is-faulted {
+  color: #fff;
+  border-color: #d64f5c;
+  background: rgba(214, 79, 92, 0.18);
+}
+
+.avs-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── P2015 fault overlay ─────────────────────────────────────────────── */
+
+.p2015-overlay {
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(430px, calc(100vw - 24px));
+  background: color-mix(in srgb, var(--panel) 96%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid #d64f5c;
+  border-radius: 4px;
+  z-index: 28;
+  overflow: hidden;
+}
+
+.p2015-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(214, 79, 92, 0.12);
+}
+
+.p2015-code {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: #ff7a86;
+  border: 1.5px solid #d64f5c;
+  border-radius: 2px;
+  padding: 0 6px;
+  flex: none;
+}
+
+.p2015-title {
+  font-size: 12.5px;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.p2015-body {
+  padding: 10px 14px 12px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.p2015-mvb {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.p2015-readouts {
+  display: flex;
+  gap: 18px;
+  margin-top: 4px;
+  font-family: var(--display);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.p2015-readouts strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.p2015-bad {
+  color: #ff7a86;
+}
+
+.p2015-body ol {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 4px;
+}
+
+.p2015-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .p2015-overlay {
+    top: auto;
+    bottom: 8px;
+    z-index: 32;
+  }
 }
 
 /* ── Callout chips (in-viewport) ─────────────────────────────────────── */

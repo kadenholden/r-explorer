@@ -42,6 +42,21 @@ export function ringGeometry(rInner: number, rOuter: number, depth: number): THR
   return new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: false, curveSegments: 48 })
 }
 
+/** Tube following a smooth curve through the given points — pipes, hoses. */
+export function tubeThrough(
+  points: [number, number, number][],
+  radius: number,
+  closed = false,
+): THREE.TubeGeometry {
+  const curve = new THREE.CatmullRomCurve3(
+    points.map((p) => new THREE.Vector3(...p)),
+    closed,
+    'catmullrom',
+    0.3,
+  )
+  return new THREE.TubeGeometry(curve, Math.max(24, points.length * 12), radius, 10, closed)
+}
+
 /** Merge primitives into one geometry, tolerating indexed + non-indexed mixes
  *  (ExtrudeGeometry is non-indexed; Cylinder/Box are indexed). */
 export function mergeParts(geometries: THREE.BufferGeometry[]): THREE.BufferGeometry {

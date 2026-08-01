@@ -1,64 +1,54 @@
 # PROGRESS
 
-## Phase 0 — complete (this session, 2026-08-01)
+## Phase 2 — complete (2026-08-01)
 
 **What's done**
 
-- Vite + React + TypeScript (strict) app scaffolded; three.js via
-  @react-three/fiber + drei; zustand store with persisted UI state (open
-  tree nodes, last camera preset).
-- Data-driven core proven end-to-end: the strict part schema
-  ([src/types/parts.ts](src/types/parts.ts)), a validating loader that
-  fails loudly on any bad data file, and the geometry recipe registry —
-  `geometryRef` resolves to a procedural recipe or (code path in place) a
-  `.glb` under `public/models/`.
-- Procedural recipes: brake disc, floating caliper, carrier, pads
-  (parameterised facing), and the first shared-fastener-library recipe
-  (`hexBolt`, parameterised by class dimensions, torque as metadata).
-- Front brake corner assembly fully working from dossier data: 340 × 30 mm
-  disc, blue aluminium caliper, carrier, both pads, M8 guide bolts (35 Nm)
-  and M12 carrier bolts (200 Nm). Explodable with animated easing and
-  ETKA-style numbered callouts + leader lines; selectable from viewport,
-  tree, or callout chips; plate-style info panel with breadcrumb; hierarchy
-  tree with all ten dossier systems, visibility toggles and isolate mode;
-  camera presets; mobile layout (drawer tree, bottom-sheet info panel);
-  reduced-motion respected.
-- GitHub Pages deployment workflow (`.github/workflows/deploy.yml`) —
-  builds and deploys on every merge to main; Vite `base` set to
-  `/r-explorer/`.
-- **Realistic-geometry pass (operator-requested):** recipes upgraded from
-  generic blocks to the real components' forms — disc with drilled hat
-  (true 5×112 PCD, 57.1 mm centre bore), radial cooling vanes, hat skirt;
-  arc-following caliper with pad window, bridge ribs, piston boss,
-  guide-pin ears, bleed nipple; H-form carrier with over-rim bridges and
-  mounting ears; pads with carrier-abutment lugs. Realistic material
-  colours with a persisted Real/System colour-mode toggle in the top bar.
-- `docs/UNVERIFIED.md` started (no OEM numbers invented — all seven Phase 0
-  parts logged pending ETKA/erWin verification).
+- **Intake & boost** (13 records): airbox → IHI IS38 turbo (voluted
+  compressor/turbine, CHRA, wastegate-actuator and diverter valve as
+  separate parts with their ECU-recalibration / 06K145xxx notes) →
+  hot-side pipe → front-mount intercooler → cold-side pipe → throttle
+  body (7 Nm T30s) → **the manifold unit**: plastic manifold with its
+  real identity **06L133201FP** (supersession chain + original AH
+  fitment documented), four curved runners, the runner-flap shaft, the
+  **V157 flap motor** (no separate part number — documented why), the
+  **G336 sensor with its own 06K907386D**, and the 9 Nm T30 flange bolts.
+- **Signature feature — the P2015 fault demo**: flap controls appear on
+  any manifold-unit part. Healthy mode sweeps the flaps closed↔open
+  (animated butterflies on the shaft); the P2015 toggle jams them at 37%,
+  glows every manifold-unit part fault-red, and raises the diagnosis
+  card: Ross-Tech definition, MVB-142 specified-vs-actual mismatch, and
+  the real repair tree (Output Test [03] → MVB 142 → 06K907386D sensor
+  vs 06L133201FP manifold → Group 142 adaptation).
+- **Dual-injection fuel** (6 records): cam-driven ~200 bar HPFP, DI rail
+  + 4 in-chamber injectors + rail pressure sensor, port rail + 4 runner
+  injectors, with the dossier's injection-strategy story in the
+  descriptions. (Tank/LPFP deferred to Phase 7 fuel storage.)
+- **Exhaust** (7 records): cast downpipe with primary cat, link pipe,
+  centre resonator, rear silencer with electric flap actuators, the R's
+  chrome quad tips, pre-turbine + post-cat lambdas. GPF build-date
+  caveat recorded.
+- New camera presets: Intake and Exhaust; Overview widened.
 
-**Verified this session:** `npm run build` clean (strict tsc + Vite);
-desktop + mobile checked in-browser: explode, selection, tree, isolate,
-presets, info plate; zero console errors.
+**Verified this session:** `npm run build` clean; in-browser: intake
+side reads convincingly (black manifold, runners, shaft, V157, rail +
+injectors), selection/breadcrumbs correct across all three new
+assemblies, flap sweep animates, P2015 demo end-to-end (red glow +
+overlay + jammed flaps + disabled command button).
 
-## What's next — Phase 1 (on operator's go)
+## What's next — Phase 3 (on operator's go)
 
-Engine short block + head per dossier §2: block, forged crank (5 mains),
-cracked-cap rods, 9.3:1 pistons with oil jets, twin balance shafts, chain
-drive with tensioner and guides, head with integrated exhaust manifold,
-both cams, AVS as an animated toggle. New recipes needed: crankshaft
-(journals/webs/counterweights), piston, rod, block, head, cam, chain run.
+Transmission per dossier §3 — **needs the car-spec answer first**:
+MQ350 6-speed manual (clutch, DMF, gear sets) or DQ250 6-speed wet DSG
+(dual clutch pack, mechatronic J743, concentric input shafts)?
 
-Deferred features (arrive with the phase that needs them): search,
-x-ray/ghost mode, nested explode, per-assembly explode, P2015 fault mode
-(Phase 2).
+Running polish list: valvetrain followers; resting-fit overlaps at 0%
+explode (schematic tolerance); search + x-ray mode; nested/per-assembly
+explode; bundle code-splitting (~1.3 MB).
 
 ## Open questions
 
-1. **Car spec check (matters from Phase 3):** manual (MQ350) or DSG
-   (DQ250)? DCC fitted? 18" Cadiz or 19" Pretoria wheels? 3-door or
-   5-door? Pre-facelift confirmed?
-2. **GitHub Pages:** enabled via API this session — confirm the first
-   deploy goes live after this PR merges (Actions tab → "Deploy to GitHub
-   Pages").
-3. Bundle is ~1.2 MB minified (three.js); fine for now, code-splitting is
-   an option later if phone load feels slow.
+1. **Which gearbox does the car have (manual vs DSG)?** Blocks Phase 3's
+   choice of assembly. Also: DCC? 18" Cadiz or 19" Pretoria? 3/5-door?
+2. PR stack: #1 (Phase 0) → #2 (Phase 1) → #3 (Phase 2). Merge in order;
+   GitHub retargets each as its base merges.
