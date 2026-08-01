@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Html, Line, Outlines, useCursor, useGLTF } from '@react-three/drei'
-import { damp3 } from 'maath/easing'
+import { damp, damp3 } from 'maath/easing'
 import * as THREE from 'three'
 import type { PartRecord, PartTransform } from '../types/parts'
 import { systemDef } from '../data/taxonomy'
@@ -57,12 +57,15 @@ interface InstanceProps {
 
 function PartInstance({ part, transform, geometry, isGlb, withCallout }: InstanceProps) {
   const group = useRef<THREE.Group>(null)
+  const spinGroup = useRef<THREE.Group>(null)
   const [hovered, setHovered] = useState(false)
   useCursor(hovered)
 
   const selected = useAppStore((s) => s.selectedPartId === part.id)
   const select = useAppStore((s) => s.select)
   const explode = useAppStore((s) => s.explode)
+  const faultActive = useAppStore((s) => s.p2015) && part.tags.includes('p2015')
+  const isFlap = part.tags.includes('runner-flap')
 
   const base = useMemo(() => new THREE.Vector3(...transform.position), [transform])
   const dir = useMemo(
@@ -86,6 +89,13 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
     if (avsShift > 0 && state.avsLargeLobe) target.x += avsShift
     if (prefersReducedMotion) g.position.copy(target)
     else damp3(g.position, target, 0.18, delta)
+
+    // runner-flap sweep: closed 0 → open ~80°; P2015 jams them mid-travel
+    if (isFlap && spinGroup.current) {
+      const angle = state.p2015 ? -0.62 : state.flapsOpen ? -1.38 : 0
+      if (prefersReducedMotion) spinGroup.current.rotation.x = angle
+      else damp(spinGroup.current.rotation, 'x', angle, 0.22, delta)
+    }
   })
 
   const colorMode = useAppStore((s) => s.colorMode)
@@ -103,36 +113,39 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
 
   const showCallout = withCallout && (explode > 0.12 || selected)
 
+  const FAULT_RED = '#d64f5c'
   return (
     <group ref={group} position={transform.position}>
       <group rotation={rotation}>
-        {isGlb ? (
-          <Suspense fallback={null}>
-            <GlbPart url={`${import.meta.env.BASE_URL}${part.geometryRef}`} />
-          </Suspense>
-        ) : geometry ? (
-          <mesh
-            geometry={geometry}
-            onClick={(e) => {
-              e.stopPropagation()
-              select(part.id)
-            }}
-            onPointerOver={(e) => {
-              e.stopPropagation()
-              setHovered(true)
-            }}
-            onPointerOut={() => setHovered(false)}
-          >
-            <meshStandardMaterial
-              color={color}
-              metalness={0.35}
-              roughness={0.55}
-              emissive={selected ? ACCENT : hovered ? color : '#000000'}
-              emissiveIntensity={selected ? 0.4 : hovered ? 0.18 : 0}
-            />
-            {selected && <Outlines thickness={0.0035} color={ACCENT} />}
-          </mesh>
-        ) : null}
+        <group ref={spinGroup}>
+          {isGlb ? (
+            <Suspense fallback={null}>
+              <GlbPart url={`${import.meta.env.BASE_URL}${part.geometryRef}`} />
+            </Suspense>
+          ) : geometry ? (
+            <mesh
+              geometry={geometry}
+              onClick={(e) => {
+                e.stopPropagation()
+                select(part.id)
+              }}
+              onPointerOver={(e) => {
+                e.stopPropagation()
+                setHovered(true)
+              }}
+              onPointerOut={() => setHovered(false)}
+            >
+              <meshStandardMaterial
+                color={color}
+                metalness={0.35}
+                roughness={0.55}
+                emissive={selected ? ACCENT : faultActive ? FAULT_RED : hovered ? color : '#000000'}
+                emissiveIntensity={selected ? 0.4 : faultActive ? 0.32 : hovered ? 0.18 : 0}
+              />
+              {selected && <Outlines thickness={0.0035} color={ACCENT} />}
+            </mesh>
+          ) : null}
+        </group>
       </group>
       {showCallout && <CalloutMarker part={part} selected={selected} onSelect={select} />}
     </group>

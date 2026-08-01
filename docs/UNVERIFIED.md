@@ -40,3 +40,26 @@ indicative tuner-reference values — verify in Bentley/erWin).
 | AVS elements + actuators (`avs-cam-elements`, `avs-actuators`) | OEM numbers, material |
 | Valves (`intake-valves`, `exhaust-valves`) | OEM numbers |
 | Chain drive (`timing-chain`, `crank-sprocket`, `chain-tensioner`, `chain-guide-rails`) | OEM numbers; tensioner latest-revision number especially worth pinning down |
+
+## Intake / fuel / exhaust (Phase 2)
+
+Two numbers ARE dossier-verified and recorded on their parts: the
+complete manifold **06L133201FP** and the G336 sensor **06K907386D**.
+The V157 motor and runner flaps intentionally carry `null` — they are
+only sold inside the complete manifold (dossier §2).
+
+| Part (id) | Missing |
+| --- | --- |
+| Airbox (`airbox`) | OEM number |
+| Turbo (`turbo-is38`) | OEM number (IS38 is the model; exact 06K unit varies) |
+| Wastegate actuator (`wastegate-actuator`) | exact 06K145xxx variant |
+| Diverter valve (`diverter-valve`) | OEM number |
+| Charge pipes (`charge-pipe-hot`, `-cold`) | OEM numbers, materials |
+| Intercooler (`intercooler`) | OEM number |
+| Throttle body (`throttle-body`) | OEM number |
+| Manifold bolts (`manifold-bolts`) | OEM number, exact class/length |
+| HPFP (`hpfp`) | OEM number |
+| Fuel rails + injectors (`di-fuel-rail`, `di-injectors`, `port-fuel-rail`, `port-injectors`) | OEM numbers |
+| Rail pressure sensor (`rail-pressure-sensor`) | OEM number |
+| Exhaust line (`downpipe-cat`, `link-pipe`, `resonator`, `rear-silencer`, `exhaust-flap-actuators`, `quad-tips`) | OEM numbers |
+| Lambda sensors (`lambda-sensors`) | OEM numbers |

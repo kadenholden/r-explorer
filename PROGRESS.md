@@ -1,61 +1,54 @@
 # PROGRESS
 
-## Phase 1 — complete (2026-08-01)
+## Phase 2 — complete (2026-08-01)
 
 **What's done**
 
-- **EA888 Gen 3 engine, short block + head**, as two new data-driven
-  assemblies (21 part records, 60 placed instances) populated entirely
-  from dossier §2:
-  - Short block: closed-deck GJL 250 block with real 82.5 mm bore
-    openings in the deck, forged flat-plane crank (five 48 mm mains,
-    92.8 mm-stroke throws, pins 1+4/2+3 opposed), cracked-cap 36MnVS4
-    rods, 9.3:1 pistons with ring lands and slipper skirts, solenoid
-    oil jets, twin counter-rotating balance shafts, main-bearing ladder.
-  - Head: AlSi10Mg casting with the integrated exhaust manifold (four
-    runners → single turbo flange), 3-layer MLS gasket (bored plate),
-    ten TTY head bolts, both cams (intake 30° / exhaust 60° phasing),
-    sodium-filled exhaust valves, chrome intake valves, and the chain
-    drive at the flywheel end — chain loop, crank sprocket, hydraulic
-    tensioner (carrying its notorious failure history as knownIssues),
-    plastic guide rails.
-  - **AVS animated toggle**: the four sliding cam elements are separable
-    parts with small+large lobe sets; selecting any AVS part shows a
-    lift toggle in the info panel that slides them axially, as the
-    electromagnetic actuators do. Works alongside explode.
-- Torques recorded with the dossier's caveats verbatim-in-spirit: head
-  bolts 40 Nm +90°+90° (TTY, conflicting published alt noted), ladder
-  ~65 Nm +90° (indicative), rod bolts 30 Nm +90° (stretch, replace).
-- Viewer: assemblies now carry a world `origin` (brake corner moved
-  beside the engine); camera presets reworked (Overview / Engine /
-  Engine top / Chain end / Brake corner); mobile fix — tree drawer now
-  overlays the info sheet instead of being covered by it.
+- **Intake & boost** (13 records): airbox → IHI IS38 turbo (voluted
+  compressor/turbine, CHRA, wastegate-actuator and diverter valve as
+  separate parts with their ECU-recalibration / 06K145xxx notes) →
+  hot-side pipe → front-mount intercooler → cold-side pipe → throttle
+  body (7 Nm T30s) → **the manifold unit**: plastic manifold with its
+  real identity **06L133201FP** (supersession chain + original AH
+  fitment documented), four curved runners, the runner-flap shaft, the
+  **V157 flap motor** (no separate part number — documented why), the
+  **G336 sensor with its own 06K907386D**, and the 9 Nm T30 flange bolts.
+- **Signature feature — the P2015 fault demo**: flap controls appear on
+  any manifold-unit part. Healthy mode sweeps the flaps closed↔open
+  (animated butterflies on the shaft); the P2015 toggle jams them at 37%,
+  glows every manifold-unit part fault-red, and raises the diagnosis
+  card: Ross-Tech definition, MVB-142 specified-vs-actual mismatch, and
+  the real repair tree (Output Test [03] → MVB 142 → 06K907386D sensor
+  vs 06L133201FP manifold → Group 142 adaptation).
+- **Dual-injection fuel** (6 records): cam-driven ~200 bar HPFP, DI rail
+  + 4 in-chamber injectors + rail pressure sensor, port rail + 4 runner
+  injectors, with the dossier's injection-strategy story in the
+  descriptions. (Tank/LPFP deferred to Phase 7 fuel storage.)
+- **Exhaust** (7 records): cast downpipe with primary cat, link pipe,
+  centre resonator, rear silencer with electric flap actuators, the R's
+  chrome quad tips, pre-turbine + post-cat lambdas. GPF build-date
+  caveat recorded.
+- New camera presets: Intake and Exhaust; Overview widened.
 
-**Verified this session:** `npm run build` clean; in-browser: engine
-renders in both colour modes, explode layers correctly (gasket → pistons
-→ head → valvetrain → bolts; chain drive pulls off the flywheel end),
-tree shows 28 parts across 3 assemblies with sub-assembly groups, AVS
-toggle slides the elements live. (Note for local dev only: the embedded
-preview pane sometimes misses the initial size event and shows an empty
-canvas until the window resizes — real browsers are unaffected.)
+**Verified this session:** `npm run build` clean; in-browser: intake
+side reads convincingly (black manifold, runners, shaft, V157, rail +
+injectors), selection/breadcrumbs correct across all three new
+assemblies, flap sweep animates, P2015 demo end-to-end (red glow +
+overlay + jammed flaps + disabled command button).
 
-## What's next — Phase 2 (on operator's go)
+## What's next — Phase 3 (on operator's go)
 
-Intake / fuel / exhaust + the signature P2015 fault mode (dossier §2
-intake section): airbox → turbo → intercooler → throttle → plastic
-manifold with animated runner flaps, V157 flap motor, G336 sensor
-(06K907386D) vs complete manifold (06L133201FP), fault toggle with the
-VCDS diagnosis overlay (output test 03, MVB 142). Also: dual-injection
-fuel system, IS38 turbo, downpipe-to-quad-tips exhaust.
+Transmission per dossier §3 — **needs the car-spec answer first**:
+MQ350 6-speed manual (clutch, DMF, gear sets) or DQ250 6-speed wet DSG
+(dual clutch pack, mechatronic J743, concentric input shafts)?
 
-Deferred/known-polish list: valvetrain followers + lash adjusters not
-modelled (noted in AVS/cam descriptions); resting-state part overlap in
-the valvetrain is visible at 0% explode (schematic tolerance); search
-and x-ray mode still to come; three.js bundle ~1.25 MB (code-split later).
+Running polish list: valvetrain followers; resting-fit overlaps at 0%
+explode (schematic tolerance); search + x-ray mode; nested/per-assembly
+explode; bundle code-splitting (~1.3 MB).
 
 ## Open questions
 
-1. **Car spec check (matters from Phase 3):** manual (MQ350) or DSG
-   (DQ250)? DCC? 18" Cadiz or 19" Pretoria? 3-door or 5-door?
-2. PR flow: Phase 1 is PR #2, stacked on Phase 0's PR #1 — merge #1
-   first, then #2.
+1. **Which gearbox does the car have (manual vs DSG)?** Blocks Phase 3's
+   choice of assembly. Also: DCC? 18" Cadiz or 19" Pretoria? 3/5-door?
+2. PR stack: #1 (Phase 0) → #2 (Phase 1) → #3 (Phase 2). Merge in order;
+   GitHub retargets each as its base merges.

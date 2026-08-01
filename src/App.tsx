@@ -3,6 +3,7 @@ import { TreePanel } from './components/TreePanel'
 import { InfoPanel } from './components/InfoPanel'
 import { ExplodeControl } from './components/ExplodeControl'
 import { Viewport } from './components/Viewport'
+import { P2015Overlay } from './components/P2015Overlay'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <TreePanel />
       <InfoPanel />
       <ExplodeControl />
+      <P2015Overlay />
     </div>
   )
 }

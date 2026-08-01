@@ -44,6 +44,40 @@ function AvsToggle() {
   )
 }
 
+function FlapControls() {
+  const flapsOpen = useAppStore((s) => s.flapsOpen)
+  const toggleFlaps = useAppStore((s) => s.toggleFlaps)
+  const p2015 = useAppStore((s) => s.p2015)
+  const toggleP2015 = useAppStore((s) => s.toggleP2015)
+  return (
+    <div className="avs-toggle">
+      <span className="plate-label">Runner-flap demo</span>
+      <button
+        type="button"
+        className={`avs-btn${flapsOpen ? ' is-large' : ''}`}
+        onClick={toggleFlaps}
+        aria-pressed={flapsOpen}
+        disabled={p2015}
+      >
+        {p2015 ? 'Flaps not responding…' : flapsOpen ? 'Commanded: open (~99%)' : 'Commanded: closed (0%)'}
+      </button>
+      <button
+        type="button"
+        className={`avs-btn avs-btn--fault${p2015 ? ' is-faulted' : ''}`}
+        onClick={toggleP2015}
+        aria-pressed={p2015}
+      >
+        {p2015 ? 'P2015 ACTIVE — clear fault' : 'Simulate P2015 fault'}
+      </button>
+      <p className="plate-note">
+        Healthy flaps track the V157's command, 0% at idle → ~99% actuated. The
+        fault jams them mid-travel so the G336 reading no longer matches —
+        exactly what VCDS measuring block 142 exposes.
+      </p>
+    </div>
+  )
+}
+
 function PartPlate({ part }: { part: PartRecord }) {
   const select = useAppStore((s) => s.select)
   const sys = systemDef(part.system)
@@ -77,6 +111,7 @@ function PartPlate({ part }: { part: PartRecord }) {
         <Row label="Quantity" value={`${part.transforms.length}`} />
         <Row label="Geometry" value={part.geometryRef} mono />
         {part.tags.includes('avs') && <AvsToggle />}
+        {part.tags.includes('p2015') && <FlapControls />}
         {part.knownIssues.length > 0 && (
           <div className="plate-issues">
             <span className="plate-label">Known issues</span>
