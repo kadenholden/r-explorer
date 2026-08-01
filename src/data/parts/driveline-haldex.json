@@ -200,10 +200,10 @@
       "knownIssues": [],
       "explodeVector": { "direction": [0, -0.5, -1], "distance": 0.3 },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 330 },
+      "geometryParams": { "lengthMm": 760 },
       "transforms": [
-        { "position": [0.12, -0.27, -1.13], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.12, -0.27, -1.13], "rotationDeg": [0, 180, 0] }
+        { "position": [0.12, -0.27, -1.13], "rotationDeg": [0, 0, 19] },
+        { "position": [-0.12, -0.27, -1.13], "rotationDeg": [0, 180, 19] }
       ],
       "callout": 10,
       "calloutOffset": [0.2, 0.12, -0.12],

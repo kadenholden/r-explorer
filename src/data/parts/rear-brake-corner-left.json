@@ -1,0 +1,420 @@
+{
+  "assembly": {
+    "id": "rear-brake-corner-left",
+    "name": "Rear brake corner (left, EPB)",
+    "system": "brakes",
+    "origin": [
+      -0.95,
+      0,
+      -1.13
+    ],
+    "rotationDeg": [
+      0,
+      -90,
+      0
+    ],
+    "description": "Rear brake (dossier §6): 310 mm ventilated disc, single-piston floating caliper with the electronic parking brake's motor-on-caliper actuator. The R's rear pads have larger guide tabs and are NOT interchangeable with the manual-handbrake GTI Performance Pack, despite the shared disc size. Disc thickness is not stated in the dossier (22 mm typical — unverified)."
+  },
+  "parts": [
+    {
+      "id": "rear-brake-disc-rl",
+      "name": "Brake disc, rear left (310 mm ventilated)",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "310 mm ventilated rear disc (dossier §6), 5×112 / 57.1 mm bore. Thickness not stated in the dossier — modelled at a typical 22 mm, flagged unverified.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "distance": 0.24
+      },
+      "geometryRef": "brakeDisc",
+      "geometryParams": {
+        "outerDiameterMm": 310,
+        "thicknessMm": 22,
+        "ringInnerDiameterMm": 168,
+        "hatFaceDiameterMm": 144,
+        "hatDepthMm": 38,
+        "pcdMm": 112,
+        "boltHoleCount": 5,
+        "boltHoleDiameterMm": 15,
+        "centerBoreMm": 57.1,
+        "ventCount": 30
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.15,
+        0.12,
+        0.1
+      ],
+      "color": "#9aa1a9",
+      "tags": [
+        "disc",
+        "rotor",
+        "ventilated",
+        "310mm",
+        "rear"
+      ]
+    },
+    {
+      "id": "rear-brake-caliper-rl",
+      "name": "Brake caliper housing, rear left (EPB)",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": "Caliper unit",
+      "oemPartNumber": null,
+      "description": "Single-piston floating rear caliper carrying the EPB motor on its piston side (dossier §6). Blue with R script like the fronts. Schematic note: modelled with the front caliper's proportions.",
+      "material": "Aluminium (painted blue)",
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.55,
+          0.55,
+          0.4
+        ],
+        "distance": 0.32
+      },
+      "geometryRef": "brakeCaliper",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        -0.06,
+        0.16,
+        0.02
+      ],
+      "color": "#2a55b8",
+      "tags": [
+        "caliper",
+        "floating",
+        "EPB",
+        "rear"
+      ]
+    },
+    {
+      "id": "epb-actuator-rl",
+      "name": "EPB actuator (motor-on-caliper), rear left",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": "Caliper unit",
+      "oemPartNumber": null,
+      "description": "Electronic parking brake: an electric motor + gearbox on the caliper screws the piston out to clamp (dossier §6). Commanded by the EPB control unit (Phase 7 electronics).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.4,
+          0.4,
+          -1
+        ],
+        "distance": 0.3
+      },
+      "geometryRef": "epbActuator",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.098,
+            0.098,
+            -0.095
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        -0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "EPB",
+        "parking-brake",
+        "actuator",
+        "rear"
+      ]
+    },
+    {
+      "id": "rear-brake-carrier-rl",
+      "name": "Caliper carrier, rear left",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Rear carrier on the wheel bearing housing.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          0.6,
+          -0.35
+        ],
+        "distance": 0.24
+      },
+      "geometryRef": "brakeCarrier",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        -0.16,
+        0.02,
+        -0.08
+      ],
+      "color": "#5a5f66",
+      "tags": [
+        "carrier",
+        "rear"
+      ]
+    },
+    {
+      "id": "rear-brake-pads-rl",
+      "name": "Brake pads, rear left (R-specific) ×2",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": "Caliper unit",
+      "oemPartNumber": null,
+      "description": "Rear pad pair. Dossier §6: the R's rear pads have larger guide tabs/hooks and are NOT interchangeable with the manual-handbrake GTI Performance Pack even though disc sizes match — a classic parts-ordering trap.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "NOT interchangeable with GTI Performance Pack rear pads despite identical disc size (dossier §6)"
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.25,
+          0.25,
+          0.9
+        ],
+        "distance": 0.19
+      },
+      "geometryRef": "brakePad",
+      "geometryParams": {
+        "facing": -1
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0.024
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        },
+        {
+          "position": [
+            0,
+            0,
+            -0.036
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        0.1,
+        0.12,
+        0.07
+      ],
+      "color": "#41454c",
+      "tags": [
+        "pads",
+        "rear",
+        "R-specific",
+        "not-GTI-PP"
+      ]
+    },
+    {
+      "id": "rear-caliper-guide-bolts-rl",
+      "name": "Caliper guide bolts, rear left (M8 ×2)",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": "Caliper unit",
+      "oemPartNumber": null,
+      "description": "Guide pin bolts, rear caliper to carrier. The dossier states 35 Nm for the FRONT only; rear figure not stated.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "distance": 0.28
+      },
+      "geometryRef": "hexBolt",
+      "geometryParams": {
+        "shankDiameterMm": 8,
+        "shankLengthMm": 30,
+        "headAcrossFlatsMm": 13
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.027,
+            0.127,
+            -0.064
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.127,
+            0.027,
+            -0.064
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        0.02,
+        0.14,
+        -0.1
+      ],
+      "color": "#98a2ae",
+      "tags": [
+        "fastener",
+        "M8",
+        "guide-pin",
+        "rear"
+      ]
+    },
+    {
+      "id": "rear-carrier-bolts-rl",
+      "name": "Carrier bolts, rear left (M12 ×2)",
+      "system": "brakes",
+      "assembly": "rear-brake-corner-left",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Carrier to rear bearing housing. Rear torque not stated in the dossier.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "hexBolt",
+      "geometryParams": {
+        "shankDiameterMm": 12,
+        "shankLengthMm": 38,
+        "headAcrossFlatsMm": 18
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.034,
+            0.09,
+            -0.062
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.09,
+            0.034,
+            -0.062
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 7,
+      "calloutOffset": [
+        -0.02,
+        -0.12,
+        -0.12
+      ],
+      "color": "#98a2ae",
+      "tags": [
+        "fastener",
+        "M12",
+        "rear"
+      ]
+    }
+  ]
+}

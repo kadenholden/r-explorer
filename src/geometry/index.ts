@@ -1,6 +1,6 @@
 import { registerRecipe, resolveRecipe } from './registry'
 import { brakeDisc } from './brakeDisc'
-import { brakeCaliper } from './brakeCaliper'
+import { brakeCaliper, epbActuator } from './brakeCaliper'
 import { brakeCarrier } from './brakeCarrier'
 import { brakePad } from './brakePad'
 import { hexBolt } from './fasteners'
@@ -51,6 +51,7 @@ import {
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
+registerRecipe('epbActuator', epbActuator)
 registerRecipe('brakeCarrier', brakeCarrier)
 registerRecipe('brakePad', brakePad)
 registerRecipe('hexBolt', hexBolt)
