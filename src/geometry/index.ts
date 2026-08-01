@@ -36,6 +36,18 @@ import {
   finalDriveDiff,
   ptoBevel,
 } from './dq250'
+import {
+  propshaftFront,
+  centerBearing,
+  propshaftRear,
+  rduHousing,
+  haldexCoupling,
+  haldexPump,
+  haldexFilter,
+  haldexController,
+  rearDiffGears,
+  driveshaft,
+} from './driveline'
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
@@ -90,5 +102,15 @@ registerRecipe('inputShafts', inputShafts)
 registerRecipe('gearCluster', gearCluster)
 registerRecipe('finalDriveDiff', finalDriveDiff)
 registerRecipe('ptoBevel', ptoBevel)
+registerRecipe('propshaftFront', propshaftFront)
+registerRecipe('centerBearing', centerBearing)
+registerRecipe('propshaftRear', propshaftRear)
+registerRecipe('rduHousing', rduHousing)
+registerRecipe('haldexCoupling', haldexCoupling)
+registerRecipe('haldexPump', haldexPump)
+registerRecipe('haldexFilter', haldexFilter)
+registerRecipe('haldexController', haldexController)
+registerRecipe('rearDiffGears', rearDiffGears)
+registerRecipe('driveshaft', driveshaft)
 
 export { resolveRecipe }

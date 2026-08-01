@@ -77,9 +77,9 @@ live at a URL the operator can open on their phone.
 - **Gearbox: DSG** → model the DQ250 6-speed wet dual-clutch (0D9 AWD),
   NOT the MQ350 manual. Verify code on the bellhousing when possible.
 - **Wheels: 19" Pretoria** (8J×19, 235/35 R19) — use for Phase 5/6.
-- **DCC: reportedly not fitted** (operator sees Eco/Normal/Sport modes) →
-  passive sport dampers in Phase 5. Flag: the dossier lists the R's modes
-  as Eco/Normal/Individual/Race, so re-verify DCC absence in person.
+- **DCC: not fitted** (confirmed — drive modes are Eco/Normal/Race; the
+  "Sport" the operator first mentioned is the DSG lever's S program) →
+  passive sport dampers in Phase 5.
 - Still open: 3-door or 5-door (matters in Phase 6).
 
 ## Phasing (dossier Section 10 build order)

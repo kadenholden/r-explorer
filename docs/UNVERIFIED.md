@@ -73,3 +73,14 @@ bellhousing label.
 | Part (id) | Missing |
 | --- | --- |
 | All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |
+
+## Driveline — Haldex Gen 5 (Phase 4)
+
+Dossier-verified: the charge pump **0CQ598549** (recorded on its part).
+Everything else stores `null`.
+
+| Part (id) | Missing |
+| --- | --- |
+| Propshaft + centre bearing (`propshaft-front`, `-rear`, `center-bearing`) | OEM numbers |
+| RDU + Haldex internals (`rdu-housing`, `haldex-coupling`, `haldex-filter`, `haldex-controller`, `rear-diff-gears`) | OEM numbers; fluid part numbers + capacities |
+| Driveshafts (`rear-driveshafts`, `front-driveshaft-right`, `front-driveshaft-left`) | OEM numbers |

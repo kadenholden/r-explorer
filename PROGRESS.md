@@ -1,5 +1,28 @@
 # PROGRESS
 
+## Phase 4 — complete (2026-08-01)
+
+**What's done:** the 4MOTION driveline as a 12-part assembly (dossier
+§4): two-piece propshaft with centre bearing from the DQ250's bevel box
+to the rear final drive; the Haldex Gen 5 coupling (plates + annular
+piston) ahead of the rear diff; the **charge pump with its real dossier
+part number 0CQ598549** carrying the full service story (clogging
+screen → pump death → silent FWD, fix = pump + fluid + filter + VCDS
+pump-learn); the fine-mesh filter as its own part; Haldex controller;
+rear diff gear set (separate GL-5 oil noted); rear driveshafts ×2 and
+both unequal-length front driveshafts (right one with intermediate
+bearing, reaching the modelled brake corner). Driveline camera preset.
+Exhaust link pipe + resonator offset laterally so the propshaft no
+longer passes through them (real cars route them side by side).
+
+**Spec correction:** operator DOES have Race mode (the "Sport" was the
+DSG lever's S program) — mode list matches the dossier; DCC absence
+stands confirmed. CLAUDE.md updated.
+
+**Next:** Phase 5 — chassis: subframes, front struts (passive sport
+dampers — no DCC), rear multilink, EPS rack, ARBs, hubs, 19" Pretoria
+wheels; gives a rolling chassis.
+
 ## Phase 3 — complete (2026-08-01)
 
 **Car spec confirmed by operator:** DSG → **DQ250** modelled; 19"
