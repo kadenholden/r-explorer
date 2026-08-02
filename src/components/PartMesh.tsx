@@ -146,6 +146,8 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                       ? (part.geometryParams['scale'] as number)
                       : 1
                   }
+                  selected={selected}
+                  hovered={hovered}
                 />
               </group>
             </Suspense>
@@ -219,10 +221,50 @@ function CalloutMarker({
 }
 
 /** Real-mesh path: a .glb under public/ referenced by geometryRef.
- *  Draco-compressed meshes supported. Selection tinting is not applied to
- *  GLB materials (they keep their authored paint/glass). */
-function GlbPart({ url, scale }: { url: string; scale: number }) {
+ *  Draco-compressed meshes supported. Selection/hover tint the mesh's
+ *  own materials with the accent emissive, restoring the authored look
+ *  on deselect — same blue highlight as the schematic parts. */
+function GlbPart({
+  url,
+  scale,
+  selected,
+  hovered,
+}: {
+  url: string
+  scale: number
+  selected: boolean
+  hovered: boolean
+}) {
   const { scene } = useGLTF(url, true)
   const cloned = useMemo(() => scene.clone(true), [scene])
+
+  useEffect(() => {
+    const materials = new Set<THREE.Material>()
+    cloned.traverse((obj) => {
+      const mesh = obj as THREE.Mesh
+      if (!mesh.isMesh) return
+      const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
+      mats.forEach((m) => materials.add(m))
+    })
+    for (const m of materials) {
+      const std = m as THREE.MeshStandardMaterial
+      if (!(std.emissive instanceof THREE.Color)) continue
+      if (std.userData['origEmissive'] === undefined) {
+        std.userData['origEmissive'] = std.emissive.getHex()
+        std.userData['origEmissiveIntensity'] = std.emissiveIntensity
+      }
+      if (selected) {
+        std.emissive.set(ACCENT)
+        std.emissiveIntensity = 0.38
+      } else if (hovered) {
+        std.emissive.set(ACCENT)
+        std.emissiveIntensity = 0.14
+      } else {
+        std.emissive.setHex(std.userData['origEmissive'] as number)
+        std.emissiveIntensity = std.userData['origEmissiveIntensity'] as number
+      }
+    }
+  }, [cloned, selected, hovered])
+
   return <primitive object={cloned} scale={scale} />
 }
