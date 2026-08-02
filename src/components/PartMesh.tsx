@@ -120,14 +120,26 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
         <group ref={spinGroup}>
           {isGlb ? (
             <Suspense fallback={null}>
-              <GlbPart
-                url={`${import.meta.env.BASE_URL}${part.geometryRef}`}
-                scale={
-                  typeof part.geometryParams?.['scale'] === 'number'
-                    ? (part.geometryParams['scale'] as number)
-                    : 1
-                }
-              />
+              <group
+                onClick={(e) => {
+                  e.stopPropagation()
+                  select(part.id)
+                }}
+                onPointerOver={(e) => {
+                  e.stopPropagation()
+                  setHovered(true)
+                }}
+                onPointerOut={() => setHovered(false)}
+              >
+                <GlbPart
+                  url={`${import.meta.env.BASE_URL}${part.geometryRef}`}
+                  scale={
+                    typeof part.geometryParams?.['scale'] === 'number'
+                      ? (part.geometryParams['scale'] as number)
+                      : 1
+                  }
+                />
+              </group>
             </Suspense>
           ) : geometry ? (
             <mesh
