@@ -1,0 +1,65 @@
+{
+  "assembly": {
+    "id": "body-shell",
+    "name": "Body shell (real Mk7 mesh)",
+    "system": "body",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "A real Mk7 Golf body mesh (draco-compressed to 2.6 MB, palette recoloured to the operator's white) dropped in through the data-driven geometryRef path — the hero-mesh upgrade the architecture was designed for. The schematic panel view is default-hidden; use the tree's eye icons to swap between them."
+  },
+  "parts": [
+    {
+      "id": "body-shell-mesh",
+      "name": "Body shell (real mesh)",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Real Golf body mesh (draco-compressed GLB, swapped in via the data-driven geometryRef path — zero viewer changes). Toggle this and the schematic panels with the tree's eye icons to switch between the lifelike shell and the clickable panel view.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.9
+      },
+      "geometryRef": "models/golf-r-mk7-shell.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.4,
+        0.3,
+        0.3
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    }
+  ]
+}

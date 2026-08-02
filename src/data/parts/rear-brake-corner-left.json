@@ -4,9 +4,9 @@
     "name": "Rear brake corner (left, EPB)",
     "system": "brakes",
     "origin": [
-      -0.95,
+      -0.78,
       0,
-      -1.45
+      -2.57
     ],
     "rotationDeg": [
       0,

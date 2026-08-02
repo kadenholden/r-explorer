@@ -3,7 +3,11 @@
     "id": "body-exterior",
     "name": "Exterior — 5-door, white, R styling",
     "system": "body",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "The operator's car outside (dossier §1): 5-door in white, with the R signatures — deeper front bumper with enlarged intakes, rear bumper with diffuser framing the quad tips, roof spoiler, gloss-black mirror caps, side skirts. L≈4,268 mm, W 1,799 mm, H≈1,470 mm in real life; the model wraps the compressed scene chassis. Hide Body systems via the tree to get the mechanical view back."
   },
   "parts": [
@@ -18,14 +22,41 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.5], "distance": 0.6 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.5
+        ],
+        "distance": 0.6
+      },
       "geometryRef": "bonnet",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.45, 0.46], "rotationDeg": [-4, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.45,
+            0.46
+          ],
+          "rotationDeg": [
+            -4,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.35, 0.16, 0.2],
+      "calloutOffset": [
+        0.35,
+        0.16,
+        0.2
+      ],
       "color": "#e8eaec",
-      "tags": ["bonnet", "closure"]
+      "tags": [
+        "bonnet",
+        "closure"
+      ]
     },
     {
       "id": "front-wing-right",
@@ -38,14 +69,46 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.3, 0.2], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.3,
+          0.2
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "frontWing",
-      "geometryParams": { "lengthMm": 780, "archZMm": 380, "archRadiusMm": 420 },
-      "transforms": [{ "position": [1.005, 0.09, -0.33], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "lengthMm": 780,
+        "archZMm": 380,
+        "archRadiusMm": 420
+      },
+      "transforms": [
+        {
+          "position": [
+            1.005,
+            0.09,
+            -0.33
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [0.16, 0.2, 0.14],
+      "calloutOffset": [
+        0.16,
+        0.2,
+        0.14
+      ],
       "color": "#e8eaec",
-      "tags": ["wing", "fender", "right"]
+      "tags": [
+        "wing",
+        "fender",
+        "right"
+      ]
     },
     {
       "id": "front-wing-left",
@@ -58,14 +121,46 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.3, 0.2], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.3,
+          0.2
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "frontWing",
-      "geometryParams": { "lengthMm": 780, "archZMm": 380, "archRadiusMm": 420 },
-      "transforms": [{ "position": [-1.005, 0.09, 0.45], "rotationDeg": [0, 180, 0] }],
+      "geometryParams": {
+        "lengthMm": 780,
+        "archZMm": 380,
+        "archRadiusMm": 420
+      },
+      "transforms": [
+        {
+          "position": [
+            -1.005,
+            0.09,
+            0.45
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [-0.16, 0.2, 0.14],
+      "calloutOffset": [
+        -0.16,
+        0.2,
+        0.14
+      ],
       "color": "#e8eaec",
-      "tags": ["wing", "fender", "left"]
+      "tags": [
+        "wing",
+        "fender",
+        "left"
+      ]
     },
     {
       "id": "front-bumper",
@@ -78,14 +173,42 @@
       "material": "Plastic (painted)",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0, 1], "distance": 0.55 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "distance": 0.55
+      },
       "geometryRef": "bumperFrontR",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.02, 0.9], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.02,
+            0.9
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.35, 0.18, 0.16],
+      "calloutOffset": [
+        0.35,
+        0.18,
+        0.16
+      ],
       "color": "#e8eaec",
-      "tags": ["bumper", "R-specific", "intakes"]
+      "tags": [
+        "bumper",
+        "R-specific",
+        "intakes"
+      ]
     },
     {
       "id": "rear-bumper",
@@ -98,14 +221,42 @@
       "material": "Plastic (painted)",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0, -1], "distance": 0.55 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "distance": 0.55
+      },
       "geometryRef": "bumperRearR",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, -1.88], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            -1.88
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [0.35, 0.18, -0.16],
+      "calloutOffset": [
+        0.35,
+        0.18,
+        -0.16
+      ],
       "color": "#e8eaec",
-      "tags": ["bumper", "diffuser", "quad-tips"]
+      "tags": [
+        "bumper",
+        "diffuser",
+        "quad-tips"
+      ]
     },
     {
       "id": "front-door-right",
@@ -118,14 +269,45 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.1, 0], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.1,
+          0
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "doorShell",
-      "geometryParams": { "lengthMm": 450 },
-      "transforms": [{ "position": [1.01, 0.05, -0.32], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "lengthMm": 450
+      },
+      "transforms": [
+        {
+          "position": [
+            1.01,
+            0.05,
+            -0.32
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 6,
-      "calloutOffset": [0.16, 0.22, -0.12],
+      "calloutOffset": [
+        0.16,
+        0.22,
+        -0.12
+      ],
       "color": "#e8eaec",
-      "tags": ["door", "front", "right", "5-door"]
+      "tags": [
+        "door",
+        "front",
+        "right",
+        "5-door"
+      ]
     },
     {
       "id": "front-door-left",
@@ -138,14 +320,45 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.1, 0], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.1,
+          0
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "doorShell",
-      "geometryParams": { "lengthMm": 450 },
-      "transforms": [{ "position": [-1.01, 0.05, -0.77], "rotationDeg": [0, 180, 0] }],
+      "geometryParams": {
+        "lengthMm": 450
+      },
+      "transforms": [
+        {
+          "position": [
+            -1.01,
+            0.05,
+            -0.77
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [-0.16, 0.22, -0.12],
+      "calloutOffset": [
+        -0.16,
+        0.22,
+        -0.12
+      ],
       "color": "#e8eaec",
-      "tags": ["door", "front", "left", "5-door"]
+      "tags": [
+        "door",
+        "front",
+        "left",
+        "5-door"
+      ]
     },
     {
       "id": "rear-door-right",
@@ -158,14 +371,45 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.1, -0.15], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.1,
+          -0.15
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "doorShell",
-      "geometryParams": { "lengthMm": 330 },
-      "transforms": [{ "position": [1.01, 0.05, -0.77], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "lengthMm": 330
+      },
+      "transforms": [
+        {
+          "position": [
+            1.01,
+            0.05,
+            -0.77
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [0.16, 0.22, -0.1],
+      "calloutOffset": [
+        0.16,
+        0.22,
+        -0.1
+      ],
       "color": "#e8eaec",
-      "tags": ["door", "rear", "right", "5-door"]
+      "tags": [
+        "door",
+        "rear",
+        "right",
+        "5-door"
+      ]
     },
     {
       "id": "rear-door-left",
@@ -178,14 +422,45 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.1, -0.15], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.1,
+          -0.15
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "doorShell",
-      "geometryParams": { "lengthMm": 330 },
-      "transforms": [{ "position": [-1.01, 0.05, -1.1], "rotationDeg": [0, 180, 0] }],
+      "geometryParams": {
+        "lengthMm": 330
+      },
+      "transforms": [
+        {
+          "position": [
+            -1.01,
+            0.05,
+            -1.1
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
       "callout": 9,
-      "calloutOffset": [-0.16, 0.22, -0.1],
+      "calloutOffset": [
+        -0.16,
+        0.22,
+        -0.1
+      ],
       "color": "#e8eaec",
-      "tags": ["door", "rear", "left", "5-door"]
+      "tags": [
+        "door",
+        "rear",
+        "left",
+        "5-door"
+      ]
     },
     {
       "id": "tailgate",
@@ -198,14 +473,42 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0.3, -1], "distance": 0.6 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0.3,
+          -1
+        ],
+        "distance": 0.6
+      },
       "geometryRef": "tailgate",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.28, -1.76], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.28,
+            -1.76
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 10,
-      "calloutOffset": [0.3, 0.22, -0.14],
+      "calloutOffset": [
+        0.3,
+        0.22,
+        -0.14
+      ],
       "color": "#e8eaec",
-      "tags": ["tailgate", "hatch", "closure"]
+      "tags": [
+        "tailgate",
+        "hatch",
+        "closure"
+      ]
     },
     {
       "id": "roof-spoiler",
@@ -218,14 +521,41 @@
       "material": "Plastic (painted)",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, -0.4], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.4
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "roofSpoiler",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.88, -1.1], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.88,
+            -1.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 11,
-      "calloutOffset": [0.25, 0.16, -0.12],
+      "calloutOffset": [
+        0.25,
+        0.16,
+        -0.12
+      ],
       "color": "#e8eaec",
-      "tags": ["spoiler", "R-specific"]
+      "tags": [
+        "spoiler",
+        "R-specific"
+      ]
     },
     {
       "id": "mirror-caps",
@@ -238,17 +568,54 @@
       "material": "Plastic, gloss black",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.3], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "mirrorCap",
       "geometryParams": {},
       "transforms": [
-        { "position": [1.06, 0.38, -0.35], "rotationDeg": [0, 0, 0] },
-        { "position": [-1.06, 0.38, -0.35], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            1.06,
+            0.38,
+            -0.35
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -1.06,
+            0.38,
+            -0.35
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 12,
-      "calloutOffset": [0.12, 0.16, 0.1],
+      "calloutOffset": [
+        0.12,
+        0.16,
+        0.1
+      ],
       "color": "#1d1f23",
-      "tags": ["mirrors", "gloss-black", "R-signature"]
+      "tags": [
+        "mirrors",
+        "gloss-black",
+        "R-signature"
+      ]
     },
     {
       "id": "side-skirts",
@@ -261,17 +628,52 @@
       "material": "Plastic (painted)",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.7, 0], "distance": 0.35 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.7,
+          0
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "sideSkirt",
       "geometryParams": {},
       "transforms": [
-        { "position": [1.03, -0.22, -0.62], "rotationDeg": [0, 0, 0] },
-        { "position": [-1.03, -0.22, -0.62], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            1.03,
+            -0.22,
+            -0.62
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -1.03,
+            -0.22,
+            -0.62
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 13,
-      "calloutOffset": [0.12, -0.14, 0.2],
+      "calloutOffset": [
+        0.12,
+        -0.14,
+        0.2
+      ],
       "color": "#e8eaec",
-      "tags": ["side-skirts"]
+      "tags": [
+        "side-skirts"
+      ]
     },
     {
       "id": "quarter-panel-right",
@@ -284,14 +686,46 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.3, -0.2], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.3,
+          -0.2
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "quarterPanel",
-      "geometryParams": { "lengthMm": 520, "archZMm": 350, "archRadiusMm": 420 },
-      "transforms": [{ "position": [0.99, 0.09, -1.1], "rotationDeg": [0, 180, 0] }],
+      "geometryParams": {
+        "lengthMm": 520,
+        "archZMm": 350,
+        "archRadiusMm": 420
+      },
+      "transforms": [
+        {
+          "position": [
+            0.99,
+            0.09,
+            -1.1
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
       "callout": 16,
-      "calloutOffset": [0.16, 0.2, -0.12],
+      "calloutOffset": [
+        0.16,
+        0.2,
+        -0.12
+      ],
       "color": "#e8eaec",
-      "tags": ["quarter-panel", "rear-arch", "right"]
+      "tags": [
+        "quarter-panel",
+        "rear-arch",
+        "right"
+      ]
     },
     {
       "id": "quarter-panel-left",
@@ -304,14 +738,46 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.3, -0.2], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.3,
+          -0.2
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "quarterPanel",
-      "geometryParams": { "lengthMm": 520, "archZMm": 170, "archRadiusMm": 420 },
-      "transforms": [{ "position": [-0.99, 0.09, -1.62], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "lengthMm": 520,
+        "archZMm": 170,
+        "archRadiusMm": 420
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.99,
+            0.09,
+            -1.62
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 17,
-      "calloutOffset": [-0.16, 0.2, -0.12],
+      "calloutOffset": [
+        -0.16,
+        0.2,
+        -0.12
+      ],
       "color": "#e8eaec",
-      "tags": ["quarter-panel", "rear-arch", "left"]
+      "tags": [
+        "quarter-panel",
+        "rear-arch",
+        "left"
+      ]
     },
     {
       "id": "windscreen",
@@ -324,15 +790,45 @@
       "material": "Laminated glass",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.6], "distance": 0.55 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.6
+        ],
+        "distance": 0.55
+      },
       "geometryRef": "glassPane",
-      "geometryParams": { "widthMm": 1500, "heightMm": 560 },
-      "transforms": [{ "position": [0, 0.62, -0.39], "rotationDeg": [-35, 0, 0] }],
+      "geometryParams": {
+        "widthMm": 1500,
+        "heightMm": 560
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.62,
+            -0.39
+          ],
+          "rotationDeg": [
+            -35,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 14,
-      "calloutOffset": [0.3, 0.2, 0.1],
+      "calloutOffset": [
+        0.3,
+        0.2,
+        0.1
+      ],
       "color": "#9fc4d8",
       "opacity": 0.35,
-      "tags": ["glass", "windscreen"]
+      "tags": [
+        "glass",
+        "windscreen"
+      ]
     },
     {
       "id": "rear-screen",
@@ -345,15 +841,45 @@
       "material": "Tempered glass",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0.8, -0.6], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0.8,
+          -0.6
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "glassPane",
-      "geometryParams": { "widthMm": 1400, "heightMm": 470 },
-      "transforms": [{ "position": [0, 0.72, -1.38], "rotationDeg": [58, 0, 0] }],
+      "geometryParams": {
+        "widthMm": 1400,
+        "heightMm": 470
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.72,
+            -1.38
+          ],
+          "rotationDeg": [
+            58,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 15,
-      "calloutOffset": [-0.3, 0.18, -0.1],
+      "calloutOffset": [
+        -0.3,
+        0.18,
+        -0.1
+      ],
       "color": "#9fc4d8",
       "opacity": 0.35,
-      "tags": ["glass", "rear-screen"]
+      "tags": [
+        "glass",
+        "rear-screen"
+      ]
     }
   ]
 }

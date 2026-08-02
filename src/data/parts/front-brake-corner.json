@@ -3,8 +3,16 @@
     "id": "front-brake-corner",
     "name": "Front brake corner (right)",
     "system": "brakes",
-    "origin": [0.95, 0, 0.05],
-    "rotationDeg": [0, 90, 0],
+    "origin": [
+      0.78,
+      0,
+      0.05
+    ],
+    "rotationDeg": [
+      0,
+      90,
+      0
+    ],
     "description": "Golf R Mk7 front brake: 340 × 30 mm ventilated disc with a single-piston floating (sliding) aluminium caliper, painted blue with the R script, on a cast carrier. Torque values are from the project dossier; OEM part numbers are not yet verified and are logged in docs/UNVERIFIED.md."
   },
   "parts": [
@@ -19,7 +27,14 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0, 1], "distance": 0.26 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "distance": 0.26
+      },
       "geometryRef": "brakeDisc",
       "geometryParams": {
         "outerDiameterMm": 340,
@@ -33,11 +48,34 @@
         "centerBoreMm": 57.1,
         "ventCount": 36
       },
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.16, 0.13, 0.1],
+      "calloutOffset": [
+        0.16,
+        0.13,
+        0.1
+      ],
       "color": "#9aa1a9",
-      "tags": ["disc", "rotor", "ventilated", "340mm", "5x112"]
+      "tags": [
+        "disc",
+        "rotor",
+        "ventilated",
+        "340mm",
+        "5x112"
+      ]
     },
     {
       "id": "front-brake-caliper",
@@ -50,14 +88,43 @@
       "material": "Aluminium (painted blue)",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.55, 0.55, 0.4], "distance": 0.34 },
+      "explodeVector": {
+        "direction": [
+          -0.55,
+          0.55,
+          0.4
+        ],
+        "distance": 0.34
+      },
       "geometryRef": "brakeCaliper",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 45] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [-0.06, 0.16, 0.02],
+      "calloutOffset": [
+        -0.06,
+        0.16,
+        0.02
+      ],
       "color": "#2a55b8",
-      "tags": ["caliper", "floating", "single-piston", "blue"]
+      "tags": [
+        "caliper",
+        "floating",
+        "single-piston",
+        "blue"
+      ]
     },
     {
       "id": "front-brake-carrier",
@@ -70,14 +137,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.6, 0.6, -0.35], "distance": 0.26 },
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          0.6,
+          -0.35
+        ],
+        "distance": 0.26
+      },
       "geometryRef": "brakeCarrier",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 45] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [-0.16, 0.02, -0.08],
+      "calloutOffset": [
+        -0.16,
+        0.02,
+        -0.08
+      ],
       "color": "#5a5f66",
-      "tags": ["carrier", "bracket"]
+      "tags": [
+        "carrier",
+        "bracket"
+      ]
     },
     {
       "id": "front-brake-pad-outer",
@@ -90,14 +184,44 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.25, 0.25, 0.9], "distance": 0.2 },
+      "explodeVector": {
+        "direction": [
+          -0.25,
+          0.25,
+          0.9
+        ],
+        "distance": 0.2
+      },
       "geometryRef": "brakePad",
-      "geometryParams": { "facing": -1 },
-      "transforms": [{ "position": [0, 0, 0.027], "rotationDeg": [0, 0, 45] }],
+      "geometryParams": {
+        "facing": -1
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0.027
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.1, 0.12, 0.07],
+      "calloutOffset": [
+        0.1,
+        0.12,
+        0.07
+      ],
       "color": "#41454c",
-      "tags": ["pad", "friction", "outer"]
+      "tags": [
+        "pad",
+        "friction",
+        "outer"
+      ]
     },
     {
       "id": "front-brake-pad-inner",
@@ -110,14 +234,45 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.25, 0.25, -0.9], "distance": 0.2 },
+      "explodeVector": {
+        "direction": [
+          -0.25,
+          0.25,
+          -0.9
+        ],
+        "distance": 0.2
+      },
       "geometryRef": "brakePad",
-      "geometryParams": { "facing": 1 },
-      "transforms": [{ "position": [0, 0, -0.027], "rotationDeg": [0, 0, 45] }],
+      "geometryParams": {
+        "facing": 1
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            -0.027
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            45
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [0.1, 0.1, -0.09],
+      "calloutOffset": [
+        0.1,
+        0.1,
+        -0.09
+      ],
       "color": "#41454c",
-      "tags": ["pad", "friction", "inner", "piston-side"]
+      "tags": [
+        "pad",
+        "friction",
+        "inner",
+        "piston-side"
+      ]
     },
     {
       "id": "front-caliper-guide-bolts",
@@ -128,19 +283,65 @@
       "oemPartNumber": null,
       "description": "Guide (slide) pin bolts securing the floating caliper to the carrier, seated in the caliper's guide-pin ears. Torque from dossier §2 table: caliper-to-carrier 35 Nm.",
       "material": null,
-      "torqueSpec": { "valueNm": 35, "angle": null, "note": "Dossier: front caliper-to-carrier" },
+      "torqueSpec": {
+        "valueNm": 35,
+        "angle": null,
+        "note": "Dossier: front caliper-to-carrier"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0, -1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 8, "shankLengthMm": 30, "headAcrossFlatsMm": 13 },
+      "geometryParams": {
+        "shankDiameterMm": 8,
+        "shankLengthMm": 30,
+        "headAcrossFlatsMm": 13
+      },
       "transforms": [
-        { "position": [-0.027, 0.127, -0.064], "rotationDeg": [-90, 0, 0] },
-        { "position": [-0.127, 0.027, -0.064], "rotationDeg": [-90, 0, 0] }
+        {
+          "position": [
+            -0.027,
+            0.127,
+            -0.064
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.127,
+            0.027,
+            -0.064
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [0.02, 0.14, -0.1],
+      "calloutOffset": [
+        0.02,
+        0.14,
+        -0.1
+      ],
       "color": "#98a2ae",
-      "tags": ["fastener", "M8", "guide-pin", "35Nm"]
+      "tags": [
+        "fastener",
+        "M8",
+        "guide-pin",
+        "35Nm"
+      ]
     },
     {
       "id": "front-carrier-bolts",
@@ -151,19 +352,64 @@
       "oemPartNumber": null,
       "description": "Bolts fixing the caliper carrier's mounting ears to the wheel bearing housing. Torque from dossier §2 table: front caliper(-carrier)-to-bearing-housing 200 Nm. Replace-after-use status not stated in the dossier.",
       "material": null,
-      "torqueSpec": { "valueNm": 200, "angle": null, "note": "Dossier: front caliper-to-bearing-housing" },
+      "torqueSpec": {
+        "valueNm": 200,
+        "angle": null,
+        "note": "Dossier: front caliper-to-bearing-housing"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0, -1], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 12, "shankLengthMm": 38, "headAcrossFlatsMm": 18 },
+      "geometryParams": {
+        "shankDiameterMm": 12,
+        "shankLengthMm": 38,
+        "headAcrossFlatsMm": 18
+      },
       "transforms": [
-        { "position": [-0.034, 0.09, -0.062], "rotationDeg": [-90, 0, 0] },
-        { "position": [-0.09, 0.034, -0.062], "rotationDeg": [-90, 0, 0] }
+        {
+          "position": [
+            -0.034,
+            0.09,
+            -0.062
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.09,
+            0.034,
+            -0.062
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 7,
-      "calloutOffset": [-0.02, -0.12, -0.12],
+      "calloutOffset": [
+        -0.02,
+        -0.12,
+        -0.12
+      ],
       "color": "#98a2ae",
-      "tags": ["fastener", "M12", "200Nm"]
+      "tags": [
+        "fastener",
+        "M12",
+        "200Nm"
+      ]
     }
   ]
 }

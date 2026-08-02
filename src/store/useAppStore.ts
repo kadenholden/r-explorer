@@ -67,7 +67,9 @@ export const useAppStore = create<AppState>()(
       explode: 0,
       setExplode: (v) => set({ explode: Math.min(1, Math.max(0, v)) }),
 
-      hidden: {},
+      // schematic body panels start hidden — the real shell mesh is the
+      // default look; the tree's eye icons swap between them
+      hidden: { 'body/body-structure': true, 'body/body-exterior': true },
       toggleHidden: (nodeId) =>
         set((s) => ({ hidden: { ...s.hidden, [nodeId]: !s.hidden[nodeId] } })),
 

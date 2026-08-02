@@ -17,3 +17,10 @@ npm run build    # type-check + production build
 
 Project conventions live in [CLAUDE.md](CLAUDE.md); current status in
 [PROGRESS.md](PROGRESS.md).
+
+## Credits
+
+Body shell mesh derived from `vw_golf.glb` in
+[dong123123123/model](https://github.com/dong123123123/model)
+(draco-compressed 83 MB → 2.6 MB, palette recoloured white for this
+personal-use project). All procedural geometry and data are original.

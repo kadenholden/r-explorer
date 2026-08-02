@@ -120,7 +120,14 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
         <group ref={spinGroup}>
           {isGlb ? (
             <Suspense fallback={null}>
-              <GlbPart url={`${import.meta.env.BASE_URL}${part.geometryRef}`} />
+              <GlbPart
+                url={`${import.meta.env.BASE_URL}${part.geometryRef}`}
+                scale={
+                  typeof part.geometryParams?.['scale'] === 'number'
+                    ? (part.geometryParams['scale'] as number)
+                    : 1
+                }
+              />
             </Suspense>
           ) : geometry ? (
             <mesh
@@ -195,10 +202,10 @@ function CalloutMarker({
 }
 
 /** Real-mesh path: a .glb under public/ referenced by geometryRef.
- *  Selection tinting is not applied to GLB materials yet (hero-mesh polish
- *  comes with the first real mesh swap). */
-function GlbPart({ url }: { url: string }) {
-  const { scene } = useGLTF(url)
+ *  Draco-compressed meshes supported. Selection tinting is not applied to
+ *  GLB materials (they keep their authored paint/glass). */
+function GlbPart({ url, scale }: { url: string; scale: number }) {
+  const { scene } = useGLTF(url, true)
   const cloned = useMemo(() => scene.clone(true), [scene])
-  return <primitive object={cloned} />
+  return <primitive object={cloned} scale={scale} />
 }

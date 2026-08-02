@@ -3,7 +3,11 @@
     "id": "suspension-front",
     "name": "Suspension — front (MacPherson) & steering",
     "system": "suspension",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "MacPherson strut front axle (dossier §5): struts with coil springs and PASSIVE sport dampers (this car has no DCC), the newly-developed 'low wishbone' lower control arms with track-stabilising scrub radius, steering knuckles, anti-roll bar with drop links, and the electromechanical progressive-ratio steering rack. Ride height 20 mm below a base Golf."
   },
   "parts": [
@@ -18,14 +22,44 @@
       "material": "Aluminium / steel hybrid",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, 0.2], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.2
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "subframe",
-      "geometryParams": { "widthMm": 840, "lengthMm": 360 },
-      "transforms": [{ "position": [0, -0.27, 0.03], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "widthMm": 690,
+        "lengthMm": 360
+      },
+      "transforms": [
+        {
+          "position": [
+            0.0,
+            -0.27,
+            0.03
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.3, -0.12, 0.16],
+      "calloutOffset": [
+        0.3,
+        -0.12,
+        0.16
+      ],
       "color": "#5a5f66",
-      "tags": ["subframe", "front"]
+      "tags": [
+        "subframe",
+        "front"
+      ]
     },
     {
       "id": "front-struts",
@@ -38,17 +72,55 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "strutFront",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.86, 0.08, 0.05], "rotationDeg": [0, 0, 12] },
-        { "position": [-0.86, 0.08, 0.05], "rotationDeg": [0, 0, -12] }
+        {
+          "position": [
+            0.688,
+            0.08,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            12
+          ]
+        },
+        {
+          "position": [
+            -0.688,
+            0.08,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -12
+          ]
+        }
       ],
       "callout": 2,
-      "calloutOffset": [0.12, 0.3, 0.1],
+      "calloutOffset": [
+        0.12,
+        0.3,
+        0.1
+      ],
       "color": "#8d939c",
-      "tags": ["strut", "MacPherson", "passive-damper", "no-DCC"]
+      "tags": [
+        "strut",
+        "MacPherson",
+        "passive-damper",
+        "no-DCC"
+      ]
     },
     {
       "id": "front-lcas",
@@ -61,17 +133,54 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, 0.3], "distance": 0.35 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.3
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "lowerControlArm",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.48, -0.19, 0.05], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.48, -0.19, 0.05], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            0.384,
+            -0.19,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.384,
+            -0.19,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 3,
-      "calloutOffset": [0.2, -0.12, 0.14],
+      "calloutOffset": [
+        0.2,
+        -0.12,
+        0.14
+      ],
       "color": "#7d838b",
-      "tags": ["control-arm", "wishbone", "ball-joint"]
+      "tags": [
+        "control-arm",
+        "wishbone",
+        "ball-joint"
+      ]
     },
     {
       "id": "front-knuckles",
@@ -82,19 +191,61 @@
       "oemPartNumber": null,
       "description": "Uprights tying strut, ball joint, tie rod and hub together; the driveshaft's outer CV splines into the hub here. Torque shown is the main hub/axle bolt (dossier §2 table).",
       "material": null,
-      "torqueSpec": { "valueNm": 200, "angle": "+180°", "note": "Main hub/axle bolt (dossier) — clamps the driveshaft outer CV into the hub" },
+      "torqueSpec": {
+        "valueNm": 200,
+        "angle": "+180°",
+        "note": "Main hub/axle bolt (dossier) — clamps the driveshaft outer CV into the hub"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.3, 1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.3,
+          1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "steeringKnuckle",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.88, -0.02, 0.05], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.88, -0.02, 0.05], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            0.704,
+            -0.02,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.704,
+            -0.02,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 4,
-      "calloutOffset": [0.14, 0.16, 0.12],
+      "calloutOffset": [
+        0.14,
+        0.16,
+        0.12
+      ],
       "color": "#6a6f76",
-      "tags": ["knuckle", "upright", "hub", "200Nm+180"]
+      "tags": [
+        "knuckle",
+        "upright",
+        "hub",
+        "200Nm+180"
+      ]
     },
     {
       "id": "front-arb",
@@ -107,14 +258,45 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.6, -1], "distance": 0.35 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.6,
+          -1
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "antiRollBar",
-      "geometryParams": { "spanMm": 1000, "armMm": 220 },
-      "transforms": [{ "position": [0, -0.21, -0.04], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "spanMm": 800,
+        "armMm": 220
+      },
+      "transforms": [
+        {
+          "position": [
+            0.0,
+            -0.21,
+            -0.04
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [-0.26, -0.1, -0.12],
+      "calloutOffset": [
+        -0.26,
+        -0.1,
+        -0.12
+      ],
       "color": "#4a4e55",
-      "tags": ["ARB", "anti-roll-bar", "front"]
+      "tags": [
+        "ARB",
+        "anti-roll-bar",
+        "front"
+      ]
     },
     {
       "id": "front-drop-links",
@@ -127,17 +309,53 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, -0.4], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.4
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "dropLink",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.5, -0.19, 0.17], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.5, -0.19, 0.17], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            0.4,
+            -0.19,
+            0.17
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.4,
+            -0.19,
+            0.17
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [0.1, 0.14, 0.1],
+      "calloutOffset": [
+        0.1,
+        0.14,
+        0.1
+      ],
       "color": "#7d838b",
-      "tags": ["drop-link", "ARB"]
+      "tags": [
+        "drop-link",
+        "ARB"
+      ]
     },
     {
       "id": "eps-rack",
@@ -150,14 +368,42 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.4, -1], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          -1
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "epsRack",
       "geometryParams": {},
-      "transforms": [{ "position": [0, -0.18, -0.12], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.0,
+            -0.18,
+            -0.12
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [-0.24, 0.12, -0.14],
+      "calloutOffset": [
+        -0.24,
+        0.12,
+        -0.14
+      ],
       "color": "#9aa1a9",
-      "tags": ["steering", "EPS", "progressive-rack"]
+      "tags": [
+        "steering",
+        "EPS",
+        "progressive-rack"
+      ]
     },
     {
       "id": "front-tie-rods",
@@ -170,17 +416,56 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.6, -1], "distance": 0.32 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.6,
+          -1
+        ],
+        "distance": 0.32
+      },
       "geometryRef": "tieRod",
-      "geometryParams": { "lengthMm": 480 },
+      "geometryParams": {
+        "lengthMm": 390
+      },
       "transforms": [
-        { "position": [0.35, -0.17, -0.09], "rotationDeg": [0, -7, 12] },
-        { "position": [-0.35, -0.17, -0.09], "rotationDeg": [0, 187, 12] }
+        {
+          "position": [
+            0.28,
+            -0.17,
+            -0.09
+          ],
+          "rotationDeg": [
+            0,
+            -7,
+            12
+          ]
+        },
+        {
+          "position": [
+            -0.28,
+            -0.17,
+            -0.09
+          ],
+          "rotationDeg": [
+            0,
+            187,
+            12
+          ]
+        }
       ],
       "callout": 8,
-      "calloutOffset": [0.16, -0.1, -0.12],
+      "calloutOffset": [
+        0.16,
+        -0.1,
+        -0.12
+      ],
       "color": "#8d939c",
-      "tags": ["tie-rod", "steering", "toe"]
+      "tags": [
+        "tie-rod",
+        "steering",
+        "toe"
+      ]
     }
   ]
 }
