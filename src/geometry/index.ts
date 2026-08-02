@@ -65,6 +65,31 @@ import {
 } from './suspension'
 import { pretoriaWheel, tyre, wheelBoltRing } from './wheels'
 import {
+  boosterMaster,
+  absUnit,
+  brakeLines,
+  wheelSpeedSensor,
+  n493Module,
+  coolantPump,
+  heatExchanger,
+  fanShroud,
+  expansionTank,
+  coolantHoses,
+  fuelTank,
+  lpfpModule,
+  fillerNeck,
+  evapCanister,
+  batteryTray,
+  ecuBox,
+  harnessLoom,
+  dashboard,
+  steeringWheelColumn,
+  pedalBox,
+  consoleShifter,
+  hvacBox,
+  acLines,
+} from './phase7'
+import {
   oilPan,
   valveCoverPcv,
   ignitionCoil,
@@ -205,5 +230,28 @@ registerRecipe('roofSpoiler', roofSpoiler)
 registerRecipe('mirrorCap', mirrorCap)
 registerRecipe('sideSkirt', sideSkirt)
 registerRecipe('glassPane', glassPane)
+registerRecipe('boosterMaster', boosterMaster)
+registerRecipe('absUnit', absUnit)
+registerRecipe('brakeLines', brakeLines)
+registerRecipe('wheelSpeedSensor', wheelSpeedSensor)
+registerRecipe('n493Module', n493Module)
+registerRecipe('coolantPump', coolantPump)
+registerRecipe('heatExchanger', heatExchanger)
+registerRecipe('fanShroud', fanShroud)
+registerRecipe('expansionTank', expansionTank)
+registerRecipe('coolantHoses', coolantHoses)
+registerRecipe('fuelTank', fuelTank)
+registerRecipe('lpfpModule', lpfpModule)
+registerRecipe('fillerNeck', fillerNeck)
+registerRecipe('evapCanister', evapCanister)
+registerRecipe('batteryTray', batteryTray)
+registerRecipe('ecuBox', ecuBox)
+registerRecipe('harnessLoom', harnessLoom)
+registerRecipe('dashboard', dashboard)
+registerRecipe('steeringWheelColumn', steeringWheelColumn)
+registerRecipe('pedalBox', pedalBox)
+registerRecipe('consoleShifter', consoleShifter)
+registerRecipe('hvacBox', hvacBox)
+registerRecipe('acLines', acLines)
 
 export { resolveRecipe }

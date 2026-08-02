@@ -1,0 +1,253 @@
+{
+  "assembly": {
+    "id": "interior",
+    "name": "Interior — dash, controls & HVAC (RHD)",
+    "system": "interior",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "Cabin basics (dossier §9 grouping): dashboard with cluster binnacle and MIB2 touchscreen, RHD steering wheel and column down to the progressive rack, DSG pedal box (no clutch), centre console with the DSG selector (the S program the operator drives), and the HVAC unit behind the dash. Seats come from the donor mesh in the body shell."
+  },
+  "parts": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard, cluster & MIB2 screen",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Pre-facelift analogue cluster with colour MFD in the binnacle (RHD side) and the MIB2 touchscreen centre stack (dossier §7).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "dashboard",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.3,
+            -0.52
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.3,
+        0.2,
+        0.14
+      ],
+      "color": "#26282c",
+      "tags": [
+        "dashboard",
+        "MIB2",
+        "cluster"
+      ]
+    },
+    {
+      "id": "steering-wheel-column",
+      "name": "Steering wheel & column (RHD)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Wheel and column dropping to the electromechanical progressive rack (dossier §5); column/intermediate shaft simplified.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0.3,
+          1,
+          0.2
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "steeringWheelColumn",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.35,
+            0.42,
+            -0.62
+          ],
+          "rotationDeg": [
+            -20,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        0.16,
+        0.18,
+        0.1
+      ],
+      "color": "#1d1f23",
+      "tags": [
+        "steering-wheel",
+        "column",
+        "RHD"
+      ]
+    },
+    {
+      "id": "pedal-box",
+      "name": "Pedal box (brake + accelerator)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Two pedals — the DSG deleted the third (dossier §3).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0.3,
+          0.6,
+          0.4
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "pedalBox",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.35,
+            -0.08,
+            -0.42
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        0.14,
+        0.1,
+        0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "pedals",
+        "DSG"
+      ]
+    },
+    {
+      "id": "console-shifter",
+      "name": "Centre console & DSG selector",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The DSG lever with its S program — the 'Sport' the operator uses — plus P/R/N/D and manual gate (dossier §3).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.2
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "consoleShifter",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.02,
+            -0.85
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        0.16,
+        0.16,
+        -0.12
+      ],
+      "color": "#26282c",
+      "tags": [
+        "console",
+        "DSG-lever",
+        "S-mode"
+      ]
+    },
+    {
+      "id": "hvac-unit",
+      "name": "HVAC unit (blower, evaporator, heater core)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Climatronic's air box behind the dash centre: blower, evaporator, heater core and flap actuators feeding the ducting (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.4
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "hvacBox",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.12,
+            -0.42
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        -0.2,
+        0.16,
+        0.12
+      ],
+      "color": "#33363c",
+      "tags": [
+        "HVAC",
+        "Climatronic"
+      ]
+    }
+  ]
+}

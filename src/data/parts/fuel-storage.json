@@ -1,0 +1,203 @@
+{
+  "assembly": {
+    "id": "fuel-storage",
+    "name": "Fuel storage — tank, LPFP & EVAP",
+    "system": "cooling-hvac",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "Fuel storage under the rear bench (dossier §8): ~55 L plastic tank, in-tank LPFP/sender module feeding the HPFP at ~4–6 bar (good to ~400 WHP stock), filler neck to the right rear quarter — relocated on the R for extra rear-inner wheel clearance vs the GTI — and the EVAP charcoal canister."
+  },
+  "parts": [
+    {
+      "id": "fuel-tank",
+      "name": "Fuel tank (~55 L, plastic)",
+      "system": "cooling-hvac",
+      "assembly": "fuel-storage",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Saddle-style plastic tank ahead of the rear axle (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.2
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "fuelTank",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.235,
+            -1.9
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.3,
+        -0.14,
+        -0.2
+      ],
+      "color": "#33363c",
+      "tags": [
+        "fuel-tank",
+        "55L"
+      ]
+    },
+    {
+      "id": "lpfp-module",
+      "name": "In-tank LPFP / sender module",
+      "system": "cooling-hvac",
+      "assembly": "fuel-storage",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Electric low-pressure pump + level sender in a top-hat module; feeds the cam-driven HPFP at ~4–6 bar — stock LPFP good to ~400 WHP (dossier §2).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0.3,
+          1,
+          -0.1
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "lpfpModule",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.15,
+            -0.14,
+            -1.85
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        0.14,
+        0.14,
+        -0.1
+      ],
+      "color": "#8d939c",
+      "tags": [
+        "LPFP",
+        "sender",
+        "4-6bar"
+      ]
+    },
+    {
+      "id": "filler-neck",
+      "name": "Filler neck (relocated, right rear)",
+      "system": "cooling-hvac",
+      "assembly": "fuel-storage",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Filler hose from the right rear quarter down to the tank — the R's relocated routing buys rear-inner wheel clearance over the GTI (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.3,
+          0
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "fillerNeck",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        0.16,
+        0.12,
+        -0.12
+      ],
+      "color": "#5d6167",
+      "tags": [
+        "filler",
+        "R-specific"
+      ]
+    },
+    {
+      "id": "evap-canister",
+      "name": "EVAP charcoal canister",
+      "system": "cooling-hvac",
+      "assembly": "fuel-storage",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Vapour canister on the tank's breather circuit (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          -0.4,
+          -0.4
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "evapCanister",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.38,
+            -0.19,
+            -2.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        -0.14,
+        -0.1,
+        -0.12
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "EVAP"
+      ]
+    }
+  ]
+}

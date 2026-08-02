@@ -119,3 +119,10 @@ Everything else stores `null`.
 | Propshaft + centre bearing (`propshaft-front`, `-rear`, `center-bearing`) | OEM numbers |
 | RDU + Haldex internals (`rdu-housing`, `haldex-coupling`, `haldex-filter`, `haldex-controller`, `rear-diff-gears`) | OEM numbers; fluid part numbers + capacities |
 | Driveshafts (`rear-driveshafts`, `front-driveshaft-right`, `front-driveshaft-left`) | OEM numbers |
+
+## Phase 7 (hydraulics, cooling, fuel, electrical, interior)
+
+All OEM numbers `null`. Specific verify-items the dossier itself
+flags: **ECU identity** (MED 17.5.2 vs SIMOS 18 — read the label/VCDS),
+battery Ah spec, N493 current revision number, and the operator-side
+assumptions: **RHD** and the exact paint code for the white.
