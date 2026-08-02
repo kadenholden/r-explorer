@@ -125,8 +125,8 @@
       "geometryRef": "exhaustTwinTip",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.17, -0.33, -1.47], "rotationDeg": [0, 0, 0] },
-        { "position": [0.17, -0.33, -1.47], "rotationDeg": [0, 0, 0] }
+        { "position": [-0.17, -0.33, -1.64], "rotationDeg": [0, 0, 0] },
+        { "position": [0.17, -0.33, -1.64], "rotationDeg": [0, 0, 0] }
       ],
       "callout": 6,
       "calloutOffset": [0.16, -0.1, -0.16],

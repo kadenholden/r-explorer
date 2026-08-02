@@ -82,8 +82,8 @@
       "geometryRef": "strutTower",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.72, 0.26, 0.05], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.72, 0.26, 0.05], "rotationDeg": [0, 0, 0] }
+        { "position": [0.78, 0.19, 0.04], "rotationDeg": [0, 0, 0] },
+        { "position": [-0.78, 0.19, 0.04], "rotationDeg": [0, 0, 0] }
       ],
       "callout": 4,
       "calloutOffset": [0.14, 0.18, 0.1],
@@ -105,12 +105,12 @@
       "geometryRef": "pillar",
       "geometryParams": { "heightMm": 560 },
       "transforms": [
-        { "position": [0.83, 0.32, -0.34], "rotationDeg": [35, 0, 0] },
-        { "position": [-0.83, 0.32, -0.34], "rotationDeg": [35, 0, 0] },
+        { "position": [0.82, 0.33, -0.28], "rotationDeg": [-25, 0, 0] },
+        { "position": [-0.82, 0.33, -0.28], "rotationDeg": [-25, 0, 0] },
         { "position": [0.86, 0.3, -0.76], "rotationDeg": [0, 0, 0] },
         { "position": [-0.86, 0.3, -0.76], "rotationDeg": [0, 0, 0] },
-        { "position": [0.8, 0.3, -1.06], "rotationDeg": [-22, 0, 0] },
-        { "position": [-0.8, 0.3, -1.06], "rotationDeg": [-22, 0, 0] }
+        { "position": [0.8, 0.3, -1.16], "rotationDeg": [22, 0, 0] },
+        { "position": [-0.8, 0.3, -1.16], "rotationDeg": [22, 0, 0] }
       ],
       "callout": 5,
       "calloutOffset": [0.16, 0.3, -0.1],

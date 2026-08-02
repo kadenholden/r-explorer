@@ -78,11 +78,11 @@ export function pillar(params: GeometryParams): THREE.BufferGeometry {
 /** Roof panel with its two longitudinal rails. */
 export function roofPanel(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  const panel = new THREE.BoxGeometry(1.5, 0.014, 0.72)
+  const panel = new THREE.BoxGeometry(1.66, 0.014, 0.72)
   parts.push(panel)
   for (const s of [-1, 1]) {
     const rail = new THREE.BoxGeometry(0.06, 0.04, 0.72)
-    rail.translate(s * 0.72, -0.02, 0)
+    rail.translate(s * 0.78, -0.02, 0)
     parts.push(rail)
   }
   return mergeParts(parts)
@@ -116,7 +116,7 @@ export function rearStructure(_params: GeometryParams): THREE.BufferGeometry {
 /** Bonnet with power bulge. */
 export function bonnet(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  const panel = new THREE.BoxGeometry(1.5, 0.014, 0.78)
+  const panel = new THREE.BoxGeometry(1.88, 0.014, 0.78)
   parts.push(panel)
   const bulge = new THREE.BoxGeometry(0.5, 0.02, 0.6)
   bulge.translate(0, 0.014, -0.02)
