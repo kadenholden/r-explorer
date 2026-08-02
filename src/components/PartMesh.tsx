@@ -63,9 +63,20 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
 
   const selected = useAppStore((s) => s.selectedPartId === part.id)
   const select = useAppStore((s) => s.select)
+  const setHoveredPart = useAppStore((s) => s.setHoveredPart)
   const explode = useAppStore((s) => s.explode)
   const faultActive = useAppStore((s) => s.p2015) && part.tags.includes('p2015')
   const isFlap = part.tags.includes('runner-flap')
+
+  const hoverOn = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation()
+    setHovered(true)
+    setHoveredPart(part.id)
+  }
+  const hoverOff = () => {
+    setHovered(false)
+    setHoveredPart(null)
+  }
 
   const base = useMemo(() => new THREE.Vector3(...transform.position), [transform])
   const dir = useMemo(
@@ -125,11 +136,8 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                   e.stopPropagation()
                   select(part.id)
                 }}
-                onPointerOver={(e) => {
-                  e.stopPropagation()
-                  setHovered(true)
-                }}
-                onPointerOut={() => setHovered(false)}
+                onPointerOver={hoverOn}
+                onPointerOut={hoverOff}
               >
                 <GlbPart
                   url={`${import.meta.env.BASE_URL}${part.geometryRef}`}
@@ -148,11 +156,8 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                 e.stopPropagation()
                 select(part.id)
               }}
-              onPointerOver={(e) => {
-                e.stopPropagation()
-                setHovered(true)
-              }}
-              onPointerOut={() => setHovered(false)}
+              onPointerOver={hoverOn}
+              onPointerOut={hoverOff}
             >
               <meshStandardMaterial
                 color={color}

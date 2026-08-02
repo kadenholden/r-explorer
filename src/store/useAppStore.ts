@@ -14,6 +14,10 @@ interface AppState {
   selectedPartId: string | null
   select: (id: string | null) => void
 
+  /** Part currently under the cursor (drives the hover name tag). */
+  hoveredPartId: string | null
+  setHoveredPart: (id: string | null) => void
+
   /** 'real': realistic part colours; 'system': dossier system colour-coding. */
   colorMode: ColorMode
   setColorMode: (mode: ColorMode) => void
@@ -60,6 +64,9 @@ export const useAppStore = create<AppState>()(
     (set) => ({
       selectedPartId: null,
       select: (id) => set({ selectedPartId: id }),
+
+      hoveredPartId: null,
+      setHoveredPart: (id) => set({ hoveredPartId: id }),
 
       colorMode: 'real',
       setColorMode: (mode) => set({ colorMode: mode }),

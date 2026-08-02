@@ -475,6 +475,33 @@ button {
   padding: 1px 6px;
 }
 
+/* ── Hover name tag ──────────────────────────────────────────────────── */
+
+.hover-tag {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  pointer-events: none;
+  padding: 3px 8px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  border: 1px solid var(--line-strong);
+  border-left: 2px solid var(--accent);
+  border-radius: 3px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.08s linear;
+}
+
+.hover-tag.is-visible {
+  opacity: 1;
+}
+
 /* ── AVS demo toggle ─────────────────────────────────────────────────── */
 
 .avs-toggle {
