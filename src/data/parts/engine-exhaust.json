@@ -3,7 +3,11 @@
     "id": "engine-exhaust",
     "name": "Engine — exhaust (downpipe to quad tips)",
     "system": "engine",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "Turbo (integrated manifold) → cast downpipe with primary catalyst → link pipe → centre resonator → rear silencer with electronically-actuated flaps → the R's signature quad tips, two chrome twin-tip outlets per side (dossier §2). A GPF appears on later Euro-6d cars, not the earliest pre-facelift R — verify by build date."
   },
   "parts": [
@@ -18,14 +22,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.5, -1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.5,
+          -1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "downpipeCat",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.16, -0.14, -0.2],
+      "calloutOffset": [
+        0.16,
+        -0.14,
+        -0.2
+      ],
       "color": "#7c828a",
-      "tags": ["downpipe", "catalyst"]
+      "tags": [
+        "downpipe",
+        "catalyst"
+      ]
     },
     {
       "id": "link-pipe",
@@ -38,14 +69,40 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.4, -1], "distance": 0.38 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          -1
+        ],
+        "distance": 0.38
+      },
       "geometryRef": "linkPipe",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.09, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.09,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [0.14, -0.1, -0.16],
+      "calloutOffset": [
+        0.14,
+        -0.1,
+        -0.16
+      ],
       "color": "#868c94",
-      "tags": ["link-pipe"]
+      "tags": [
+        "link-pipe"
+      ]
     },
     {
       "id": "resonator",
@@ -58,14 +115,40 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.4, -1], "distance": 0.46 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          -1
+        ],
+        "distance": 0.46
+      },
       "geometryRef": "resonator",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.14, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.14,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [0.16, -0.1, -0.2],
+      "calloutOffset": [
+        0.16,
+        -0.1,
+        -0.2
+      ],
       "color": "#868c94",
-      "tags": ["resonator"]
+      "tags": [
+        "resonator"
+      ]
     },
     {
       "id": "rear-silencer",
@@ -78,14 +161,42 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.4, -1], "distance": 0.56 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          -1
+        ],
+        "distance": 0.56
+      },
       "geometryRef": "rearSilencer",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.3, -0.14, -0.2],
+      "calloutOffset": [
+        0.3,
+        -0.14,
+        -0.2
+      ],
       "color": "#868c94",
-      "tags": ["silencer", "exhaust-flaps", "drive-mode"]
+      "tags": [
+        "silencer",
+        "exhaust-flaps",
+        "drive-mode"
+      ]
     },
     {
       "id": "exhaust-flap-actuators",
@@ -98,17 +209,53 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, -0.3], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.3
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "exhaustValveActuator",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.12, -0.235, -1.22], "rotationDeg": [0, 0, 0] },
-        { "position": [0.12, -0.235, -1.22], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.12,
+            -0.235,
+            -2.66
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.12,
+            -0.235,
+            -2.66
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 5,
-      "calloutOffset": [-0.14, 0.12, -0.12],
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        -0.12
+      ],
       "color": "#5d6167",
-      "tags": ["exhaust-flaps", "actuator"]
+      "tags": [
+        "exhaust-flaps",
+        "actuator"
+      ]
     },
     {
       "id": "quad-tips",
@@ -121,17 +268,54 @@
       "material": "Stainless, chrome finish",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.3, -1], "distance": 0.7 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.3,
+          -1
+        ],
+        "distance": 0.7
+      },
       "geometryRef": "exhaustTwinTip",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.17, -0.33, -1.47], "rotationDeg": [0, 0, 0] },
-        { "position": [0.17, -0.33, -1.47], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.17,
+            -0.33,
+            -3.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.17,
+            -0.33,
+            -3.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [0.16, -0.1, -0.16],
+      "calloutOffset": [
+        0.16,
+        -0.1,
+        -0.16
+      ],
       "color": "#c9cfd7",
-      "tags": ["quad-tips", "chrome", "R-signature"]
+      "tags": [
+        "quad-tips",
+        "chrome",
+        "R-signature"
+      ]
     },
     {
       "id": "lambda-sensors",
@@ -144,17 +328,54 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0.4, 1, -0.2], "distance": 0.32 },
+      "explodeVector": {
+        "direction": [
+          0.4,
+          1,
+          -0.2
+        ],
+        "distance": 0.32
+      },
       "geometryRef": "lambdaSensor",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.045, 0.035, -0.245], "rotationDeg": [-25, 0, 0] },
-        { "position": [0.045, -0.24, -0.44], "rotationDeg": [0, 0, -35] }
+        {
+          "position": [
+            -0.045,
+            0.035,
+            -0.245
+          ],
+          "rotationDeg": [
+            -25,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.045,
+            -0.24,
+            -0.44
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -35
+          ]
+        }
       ],
       "callout": 7,
-      "calloutOffset": [0.12, 0.14, -0.1],
+      "calloutOffset": [
+        0.12,
+        0.14,
+        -0.1
+      ],
       "color": "#83898f",
-      "tags": ["lambda", "O2", "sensors"]
+      "tags": [
+        "lambda",
+        "O2",
+        "sensors"
+      ]
     }
   ]
 }

@@ -3,7 +3,11 @@
     "id": "wheels-pretoria",
     "name": "Wheels — 19\" Pretoria, 235/35 R19",
     "system": "suspension",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "The operator's confirmed fitment: 19-inch Pretoria alloys (8J×19) with 235/35 R19 tyres, 5×112 PCD, 57.1 mm bore, ball-seat 14×1.5 bolts at the dossier's well-documented 120 Nm. Tip: hide this branch with the eye icon in the tree to see the brakes behind the wheels."
   },
   "parts": [
@@ -18,17 +22,58 @@
       "material": "Cast aluminium",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0, 0], "distance": 0.45 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "distance": 0.45
+      },
       "geometryRef": "pretoriaWheel",
-      "geometryParams": { "rimDiameterMm": 482.6, "widthMm": 203 },
+      "geometryParams": {
+        "rimDiameterMm": 482.6,
+        "widthMm": 203
+      },
       "transforms": [
-        { "position": [1.0, 0, 0.05], "rotationDeg": [0, 0, 0] },
-        { "position": [1.0, 0, -1.13], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            0.79,
+            0,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.79,
+            0,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 1,
-      "calloutOffset": [0.2, 0.28, 0.12],
+      "calloutOffset": [
+        0.2,
+        0.28,
+        0.12
+      ],
       "color": "#c8ccd2",
-      "tags": ["wheel", "pretoria", "19-inch", "8Jx19"]
+      "tags": [
+        "wheel",
+        "pretoria",
+        "19-inch",
+        "8Jx19"
+      ]
     },
     {
       "id": "pretoria-wheels-left",
@@ -41,17 +86,57 @@
       "material": "Cast aluminium",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0, 0], "distance": 0.45 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0,
+          0
+        ],
+        "distance": 0.45
+      },
       "geometryRef": "pretoriaWheel",
-      "geometryParams": { "rimDiameterMm": 482.6, "widthMm": 203 },
+      "geometryParams": {
+        "rimDiameterMm": 482.6,
+        "widthMm": 203
+      },
       "transforms": [
-        { "position": [-1.0, 0, 0.05], "rotationDeg": [0, 180, 0] },
-        { "position": [-1.0, 0, -1.13], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            -0.79,
+            0,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.79,
+            0,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 2,
-      "calloutOffset": [-0.2, 0.28, 0.12],
+      "calloutOffset": [
+        -0.2,
+        0.28,
+        0.12
+      ],
       "color": "#c8ccd2",
-      "tags": ["wheel", "pretoria", "19-inch"]
+      "tags": [
+        "wheel",
+        "pretoria",
+        "19-inch"
+      ]
     },
     {
       "id": "tyres-right",
@@ -64,17 +149,56 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.15, 0], "distance": 0.62 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.15,
+          0
+        ],
+        "distance": 0.62
+      },
       "geometryRef": "tyre",
-      "geometryParams": { "rimDiameterMm": 482.6, "sectionMm": 235 },
+      "geometryParams": {
+        "rimDiameterMm": 482.6,
+        "sectionMm": 235
+      },
       "transforms": [
-        { "position": [1.0, 0, 0.05], "rotationDeg": [0, 0, 0] },
-        { "position": [1.0, 0, -1.13], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            0.79,
+            0,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.79,
+            0,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 3,
-      "calloutOffset": [0.18, -0.28, 0.14],
+      "calloutOffset": [
+        0.18,
+        -0.28,
+        0.14
+      ],
       "color": "#26282c",
-      "tags": ["tyre", "235-35-R19"]
+      "tags": [
+        "tyre",
+        "235-35-R19"
+      ]
     },
     {
       "id": "tyres-left",
@@ -87,17 +211,56 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.15, 0], "distance": 0.62 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.15,
+          0
+        ],
+        "distance": 0.62
+      },
       "geometryRef": "tyre",
-      "geometryParams": { "rimDiameterMm": 482.6, "sectionMm": 235 },
+      "geometryParams": {
+        "rimDiameterMm": 482.6,
+        "sectionMm": 235
+      },
       "transforms": [
-        { "position": [-1.0, 0, 0.05], "rotationDeg": [0, 180, 0] },
-        { "position": [-1.0, 0, -1.13], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            -0.79,
+            0,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.79,
+            0,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 4,
-      "calloutOffset": [-0.18, -0.28, 0.14],
+      "calloutOffset": [
+        -0.18,
+        -0.28,
+        0.14
+      ],
       "color": "#26282c",
-      "tags": ["tyre", "235-35-R19"]
+      "tags": [
+        "tyre",
+        "235-35-R19"
+      ]
     },
     {
       "id": "wheel-bolts-right",
@@ -108,19 +271,62 @@
       "oemPartNumber": null,
       "description": "Ball-seat M14×1.5 wheel bolts on the 5×112 pattern. 120 Nm is one of the best-documented torques on the car (dossier §2/§5).",
       "material": null,
-      "torqueSpec": { "valueNm": 120, "angle": null, "note": "Dossier: wheel bolts — well-documented MQB spec" },
+      "torqueSpec": {
+        "valueNm": 120,
+        "angle": null,
+        "note": "Dossier: wheel bolts — well-documented MQB spec"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [1, -0.15, 0], "distance": 0.8 },
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.15,
+          0
+        ],
+        "distance": 0.8
+      },
       "geometryRef": "wheelBoltRing",
-      "geometryParams": { "pcdMm": 112 },
+      "geometryParams": {
+        "pcdMm": 112
+      },
       "transforms": [
-        { "position": [1.09, 0, 0.05], "rotationDeg": [0, 0, 0] },
-        { "position": [1.09, 0, -1.13], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            0.88,
+            0,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.88,
+            0,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 5,
-      "calloutOffset": [0.16, 0.16, 0.1],
+      "calloutOffset": [
+        0.16,
+        0.16,
+        0.1
+      ],
       "color": "#98a2ae",
-      "tags": ["wheel-bolts", "120Nm", "5x112"]
+      "tags": [
+        "wheel-bolts",
+        "120Nm",
+        "5x112"
+      ]
     },
     {
       "id": "wheel-bolts-left",
@@ -131,19 +337,61 @@
       "oemPartNumber": null,
       "description": "Left-side bolt sets, 120 Nm.",
       "material": null,
-      "torqueSpec": { "valueNm": 120, "angle": null, "note": "Dossier: wheel bolts" },
+      "torqueSpec": {
+        "valueNm": 120,
+        "angle": null,
+        "note": "Dossier: wheel bolts"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, -0.15, 0], "distance": 0.8 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          -0.15,
+          0
+        ],
+        "distance": 0.8
+      },
       "geometryRef": "wheelBoltRing",
-      "geometryParams": { "pcdMm": 112 },
+      "geometryParams": {
+        "pcdMm": 112
+      },
       "transforms": [
-        { "position": [-1.09, 0, 0.05], "rotationDeg": [0, 180, 0] },
-        { "position": [-1.09, 0, -1.13], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            -0.88,
+            0,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.88,
+            0,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [-0.16, 0.16, 0.1],
+      "calloutOffset": [
+        -0.16,
+        0.16,
+        0.1
+      ],
       "color": "#98a2ae",
-      "tags": ["wheel-bolts", "120Nm"]
+      "tags": [
+        "wheel-bolts",
+        "120Nm"
+      ]
     }
   ]
 }

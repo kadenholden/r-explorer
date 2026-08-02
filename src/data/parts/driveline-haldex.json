@@ -3,7 +3,11 @@
     "id": "driveline-haldex",
     "name": "Drivetrain — 4MOTION (Haldex Gen 5)",
     "system": "drivetrain",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "The AWD path (dossier §4): the gearbox's bevel box sends torque down a two-piece propshaft to the rear final drive, where the Haldex Gen 5 electro-hydraulic coupling sits AHEAD of the rear differential — pre-emptively clutching up to ~50% of torque rearward before slip happens. Plus the front and rear driveshafts with their CV joints. The coupling's pump and fine-mesh filter are the famous service item: they clog on hard-driven cars and fail with no dash warning."
   },
   "parts": [
@@ -18,14 +22,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, -0.3, 0], "distance": 0.34 },
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.3,
+          0
+        ],
+        "distance": 0.34
+      },
       "geometryRef": "propshaftFront",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.18, -0.1, -0.12],
+      "calloutOffset": [
+        0.18,
+        -0.1,
+        -0.12
+      ],
       "color": "#9aa0a8",
-      "tags": ["propshaft", "two-piece"]
+      "tags": [
+        "propshaft",
+        "two-piece"
+      ]
     },
     {
       "id": "center-bearing",
@@ -38,14 +69,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.4, 0], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.4,
+          0
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "centerBearing",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.1, -0.28, -0.61], "rotationDeg": [90, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.1,
+            -0.28,
+            -0.61
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [0.14, 0.12, -0.08],
+      "calloutOffset": [
+        0.14,
+        0.12,
+        -0.08
+      ],
       "color": "#5d6167",
-      "tags": ["centre-bearing", "propshaft"]
+      "tags": [
+        "centre-bearing",
+        "propshaft"
+      ]
     },
     {
       "id": "propshaft-rear",
@@ -58,14 +116,40 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, -0.2, -0.2], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.2,
+          -0.2
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "propshaftRear",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [0.16, -0.08, -0.14],
+      "calloutOffset": [
+        0.16,
+        -0.08,
+        -0.14
+      ],
       "color": "#9aa0a8",
-      "tags": ["propshaft"]
+      "tags": [
+        "propshaft"
+      ]
     },
     {
       "id": "rdu-housing",
@@ -78,14 +162,42 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, -0.3], "distance": 0.08 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          -0.3
+        ],
+        "distance": 0.08
+      },
       "geometryRef": "rduHousing",
       "geometryParams": {},
-      "transforms": [{ "position": [0, -0.27, -1.12], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.27,
+            -2.56
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.18, -0.12, -0.12],
+      "calloutOffset": [
+        0.18,
+        -0.12,
+        -0.12
+      ],
       "color": "#868c94",
-      "tags": ["RDU", "rear-diff", "housing"]
+      "tags": [
+        "RDU",
+        "rear-diff",
+        "housing"
+      ]
     },
     {
       "id": "haldex-coupling",
@@ -97,15 +209,46 @@
       "description": "Electro-hydraulically clamped wet multi-plate clutch ahead of the rear diff: friction + steel plates squeezed by an annular piston, controlled pre-emptively (up to ~50% torque rearward before slip occurs) by its own controller (dossier §4).",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Works only as well as its oil supply: see the pump/filter service story — fluid change is on a service interval, filter cleaning is owner-wisdom (dossier §4)"],
-      "explodeVector": { "direction": [0, 0.4, 1], "distance": 0.36 },
+      "knownIssues": [
+        "Works only as well as its oil supply: see the pump/filter service story — fluid change is on a service interval, filter cleaning is owner-wisdom (dossier §4)"
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.4,
+          1
+        ],
+        "distance": 0.36
+      },
       "geometryRef": "haldexCoupling",
       "geometryParams": {},
-      "transforms": [{ "position": [0, -0.27, -1.05], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.27,
+            -2.49
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [0.14, 0.14, 0.1],
+      "calloutOffset": [
+        0.14,
+        0.14,
+        0.1
+      ],
       "color": "#8d939c",
-      "tags": ["haldex", "gen5", "coupling", "4motion"]
+      "tags": [
+        "haldex",
+        "gen5",
+        "coupling",
+        "4motion"
+      ]
     },
     {
       "id": "haldex-pump",
@@ -117,15 +260,46 @@
       "description": "The electric feed/charge pump that pressurises the coupling — dossier §4 gives its part number directly: 0CQ598549. THE Gen 5 service item: its fine mesh filter clogs on tuned/hard-driven Rs and kills the pump.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Pump failure symptoms: front-wheel spin, axle tramp off the line, usually NO dash warning (stored code only). Fix: pump + fluid + filter/screen clean, then a VCDS 'pump learn' basic-settings re-adaptation (dossier §4)."],
-      "explodeVector": { "direction": [-1, -0.4, 0.2], "distance": 0.32 },
+      "knownIssues": [
+        "Pump failure symptoms: front-wheel spin, axle tramp off the line, usually NO dash warning (stored code only). Fix: pump + fluid + filter/screen clean, then a VCDS 'pump learn' basic-settings re-adaptation (dossier §4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -1,
+          -0.4,
+          0.2
+        ],
+        "distance": 0.32
+      },
       "geometryRef": "haldexPump",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.1, -0.31, -1.1], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.1,
+            -0.31,
+            -2.54
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 6,
-      "calloutOffset": [-0.16, -0.1, 0.1],
+      "calloutOffset": [
+        -0.16,
+        -0.1,
+        0.1
+      ],
       "color": "#3a3d44",
-      "tags": ["haldex", "pump", "0CQ598549", "service-item"]
+      "tags": [
+        "haldex",
+        "pump",
+        "0CQ598549",
+        "service-item"
+      ]
     },
     {
       "id": "haldex-filter",
@@ -137,15 +311,46 @@
       "description": "The fine mesh screen protecting the pump — and the thing that clogs. Cleaning it at every Haldex fluid change is the community-standard preventative (dossier §4).",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Clogged screen starves the pump → coupling can't clamp → quietly front-wheel-drive until the stored code is read"],
-      "explodeVector": { "direction": [-1, -0.6, 0.3], "distance": 0.42 },
+      "knownIssues": [
+        "Clogged screen starves the pump → coupling can't clamp → quietly front-wheel-drive until the stored code is read"
+      ],
+      "explodeVector": {
+        "direction": [
+          -1,
+          -0.6,
+          0.3
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "haldexFilter",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.07, -0.34, -1.08], "rotationDeg": [0, 0, 90] }],
+      "transforms": [
+        {
+          "position": [
+            -0.07,
+            -0.34,
+            -2.52
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [-0.12, -0.14, 0.08],
+      "calloutOffset": [
+        -0.12,
+        -0.14,
+        0.08
+      ],
       "color": "#b08968",
-      "tags": ["haldex", "filter", "screen", "service-item"]
+      "tags": [
+        "haldex",
+        "filter",
+        "screen",
+        "service-item"
+      ]
     },
     {
       "id": "haldex-controller",
@@ -158,14 +363,42 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0.4, 1, 0], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0.4,
+          1,
+          0
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "haldexController",
       "geometryParams": {},
-      "transforms": [{ "position": [0.05, -0.2, -1.12], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.05,
+            -0.2,
+            -2.56
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [0.12, 0.14, -0.08],
+      "calloutOffset": [
+        0.12,
+        0.14,
+        -0.08
+      ],
       "color": "#3a3d44",
-      "tags": ["haldex", "controller", "ECU"]
+      "tags": [
+        "haldex",
+        "controller",
+        "ECU"
+      ]
     },
     {
       "id": "rear-diff-gears",
@@ -178,14 +411,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.3, -1], "distance": 0.36 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.3,
+          -1
+        ],
+        "distance": 0.36
+      },
       "geometryRef": "rearDiffGears",
       "geometryParams": {},
-      "transforms": [{ "position": [0, -0.27, -1.16], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.27,
+            -2.6
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 9,
-      "calloutOffset": [-0.14, -0.1, -0.14],
+      "calloutOffset": [
+        -0.14,
+        -0.1,
+        -0.14
+      ],
       "color": "#7d838b",
-      "tags": ["rear-diff", "GL-5"]
+      "tags": [
+        "rear-diff",
+        "GL-5"
+      ]
     },
     {
       "id": "rear-driveshafts",
@@ -198,17 +458,56 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.5, -1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.5,
+          -1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 815 },
+      "geometryParams": {
+        "lengthMm": 650
+      },
       "transforms": [
-        { "position": [0.12, -0.27, -1.13], "rotationDeg": [0, 0, 19] },
-        { "position": [-0.12, -0.27, -1.13], "rotationDeg": [0, 180, 19] }
+        {
+          "position": [
+            0.12,
+            -0.27,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            22
+          ]
+        },
+        {
+          "position": [
+            -0.12,
+            -0.27,
+            -2.57
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            22
+          ]
+        }
       ],
       "callout": 10,
-      "calloutOffset": [0.2, 0.12, -0.12],
+      "calloutOffset": [
+        0.2,
+        0.12,
+        -0.12
+      ],
       "color": "#9aa0a8",
-      "tags": ["driveshafts", "rear", "CV"]
+      "tags": [
+        "driveshafts",
+        "rear",
+        "CV"
+      ]
     },
     {
       "id": "front-driveshaft-right",
@@ -221,14 +520,45 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0.3, -0.6, 1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0.3,
+          -0.6,
+          1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 1340, "intermediateBearing": 1 },
-      "transforms": [{ "position": [-0.44, -0.14, 0.05], "rotationDeg": [0, 0, 6] }],
+      "geometryParams": {
+        "lengthMm": 1120,
+        "intermediateBearing": 1
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.44,
+            -0.14,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            6
+          ]
+        }
+      ],
       "callout": 11,
-      "calloutOffset": [0.2, -0.14, 0.14],
+      "calloutOffset": [
+        0.2,
+        -0.14,
+        0.14
+      ],
       "color": "#9aa0a8",
-      "tags": ["driveshaft", "front", "intermediate-bearing"]
+      "tags": [
+        "driveshaft",
+        "front",
+        "intermediate-bearing"
+      ]
     },
     {
       "id": "front-driveshaft-left",
@@ -241,14 +571,44 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.3, -0.6, 1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          -0.3,
+          -0.6,
+          1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "driveshaft",
-      "geometryParams": { "lengthMm": 340 },
-      "transforms": [{ "position": [-0.58, -0.14, 0.05], "rotationDeg": [0, 180, 21] }],
+      "geometryParams": {
+        "lengthMm": 185
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.58,
+            -0.14,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            34
+          ]
+        }
+      ],
       "callout": 12,
-      "calloutOffset": [-0.18, -0.14, 0.14],
+      "calloutOffset": [
+        -0.18,
+        -0.14,
+        0.14
+      ],
       "color": "#9aa0a8",
-      "tags": ["driveshaft", "front", "short"]
+      "tags": [
+        "driveshaft",
+        "front",
+        "short"
+      ]
     }
   ]
 }

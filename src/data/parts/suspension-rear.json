@@ -3,8 +3,16 @@
     "id": "suspension-rear",
     "name": "Suspension — rear (multi-link)",
     "system": "suspension",
-    "origin": [0, 0, -1.13],
-    "rotationDeg": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      -2.57
+    ],
+    "rotationDeg": [
+      0,
+      0,
+      0
+    ],
     "description": "Four-link independent rear axle (dossier §5): per side, a longitudinal trailing link plus three lateral links (upper, lower/spring link, toe link), with the coil spring SEPARATE from the passive damper, all on the rear subframe that also carries the Haldex final drive. Bushings tuned for lateral rigidity on the R."
   },
   "parts": [
@@ -19,14 +27,44 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "subframe",
-      "geometryParams": { "widthMm": 840, "lengthMm": 400 },
-      "transforms": [{ "position": [0, -0.27, 0.02], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "widthMm": 690,
+        "lengthMm": 320
+      },
+      "transforms": [
+        {
+          "position": [
+            0.0,
+            -0.27,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.3, -0.12, 0.16],
+      "calloutOffset": [
+        0.3,
+        -0.12,
+        0.16
+      ],
       "color": "#5a5f66",
-      "tags": ["subframe", "rear"]
+      "tags": [
+        "subframe",
+        "rear"
+      ]
     },
     {
       "id": "rear-trailing-links",
@@ -39,17 +77,53 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.4, 1], "distance": 0.35 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          1
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "trailingLink",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.84, -0.12, 0.32], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.84, -0.12, 0.32], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            0.672,
+            -0.12,
+            0.32
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.672,
+            -0.12,
+            0.32
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 2,
-      "calloutOffset": [0.16, 0.12, 0.16],
+      "calloutOffset": [
+        0.16,
+        0.12,
+        0.16
+      ],
       "color": "#7d838b",
-      "tags": ["trailing-link", "longitudinal"]
+      "tags": [
+        "trailing-link",
+        "longitudinal"
+      ]
     },
     {
       "id": "rear-upper-links",
@@ -62,17 +136,56 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, -0.3], "distance": 0.32 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.3
+        ],
+        "distance": 0.32
+      },
       "geometryRef": "lateralLink",
-      "geometryParams": { "lengthMm": 330 },
+      "geometryParams": {
+        "lengthMm": 264
+      },
       "transforms": [
-        { "position": [0.52, -0.06, -0.06], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.52, -0.06, -0.06], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            0.416,
+            -0.06,
+            -0.06
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.416,
+            -0.06,
+            -0.06
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 3,
-      "calloutOffset": [0.14, 0.14, -0.1],
+      "calloutOffset": [
+        0.14,
+        0.14,
+        -0.1
+      ],
       "color": "#7d838b",
-      "tags": ["lateral-link", "upper", "camber"]
+      "tags": [
+        "lateral-link",
+        "upper",
+        "camber"
+      ]
     },
     {
       "id": "rear-spring-links",
@@ -85,17 +198,56 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, 0.3], "distance": 0.35 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.3
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "lateralLink",
-      "geometryParams": { "lengthMm": 400, "springSeat": 1 },
+      "geometryParams": {
+        "lengthMm": 320,
+        "springSeat": 1
+      },
       "transforms": [
-        { "position": [0.46, -0.26, 0.02], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.46, -0.26, 0.02], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            0.368,
+            -0.26,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.368,
+            -0.26,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 4,
-      "calloutOffset": [0.18, -0.12, 0.12],
+      "calloutOffset": [
+        0.18,
+        -0.12,
+        0.12
+      ],
       "color": "#7d838b",
-      "tags": ["spring-link", "lower"]
+      "tags": [
+        "spring-link",
+        "lower"
+      ]
     },
     {
       "id": "rear-toe-links",
@@ -108,17 +260,55 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.5, -1], "distance": 0.32 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.5,
+          -1
+        ],
+        "distance": 0.32
+      },
       "geometryRef": "lateralLink",
-      "geometryParams": { "lengthMm": 350 },
+      "geometryParams": {
+        "lengthMm": 280
+      },
       "transforms": [
-        { "position": [0.5, -0.15, -0.14], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.5, -0.15, -0.14], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            0.4,
+            -0.15,
+            -0.14
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.4,
+            -0.15,
+            -0.14
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 5,
-      "calloutOffset": [0.14, -0.1, -0.14],
+      "calloutOffset": [
+        0.14,
+        -0.1,
+        -0.14
+      ],
       "color": "#7d838b",
-      "tags": ["toe-link", "alignment"]
+      "tags": [
+        "toe-link",
+        "alignment"
+      ]
     },
     {
       "id": "rear-springs",
@@ -131,17 +321,58 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.3], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "coilSpring",
-      "geometryParams": { "heightMm": 180, "diameterMm": 110, "turns": 5 },
+      "geometryParams": {
+        "heightMm": 180,
+        "diameterMm": 110,
+        "turns": 5
+      },
       "transforms": [
-        { "position": [0.7, -0.25, 0.02], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.7, -0.25, 0.02], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            0.56,
+            -0.25,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.56,
+            -0.25,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [0.12, 0.16, 0.1],
+      "calloutOffset": [
+        0.12,
+        0.16,
+        0.1
+      ],
       "color": "#33363c",
-      "tags": ["spring", "coil", "rear"]
+      "tags": [
+        "spring",
+        "coil",
+        "rear"
+      ]
     },
     {
       "id": "rear-dampers",
@@ -154,17 +385,54 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, -0.3], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.3
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "damperRear",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.86, -0.12, -0.1], "rotationDeg": [0, 0, 8] },
-        { "position": [-0.86, -0.12, -0.1], "rotationDeg": [0, 0, -8] }
+        {
+          "position": [
+            0.688,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "position": [
+            -0.688,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -8
+          ]
+        }
       ],
       "callout": 7,
-      "calloutOffset": [0.12, 0.2, -0.1],
+      "calloutOffset": [
+        0.12,
+        0.2,
+        -0.1
+      ],
       "color": "#8d939c",
-      "tags": ["damper", "passive", "no-DCC"]
+      "tags": [
+        "damper",
+        "passive",
+        "no-DCC"
+      ]
     },
     {
       "id": "rear-arb",
@@ -177,14 +445,44 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.6, -1], "distance": 0.35 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.6,
+          -1
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "antiRollBar",
-      "geometryParams": { "spanMm": 900, "armMm": 180 },
-      "transforms": [{ "position": [0, -0.2, -0.1], "rotationDeg": [0, 180, 0] }],
+      "geometryParams": {
+        "spanMm": 720,
+        "armMm": 180
+      },
+      "transforms": [
+        {
+          "position": [
+            0.0,
+            -0.2,
+            -0.1
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [-0.24, -0.1, -0.12],
+      "calloutOffset": [
+        -0.24,
+        -0.1,
+        -0.12
+      ],
       "color": "#4a4e55",
-      "tags": ["ARB", "rear"]
+      "tags": [
+        "ARB",
+        "rear"
+      ]
     },
     {
       "id": "rear-carriers",
@@ -195,19 +493,61 @@
       "oemPartNumber": null,
       "description": "Rear uprights collecting all four links, carrying the wheel bearing and the rear driveshaft's outer CV. Torque shown is the main hub/axle bolt (dossier §2 table).",
       "material": null,
-      "torqueSpec": { "valueNm": 200, "angle": "+180°", "note": "Main hub/axle bolt (dossier)" },
+      "torqueSpec": {
+        "valueNm": 200,
+        "angle": "+180°",
+        "note": "Main hub/axle bolt (dossier)"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.2, 1], "distance": 0.3 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.2,
+          1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "wheelCarrier",
       "geometryParams": {},
       "transforms": [
-        { "position": [0.88, -0.02, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.88, -0.02, 0], "rotationDeg": [0, 180, 0] }
+        {
+          "position": [
+            0.704,
+            -0.02,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.704,
+            -0.02,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
       ],
       "callout": 9,
-      "calloutOffset": [0.14, 0.16, 0.12],
+      "calloutOffset": [
+        0.14,
+        0.16,
+        0.12
+      ],
       "color": "#6a6f76",
-      "tags": ["carrier", "hub", "rear", "200Nm+180"]
+      "tags": [
+        "carrier",
+        "hub",
+        "rear",
+        "200Nm+180"
+      ]
     }
   ]
 }

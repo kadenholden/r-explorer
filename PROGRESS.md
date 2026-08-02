@@ -1,5 +1,54 @@
 # PROGRESS
 
+## Likeness upgrade — real body shell + true-dimension re-base (2026-08-02)
+
+**Operator authorised sourcing a real mesh.** Found a genuine Mk7 Golf
+GLB (via GitHub LFS; credited in README), compressed 83 MB → 2.6 MB
+(draco + webp), and recoloured its 32×4 palette from red to the
+operator's white. Integrated as its own `body-shell` assembly through
+the geometryRef `.glb` path — the exact hero-mesh swap the
+architecture was designed for. GlbPart now supports draco + a scale
+param.
+
+**Chassis re-based to the car's REAL dimensions** so the real-scale
+shell drops on: wheelbase 2.62 m (rear axle z −2.57), track ±0.79,
+every rear-cluster station moved by script (rear suspension, rear
+brakes, wheels, Haldex RDU, driveshafts, propshaft, exhaust line),
+driveshaft lengths/angles recomputed. Wheels now sit in the shell's
+actual arches; default view is the white car over the full chassis.
+
+**Known follow-ups:** (1) schematic body panels are default-hidden and
+still cut for the old compressed stations — re-cut them to the real
+stations if the panel view should return; (2) the donor mesh is
+GTI-trim at the bumpers/badges — R-specific details could be swapped
+later; (3) interior of the shell is hollow (Phase 7's interior fills
+it).
+
+## Phase 6 — complete (2026-08-02)
+
+**Operator spec:** 5-door, WHITE (recorded in CLAUDE.md).
+
+**Body-in-white (8 records):** floorpan + tunnel, front longitudinals/
+crash boxes/beam, bulkhead (with the MQB fixed-dimension fact), strut
+towers, A/B/C pillars in hot-formed ~1,000 MPa steel, roof + rails,
+sills, rear wheelhouses/panel/spare well. Carries VW's own 23 kg BIW
+weight-saving breakdown and the 66%→80% high-strength-steel jump.
+
+**Exterior (15 records):** bonnet, both front wings with REAL wheel-arch
+cuts over the Pretorias, R front bumper (enlarged intakes + splitter),
+R rear bumper with diffuser over the quad tips, all four 5-door doors +
+tailgate, roof spoiler, gloss-black mirror caps, side skirts, and
+transparent windscreen/rear screen (new `opacity` render field).
+
+Hide the two Body branches via the tree's eye icons to return to the
+mechanical view. Overview preset widened to frame the whole car.
+**Model: 152 parts.** Verified in-browser: white shell wraps the
+chassis, glass is see-through, mechanicals visible through openings.
+
+**Next (final): Phase 7** — electrics (ECU, gateway, battery, lighting,
+harness nodes), cooling (N493 module, coolant pump, radiator stack),
+brake hydraulics + ABS, fuel tank/LPFP, HVAC, interior, steering column.
+
 ## Coverage audit (2026-08-02, operator-prompted)
 
 Operator asked "isn't there supposed to be a back suspension?" — the

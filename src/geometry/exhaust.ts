@@ -37,8 +37,8 @@ export function linkPipe(_params: GeometryParams): THREE.BufferGeometry {
   return tubeThrough(
     [
       [0, -0.305, -0.67],
-      [0, -0.325, -0.78],
-      [0, -0.33, -0.86],
+      [0, -0.325, -0.92],
+      [0, -0.33, -1.18],
     ],
     0.027,
   )
@@ -49,9 +49,9 @@ export function resonator(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
   const body = new THREE.CylinderGeometry(0.052, 0.052, 0.26, 20)
   body.rotateX(Math.PI / 2)
-  body.translate(0, -0.33, -1.0)
+  body.translate(0, -0.33, -1.32)
   parts.push(body)
-  for (const z of [-1.14, -0.86]) {
+  for (const z of [-1.46, -1.18]) {
     const stub = new THREE.CylinderGeometry(0.027, 0.027, 0.05, 14)
     stub.rotateX(Math.PI / 2)
     stub.translate(0, -0.33, z)
@@ -65,16 +65,16 @@ export function resonator(_params: GeometryParams): THREE.BufferGeometry {
 export function rearSilencer(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
   const body = new THREE.BoxGeometry(0.52, 0.17, 0.26)
-  body.translate(0, -0.33, -1.27)
+  body.translate(0, -0.33, -1.59)
   parts.push(body)
   const inlet = new THREE.CylinderGeometry(0.027, 0.027, 0.08, 14)
   inlet.rotateX(Math.PI / 2)
-  inlet.translate(0, -0.33, -1.12)
+  inlet.translate(0, -0.33, -1.44)
   parts.push(inlet)
   for (const x of [-0.17, 0.17]) {
     const outlet = new THREE.CylinderGeometry(0.024, 0.024, 0.05, 14)
     outlet.rotateX(Math.PI / 2)
-    outlet.translate(x, -0.33, -1.42)
+    outlet.translate(x, -0.33, -1.74)
     parts.push(outlet)
   }
   return mergeParts(parts)

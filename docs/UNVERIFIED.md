@@ -82,6 +82,13 @@ bellhousing label.
 | --- | --- |
 | All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |
 
+## Body & exterior (Phase 6)
+
+Dossier-verified facts live on the parts (BIW weight-saving quotes, 80%
+HSS share, hot-formed pillars, R styling items, real exterior
+dimensions). All OEM panel numbers `null`. Real-car paint code for the
+operator's white also unrecorded.
+
 ## Engine ancillaries (coverage-audit addition)
 
 Dossier-verified: engine-mount torques (60 Nm +90° bracket / 40 Nm +90°

@@ -14,6 +14,10 @@ interface AppState {
   selectedPartId: string | null
   select: (id: string | null) => void
 
+  /** Part currently under the cursor (drives the hover name tag). */
+  hoveredPartId: string | null
+  setHoveredPart: (id: string | null) => void
+
   /** 'real': realistic part colours; 'system': dossier system colour-coding. */
   colorMode: ColorMode
   setColorMode: (mode: ColorMode) => void
@@ -61,13 +65,18 @@ export const useAppStore = create<AppState>()(
       selectedPartId: null,
       select: (id) => set({ selectedPartId: id }),
 
+      hoveredPartId: null,
+      setHoveredPart: (id) => set({ hoveredPartId: id }),
+
       colorMode: 'real',
       setColorMode: (mode) => set({ colorMode: mode }),
 
       explode: 0,
       setExplode: (v) => set({ explode: Math.min(1, Math.max(0, v)) }),
 
-      hidden: {},
+      // schematic body panels start hidden — the real shell mesh is the
+      // default look; the tree's eye icons swap between them
+      hidden: { 'body/body-structure': true, 'body/body-exterior': true },
       toggleHidden: (nodeId) =>
         set((s) => ({ hidden: { ...s.hidden, [nodeId]: !s.hidden[nodeId] } })),
 

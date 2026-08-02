@@ -63,9 +63,20 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
 
   const selected = useAppStore((s) => s.selectedPartId === part.id)
   const select = useAppStore((s) => s.select)
+  const setHoveredPart = useAppStore((s) => s.setHoveredPart)
   const explode = useAppStore((s) => s.explode)
   const faultActive = useAppStore((s) => s.p2015) && part.tags.includes('p2015')
   const isFlap = part.tags.includes('runner-flap')
+
+  const hoverOn = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation()
+    setHovered(true)
+    setHoveredPart(part.id)
+  }
+  const hoverOff = () => {
+    setHovered(false)
+    setHoveredPart(null)
+  }
 
   const base = useMemo(() => new THREE.Vector3(...transform.position), [transform])
   const dir = useMemo(
@@ -120,7 +131,25 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
         <group ref={spinGroup}>
           {isGlb ? (
             <Suspense fallback={null}>
-              <GlbPart url={`${import.meta.env.BASE_URL}${part.geometryRef}`} />
+              <group
+                onClick={(e) => {
+                  e.stopPropagation()
+                  select(part.id)
+                }}
+                onPointerOver={hoverOn}
+                onPointerOut={hoverOff}
+              >
+                <GlbPart
+                  url={`${import.meta.env.BASE_URL}${part.geometryRef}`}
+                  scale={
+                    typeof part.geometryParams?.['scale'] === 'number'
+                      ? (part.geometryParams['scale'] as number)
+                      : 1
+                  }
+                  selected={selected}
+                  hovered={hovered}
+                />
+              </group>
             </Suspense>
           ) : geometry ? (
             <mesh
@@ -129,16 +158,16 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                 e.stopPropagation()
                 select(part.id)
               }}
-              onPointerOver={(e) => {
-                e.stopPropagation()
-                setHovered(true)
-              }}
-              onPointerOut={() => setHovered(false)}
+              onPointerOver={hoverOn}
+              onPointerOut={hoverOff}
             >
               <meshStandardMaterial
                 color={color}
                 metalness={0.35}
                 roughness={0.55}
+                transparent={part.opacity !== null}
+                opacity={part.opacity ?? 1}
+                depthWrite={part.opacity === null}
                 emissive={selected ? ACCENT : faultActive ? FAULT_RED : hovered ? color : '#000000'}
                 emissiveIntensity={selected ? 0.4 : faultActive ? 0.32 : hovered ? 0.18 : 0}
               />
@@ -192,10 +221,50 @@ function CalloutMarker({
 }
 
 /** Real-mesh path: a .glb under public/ referenced by geometryRef.
- *  Selection tinting is not applied to GLB materials yet (hero-mesh polish
- *  comes with the first real mesh swap). */
-function GlbPart({ url }: { url: string }) {
-  const { scene } = useGLTF(url)
+ *  Draco-compressed meshes supported. Selection/hover tint the mesh's
+ *  own materials with the accent emissive, restoring the authored look
+ *  on deselect — same blue highlight as the schematic parts. */
+function GlbPart({
+  url,
+  scale,
+  selected,
+  hovered,
+}: {
+  url: string
+  scale: number
+  selected: boolean
+  hovered: boolean
+}) {
+  const { scene } = useGLTF(url, true)
   const cloned = useMemo(() => scene.clone(true), [scene])
-  return <primitive object={cloned} />
+
+  useEffect(() => {
+    const materials = new Set<THREE.Material>()
+    cloned.traverse((obj) => {
+      const mesh = obj as THREE.Mesh
+      if (!mesh.isMesh) return
+      const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
+      mats.forEach((m) => materials.add(m))
+    })
+    for (const m of materials) {
+      const std = m as THREE.MeshStandardMaterial
+      if (!(std.emissive instanceof THREE.Color)) continue
+      if (std.userData['origEmissive'] === undefined) {
+        std.userData['origEmissive'] = std.emissive.getHex()
+        std.userData['origEmissiveIntensity'] = std.emissiveIntensity
+      }
+      if (selected) {
+        std.emissive.set(ACCENT)
+        std.emissiveIntensity = 0.38
+      } else if (hovered) {
+        std.emissive.set(ACCENT)
+        std.emissiveIntensity = 0.14
+      } else {
+        std.emissive.setHex(std.userData['origEmissive'] as number)
+        std.emissiveIntensity = std.userData['origEmissiveIntensity'] as number
+      }
+    }
+  }, [cloned, selected, hovered])
+
+  return <primitive object={cloned} scale={scale} />
 }

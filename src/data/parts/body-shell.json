@@ -1,0 +1,615 @@
+{
+  "assembly": {
+    "id": "body-shell",
+    "name": "Body shell (real Mk7 mesh)",
+    "system": "body",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "The real Mk7 body split into twelve exploding panel groups (bonnet, roof, glass, clips, lamps, tailgate, mirrors, seats — donor wheels/brakes removed in favour of ours). Paint recoloured white, trim lines R-blue. Total ~2 MB draco. The schematic panel view remains available via the tree."
+  },
+  "parts": [
+    {
+      "id": "shell-sides",
+      "name": "Body sides, doors & quarters (shell)",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The welded side structure with doors, fenders, quarters, skirts and trim — the shell's anchor piece. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.22
+      },
+      "geometryRef": "models/shell/sideshell.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-hood",
+      "name": "Bonnet",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The real bonnet panel with its cowl trim. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.8,
+          0.6
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "models/shell/hood.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-roof",
+      "name": "Roof & rails",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Roof skin with rails and antenna. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.85
+      },
+      "geometryRef": "models/shell/roof.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-glass",
+      "name": "Glazing (windscreen & windows)",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "All glazing plus wipers and scuttle. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.2
+        ],
+        "distance": 0.6
+      },
+      "geometryRef": "models/shell/glass.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-frontclip",
+      "name": "Front bumper & grille assembly",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Front clip: bumper skin, grilles, badge, parking sensors. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.05,
+          1
+        ],
+        "distance": 0.6
+      },
+      "geometryRef": "models/shell/frontclip.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-headlights",
+      "name": "Headlights & fog lights",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Complete lamp units — reflectors, lenses, trim line recoloured R-blue. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.3,
+          1
+        ],
+        "distance": 0.9
+      },
+      "geometryRef": "models/shell/headlights.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-taillights",
+      "name": "Tail lights",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Both tail lamp clusters. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.3,
+          -1
+        ],
+        "distance": 0.9
+      },
+      "geometryRef": "models/shell/taillights.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 7,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-rearclip",
+      "name": "Rear bumper & valance",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Rear clip: bumper, valance grille, badge, sensors, tip surrounds. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "distance": 0.6
+      },
+      "geometryRef": "models/shell/rearclip.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 8,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-tailgate",
+      "name": "Tailgate & rear wiper",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Hatch with high-level brake light and wiper. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.4,
+          -1
+        ],
+        "distance": 0.75
+      },
+      "geometryRef": "models/shell/tailgate.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 9,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-spoiler",
+      "name": "Roof spoiler",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The R roof spoiler. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.35
+        ],
+        "distance": 0.6
+      },
+      "geometryRef": "models/shell/spoiler.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 10,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-mirrors",
+      "name": "Door mirrors",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Mirror housings with indicators and glass. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.45
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "models/shell/mirrors.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 11,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    },
+    {
+      "id": "shell-seats",
+      "name": "Seats (interior, from donor mesh)",
+      "system": "body",
+      "assembly": "body-shell",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The donor model's seats — a head start on Phase 7's interior. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.15
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "models/shell/seats.glb",
+      "geometryParams": {
+        "scale": 0.01
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.33,
+            -1.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 12,
+      "calloutOffset": [
+        0.35,
+        0.25,
+        0.2
+      ],
+      "color": null,
+      "tags": [
+        "body-shell",
+        "glb",
+        "hero-mesh"
+      ]
+    }
+  ]
+}
