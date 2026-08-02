@@ -64,6 +64,17 @@ import {
   trailingLink,
 } from './suspension'
 import { pretoriaWheel, tyre, wheelBoltRing } from './wheels'
+import {
+  oilPan,
+  valveCoverPcv,
+  ignitionCoil,
+  feadBelt,
+  alternator,
+  acCompressor,
+  starterMotor,
+  hydraulicMount,
+  dogboneMount,
+} from './ancillaries'
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
@@ -145,5 +156,14 @@ registerRecipe('trailingLink', trailingLink)
 registerRecipe('pretoriaWheel', pretoriaWheel)
 registerRecipe('tyre', tyre)
 registerRecipe('wheelBoltRing', wheelBoltRing)
+registerRecipe('oilPan', oilPan)
+registerRecipe('valveCoverPcv', valveCoverPcv)
+registerRecipe('ignitionCoil', ignitionCoil)
+registerRecipe('feadBelt', feadBelt)
+registerRecipe('alternator', alternator)
+registerRecipe('acCompressor', acCompressor)
+registerRecipe('starterMotor', starterMotor)
+registerRecipe('hydraulicMount', hydraulicMount)
+registerRecipe('dogboneMount', dogboneMount)
 
 export { resolveRecipe }
