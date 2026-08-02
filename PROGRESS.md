@@ -1,5 +1,34 @@
 # PROGRESS
 
+## Coverage audit (2026-08-02, operator-prompted)
+
+Operator asked "isn't there supposed to be a back suspension?" — the
+rear multilink WAS built (9 parts) but had no camera preset, so it was
+effectively invisible. Added a **Rear axle** preset. The full
+taxonomy-vs-built sweep then caught one genuine miss and produced this
+ledger:
+
+**Caught & fixed now — engine ancillaries** (dossier §10 assigns them
+to Phase 2; they were skipped): oil pan (lubrication weep notes), valve
+cover with the failure-prone **PCV diaphragm** (knownIssue), coil-on-plug
+ignition ×4, FEAD serpentine belt/pulleys/tensioner (with the
+"coolant pump is NOT on this belt" trap), alternator, A/C compressor,
+starter, and the three-point mounting (hydraulic engine + gearbox
+mounts at the dossier's 60 Nm +90°, dogbone to the subframe). 10
+records; engine system now 57 parts, model 129.
+
+**Verified present (not missing):** rear multilink, all 4 brake
+corners, both front driveshafts (unequal by design), full driveline.
+
+**Deliberately deferred, now explicitly scheduled:**
+- Phase 6 (body): BIW, closures, R exterior, glass. Needs 3dr/5dr.
+- Phase 7: brake hydraulics (master cylinder, booster, ABS/ESC unit,
+  EPB control unit, lines, wheel-speed sensors), steering column +
+  intermediate shaft, engine cooling (N493 rotary module, coolant
+  pump, radiator stack incl. relocating the Phase 2 intercooler into
+  it), fuel tank + LPFP, all ECUs/harness/battery/lighting, HVAC,
+  interior. Oil-pump internals stay unmodelled (inside the pan).
+
 ## Phase 5 — complete (2026-08-01)
 
 **Alignment audit (operator-requested) first:** checked every mechanical

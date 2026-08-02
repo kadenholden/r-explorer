@@ -82,6 +82,13 @@ bellhousing label.
 | --- | --- |
 | All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |
 
+## Engine ancillaries (coverage-audit addition)
+
+Dossier-verified: engine-mount torques (60 Nm +90° bracket / 40 Nm +90°
+rail). All OEM numbers `null` (oil pan, valve cover/PCV, coils, FEAD
+belt + tensioner, alternator, A/C compressor, starter, mounts,
+dogbone).
+
 ## Suspension, steering & wheels (Phase 5)
 
 Dossier-verified on their parts: wheel bolts 120 Nm; hub/axle bolt
