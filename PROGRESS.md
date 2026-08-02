@@ -1,5 +1,29 @@
 # PROGRESS
 
+## Likeness upgrade — real body shell + true-dimension re-base (2026-08-02)
+
+**Operator authorised sourcing a real mesh.** Found a genuine Mk7 Golf
+GLB (via GitHub LFS; credited in README), compressed 83 MB → 2.6 MB
+(draco + webp), and recoloured its 32×4 palette from red to the
+operator's white. Integrated as its own `body-shell` assembly through
+the geometryRef `.glb` path — the exact hero-mesh swap the
+architecture was designed for. GlbPart now supports draco + a scale
+param.
+
+**Chassis re-based to the car's REAL dimensions** so the real-scale
+shell drops on: wheelbase 2.62 m (rear axle z −2.57), track ±0.79,
+every rear-cluster station moved by script (rear suspension, rear
+brakes, wheels, Haldex RDU, driveshafts, propshaft, exhaust line),
+driveshaft lengths/angles recomputed. Wheels now sit in the shell's
+actual arches; default view is the white car over the full chassis.
+
+**Known follow-ups:** (1) schematic body panels are default-hidden and
+still cut for the old compressed stations — re-cut them to the real
+stations if the panel view should return; (2) the donor mesh is
+GTI-trim at the bumpers/badges — R-specific details could be swapped
+later; (3) interior of the shell is hollow (Phase 7's interior fills
+it).
+
 ## Phase 6 — complete (2026-08-02)
 
 **Operator spec:** 5-door, WHITE (recorded in CLAUDE.md).
