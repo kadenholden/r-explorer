@@ -14,14 +14,14 @@ import { mergeParts } from './shapes'
 /** Floorpan with centre tunnel and rear floor step. */
 export function floorpan(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  const main = new THREE.BoxGeometry(1.9, 0.016, 1.15)
-  main.translate(0, -0.28, -0.72)
+  const main = new THREE.BoxGeometry(1.9, 0.016, 1.48)
+  main.translate(0, -0.28, -0.88)
   parts.push(main)
-  const tunnel = new THREE.BoxGeometry(0.26, 0.11, 1.15)
-  tunnel.translate(0, -0.23, -0.72)
+  const tunnel = new THREE.BoxGeometry(0.26, 0.11, 1.48)
+  tunnel.translate(0, -0.23, -0.88)
   parts.push(tunnel)
   const rearFloor = new THREE.BoxGeometry(1.7, 0.016, 0.45)
-  rearFloor.translate(0, -0.2, -1.42)
+  rearFloor.translate(0, -0.2, -1.74)
   parts.push(rearFloor)
   return mergeParts(parts)
 }
@@ -90,7 +90,7 @@ export function roofPanel(_params: GeometryParams): THREE.BufferGeometry {
 
 /** Sill / rocker box section (per side via instances). */
 export function sillRail(_params: GeometryParams): THREE.BufferGeometry {
-  const g = new THREE.BoxGeometry(0.07, 0.09, 1.15)
+  const g = new THREE.BoxGeometry(0.07, 0.09, 0.97)
   return g
 }
 
@@ -101,14 +101,14 @@ export function rearStructure(_params: GeometryParams): THREE.BufferGeometry {
     const house = new THREE.CylinderGeometry(0.4, 0.4, 0.24, 20, 1, true, 0, Math.PI)
     house.rotateZ(Math.PI / 2)
     house.rotateY(Math.PI / 2)
-    house.translate(s * 0.88, 0, -1.13)
+    house.translate(s * 0.88, 0, -1.45)
     parts.push(house)
   }
   const rearPanel = new THREE.BoxGeometry(1.6, 0.35, 0.02)
-  rearPanel.translate(0, -0.05, -1.58)
+  rearPanel.translate(0, -0.05, -1.9)
   parts.push(rearPanel)
   const well = new THREE.CylinderGeometry(0.3, 0.26, 0.1, 20)
-  well.translate(0, -0.26, -1.4)
+  well.translate(0, -0.26, -1.72)
   parts.push(well)
   return mergeParts(parts)
 }
@@ -141,6 +141,33 @@ export function frontWing(params: GeometryParams): THREE.BufferGeometry {
   shape.closePath()
   const g = new THREE.ExtrudeGeometry(shape, { depth: 0.015, bevelEnabled: false, curveSegments: 24 })
   // shape (x=along car Z, y=up) → rotate so length runs along −Z, thickness X
+  g.rotateY(-Math.PI / 2)
+  return g
+}
+
+/** Rear quarter panel: side panel whose bottom edge IS the rear wheel
+ *  arch (the arc is clipped generically against both panel edges).
+ *  Same canonical frame as the wing: panel ZY, thickness X, extends +Z
+ *  (or −Z when the instance is Y-flipped). `archZMm` measures from the
+ *  panel's own start edge along its extend direction. */
+export function quarterPanel(params: GeometryParams): THREE.BufferGeometry {
+  const len = mm(params, 'lengthMm', 520)
+  const archZ = mm(params, 'archZMm', 170)
+  const r = mm(params, 'archRadiusMm', 420)
+  const yBase = -0.18
+  const edgeY = (e: number) => {
+    const dx = e - archZ
+    return Math.abs(dx) < r ? yBase + Math.sqrt(r * r - dx * dx) : yBase
+  }
+  const edgeAngle = (e: number) => Math.atan2(edgeY(e) - yBase, e - archZ)
+  const shape = new THREE.Shape()
+  shape.moveTo(0, 0.36)
+  shape.lineTo(len, 0.36)
+  shape.lineTo(len, edgeY(len))
+  shape.absarc(archZ, yBase, r, edgeAngle(len), edgeAngle(0), false)
+  shape.lineTo(0, edgeY(0))
+  shape.closePath()
+  const g = new THREE.ExtrudeGeometry(shape, { depth: 0.015, bevelEnabled: false, curveSegments: 24 })
   g.rotateY(-Math.PI / 2)
   return g
 }

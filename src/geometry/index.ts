@@ -86,6 +86,7 @@ import {
   rearStructure,
   bonnet,
   frontWing,
+  quarterPanel,
   doorShell,
   tailgate,
   bumperFrontR,
@@ -195,6 +196,7 @@ registerRecipe('sillRail', sillRail)
 registerRecipe('rearStructure', rearStructure)
 registerRecipe('bonnet', bonnet)
 registerRecipe('frontWing', frontWing)
+registerRecipe('quarterPanel', quarterPanel)
 registerRecipe('doorShell', doorShell)
 registerRecipe('tailgate', tailgate)
 registerRecipe('bumperFrontR', bumperFrontR)

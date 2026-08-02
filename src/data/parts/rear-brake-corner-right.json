@@ -3,7 +3,7 @@
     "id": "rear-brake-corner-right",
     "name": "Rear brake corner (right, EPB)",
     "system": "brakes",
-    "origin": [0.95, 0, -1.13],
+    "origin": [0.95, 0, -1.45],
     "rotationDeg": [0, 90, 0],
     "description": "Rear brake (dossier §6): 310 mm ventilated disc, single-piston floating caliper with the electronic parking brake's motor-on-caliper actuator. The R's rear pads have larger guide tabs and are NOT interchangeable with the manual-handbrake GTI Performance Pack, despite the shared disc size. Disc thickness is not stated in the dossier (22 mm typical — unverified)."
   },

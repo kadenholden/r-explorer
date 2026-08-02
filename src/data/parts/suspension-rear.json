@@ -3,7 +3,7 @@
     "id": "suspension-rear",
     "name": "Suspension — rear (multi-link)",
     "system": "suspension",
-    "origin": [0, 0, -1.13],
+    "origin": [0, 0, -1.45],
     "rotationDeg": [0, 0, 0],
     "description": "Four-link independent rear axle (dossier §5): per side, a longitudinal trailing link plus three lateral links (upper, lower/spring link, toe link), with the coil spring SEPARATE from the passive damper, all on the rear subframe that also carries the Haldex final drive. Bushings tuned for lateral rigidity on the R."
   },

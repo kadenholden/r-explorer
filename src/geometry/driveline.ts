@@ -54,15 +54,15 @@ export function propshaftRear(_params: GeometryParams): THREE.BufferGeometry {
     tubeThrough(
       [
         [-0.08, -0.28, -0.64],
-        [-0.02, -0.28, -0.85],
-        [0, -0.27, -1.0],
+        [-0.02, -0.28, -1.0],
+        [0, -0.27, -1.32],
       ],
       0.019,
     ),
   )
   const flange = new THREE.CylinderGeometry(0.04, 0.04, 0.016, 16)
   flange.rotateX(Math.PI / 2)
-  flange.translate(0, -0.27, -1.0)
+  flange.translate(0, -0.27, -1.32)
   parts.push(flange)
   return mergeParts(parts)
 }
