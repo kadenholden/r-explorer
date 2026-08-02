@@ -364,7 +364,7 @@
       "assembly": "suspension-front",
       "subAssembly": "Steering",
       "oemPartNumber": null,
-      "description": "Rack-mounted-motor EPS with the progressive-ratio rack — variable-pitch teeth quicken the ratio off-centre (dossier §5). Column and intermediate shaft arrive with the interior in Phase 7.",
+      "description": "Rack-mounted-motor EPS with the progressive-ratio rack — variable-pitch teeth quicken the ratio off-centre (dossier §5). Column and intermediate shaft arrive with the interior in Phase 7. Rack flipped for the operator's RHD car.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -387,7 +387,7 @@
           ],
           "rotationDeg": [
             0,
-            0,
+            180,
             0
           ]
         }

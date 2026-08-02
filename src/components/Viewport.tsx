@@ -24,6 +24,7 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   'rear-axle': { label: 'Rear axle', position: [2.3, 0.45, -4.1], target: [0.2, -0.15, -2.55] },
   'exhaust-line': { label: 'Exhaust', position: [1.3, 0.2, -2.9], target: [0, -0.3, -1.8] },
   'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
+  cabin: { label: 'Cabin', position: [1.1, 1.7, 0.5], target: [0.15, 0.1, -0.75] },
 }
 
 function CameraRig() {

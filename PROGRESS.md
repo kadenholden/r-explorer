@@ -1,5 +1,42 @@
 # PROGRESS
 
+## Phase 7 — complete (2026-08-02) — THE DOSSIER BUILD ORDER IS DONE
+
+All ten dossier systems are now populated (195 parts). Final phase
+added 29 records across five assemblies:
+
+- **Brake hydraulics** (5): booster + master cylinder (~1.2 L DOT4,
+  2–3 yr), Bosch MK-class ABS/ESC unit (ABS/ESC/EDS/XDS+/hill-hold +
+  the AWD vectoring), hard lines to all four corners, wheel-speed
+  sensors ×4, EPB control unit.
+- **Cooling** (10): the N493 rotary thermal-management module with its
+  full dossier story (two coupled rotary valves, 80–110 °C window,
+  worm-drive DC motor, 1 kHz PWM) and its cracking-plastic-housing
+  knownIssue (60–90k miles); balance-shaft-driven coolant pump; the
+  front stack in dossier order (condenser → radiator → intercooler →
+  fans); aux radiator; expansion tank; hoses + heater feed; DSG oil
+  cooler; A/C lines.
+- **Fuel storage** (4): ~55 L tank, in-tank LPFP (~4–6 bar, ~400 WHP
+  stock), the R's relocated filler neck, EVAP canister.
+- **Electrical** (5): MED 17.5.2 ECU (with the verify-vs-SIMOS18
+  flag), J533 gateway with the CAN topology story, EFB/AGM battery +
+  recuperation, fuse box, main harness runs.
+- **Interior, RHD** (5): dash + cluster + MIB2, steering wheel/column
+  (EPS rack flipped RHD), DSG pedal box, console with the S-program
+  selector, HVAC unit. Seats already live in the body-shell donor
+  parts. RHD is an assumption from the operator's vocabulary — flag in
+  CLAUDE.md, flip if wrong.
+
+New Cabin camera preset (use with Body systems hidden). Verified
+in-browser: all five assemblies render; cabin view shows dash/wheel/
+console/HVAC correctly on the right-hand side.
+
+**Remaining polish backlog (post-dossier):** re-cut schematic body
+panels to real stations; exact R-front mesh; valvetrain followers;
+search + x-ray modes; callout-density control at full explode; CAN
+topology overlay (dossier recommendation); ECU/battery/paint-code
+verification against the real car.
+
 ## Likeness upgrade — real body shell + true-dimension re-base (2026-08-02)
 
 **Operator authorised sourcing a real mesh.** Found a genuine Mk7 Golf

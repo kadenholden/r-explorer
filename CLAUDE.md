@@ -82,6 +82,9 @@ live at a URL the operator can open on their phone.
   passive sport dampers in Phase 5.
 - **Body: 5-door, white** (operator-confirmed 2026-08-02) — model four
   side doors + tailgate; body panels white, R gloss-black mirror caps.
+- **RHD assumed** (operator's UK-style vocabulary; not explicitly
+  confirmed) — steering/pedals/booster on the right, EPS rack flipped.
+  Flip those x-positions if the car turns out LHD.
 
 ## Phasing (dossier Section 10 build order)
 

@@ -1,0 +1,503 @@
+{
+  "assembly": {
+    "id": "engine-cooling",
+    "name": "Cooling — N493 thermal management & stack",
+    "system": "cooling-hvac",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "The Gen 3's signature cooling system (dossier §2): the N493 rotary-slide thermal-management module (two coupled rotary valves, one DC motor) holds coolant anywhere between ~80–110 °C and blocks block-flow during warm-up; the mechanical pump is driven off a balance shaft, NOT the accessory belt. Front stack front→rear: condenser, radiator, intercooler, fans."
+  },
+  "parts": [
+    {
+      "id": "n493-module",
+      "name": "N493 rotary thermal-management module",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The Audi/Schaeffler rotary-slide valve module replacing a wax thermostat: valve 1 regulates oil-cooler/head/radiator flow (~80–110 °C, up to ~107 °C light-load for low friction), valve 2 couples the block in at ~145° of valve-1 rotation. Driven by one DC motor through a worm gear; 12 V / 1,000 Hz PWM control (dossier §2).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "THE classic Gen 3 coolant weak point: the plastic housing near the hot side goes brittle and cracks/leaks, typically 60,000–90,000 miles. Aftermarket reinforced/metal housings exist (dossier §2)."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.5,
+          0.2
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "n493Module",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.31,
+            -0.02,
+            0.06
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.16,
+        0.14,
+        0.1
+      ],
+      "color": "#33363c",
+      "tags": [
+        "N493",
+        "thermostat",
+        "thermal-management",
+        "known-issue"
+      ]
+    },
+    {
+      "id": "coolant-pump",
+      "name": "Coolant pump (balance-shaft driven)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Mechanical pump on the cold side, belt-driven off a BALANCE SHAFT — famously absent from the accessory belt (dossier §2).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          -0.5,
+          0.4
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "coolantPump",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.2,
+            -0.06,
+            0.12
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        0.12,
+        -0.12,
+        0.12
+      ],
+      "color": "#7d838b",
+      "tags": [
+        "coolant-pump",
+        "balance-shaft-driven"
+      ]
+    },
+    {
+      "id": "radiator-main",
+      "name": "Radiator (high-performance)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The R's uprated main radiator in the MQB front stack (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.2,
+          1
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "heatExchanger",
+      "geometryParams": {
+        "widthMm": 620,
+        "heightMm": 380,
+        "thicknessMm": 32
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.02,
+            0.62
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        0.3,
+        0.18,
+        0.12
+      ],
+      "color": "#9aa1a9",
+      "tags": [
+        "radiator"
+      ]
+    },
+    {
+      "id": "condenser",
+      "name": "A/C condenser",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Forward-most of the stack (dossier §8): condenser, then radiator, then intercooler.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.1,
+          1
+        ],
+        "distance": 0.62
+      },
+      "geometryRef": "heatExchanger",
+      "geometryParams": {
+        "widthMm": 580,
+        "heightMm": 340,
+        "thicknessMm": 16
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.03,
+            0.68
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        -0.28,
+        0.16,
+        0.12
+      ],
+      "color": "#aab0b8",
+      "tags": [
+        "condenser",
+        "AC"
+      ]
+    },
+    {
+      "id": "aux-radiator",
+      "name": "Auxiliary radiator",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "One of the market-dependent auxiliary radiators the R carries (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          0.2,
+          0.8
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "heatExchanger",
+      "geometryParams": {
+        "widthMm": 220,
+        "heightMm": 260,
+        "thicknessMm": 20
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.52,
+            -0.05,
+            0.6
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        -0.16,
+        0.12,
+        0.1
+      ],
+      "color": "#9aa1a9",
+      "tags": [
+        "aux-radiator"
+      ]
+    },
+    {
+      "id": "fan-shroud",
+      "name": "Twin cooling fans & shroud",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Twin electric fans on the engine side of the radiator.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.2,
+          1
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "fanShroud",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.02,
+            0.5
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        0.28,
+        -0.16,
+        0.1
+      ],
+      "color": "#33363c",
+      "tags": [
+        "fans",
+        "shroud"
+      ]
+    },
+    {
+      "id": "expansion-tank",
+      "name": "Expansion / degas tank",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Pressurised degas bottle up high on the left of the bay.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.4,
+          1,
+          0.2
+        ],
+        "distance": 0.38
+      },
+      "geometryRef": "expansionTank",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.42,
+            0.4,
+            0.18
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 7,
+      "calloutOffset": [
+        -0.14,
+        0.14,
+        0.1
+      ],
+      "color": "#c8ccd2",
+      "tags": [
+        "expansion-tank",
+        "G13"
+      ]
+    },
+    {
+      "id": "coolant-hoses",
+      "name": "Main coolant hoses & heater feed",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Top/bottom radiator hoses off the N493/pump plus the heater-core feed through the bulkhead; the gearbox-oil heat exchanger also taps this circuit via its own switching valve (dossier §2).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.5
+        ],
+        "distance": 0.42
+      },
+      "geometryRef": "coolantHoses",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 8,
+      "calloutOffset": [
+        0.2,
+        0.16,
+        0.3
+      ],
+      "color": "#26282c",
+      "tags": [
+        "hoses",
+        "heater-core"
+      ]
+    },
+    {
+      "id": "gearbox-cooler",
+      "name": "Gearbox-oil heat exchanger (DQ250)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Oil-to-coolant exchanger keeping the wet-clutch DSG's oil in its window (dossier §2 switching-valve circuit).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.8,
+          0.4,
+          0.2
+        ],
+        "distance": 0.36
+      },
+      "geometryRef": "heatExchanger",
+      "geometryParams": {
+        "widthMm": 140,
+        "heightMm": 120,
+        "thicknessMm": 40
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.5,
+            0.1,
+            0.14
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 9,
+      "calloutOffset": [
+        -0.16,
+        0.14,
+        0.1
+      ],
+      "color": "#8d939c",
+      "tags": [
+        "DSG",
+        "oil-cooler"
+      ]
+    },
+    {
+      "id": "hvac-refrigerant-lines",
+      "name": "A/C refrigerant lines",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "High/low-side lines from the belt-driven compressor to the condenser and on to the bulkhead expansion valve (dossier §8).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "acLines",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 10,
+      "calloutOffset": [
+        -0.2,
+        0.12,
+        0.2
+      ],
+      "color": "#97a1ad",
+      "tags": [
+        "AC",
+        "refrigerant"
+      ]
+    }
+  ]
+}

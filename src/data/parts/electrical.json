@@ -1,0 +1,265 @@
+{
+  "assembly": {
+    "id": "electrical",
+    "name": "Electrical — ECU, gateway, battery & harness",
+    "system": "electrical",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "The car's nervous system (dossier §7): Bosch MED 17.5.2 engine ECU (verify against SIMOS 18 on the actual car's label), the J533 gateway bridging powertrain CAN-C / comfort CAN-B / infotainment / LIN / diagnostic CAN, EFB/AGM battery with recuperation, fuse box, and the main harness runs. Lighting units live in the body shell parts."
+  },
+  "parts": [
+    {
+      "id": "engine-ecu",
+      "name": "Engine ECU (Bosch MED 17.5.2)",
+      "system": "electrical",
+      "assembly": "electrical",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Gasoline DI ECU (Infineon TriCore) running the dual injection, IS38 wastegate, AVS and N493 (dossier §7). Flash-tunable to ~600–650 WHP per RWC. Some sources cite SIMOS 18 on later cars — VERIFY from the ECU label / VCDS.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.8,
+          0.6,
+          0.2
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "ecuBox",
+      "geometryParams": {
+        "widthMm": 240,
+        "heightMm": 45,
+        "depthMm": 170
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.66,
+            0.34,
+            0.12
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        -0.16,
+        0.14,
+        0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "ECU",
+        "MED17.5.2",
+        "verify-SIMOS18"
+      ]
+    },
+    {
+      "id": "gateway-j533",
+      "name": "Gateway J533 (CAN bridge)",
+      "system": "electrical",
+      "assembly": "electrical",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The central gateway bridging CAN-C powertrain (engine, DSG, ABS/ESC, Haldex), CAN-B comfort, infotainment CAN/MOST, LIN sub-buses and the diagnostic CAN to the OBD port (dossier §7). Phase 8 idea from the dossier: overlay the bus topology on the model.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.7,
+          0.6,
+          -0.2
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "ecuBox",
+      "geometryParams": {
+        "widthMm": 160,
+        "heightMm": 35,
+        "depthMm": 120
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.42,
+            0.02,
+            -0.6
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        -0.16,
+        0.12,
+        -0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "gateway",
+        "J533",
+        "CAN"
+      ]
+    },
+    {
+      "id": "battery",
+      "name": "Battery (EFB/AGM, ~68–72 Ah) & tray",
+      "system": "electrical",
+      "assembly": "electrical",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Front-left battery with management for the recuperation/start-stop system (dossier §7).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.5,
+          1,
+          0.3
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "batteryTray",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.52,
+            0.3,
+            0.34
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        -0.16,
+        0.16,
+        0.12
+      ],
+      "color": "#26282c",
+      "tags": [
+        "battery",
+        "AGM",
+        "recuperation"
+      ]
+    },
+    {
+      "id": "fuse-box",
+      "name": "Fuse / relay box",
+      "system": "electrical",
+      "assembly": "electrical",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Main engine-bay fuse and relay carrier beside the battery.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.4,
+          1,
+          0.1
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "ecuBox",
+      "geometryParams": {
+        "widthMm": 180,
+        "heightMm": 60,
+        "depthMm": 140
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.52,
+            0.42,
+            0.2
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        -0.12,
+        0.14,
+        0.1
+      ],
+      "color": "#33363c",
+      "tags": [
+        "fuses",
+        "relays"
+      ]
+    },
+    {
+      "id": "harness-loom",
+      "name": "Main wiring harness runs",
+      "system": "electrical",
+      "assembly": "electrical",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The trunk runs: bay → bulkhead → floor → rear, plus the cross-bay branch (dossier §7 lists engine-bay, cabin, door and rear zone harnesses).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.3
+      },
+      "geometryRef": "harnessLoom",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        -0.2,
+        0.2,
+        -0.3
+      ],
+      "color": "#1d1f23",
+      "tags": [
+        "harness",
+        "loom"
+      ]
+    }
+  ]
+}

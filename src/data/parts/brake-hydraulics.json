@@ -1,0 +1,292 @@
+{
+  "assembly": {
+    "id": "brake-hydraulics",
+    "name": "Brakes — hydraulics & ABS/ESC",
+    "system": "brakes",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "The braking system's control side (dossier §6): vacuum booster + tandem master cylinder (~1.2 L DOT4, 2–3 year change), the Bosch MK-class ABS/ESC unit integrating ABS, ESC, EDS, XDS+, hill-hold and the AWD brake-vectoring logic, hard lines to all four corners, wheel-speed sensors, and the EPB control unit. RHD placement assumed."
+  },
+  "parts": [
+    {
+      "id": "booster-master",
+      "name": "Brake booster + master cylinder + reservoir",
+      "system": "brakes",
+      "assembly": "brake-hydraulics",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Vacuum booster with tandem master cylinder on the bulkhead (driver side, RHD). System holds ~1.2 L of DOT4 with a 2–3 year change interval (dossier §6).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0.3,
+          1,
+          0.3
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "boosterMaster",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.35,
+            0.28,
+            -0.24
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.16,
+        0.16,
+        0.12
+      ],
+      "color": "#5a5f66",
+      "tags": [
+        "booster",
+        "master-cylinder",
+        "DOT4"
+      ]
+    },
+    {
+      "id": "abs-esc-unit",
+      "name": "ABS/ESC hydraulic unit (Bosch MK-class)",
+      "system": "brakes",
+      "assembly": "brake-hydraulics",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Bosch ESP modulator + pump + control module (MK100/MK60EC1-class, dossier §6): ABS, ESC, EDS, XDS+, hill-hold, and the brake-based torque vectoring the 4MOTION system leans on.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          1,
+          0.2
+        ],
+        "distance": 0.42
+      },
+      "geometryRef": "absUnit",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.38,
+            0.2,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        -0.16,
+        0.14,
+        0.1
+      ],
+      "color": "#8d939c",
+      "tags": [
+        "ABS",
+        "ESC",
+        "XDS",
+        "Bosch"
+      ]
+    },
+    {
+      "id": "brake-lines",
+      "name": "Brake hard lines (to all four corners)",
+      "system": "brakes",
+      "assembly": "brake-hydraulics",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Hard lines from the modulator out to each corner's flexible hose.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.2
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "brakeLines",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        0.3,
+        -0.12,
+        0.2
+      ],
+      "color": "#97a1ad",
+      "tags": [
+        "brake-lines"
+      ]
+    },
+    {
+      "id": "wheel-speed-sensors",
+      "name": "Wheel-speed sensors ×4",
+      "system": "brakes",
+      "assembly": "brake-hydraulics",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "One per hub, feeding ABS/ESC and the Haldex controller (dossier §6–7).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.3
+      },
+      "geometryRef": "wheelSpeedSensor",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.68,
+            -0.06,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -25
+          ]
+        },
+        {
+          "position": [
+            -0.68,
+            -0.06,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            25
+          ]
+        },
+        {
+          "position": [
+            0.68,
+            -0.06,
+            -2.45
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -25
+          ]
+        },
+        {
+          "position": [
+            -0.68,
+            -0.06,
+            -2.45
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            25
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        0.12,
+        0.12,
+        0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "wheel-speed",
+        "sensors"
+      ]
+    },
+    {
+      "id": "epb-control-unit",
+      "name": "EPB control unit",
+      "system": "brakes",
+      "assembly": "brake-hydraulics",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The electronic parking brake's controller commanding the rear caliper motors (dossier §6).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          -0.4,
+          1,
+          -0.2
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "ecuBox",
+      "geometryParams": {
+        "widthMm": 140,
+        "heightMm": 35,
+        "depthMm": 110
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.45,
+            -0.12,
+            -2.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        -0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "EPB",
+        "ECU"
+      ]
+    }
+  ]
+}
