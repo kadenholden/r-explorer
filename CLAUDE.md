@@ -80,7 +80,8 @@ live at a URL the operator can open on their phone.
 - **DCC: not fitted** (confirmed — drive modes are Eco/Normal/Race; the
   "Sport" the operator first mentioned is the DSG lever's S program) →
   passive sport dampers in Phase 5.
-- Still open: 3-door or 5-door (matters in Phase 6).
+- **Body: 5-door, white** (operator-confirmed 2026-08-02) — model four
+  side doors + tailgate; body panels white, R gloss-black mirror caps.
 
 ## Phasing (dossier Section 10 build order)
 

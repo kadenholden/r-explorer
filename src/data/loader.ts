@@ -152,6 +152,10 @@ function parsePart(file: string, value: unknown, meta: AssemblyMeta): PartRecord
         ? null
         : vec3(file, calloutOffsetRaw, `${id}.calloutOffset`),
     color: strOrNull(file, value, 'color'),
+    opacity:
+      value['opacity'] === null || value['opacity'] === undefined
+        ? null
+        : num(file, value, 'opacity'),
   }
 }
 

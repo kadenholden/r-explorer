@@ -139,6 +139,9 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                 color={color}
                 metalness={0.35}
                 roughness={0.55}
+                transparent={part.opacity !== null}
+                opacity={part.opacity ?? 1}
+                depthWrite={part.opacity === null}
                 emissive={selected ? ACCENT : faultActive ? FAULT_RED : hovered ? color : '#000000'}
                 emissiveIntensity={selected ? 0.4 : faultActive ? 0.32 : hovered ? 0.18 : 0}
               />

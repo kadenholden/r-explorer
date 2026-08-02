@@ -13,7 +13,7 @@ interface CameraPreset {
 }
 
 export const CAMERA_PRESETS: Record<string, CameraPreset> = {
-  'front-three-quarter': { label: 'Overview', position: [1.7, 0.9, 1.9], target: [0.25, 0, -0.15] },
+  'front-three-quarter': { label: 'Overview', position: [2.4, 1.1, 2.4], target: [0, 0.12, -0.35] },
   engine: { label: 'Engine', position: [0.7, 0.42, 0.95], target: [0, 0.12, 0] },
   intake: { label: 'Intake', position: [0.55, 0.5, 1.3], target: [0, 0.1, 0.22] },
   'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },

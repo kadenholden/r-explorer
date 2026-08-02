@@ -75,6 +75,26 @@ import {
   hydraulicMount,
   dogboneMount,
 } from './ancillaries'
+import {
+  floorpan,
+  frontStructure,
+  bulkhead,
+  strutTower,
+  pillar,
+  roofPanel,
+  sillRail,
+  rearStructure,
+  bonnet,
+  frontWing,
+  doorShell,
+  tailgate,
+  bumperFrontR,
+  bumperRearR,
+  roofSpoiler,
+  mirrorCap,
+  sideSkirt,
+  glassPane,
+} from './body'
 
 registerRecipe('brakeDisc', brakeDisc)
 registerRecipe('brakeCaliper', brakeCaliper)
@@ -165,5 +185,23 @@ registerRecipe('acCompressor', acCompressor)
 registerRecipe('starterMotor', starterMotor)
 registerRecipe('hydraulicMount', hydraulicMount)
 registerRecipe('dogboneMount', dogboneMount)
+registerRecipe('floorpan', floorpan)
+registerRecipe('frontStructure', frontStructure)
+registerRecipe('bulkhead', bulkhead)
+registerRecipe('strutTower', strutTower)
+registerRecipe('pillar', pillar)
+registerRecipe('roofPanel', roofPanel)
+registerRecipe('sillRail', sillRail)
+registerRecipe('rearStructure', rearStructure)
+registerRecipe('bonnet', bonnet)
+registerRecipe('frontWing', frontWing)
+registerRecipe('doorShell', doorShell)
+registerRecipe('tailgate', tailgate)
+registerRecipe('bumperFrontR', bumperFrontR)
+registerRecipe('bumperRearR', bumperRearR)
+registerRecipe('roofSpoiler', roofSpoiler)
+registerRecipe('mirrorCap', mirrorCap)
+registerRecipe('sideSkirt', sideSkirt)
+registerRecipe('glassPane', glassPane)
 
 export { resolveRecipe }

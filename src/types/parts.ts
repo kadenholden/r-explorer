@@ -70,6 +70,8 @@ export interface PartRecord {
   /** Realistic appearance colour, used in 'real' colour mode (the 'system'
    *  mode colour-codes by system instead). Null falls back to neutral. */
   color: string | null
+  /** Render opacity 0..1 for glass etc.; null = fully opaque. */
+  opacity: number | null
 }
 
 export interface AssemblyMeta {

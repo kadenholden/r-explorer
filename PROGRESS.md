@@ -1,5 +1,30 @@
 # PROGRESS
 
+## Phase 6 — complete (2026-08-02)
+
+**Operator spec:** 5-door, WHITE (recorded in CLAUDE.md).
+
+**Body-in-white (8 records):** floorpan + tunnel, front longitudinals/
+crash boxes/beam, bulkhead (with the MQB fixed-dimension fact), strut
+towers, A/B/C pillars in hot-formed ~1,000 MPa steel, roof + rails,
+sills, rear wheelhouses/panel/spare well. Carries VW's own 23 kg BIW
+weight-saving breakdown and the 66%→80% high-strength-steel jump.
+
+**Exterior (15 records):** bonnet, both front wings with REAL wheel-arch
+cuts over the Pretorias, R front bumper (enlarged intakes + splitter),
+R rear bumper with diffuser over the quad tips, all four 5-door doors +
+tailgate, roof spoiler, gloss-black mirror caps, side skirts, and
+transparent windscreen/rear screen (new `opacity` render field).
+
+Hide the two Body branches via the tree's eye icons to return to the
+mechanical view. Overview preset widened to frame the whole car.
+**Model: 152 parts.** Verified in-browser: white shell wraps the
+chassis, glass is see-through, mechanicals visible through openings.
+
+**Next (final): Phase 7** — electrics (ECU, gateway, battery, lighting,
+harness nodes), cooling (N493 module, coolant pump, radiator stack),
+brake hydraulics + ABS, fuel tank/LPFP, HVAC, interior, steering column.
+
 ## Coverage audit (2026-08-02, operator-prompted)
 
 Operator asked "isn't there supposed to be a back suspension?" — the
