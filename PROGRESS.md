@@ -1,5 +1,23 @@
 # PROGRESS
 
+## Next chapter: from skeleton to replica (2026-08-02)
+
+Phase 7 merged — all ten dossier systems exist and the app machinery is
+proven. Measured coverage at that point: **195 part records / 291 placed
+instances, but only 3 OEM numbers and 15 torque specs.** The dossier's own
+"every nut and cranny" estimate is 1,800–2,500 parts, so the constraint
+from here is DATA, not code.
+
+`docs/RESEARCH-BRIEFS.md` now holds 14 paste-ready deep-research briefs
+(one per system plus fasteners, a fault/animation library, and geometry
+sources) with a standard return format that maps onto the part schema.
+Returns go in `docs/research/` and get converted into part records.
+
+Operator's end goal, recorded: a digital replica of THIS car — every bolt
+present and identifiable, lifelike geometry throughout (not just the
+shell), and fault animations that explain how systems work and what goes
+wrong.
+
 ## Phase 7 — complete (2026-08-02) — THE DOSSIER BUILD ORDER IS DONE
 
 All ten dossier systems are now populated (195 parts). Final phase
