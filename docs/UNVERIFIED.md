@@ -126,3 +126,22 @@ All OEM numbers `null`. Specific verify-items the dossier itself
 flags: **ECU identity** (MED 17.5.2 vs SIMOS 18 — read the label/VCDS),
 battery Ah spec, N493 current revision number, and the operator-side
 assumptions: **RHD** and the exact paint code for the white.
+
+## Lubrication / sump (added 2026-08-04 after a real oil leak)
+
+The operator's car developed an upper-sump oil leak. The area was built
+out into separate parts, but several facts are NOT in the dossier and
+must be verified against ETKA / erWin / Bentley before ordering or
+working:
+
+- **Two-piece sump construction** (aluminium upper + lower pan) — typical
+  for this engine family, not dossier-stated.
+- **Sealant-not-gasket joint** and the correct sealant part number.
+- **Sump bolt torque and tightening sequence** — the model currently
+  shows the dossier's GENERAL M6 class figure (10 Nm) as a placeholder,
+  explicitly flagged on the part. Sealant joints are sequence-sensitive.
+- OEM numbers for upper sump, lower sump, pickup, drain plug + crush
+  washer, oil level sensor, filter housing/cooler.
+
+Dossier-backed here: filter-housing / oil-cooler weeps and rear main seal
+seeps are named in the §2 failure list.

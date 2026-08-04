@@ -8,18 +8,133 @@ import { mergeParts, tubeThrough } from './shapes'
  * lubrication, PCV, ignition, and the three-point engine mounting.
  */
 
-/** Oil pan / sump with drain plug and windage step. */
-export function oilPan(_params: GeometryParams): THREE.BufferGeometry {
+/**
+ * Lubrication — modelled as the real two-piece sump so each leak path is
+ * its own clickable part: aluminium UPPER sump bolting to the block
+ * (carrying the pickup and level sensor), the sealed joint, and the
+ * LOWER pan with the drain plug.
+ */
+
+/** Upper sump: aluminium casting, block-bottom flange, bellhousing-end
+ *  buttress, pickup boss and level-sensor boss. */
+export function upperSump(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  const upper = new THREE.BoxGeometry(0.42, 0.05, 0.2)
-  upper.translate(0, -0.025, 0)
-  parts.push(upper)
-  const deep = new THREE.BoxGeometry(0.22, 0.08, 0.17)
-  deep.translate(-0.08, -0.085, 0)
+  const flange = new THREE.BoxGeometry(0.44, 0.012, 0.21)
+  flange.translate(0, 0.024, 0)
+  parts.push(flange)
+  const body = new THREE.BoxGeometry(0.42, 0.05, 0.2)
+  body.translate(0, -0.006, 0)
+  parts.push(body)
+  // lower mating flange (the joint that seals to the lower pan)
+  const lowerFlange = new THREE.BoxGeometry(0.43, 0.01, 0.205)
+  lowerFlange.translate(0, -0.036, 0)
+  parts.push(lowerFlange)
+  // stiffening buttress at the gearbox end
+  const buttress = new THREE.BoxGeometry(0.03, 0.06, 0.19)
+  buttress.translate(-0.2, -0.01, 0)
+  parts.push(buttress)
+  // pickup + level-sensor bosses
+  const pickupBoss = new THREE.CylinderGeometry(0.018, 0.018, 0.03, 12)
+  pickupBoss.translate(-0.09, -0.02, 0.05)
+  parts.push(pickupBoss)
+  const sensorBoss = new THREE.CylinderGeometry(0.014, 0.014, 0.02, 10)
+  sensorBoss.translate(0.12, -0.02, -0.08)
+  parts.push(sensorBoss)
+  return mergeParts(parts)
+}
+
+/** The upper-to-lower sump sealing joint: a thin flange ring standing in
+ *  for the sealant bead (VW seals this joint with sealant, not a gasket). */
+export function sumpSealJoint(_params: GeometryParams): THREE.BufferGeometry {
+  const shape = new THREE.Shape()
+  shape.moveTo(-0.215, -0.1)
+  shape.lineTo(0.215, -0.1)
+  shape.lineTo(0.215, 0.1)
+  shape.lineTo(-0.215, 0.1)
+  shape.closePath()
+  const hole = new THREE.Path()
+  hole.moveTo(-0.2, -0.086)
+  hole.lineTo(0.2, -0.086)
+  hole.lineTo(0.2, 0.086)
+  hole.lineTo(-0.2, 0.086)
+  hole.closePath()
+  shape.holes.push(hole)
+  const g = new THREE.ExtrudeGeometry(shape, { depth: 0.004, bevelEnabled: false })
+  g.rotateX(-Math.PI / 2)
+  return g
+}
+
+/** Lower sump pan with drain boss. */
+export function lowerSump(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const flange = new THREE.BoxGeometry(0.43, 0.01, 0.205)
+  flange.translate(0, 0.03, 0)
+  parts.push(flange)
+  const body = new THREE.BoxGeometry(0.4, 0.045, 0.19)
+  body.translate(0, 0.003, 0)
+  parts.push(body)
+  const deep = new THREE.BoxGeometry(0.22, 0.05, 0.165)
+  deep.translate(-0.07, -0.04, 0)
   parts.push(deep)
-  const plug = new THREE.CylinderGeometry(0.008, 0.008, 0.01, 6)
-  plug.translate(-0.08, -0.128, 0)
-  parts.push(plug)
+  const drainBoss = new THREE.CylinderGeometry(0.014, 0.014, 0.012, 12)
+  drainBoss.translate(-0.07, -0.068, 0)
+  parts.push(drainBoss)
+  return mergeParts(parts)
+}
+
+/** Drain plug with its crush washer. */
+export function drainPlug(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const washer = new THREE.CylinderGeometry(0.012, 0.012, 0.002, 14)
+  parts.push(washer)
+  const head = new THREE.CylinderGeometry(0.009, 0.009, 0.012, 6)
+  head.translate(0, -0.007, 0)
+  parts.push(head)
+  return mergeParts(parts)
+}
+
+/** Oil pickup: strainer box on its tube up to the pump. */
+export function oilPickup(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const strainer = new THREE.BoxGeometry(0.09, 0.018, 0.06)
+  parts.push(strainer)
+  const tube = new THREE.CylinderGeometry(0.011, 0.011, 0.075, 12)
+  tube.rotateZ(-0.25)
+  tube.translate(0.022, 0.045, 0)
+  parts.push(tube)
+  const flange = new THREE.CylinderGeometry(0.018, 0.018, 0.006, 12)
+  flange.translate(0.04, 0.082, 0)
+  parts.push(flange)
+  return mergeParts(parts)
+}
+
+/** Oil filter housing / cooler module on the block — the classic
+ *  "looks like a sump leak" culprit because it drips downward. */
+export function oilFilterHousing(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const body = new THREE.BoxGeometry(0.09, 0.08, 0.08)
+  parts.push(body)
+  const canister = new THREE.CylinderGeometry(0.042, 0.042, 0.075, 18)
+  canister.translate(0, -0.06, 0)
+  parts.push(canister)
+  const cap = new THREE.CylinderGeometry(0.038, 0.038, 0.014, 12)
+  cap.translate(0, -0.104, 0)
+  parts.push(cap)
+  // oil-to-coolant cooler stack on the side
+  const cooler = new THREE.BoxGeometry(0.02, 0.055, 0.07)
+  cooler.translate(0.055, 0.005, 0)
+  parts.push(cooler)
+  return mergeParts(parts)
+}
+
+/** Oil level / temperature sensor puck in the sump floor. */
+export function oilLevelSensor(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const puck = new THREE.CylinderGeometry(0.016, 0.016, 0.012, 14)
+  parts.push(puck)
+  const connector = new THREE.BoxGeometry(0.018, 0.012, 0.014)
+  connector.translate(0, -0.012, 0)
+  parts.push(connector)
   return mergeParts(parts)
 }
 

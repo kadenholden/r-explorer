@@ -25,6 +25,7 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   'exhaust-line': { label: 'Exhaust', position: [1.3, 0.2, -2.9], target: [0, -0.3, -1.8] },
   'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
   cabin: { label: 'Cabin', position: [1.1, 1.7, 0.5], target: [0.15, 0.1, -0.75] },
+  sump: { label: 'Sump', position: [0.72, -0.62, 0.62], target: [0, -0.22, 0] },
 }
 
 function CameraRig() {
@@ -58,6 +59,8 @@ export function Viewport() {
       <hemisphereLight args={['#cfd6e4', '#25282e', 0.6]} />
       <directionalLight position={[2.5, 3, 2]} intensity={1.5} />
       <directionalLight position={[-2, 1.5, -2.5]} intensity={0.55} />
+      {/* underside fill — the sump/driveline views look up from below */}
+      <directionalLight position={[0.6, -2.2, 1.2]} intensity={0.5} />
       <Grid
         position={[0, -0.33, 0]}
         infiniteGrid

@@ -3,30 +3,14 @@
     "id": "engine-ancillaries",
     "name": "Engine — ancillaries, lubrication & mounts",
     "system": "engine",
-    "origin": [0, 0, 0],
-    "description": "The dossier §2 items the coverage audit caught: the serpentine FEAD belt on the accessory end driving the alternator and A/C compressor (note — the coolant pump is NOT on this belt, it's balance-shaft driven), the starter, oil pan, valve cover with the failure-prone PCV diaphragm, coil-on-plug ignition, and the three-point engine mounting with its dossier torques."
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "The dossier §2 items the coverage audit caught, plus the lubrication area built out in detail after the operator's car developed an upper-sump oil leak (2026-08): the two-piece sump with its sealed joint, pickup, drain plug, level sensor and the filter housing/oil cooler above it — the three leak paths that look identical once oil has run down the block. Also the FEAD belt driving alternator and A/C (the coolant pump is NOT on this belt — it's balance-shaft driven), starter, valve cover with the failure-prone PCV diaphragm, coil-on-plug ignition, and the three-point engine mounting."
   },
   "parts": [
-    {
-      "id": "oil-pan",
-      "name": "Oil pan / sump",
-      "system": "engine",
-      "assembly": "engine-ancillaries",
-      "subAssembly": "Lubrication",
-      "oemPartNumber": null,
-      "description": "Sump under the ladder frame; the oil pump and pickup live inside (internals not modelled yet). Dossier §2 failure list notes oil-cooler/filter-housing weeps and rear-main-seal seeps as known EA888 drips.",
-      "material": null,
-      "torqueSpec": null,
-      "knownIssues": ["Oil-cooler / filter-housing weeps and rear main seal seeps are on the dossier's known-issues list (§2)"],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.55 },
-      "geometryRef": "oilPan",
-      "geometryParams": {},
-      "transforms": [{ "position": [0, -0.163, 0], "rotationDeg": [0, 0, 0] }],
-      "callout": 1,
-      "calloutOffset": [0.24, -0.14, 0.12],
-      "color": "#7b8087",
-      "tags": ["oil-pan", "sump", "lubrication"]
-    },
     {
       "id": "valve-cover-pcv",
       "name": "Valve cover with integrated PCV",
@@ -37,15 +21,46 @@
       "description": "Cam cover with the crankcase-ventilation diaphragm built in (dossier §2). A torn PCV diaphragm is a classic all-generations EA888 fault: rough idle, boost/vacuum codes, oil consumption. The AVS actuators and ignition coils mount through it.",
       "material": "Plastic",
       "torqueSpec": null,
-      "knownIssues": ["PCV diaphragm tears → rough idle, boost/vacuum faults, oil consumption (dossier §2 failure list). Whistle from the cover is the classic symptom."],
-      "explodeVector": { "direction": [0, 1, 0], "distance": 1.25 },
+      "knownIssues": [
+        "PCV diaphragm tears → rough idle, boost/vacuum faults, oil consumption (dossier §2 failure list). Whistle from the cover is the classic symptom."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 1.25
+      },
       "geometryRef": "valveCoverPcv",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.3, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.3,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [-0.26, 0.14, 0.12],
+      "calloutOffset": [
+        -0.26,
+        0.14,
+        0.12
+      ],
       "color": "#33363c",
-      "tags": ["valve-cover", "PCV", "breather", "known-issue"]
+      "tags": [
+        "valve-cover",
+        "PCV",
+        "breather",
+        "known-issue"
+      ]
     },
     {
       "id": "ignition-coils",
@@ -58,19 +73,78 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.2], "distance": 1.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.2
+        ],
+        "distance": 1.4
+      },
       "geometryRef": "ignitionCoil",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.132, 0.33, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, 0.33, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, 0.33, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, 0.33, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            0.33,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            0.33,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            0.33,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.33,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 3,
-      "calloutOffset": [0.16, 0.18, 0.1],
+      "calloutOffset": [
+        0.16,
+        0.18,
+        0.1
+      ],
       "color": "#3a3d44",
-      "tags": ["ignition", "coils", "1-3-4-2"]
+      "tags": [
+        "ignition",
+        "coils",
+        "1-3-4-2"
+      ]
     },
     {
       "id": "fead-belt",
@@ -83,14 +157,43 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.3, 0], "distance": 0.45 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.3,
+          0
+        ],
+        "distance": 0.45
+      },
       "geometryRef": "feadBelt",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.18, 0.14, 0.14],
+      "calloutOffset": [
+        0.18,
+        0.14,
+        0.14
+      ],
       "color": "#26282c",
-      "tags": ["FEAD", "belt", "tensioner", "no-water-pump"]
+      "tags": [
+        "FEAD",
+        "belt",
+        "tensioner",
+        "no-water-pump"
+      ]
     },
     {
       "id": "alternator",
@@ -103,14 +206,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.6, 0.3], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.6,
+          0.3
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "alternator",
       "geometryParams": {},
-      "transforms": [{ "position": [0.285, 0.06, 0.12], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.285,
+            0.06,
+            0.12
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [0.16, 0.12, 0.1],
+      "calloutOffset": [
+        0.16,
+        0.12,
+        0.1
+      ],
       "color": "#8d939c",
-      "tags": ["alternator", "charging"]
+      "tags": [
+        "alternator",
+        "charging"
+      ]
     },
     {
       "id": "ac-compressor",
@@ -123,14 +253,42 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [1, -0.5, 0.3], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.5,
+          0.3
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "acCompressor",
       "geometryParams": {},
-      "transforms": [{ "position": [0.29, -0.14, 0.13], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.29,
+            -0.14,
+            0.13
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 6,
-      "calloutOffset": [0.16, -0.12, 0.1],
+      "calloutOffset": [
+        0.16,
+        -0.12,
+        0.1
+      ],
       "color": "#8d939c",
-      "tags": ["AC", "compressor", "HVAC"]
+      "tags": [
+        "AC",
+        "compressor",
+        "HVAC"
+      ]
     },
     {
       "id": "starter-motor",
@@ -143,14 +301,40 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0.3, -0.4, 1], "distance": 0.38 },
+      "explodeVector": {
+        "direction": [
+          0.3,
+          -0.4,
+          1
+        ],
+        "distance": 0.38
+      },
       "geometryRef": "starterMotor",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.17, -0.11, 0.15], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.17,
+            -0.11,
+            0.15
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [0.12, -0.12, 0.14],
+      "calloutOffset": [
+        0.12,
+        -0.12,
+        0.14
+      ],
       "color": "#6a6f76",
-      "tags": ["starter"]
+      "tags": [
+        "starter"
+      ]
     },
     {
       "id": "engine-mount-right",
@@ -161,16 +345,48 @@
       "oemPartNumber": null,
       "description": "Right-side hydraulic (pendulum-type) engine mount on the accessory end, to the body rail. Dossier §2 torques: mount-to-engine-bracket ~60 Nm +90°, mount-to-frame-rail ~40 Nm +90°.",
       "material": null,
-      "torqueSpec": { "valueNm": 60, "angle": "+90°", "note": "Mount-to-engine-bracket; to-frame-rail is 40 Nm +90° (dossier §2, MQB)" },
+      "torqueSpec": {
+        "valueNm": 60,
+        "angle": "+90°",
+        "note": "Mount-to-engine-bracket; to-frame-rail is 40 Nm +90° (dossier §2, MQB)"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.8, 0], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          1,
+          0.8,
+          0
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "hydraulicMount",
       "geometryParams": {},
-      "transforms": [{ "position": [0.31, 0.13, -0.02], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.31,
+            0.13,
+            -0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [0.14, 0.16, -0.08],
+      "calloutOffset": [
+        0.14,
+        0.16,
+        -0.08
+      ],
       "color": "#5a5f66",
-      "tags": ["engine-mount", "hydraulic", "60Nm+90"]
+      "tags": [
+        "engine-mount",
+        "hydraulic",
+        "60Nm+90"
+      ]
     },
     {
       "id": "transmission-mount-left",
@@ -181,16 +397,46 @@
       "oemPartNumber": null,
       "description": "Left-side mount on top of the DQ250 case to the body rail — the second point of the three-point transverse mounting (dossier §2).",
       "material": null,
-      "torqueSpec": { "valueNm": 60, "angle": "+90°", "note": "Same MQB mount torque family as the engine side (dossier §2)" },
+      "torqueSpec": {
+        "valueNm": 60,
+        "angle": "+90°",
+        "note": "Same MQB mount torque family as the engine side (dossier §2)"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.8, 0], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.8,
+          0
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "hydraulicMount",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.56, 0.12, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.56,
+            0.12,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 9,
-      "calloutOffset": [-0.14, 0.16, 0.08],
+      "calloutOffset": [
+        -0.14,
+        0.16,
+        0.08
+      ],
       "color": "#5a5f66",
-      "tags": ["transmission-mount"]
+      "tags": [
+        "transmission-mount"
+      ]
     },
     {
       "id": "dogbone-mount",
@@ -203,14 +449,627 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, 0.4], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.4
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "dogboneMount",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.38, -0.24, 0.16], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.38,
+            -0.24,
+            0.16
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 10,
-      "calloutOffset": [-0.16, -0.12, 0.14],
+      "calloutOffset": [
+        -0.16,
+        -0.12,
+        0.14
+      ],
       "color": "#5a5f66",
-      "tags": ["dogbone", "pendulum-support", "torque-arm"]
+      "tags": [
+        "dogbone",
+        "pendulum-support",
+        "torque-arm"
+      ]
+    },
+    {
+      "id": "upper-sump",
+      "name": "Upper sump (aluminium)",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The upper half of the two-piece sump: an aluminium casting bolting to the block's bottom face, carrying the oil pickup and the level-sensor boss, and forming the upper half of the sealed sump joint. THIS is the area the operator's garage identified as leaking (2026-08). Note: the two-piece construction is typical of this engine family but is NOT described in the project dossier — verify the exact parts against ETKA before ordering.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Oil leaks in this area have three common sources that look identical once oil has run down the casting: (a) the upper-to-lower sump sealing joint, (b) the upper-sump-to-block joint, (c) oil dripping DOWN from the filter housing / oil cooler above — the dossier §2 failure list names filter-housing/oil-cooler weeps and rear main seal seeps explicitly. Clean the area and re-inspect to find the true origin before resealing."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.25
+        ],
+        "distance": 0.42
+      },
+      "geometryRef": "upperSump",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.183,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.26,
+        -0.1,
+        0.14
+      ],
+      "color": "#8a9099",
+      "tags": [
+        "sump",
+        "upper-sump",
+        "lubrication",
+        "oil-leak",
+        "operator-issue"
+      ]
+    },
+    {
+      "id": "sump-seal-joint",
+      "name": "Sump sealing joint (upper ↔ lower)",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The mating joint between upper and lower sump. VW seals joints like this with an anaerobic sealant bead rather than a paper/rubber gasket — so a reseal means separating, fully cleaning both flanges and re-applying, not just fitting a new gasket. Sealant part number and exact procedure NOT in the dossier — verify against erWin/Bentley.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "The classic upper-sump leak path. Sealant joints weep with age, heat cycling, or after a previous reseal done without fully cleaning the flanges."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          -0.3
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "sumpSealJoint",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.221,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 11,
+      "calloutOffset": [
+        -0.24,
+        -0.08,
+        0.14
+      ],
+      "color": "#b08968",
+      "tags": [
+        "sealant",
+        "joint",
+        "oil-leak",
+        "reseal"
+      ]
+    },
+    {
+      "id": "lower-sump",
+      "name": "Lower sump pan",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The lower pan bolting up to the upper sump, holding the oil volume and carrying the drain plug.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.62
+      },
+      "geometryRef": "lowerSump",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.245,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 12,
+      "calloutOffset": [
+        0.24,
+        -0.1,
+        -0.14
+      ],
+      "color": "#7b8087",
+      "tags": [
+        "sump",
+        "lower-pan",
+        "lubrication"
+      ]
+    },
+    {
+      "id": "sump-bolts",
+      "name": "Sump bolts (M6 perimeter) ×16",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "Perimeter bolts clamping the sump joint. The dossier gives no sump-specific figure; its GENERAL Gen 3 fastener class for M6 is 10 Nm, shown here as a class default only — get the real spec and tightening sequence from Bentley/erWin before resealing, since sealant joints are sequence-sensitive.",
+      "material": null,
+      "torqueSpec": {
+        "valueNm": 10,
+        "angle": null,
+        "note": "General M6 class figure from the dossier — NOT a verified sump-specific torque or sequence"
+      },
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.75
+      },
+      "geometryRef": "hexBolt",
+      "geometryParams": {
+        "shankDiameterMm": 6,
+        "shankLengthMm": 22,
+        "headAcrossFlatsMm": 10
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.18,
+            -0.229,
+            -0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.09,
+            -0.229,
+            -0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.229,
+            -0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.09,
+            -0.229,
+            -0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.18,
+            -0.229,
+            -0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.18,
+            -0.229,
+            0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.09,
+            -0.229,
+            0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.229,
+            0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.09,
+            -0.229,
+            0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.18,
+            -0.229,
+            0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.215,
+            -0.229,
+            -0.05
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.215,
+            -0.229,
+            0.05
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.215,
+            -0.229,
+            -0.05
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.215,
+            -0.229,
+            0.05
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.135,
+            -0.229,
+            -0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.135,
+            -0.229,
+            0.1
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 13,
+      "calloutOffset": [
+        0.1,
+        -0.16,
+        0.16
+      ],
+      "color": "#98a2ae",
+      "tags": [
+        "fastener",
+        "M6",
+        "sump-bolts",
+        "verify-torque"
+      ]
+    },
+    {
+      "id": "oil-pickup",
+      "name": "Oil pickup & strainer",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "Strainer and tube drawing oil from the sump floor up to the pump. Comes out with the sump — worth inspecting for debris whenever the pan is off.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.4
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "oilPickup",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.09,
+            -0.268,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 14,
+      "calloutOffset": [
+        -0.16,
+        -0.1,
+        0.14
+      ],
+      "color": "#9aa0a8",
+      "tags": [
+        "pickup",
+        "strainer",
+        "lubrication"
+      ]
+    },
+    {
+      "id": "oil-drain-plug",
+      "name": "Drain plug & crush washer",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "Sump drain plug with its single-use crush washer — a leak source in its own right if the washer is reused or the plug is over-torqued into the alloy pan.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Reused crush washers and over-torqued plugs are a common cause of 'sump' drips that are actually just the plug."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.85
+      },
+      "geometryRef": "drainPlug",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.07,
+            -0.316,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 15,
+      "calloutOffset": [
+        -0.12,
+        -0.1,
+        0.12
+      ],
+      "color": "#98a2ae",
+      "tags": [
+        "drain-plug",
+        "crush-washer",
+        "oil-leak"
+      ]
+    },
+    {
+      "id": "oil-filter-housing",
+      "name": "Oil filter housing & oil cooler",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "Filter housing with the oil-to-coolant cooler on the block. Sits ABOVE the sump, so when its seals weep the oil runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed. The dossier §2 failure list names filter-housing/oil-cooler weeps directly.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Oil-cooler / filter-housing weeps are on the dossier's known-issues list (§2). Because it drips downward onto the sump area, ALWAYS rule this out before resealing a sump."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.8,
+          0.3,
+          0.5
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "oilFilterHousing",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.19,
+            -0.06,
+            0.11
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 16,
+      "calloutOffset": [
+        0.18,
+        0.06,
+        0.16
+      ],
+      "color": "#7d838b",
+      "tags": [
+        "oil-filter",
+        "oil-cooler",
+        "known-issue",
+        "misdiagnosis-suspect"
+      ]
+    },
+    {
+      "id": "oil-level-sensor",
+      "name": "Oil level / temperature sensor",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "Sensor in the sump floor feeding oil level and temperature to the cluster and ECU (dossier §7 sensor catalogue). Its seal is another small leak path.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          -0.3
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "oilLevelSensor",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.12,
+            -0.29,
+            -0.08
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 17,
+      "calloutOffset": [
+        0.14,
+        -0.1,
+        -0.12
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "sensor",
+        "oil-level",
+        "lubrication"
+      ]
     }
   ]
 }

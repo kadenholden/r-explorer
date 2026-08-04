@@ -90,7 +90,13 @@ import {
   acLines,
 } from './phase7'
 import {
-  oilPan,
+  upperSump,
+  sumpSealJoint,
+  lowerSump,
+  drainPlug,
+  oilPickup,
+  oilFilterHousing,
+  oilLevelSensor,
   valveCoverPcv,
   ignitionCoil,
   feadBelt,
@@ -202,7 +208,13 @@ registerRecipe('trailingLink', trailingLink)
 registerRecipe('pretoriaWheel', pretoriaWheel)
 registerRecipe('tyre', tyre)
 registerRecipe('wheelBoltRing', wheelBoltRing)
-registerRecipe('oilPan', oilPan)
+registerRecipe('upperSump', upperSump)
+registerRecipe('sumpSealJoint', sumpSealJoint)
+registerRecipe('lowerSump', lowerSump)
+registerRecipe('drainPlug', drainPlug)
+registerRecipe('oilPickup', oilPickup)
+registerRecipe('oilFilterHousing', oilFilterHousing)
+registerRecipe('oilLevelSensor', oilLevelSensor)
 registerRecipe('valveCoverPcv', valveCoverPcv)
 registerRecipe('ignitionCoil', ignitionCoil)
 registerRecipe('feadBelt', feadBelt)
