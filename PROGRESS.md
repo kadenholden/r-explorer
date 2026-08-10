@@ -1,5 +1,47 @@
 # PROGRESS
 
+## R1 ingested — short block goes from skeleton to documented (2026-08-10)
+
+The first deep-research return (R1, engine short block) landed and was
+converted into the model — the data pipeline works end to end. The model
+went **202 → 224 parts**, and OEM part-number coverage jumped **3 → ~30**.
+Full transcription: `docs/research/R1-short-block.md`.
+
+**Architecture corrections** (the return contradicted three things we had
+modelled — all fixed):
+
+- There is **no one-piece ladder frame**. The Gen 3 bottom end is five
+  discrete main caps, cross-bolted at the sides, clamped from below by
+  the structural aluminium upper sump (which carries the upper
+  main-bearing supports, oil pump, pickup and baffle). The
+  `main-bearing-ladder` record is gone; caps, vertical TTY bolts
+  (N91118902, 65 Nm + 90°) and cross bolts (N91187501, torque still
+  unverified) replaced it.
+- The upper↔lower sump joint is a **rubber gasket** (06K103649H Elring),
+  not a sealant bead — the liquid sealant is at the block joint. The
+  lower-pan bolts are verified 8 Nm + 45°.
+- The OEM drain plug is a **plastic quarter-turn bayonet** (no crush
+  washer) — our threaded-plug-with-washer record was wrong.
+
+**New records** (18 short block + 5 lubrication): main caps ×5, cap
+bolts ×10, cross bolts ×10, main shells upper/lower ×5+5 (colour-graded
+select-fit), rod shells ×8, thrust washers ×2 (launch-wear concern), rod
+bolts ×8, ring sets ×4, wrist pins ×4, vibration damper + TTY centre
+bolt (class-dependent torque), timing/front cover, front crank seal,
+rear main seal flange + 8 alu bolts, core plugs ×4, dipstick; two-stage
+oil pump, N428 + N522 solenoids, windage tray, N0282222 O-ring. Fifteen
+new geometry recipes in `src/geometry/shortBlockDetail.ts`.
+
+**Torques resolved** (erWin-derived per R1; still confirm before real
+work): main caps 65+90, rods 45+90 (30 Nm = old-bolt measuring step
+only), damper bolt 100+180 (10.9, DSG car), flywheel 60+90, flange
+~15 alternating, sump 8+45, baffle 4+45, pump 8+90.
+
+UNVERIFIED.md's short-block and sump sections collapsed to R1's five
+open flags. R2 (head) carries the head-bolt torque conflict. Verified in
+the dev preview: load clean, 224 parts, explode separates the new
+bottom-end correctly, sump view shows the corrected stack.
+
 ## Next chapter: from skeleton to replica (2026-08-02)
 
 Phase 7 merged — all ten dossier systems exist and the app machinery is
