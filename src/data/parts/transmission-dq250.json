@@ -3,8 +3,16 @@
     "id": "transmission-dq250",
     "name": "Transmission — DQ250 6-speed wet DSG (0D9 AWD)",
     "system": "transmission",
-    "origin": [-0.42, -0.02, 0],
-    "rotationDeg": [0, 0, 0],
+    "origin": [
+      -0.42,
+      -0.02,
+      0
+    ],
+    "rotationDeg": [
+      0,
+      0,
+      0
+    ],
     "description": "The operator's car runs the DQ250 6-speed wet dual-clutch (0D9 AWD variant) — the world's first mass-produced passenger-car DCT, designed for VAG engines up to ~350–380 Nm (dossier §3). K1 drives odd gears, K2 even, both packs submerged in oil; the J743 mechatronic unit pressurises the circuit to ~40–60 bar. Bolted to the engine's flywheel end; the AWD power take-off flange points rearward for Phase 4's Haldex driveline. Verify the gearbox code on the bellhousing label against DQ250 (a Mk7.5 would be DQ381)."
   },
   "parts": [
@@ -19,14 +27,42 @@
       "material": "Cast aluminium",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0, 0], "distance": 0.05 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0,
+          0
+        ],
+        "distance": 0.05
+      },
       "geometryRef": "dsgHousing",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [-0.2, 0.2, 0.12],
+      "calloutOffset": [
+        -0.2,
+        0.2,
+        0.12
+      ],
       "color": "#a8aeb6",
-      "tags": ["housing", "bellhousing", "0D9"]
+      "tags": [
+        "housing",
+        "bellhousing",
+        "0D9"
+      ]
     },
     {
       "id": "dual-mass-damper",
@@ -37,16 +73,49 @@
       "oemPartNumber": null,
       "description": "Torsional dual-mass damper between the crank and the clutch pack, smoothing firing pulses before they reach the gear sets (dossier §3 model list).",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [1, 0.25, 0], "distance": 0.28 },
+      "torqueSpec": {
+        "valueNm": 60,
+        "angle": "+90°",
+        "note": "Flywheel/drive-plate-to-crank bolts — TTY, REPLACE (R1: Audizine + erWin). DQ250-specific DMF part number not found — verify the bin"
+      },
+      "knownIssues": [
+        "DMF rattle at high mileage (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.25,
+          0
+        ],
+        "distance": 0.28
+      },
       "geometryRef": "dualMassDamper",
       "geometryParams": {},
-      "transforms": [{ "position": [0.13, -0.07, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.13,
+            -0.07,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [0.16, 0.16, 0.1],
+      "calloutOffset": [
+        0.16,
+        0.16,
+        0.1
+      ],
       "color": "#9aa0a8",
-      "tags": ["DMF", "damper"]
+      "tags": [
+        "DMF",
+        "damper"
+      ]
     },
     {
       "id": "dual-clutch-pack",
@@ -58,15 +127,46 @@
       "description": "Concentric multi-plate packs running in oil: K1 (outer) carries gears 1-3-5, K2 (inner) 2-4-6-R, so the next gear is pre-selected and the swap is a clutch handover. The wet design is why the DQ250 tolerates track abuse better than dry DSGs (dossier §3).",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Clutch wear accelerates with hard launches from cold — let the oil warm before launching (dossier §3)"],
-      "explodeVector": { "direction": [1, -0.2, 0.3], "distance": 0.4 },
+      "knownIssues": [
+        "Clutch wear accelerates with hard launches from cold — let the oil warm before launching (dossier §3)"
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.2,
+          0.3
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "dualClutchPack",
       "geometryParams": {},
-      "transforms": [{ "position": [0.04, -0.07, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.04,
+            -0.07,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [0.12, -0.18, 0.14],
+      "calloutOffset": [
+        0.12,
+        -0.18,
+        0.14
+      ],
       "color": "#8d939c",
-      "tags": ["clutch", "K1", "K2", "wet"]
+      "tags": [
+        "clutch",
+        "K1",
+        "K2",
+        "wet"
+      ]
     },
     {
       "id": "mechatronic-j743",
@@ -78,15 +178,46 @@
       "description": "The DSG's brain and hydraulics in one: valve body, electric pump, pressure accumulator, shift/clutch solenoids, TCU and speed/pressure sensors, pressurising the circuit to ~40–60 bar (dossier §3). Uses its own hydraulic oil, separate from the gear oil.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Pressure-accumulator wear is the documented DQ250 mechatronic weak point (dossier §3)"],
-      "explodeVector": { "direction": [0, 0.3, 1], "distance": 0.42 },
+      "knownIssues": [
+        "Pressure-accumulator wear is the documented DQ250 mechatronic weak point (dossier §3)"
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.3,
+          1
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "mechatronicJ743",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.02, -0.02, 0.155], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.02,
+            -0.02,
+            0.155
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.14, 0.16, 0.16],
+      "calloutOffset": [
+        0.14,
+        0.16,
+        0.16
+      ],
       "color": "#3a3d44",
-      "tags": ["mechatronic", "J743", "TCU", "valve-body"]
+      "tags": [
+        "mechatronic",
+        "J743",
+        "TCU",
+        "valve-body"
+      ]
     },
     {
       "id": "input-shafts",
@@ -99,14 +230,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.4, 0], "distance": 0.36 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.4,
+          0
+        ],
+        "distance": 0.36
+      },
       "geometryRef": "inputShafts",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.06, -0.07, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.06,
+            -0.07,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [-0.16, 0.14, 0.1],
+      "calloutOffset": [
+        -0.16,
+        0.14,
+        0.1
+      ],
       "color": "#b4bac2",
-      "tags": ["input-shafts", "concentric"]
+      "tags": [
+        "input-shafts",
+        "concentric"
+      ]
     },
     {
       "id": "gear-set-1",
@@ -119,14 +277,44 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.8, 0.5, 0.5], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          -0.8,
+          0.5,
+          0.5
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "gearCluster",
-      "geometryParams": { "variant": 0 },
-      "transforms": [{ "position": [-0.05, 0.02, 0.075], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "variant": 0
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.05,
+            0.02,
+            0.075
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 6,
-      "calloutOffset": [-0.14, 0.16, 0.12],
+      "calloutOffset": [
+        -0.14,
+        0.16,
+        0.12
+      ],
       "color": "#aab0b8",
-      "tags": ["gears", "output-shaft", "synchro"]
+      "tags": [
+        "gears",
+        "output-shaft",
+        "synchro"
+      ]
     },
     {
       "id": "gear-set-2",
@@ -139,14 +327,44 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.8, 0.5, -0.5], "distance": 0.42 },
+      "explodeVector": {
+        "direction": [
+          -0.8,
+          0.5,
+          -0.5
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "gearCluster",
-      "geometryParams": { "variant": 1 },
-      "transforms": [{ "position": [-0.05, 0.02, -0.075], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "variant": 1
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.05,
+            0.02,
+            -0.075
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [-0.14, 0.16, -0.14],
+      "calloutOffset": [
+        -0.14,
+        0.16,
+        -0.14
+      ],
       "color": "#aab0b8",
-      "tags": ["gears", "output-shaft", "reverse"]
+      "tags": [
+        "gears",
+        "output-shaft",
+        "reverse"
+      ]
     },
     {
       "id": "final-drive-diff",
@@ -159,14 +377,41 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [-0.4, -1, 0.2], "distance": 0.36 },
+      "explodeVector": {
+        "direction": [
+          -0.4,
+          -1,
+          0.2
+        ],
+        "distance": 0.36
+      },
       "geometryRef": "finalDriveDiff",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.09, -0.13, 0.05], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.09,
+            -0.13,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [-0.16, -0.14, 0.12],
+      "calloutOffset": [
+        -0.16,
+        -0.14,
+        0.12
+      ],
       "color": "#7d838b",
-      "tags": ["final-drive", "differential"]
+      "tags": [
+        "final-drive",
+        "differential"
+      ]
     },
     {
       "id": "pto-bevel",
@@ -179,14 +424,42 @@
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.4, -1], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          -1
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "ptoBevel",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.09, -0.13, -0.06], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.09,
+            -0.13,
+            -0.06
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 9,
-      "calloutOffset": [0.12, -0.16, -0.16],
+      "calloutOffset": [
+        0.12,
+        -0.16,
+        -0.16
+      ],
       "color": "#868c94",
-      "tags": ["PTO", "bevel-box", "4motion"]
+      "tags": [
+        "PTO",
+        "bevel-box",
+        "4motion"
+      ]
     }
   ]
 }

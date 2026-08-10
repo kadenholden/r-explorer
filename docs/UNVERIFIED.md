@@ -25,25 +25,31 @@ additionally need: **rear disc thickness** (modelled at a typical 22 mm
 states front only), EPB actuator part number, and the R-specific rear
 pad number (the one that is NOT the GTI Performance Pack pad).
 
-## Engine — short block & head (Phase 1)
+## Engine — short block (Phase 1) — LARGELY RESOLVED by R1 (2026-08-10)
 
-The dossier gives materials and dimensions for these but no OEM part
-numbers; all 21 records store `null`. Torque caveats are recorded on the
-records themselves (head/ladder/rod figures are dossier-flagged as
-indicative tuner-reference values — verify in Bentley/erWin).
+The R1 research return (docs/research/R1-short-block.md) supplied OEM
+numbers and erWin-derived torques for most of the bottom end — recorded
+on the parts. What remains open from R1's own flags:
+
+| Item | Status |
+| --- | --- |
+| Main-cap CROSS-bolt torque (`main-cap-cross-bolts`, N91187501) | NOT captured from a primary source — tightened after the vertical bolts; confirm in erWin |
+| Balance-shaft module number | 06K103295-series vs older 06H198205 bin — verify against a live CJXC ETKA entry |
+| Oil pump + dipstick tube numbers | best-available US bins (06L115105/06K115105-series, 06L103663-series) — verify vs live CJXC catalogue |
+| Piston circlips, oil-pump chain kit, core plugs, dowels, balance-shaft seal, DQ250 DMF | NONE FOUND — legitimately no separate numbers located |
+| Upper-sump-to-block bolt torque | aluminium single-use bolts; value not captured |
+| Main journal 48 mm | R-specific (SSP's generic 52 mm belongs to other Gen 3 codes) — noted, adopted |
+
+## Engine — head & valvetrain (awaiting R2)
+
+The dossier gives materials/dimensions but no OEM numbers; records store
+`null` until the R2 return lands.
 
 | Part (id) | Missing |
 | --- | --- |
-| Cylinder block (`cylinder-block`) | OEM number |
-| Main-bearing ladder (`main-bearing-ladder`) | OEM number, material, exact torque |
-| Crankshaft (`crankshaft`) | OEM number |
-| Connecting rods (`connecting-rods`) | OEM number |
-| Pistons (`pistons`) | OEM number |
-| Piston oil jets (`piston-oil-jets`) | OEM number, material |
-| Balance shafts (`balance-shaft-intake`, `-exhaust`) | OEM numbers |
 | Cylinder head (`cylinder-head-casting`) | OEM number |
 | Head gasket (`head-gasket`) | OEM number |
-| Head bolts (`head-bolts`) | OEM number, material, definitive torque (40+90+90 vs 60+180) |
+| Head bolts (`head-bolts`) | OEM number, material, definitive torque (40+90+90 vs 60+180 — R1 explicitly carried this flag to R2) |
 | Camshafts (`intake-camshaft`, `exhaust-camshaft`) | OEM numbers, material |
 | AVS elements + actuators (`avs-cam-elements`, `avs-actuators`) | OEM numbers, material |
 | Valves (`intake-valves`, `exhaust-valves`) | OEM numbers |
@@ -92,9 +98,9 @@ operator's white also unrecorded.
 ## Engine ancillaries (coverage-audit addition)
 
 Dossier-verified: engine-mount torques (60 Nm +90° bracket / 40 Nm +90°
-rail). All OEM numbers `null` (oil pan, valve cover/PCV, coils, FEAD
-belt + tensioner, alternator, A/C compressor, starter, mounts,
-dogbone).
+rail). Sump-area numbers now come from R1 (see above). Still `null`:
+valve cover/PCV, coils, FEAD belt + tensioner, alternator, A/C
+compressor, starter, mounts, dogbone.
 
 ## Suspension, steering & wheels (Phase 5)
 
@@ -127,21 +133,20 @@ flags: **ECU identity** (MED 17.5.2 vs SIMOS 18 — read the label/VCDS),
 battery Ah spec, N493 current revision number, and the operator-side
 assumptions: **RHD** and the exact paint code for the white.
 
-## Lubrication / sump (added 2026-08-04 after a real oil leak)
+## Lubrication / sump (added 2026-08-04 after a real oil leak — R1-RESOLVED 2026-08-10)
 
-The operator's car developed an upper-sump oil leak. The area was built
-out into separate parts, but several facts are NOT in the dossier and
-must be verified against ETKA / erWin / Bentley before ordering or
-working:
+The R1 return settled most of what this section used to flag, and
+corrected two of our assumptions (details in docs/research/R1-short-block.md):
 
-- **Two-piece sump construction** (aluminium upper + lower pan) — typical
-  for this engine family, not dossier-stated.
-- **Sealant-not-gasket joint** and the correct sealant part number.
-- **Sump bolt torque and tightening sequence** — the model currently
-  shows the dossier's GENERAL M6 class figure (10 Nm) as a placeholder,
-  explicitly flagged on the part. Sealant joints are sequence-sensitive.
-- OEM numbers for upper sump, lower sump, pickup, drain plug + crush
-  washer, oil level sensor, filter housing/cooler.
+- **Two-piece construction CONFIRMED**: die-cast aluminium structural
+  upper sump 06K103603BL + glass-filled-plastic lower pan 06K103600D.
+- **CORRECTION — the upper↔lower joint is a rubber gasket** (06K103649H,
+  Elring), not sealant. The liquid-sealant joint is upper-sump-to-BLOCK.
+- **Lower-pan bolt torque verified: 8 Nm + 45°** (steel bolts); baffle
+  4 Nm + 45°; oil pump 8 Nm + 90°. No numbered sequence published.
+- **CORRECTION — the OEM drain plug is a plastic quarter-turn bayonet**,
+  not a threaded plug with crush washer.
 
-Dossier-backed here: filter-housing / oil-cooler weeps and rear main seal
-seeps are named in the §2 failure list.
+Still open: upper-sump-to-block aluminium-bolt torque; OEM plastic
+drain-plug torque (aftermarket steel = 30 Nm); filter housing / oil
+cooler numbers (R9 cooling brief territory).

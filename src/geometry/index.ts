@@ -107,6 +107,23 @@ import {
   dogboneMount,
 } from './ancillaries'
 import {
+  mainBearingCap,
+  bearingShell,
+  thrustWasher,
+  pistonRingSet,
+  wristPin,
+  vibrationDamper,
+  frontCover,
+  crankSeal,
+  rearSealFlange,
+  corePlug,
+  dipstickTube,
+  oilPumpTwoStage,
+  solenoidValve,
+  windageTray,
+  oRing,
+} from './shortBlockDetail'
+import {
   floorpan,
   frontStructure,
   bulkhead,
@@ -223,6 +240,21 @@ registerRecipe('acCompressor', acCompressor)
 registerRecipe('starterMotor', starterMotor)
 registerRecipe('hydraulicMount', hydraulicMount)
 registerRecipe('dogboneMount', dogboneMount)
+registerRecipe('mainBearingCap', mainBearingCap)
+registerRecipe('bearingShell', bearingShell)
+registerRecipe('thrustWasher', thrustWasher)
+registerRecipe('pistonRingSet', pistonRingSet)
+registerRecipe('wristPin', wristPin)
+registerRecipe('vibrationDamper', vibrationDamper)
+registerRecipe('frontCover', frontCover)
+registerRecipe('crankSeal', crankSeal)
+registerRecipe('rearSealFlange', rearSealFlange)
+registerRecipe('corePlug', corePlug)
+registerRecipe('dipstickTube', dipstickTube)
+registerRecipe('oilPumpTwoStage', oilPumpTwoStage)
+registerRecipe('solenoidValve', solenoidValve)
+registerRecipe('windageTray', windageTray)
+registerRecipe('oRing', oRing)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)

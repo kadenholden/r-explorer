@@ -8,7 +8,7 @@
       0,
       0
     ],
-    "description": "The dossier §2 items the coverage audit caught, plus the lubrication area built out in detail after the operator's car developed an upper-sump oil leak (2026-08): the two-piece sump with its sealed joint, pickup, drain plug, level sensor and the filter housing/oil cooler above it — the three leak paths that look identical once oil has run down the block. Also the FEAD belt driving alternator and A/C (the coolant pump is NOT on this belt — it's balance-shaft driven), starter, valve cover with the failure-prone PCV diaphragm, coil-on-plug ignition, and the three-point engine mounting."
+    "description": "The dossier §2 items the coverage audit caught, plus the lubrication area built out after the operator's car developed an upper-sump oil leak (2026-08) and then corrected against the R1 research return: the structural aluminium upper sump (which also clamps the main-bearing caps), the RUBBER-gasketed joint to the plastic lower pan, the two-stage oil pump, pickup, bayonet drain plug, G266 sensor and the filter housing/oil cooler above — the leak paths that look identical once oil has run down the block. Also the FEAD belt driving alternator and A/C (the coolant pump is balance-shaft driven), starter, valve cover with the failure-prone PCV diaphragm, coil-on-plug ignition, and the three-point engine mounting."
   },
   "parts": [
     {
@@ -488,16 +488,17 @@
     },
     {
       "id": "upper-sump",
-      "name": "Upper sump (aluminium)",
+      "name": "Upper sump (die-cast aluminium, structural)",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
-      "oemPartNumber": null,
-      "description": "The upper half of the two-piece sump: an aluminium casting bolting to the block's bottom face, carrying the oil pickup and the level-sensor boss, and forming the upper half of the sealed sump joint. THIS is the area the operator's garage identified as leaking (2026-08). Note: the two-piece construction is typical of this engine family but is NOT described in the project dossier — verify the exact parts against ETKA before ordering.",
-      "material": null,
+      "oemPartNumber": "06K103603BL",
+      "description": "The structural upper half of the two-piece sump (R1: 06K103603BL, supersedes 06K103603AN/AP). Far more than an oil pan: it carries the two-stage oil pump, the honeycomb pickup, the windage baffle AND the upper main-bearing supports — bolting up from below it clamps the five main caps, acting as a partial bedplate. Sealed to the block with LIQUID SEALANT and single-use aluminium bolts (torque not captured in R1 — confirm in erWin). THIS is the area the operator's garage identified as leaking (2026-08).",
+      "material": "Die-cast aluminium",
       "torqueSpec": null,
       "knownIssues": [
-        "Oil leaks in this area have three common sources that look identical once oil has run down the casting: (a) the upper-to-lower sump sealing joint, (b) the upper-sump-to-block joint, (c) oil dripping DOWN from the filter housing / oil cooler above — the dossier §2 failure list names filter-housing/oil-cooler weeps and rear main seal seeps explicitly. Clean the area and re-inspect to find the true origin before resealing."
+        "Oil leaks here have three look-alike sources once oil has run down the casting: (a) the sealant joint to the block, (b) the rubber-gasketed joint to the lower pan, (c) oil dripping DOWN from the filter housing / oil cooler above (dossier §2 names those weeps, and rear-main seeps, explicitly). Clean and re-inspect before resealing anything.",
+        "Sealant joint weeps with age/heat cycles; aluminium bolts pull threads if over-torqued (R1)."
       ],
       "explodeVector": {
         "direction": [
@@ -532,24 +533,24 @@
       "color": "#8a9099",
       "tags": [
         "sump",
-        "upper-sump",
-        "lubrication",
-        "oil-leak",
-        "operator-issue"
+        "structural",
+        "liquid-sealant",
+        "operator-issue",
+        "oil-leak"
       ]
     },
     {
       "id": "sump-seal-joint",
-      "name": "Sump sealing joint (upper ↔ lower)",
+      "name": "Lower sump gasket (rubber, Elring)",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
-      "oemPartNumber": null,
-      "description": "The mating joint between upper and lower sump. VW seals joints like this with an anaerobic sealant bead rather than a paper/rubber gasket — so a reseal means separating, fully cleaning both flanges and re-applying, not just fitting a new gasket. Sealant part number and exact procedure NOT in the dossier — verify against erWin/Bentley.",
-      "material": null,
+      "oemPartNumber": "06K103649H",
+      "description": "R1 CORRECTION to our earlier assumption: the joint between the upper and lower sump uses a real RUBBER GASKET (06K103649H, also -J) — not a sealant bead. The liquid-sealant joint is one level up, where the aluminium upper sump meets the block. So a lower-pan reseal is a gasket swap; a block-joint reseal means dropping the upper sump, cleaning both faces and re-applying sealant.",
+      "material": "Rubber (Elring)",
       "torqueSpec": null,
       "knownIssues": [
-        "The classic upper-sump leak path. Sealant joints weep with age, heat cycling, or after a previous reseal done without fully cleaning the flanges."
+        "Weep if the gasket is reused (R1) — always fit a new one when the lower pan comes off."
       ],
       "explodeVector": {
         "direction": [
@@ -583,23 +584,26 @@
       ],
       "color": "#b08968",
       "tags": [
-        "sealant",
-        "joint",
+        "gasket",
+        "rubber",
         "oil-leak",
-        "reseal"
+        "R1-correction"
       ]
     },
     {
       "id": "lower-sump",
-      "name": "Lower sump pan",
+      "name": "Lower sump pan (glass-filled plastic)",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
-      "oemPartNumber": null,
-      "description": "The lower pan bolting up to the upper sump, holding the oil volume and carrying the drain plug.",
-      "material": null,
+      "oemPartNumber": "06K103600D",
+      "description": "The plastic lower pan (R1: 06K103600D, also -R/-AE) bolting to the aluminium upper section with the rubber gasket and steel bolts at 8 Nm + 45°. Houses the G266 oil-level/thermal sensor and the quarter-turn bayonet drain plug.",
+      "material": "Glass-filled plastic",
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Cracks on impact/curbing — it is plastic and low (R1); a steel-pan upgrade exists aftermarket.",
+        "Drain-plug boss strip is a common complaint (R1)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -634,22 +638,23 @@
       "tags": [
         "sump",
         "lower-pan",
-        "lubrication"
+        "plastic",
+        "G266"
       ]
     },
     {
       "id": "sump-bolts",
-      "name": "Sump bolts (M6 perimeter) ×16",
+      "name": "Lower sump perimeter bolts (steel)",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Perimeter bolts clamping the sump joint. The dossier gives no sump-specific figure; its GENERAL Gen 3 fastener class for M6 is 10 Nm, shown here as a class default only — get the real spec and tightening sequence from Bentley/erWin before resealing, since sealant joints are sequence-sensitive.",
+      "description": "Steel perimeter bolts clamping the plastic lower pan and its rubber gasket to the aluminium upper sump. R1 verified the figure: 8 Nm + 45° (ECS install instructions + VW Vortex DIY + erWin). No numbered sequence is published — work alternately across the joint. NOTE the upper sump's own aluminium bolts to the block are a different, single-use fastener with no captured torque.",
       "material": null,
       "torqueSpec": {
-        "valueNm": 10,
-        "angle": null,
-        "note": "General M6 class figure from the dossier — NOT a verified sump-specific torque or sequence"
+        "valueNm": 8,
+        "angle": "+45°",
+        "note": "Lower pan to upper sump — R1-verified (ECS + VW Vortex + erWin); no numbered sequence published"
       },
       "knownIssues": [],
       "explodeVector": {
@@ -868,23 +873,24 @@
       ],
       "color": "#98a2ae",
       "tags": [
-        "fastener",
-        "M6",
         "sump-bolts",
-        "verify-torque"
+        "8Nm+45",
+        "R1-verified"
       ]
     },
     {
       "id": "oil-pickup",
-      "name": "Oil pickup & strainer",
+      "name": "Oil pickup (honeycomb)",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Strainer and tube drawing oil from the sump floor up to the pump. Comes out with the sump — worth inspecting for debris whenever the pan is off.",
+      "description": "The honeycomb pickup drawing oil from the pan floor to the two-stage pump — carried by the aluminium upper sump as part of the pump assembly (R1). Its interface seals with the N0282222 O-ring. Inspect the screen for sludge whenever the pan is off: a blocked pickup starves the pump, the jets and the bearings.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Screen sludge blockage (R1) — the quiet killer behind spun bearings and jet blockage."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -918,22 +924,23 @@
       "color": "#9aa0a8",
       "tags": [
         "pickup",
+        "honeycomb",
         "strainer",
-        "lubrication"
+        "sludge"
       ]
     },
     {
       "id": "oil-drain-plug",
-      "name": "Drain plug & crush washer",
+      "name": "Drain plug (plastic quarter-turn bayonet)",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Sump drain plug with its single-use crush washer — a leak source in its own right if the washer is reused or the plug is over-torqued into the alloy pan.",
+      "description": "R1 CORRECTION: the Gen 3 OEM drain plug is a PLASTIC quarter-turn bayonet in the plastic pan — not a threaded steel plug with a crush washer. No separate part number found (integral to the 06K103600D pan area). OEM plastic-plug torque UNVERIFIED; the common aftermarket steel-pan conversion uses a conventional 30 Nm steel plug.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
-        "Reused crush washers and over-torqued plugs are a common cause of 'sump' drips that are actually just the plug."
+        "Cross-thread/strip and leaks are a common complaint with the plastic bayonet design (R1/SSP) — hence the popular steel-pan upgrade."
       ],
       "explodeVector": {
         "direction": [
@@ -968,7 +975,9 @@
       "color": "#98a2ae",
       "tags": [
         "drain-plug",
-        "crush-washer",
+        "bayonet",
+        "plastic",
+        "R1-correction",
         "oil-leak"
       ]
     },
@@ -979,7 +988,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Filter housing with the oil-to-coolant cooler on the block. Sits ABOVE the sump, so when its seals weep the oil runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed. The dossier §2 failure list names filter-housing/oil-cooler weeps directly.",
+      "description": "Filter housing with the oil-to-coolant cooler on the block, and mounting solenoid N522 (the piston-jet control valve). Sits ABOVE the sump, so when its seals weep the oil runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed. The dossier §2 failure list names filter-housing/oil-cooler weeps directly.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -1025,12 +1034,12 @@
     },
     {
       "id": "oil-level-sensor",
-      "name": "Oil level / temperature sensor",
+      "name": "Oil level / thermal sensor G266",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Sensor in the sump floor feeding oil level and temperature to the cluster and ECU (dossier §7 sensor catalogue). Its seal is another small leak path.",
+      "description": "The G266 oil-level/thermal sensor integrated in the plastic lower pan (R1), feeding level and temperature to the cluster and ECU. Its seal (with the N0282222 O-ring family) is another small leak path.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -1067,8 +1076,269 @@
       "color": "#3a3d44",
       "tags": [
         "sensor",
+        "G266",
         "oil-level",
         "lubrication"
+      ]
+    },
+    {
+      "id": "oil-pump-two-stage",
+      "name": "Oil pump, regulated two-stage",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "Chain-driven, electronically regulated two-stage oil pump living in the upper sump (R1). Low stage saves fuel; the N428 valve controls regulation, and a second pressurised gallery feeds the switchable piston-cooling jets. R1 lists 06L115105 / 06K115105-series bins — verify against a live CJXC catalogue before ordering. Pump-to-block bolts 8 Nm + 90°.",
+      "material": "Aluminium + steel",
+      "torqueSpec": {
+        "valueNm": 8,
+        "angle": "+90°",
+        "note": "Pump-to-block (R1)"
+      },
+      "knownIssues": [
+        "Chain wear rare on Gen 3; the real risk is pickup-screen sludge blockage (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.3,
+          -1,
+          0.3
+        ],
+        "distance": 0.48
+      },
+      "geometryRef": "oilPumpTwoStage",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.1,
+            -0.19,
+            0.03
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 18,
+      "calloutOffset": [
+        -0.16,
+        -0.1,
+        0.14
+      ],
+      "color": "#8d939c",
+      "tags": [
+        "oil-pump",
+        "two-stage",
+        "chain-driven",
+        "N428"
+      ]
+    },
+    {
+      "id": "oil-pressure-valve-n428",
+      "name": "Oil pressure regulation valve N428",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The solenoid switching the two-stage pump between low and high pressure, on the oil-pan top section (R1: 06L115243-series — verify exact number).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Sticking valve → oil-pressure faults / warning light (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.6,
+          1
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.06,
+            -0.155,
+            0.08
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 19,
+      "calloutOffset": [
+        0.1,
+        -0.08,
+        0.14
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "N428",
+        "solenoid",
+        "oil-pressure"
+      ]
+    },
+    {
+      "id": "piston-jet-valve-n522",
+      "name": "Piston-cooling jet control valve N522",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": "06K115243AB",
+      "description": "Solenoid on the oil-filter/adapter housing gating oil to the piston-jet switching valve (R1; supersedes 06K115243T). Behind its fine screen is where sludge does damage.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Screen clog → 'piston cooling nozzle circuit' high/low DTC and hot pistons (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.2,
+          0.6
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.245,
+            -0.095,
+            0.135
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 20,
+      "calloutOffset": [
+        0.12,
+        -0.06,
+        0.12
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "N522",
+        "solenoid",
+        "piston-jets",
+        "06K115243AB"
+      ]
+    },
+    {
+      "id": "windage-tray",
+      "name": "Windage tray / oil baffle",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The baffle plate calming the oil surface against crank windage and cornering slosh — supplied WITH the upper oil pan, not separately (R1). Baffle bolts 4 Nm + 45° into the aluminium pan top.",
+      "material": "Steel/plastic baffle",
+      "torqueSpec": {
+        "valueNm": 4,
+        "angle": "+45°",
+        "note": "Baffle bolt into aluminium pan top (R1)"
+      },
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          -0.4
+        ],
+        "distance": 0.36
+      },
+      "geometryRef": "windageTray",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.168,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 21,
+      "calloutOffset": [
+        -0.2,
+        -0.06,
+        -0.12
+      ],
+      "color": "#7d838b",
+      "tags": [
+        "windage-tray",
+        "baffle",
+        "4Nm+45"
+      ]
+    },
+    {
+      "id": "sump-o-ring",
+      "name": "Pickup / level-sensor O-ring",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": "N0282222",
+      "description": "The lower oil-pan sealing O-ring at the pickup / level-sensor interface (R1). Small, cheap, and yet another candidate 'sump leak'.",
+      "material": "Rubber",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Weep (R1) — renew whenever the pan is off."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          -0.35
+        ],
+        "distance": 0.68
+      },
+      "geometryRef": "oRing",
+      "geometryParams": {
+        "ringDiameterMm": 30
+      },
+      "transforms": [
+        {
+          "position": [
+            0.12,
+            -0.279,
+            -0.08
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 22,
+      "calloutOffset": [
+        0.12,
+        -0.08,
+        -0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "o-ring",
+        "N0282222",
+        "oil-leak"
       ]
     }
   ]
