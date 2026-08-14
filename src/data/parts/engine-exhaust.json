@@ -18,10 +18,12 @@
       "assembly": "engine-exhaust",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Cast downpipe off the turbine outlet carrying the primary catalyst (dossier §2). The classic first stop for tuning — and the post-cat lambda lives here.",
+      "description": "Cast downpipe housing the PRIMARY CATALYST — this pre-facelift EU car is pre-GPF, so there is no particulate filter and only two lambdas (R4). Joins the turbo with V-band clamp 5Q0253725G (supersedes A/C), fire-ring gasket 5Q0253115B and bolt N10240003 (M8×1.25×33) — gasket and bolt are one-time-use; clamp torque not published. OEM downpipe PN not found.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Flex-section cracking; cat rattle on tuned cars (R4)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -65,10 +67,12 @@
       "assembly": "engine-exhaust",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Connecting pipe from the cat section back to the centre resonator (dossier §2).",
+      "description": "Centre section from the downpipe back — sleeve/double-clamp joints (clamp PNs and torques not found) hung on rubber hangers (R4).",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Corrosion; perished hangers → knock over bumps (R4)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -157,10 +161,12 @@
       "assembly": "engine-exhaust",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Rear silencer housing the electronically-actuated exhaust flaps, controlled by the factory drive-mode logic — Race mode opens them up (dossier §2).",
+      "description": "The valved quad-exit rear box. No OEM number confirmed for the pre-facelift hatch (R4). Flaps open under Race/Sport, higher rpm and load to cut backpressure; closed for quiet running.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Flap seizure/rattle, worn valve, corrosion (R4)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -200,15 +206,17 @@
     },
     {
       "id": "exhaust-flap-actuators",
-      "name": "Exhaust flap actuators (electric) ×2",
+      "name": "Exhaust flap servomotors (electric) ×2",
       "system": "engine",
       "assembly": "engine-exhaust",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Electric actuators for the silencer's internal flaps — the hardware behind the R's drive-mode exhaust note.",
+      "oemPartNumber": "4H0133246J",
+      "description": "R4 RESOLUTION: the rear-box flaps are driven by ELECTRIC servomotors — no vacuum lines, reservoir or diaphragm anywhere in this system. Actuator family 4H0133246 (current -J, supersedes -D/-H); the R's quad-exit box typically carries two, and aftermarket cat-backs reuse them. R4 also warns: the exact V-designation was NOT found — do not label these 'N321' (an N-number means a solenoid, which this is not).",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Seized flap, motor failure, rattle (R4)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -254,7 +262,9 @@
       "color": "#5d6167",
       "tags": [
         "exhaust-flaps",
-        "actuator"
+        "electric-servo",
+        "4H0133246J",
+        "R4-resolved"
       ]
     },
     {
@@ -264,7 +274,7 @@
       "assembly": "engine-exhaust",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Two chrome twin-tip outlets, one per side — the R's defining rear signature vs the GTI's twin left-side tips (dossier §1).",
+      "description": "Polished quad tips framed by the diffuser — sold as part of the rear-box assembly, no separate number (R4).",
       "material": "Stainless, chrome finish",
       "torqueSpec": null,
       "knownIssues": [],
@@ -318,16 +328,18 @@
       ]
     },
     {
-      "id": "lambda-sensors",
-      "name": "Lambda sensors (pre-turbine + post-cat) ×2",
+      "id": "lambda-precat-g39",
+      "name": "Pre-cat lambda G39 (wideband LSU ADV)",
       "system": "engine",
       "assembly": "engine-exhaust",
-      "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "O2 sensing: one directly upstream of the turbine (in the turbo/IEM area) plus post-cat sensor(s) on the downpipe (dossier §2).",
-      "material": null,
+      "subAssembly": "Emission control",
+      "oemPartNumber": "06K906262C",
+      "description": "Bank 1 Sensor 1: the wideband sensor at the turbo outlet running closed-loop fuelling (R4; family also 06K906262CS). M18×1.5; the common ~45 Nm figure is a general lambda guide, not a VW-verified spec. No coding after replacement — clear codes and run a readiness cycle.",
+      "material": "Bosch, M18×1.5",
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Heater-circuit P0030-family codes and slow aging (R4)."
+      ],
       "explodeVector": {
         "direction": [
           0.4,
@@ -350,18 +362,6 @@
             0,
             0
           ]
-        },
-        {
-          "position": [
-            0.045,
-            -0.24,
-            -0.44
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            -35
-          ]
         }
       ],
       "callout": 7,
@@ -373,8 +373,60 @@
       "color": "#83898f",
       "tags": [
         "lambda",
-        "O2",
-        "sensors"
+        "G39",
+        "wideband",
+        "pre-cat"
+      ]
+    },
+    {
+      "id": "lambda-postcat-g130",
+      "name": "Post-cat lambda G130 (binary)",
+      "system": "engine",
+      "assembly": "engine-exhaust",
+      "subAssembly": "Emission control",
+      "oemPartNumber": "8S0906262B",
+      "description": "Bank 1 Sensor 2: the binary sensor after the cat trimming and monitoring cat efficiency (R4; family also 06K906262AC). This car has exactly TWO lambdas — a mid sensor or GPF means facelift hardware.",
+      "material": "Bosch, M18×1.5",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Slow response → cat-efficiency codes (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.4,
+          1,
+          -0.2
+        ],
+        "distance": 0.32
+      },
+      "geometryRef": "lambdaSensor",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.045,
+            -0.24,
+            -0.44
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 8,
+      "calloutOffset": [
+        0.12,
+        0.09000000000000001,
+        -0.1
+      ],
+      "color": "#83898f",
+      "tags": [
+        "lambda",
+        "G130",
+        "binary",
+        "post-cat"
       ]
     }
   ]

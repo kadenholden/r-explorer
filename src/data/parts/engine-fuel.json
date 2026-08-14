@@ -3,8 +3,12 @@
     "id": "engine-fuel",
     "name": "Engine — dual-injection fuel system",
     "system": "engine",
-    "origin": [0, 0, 0],
-    "description": "Gen 3 dual injection (dossier §2): the exhaust cam's four-lobe section drives the HPFP to ~200 bar for the in-chamber direct injectors, while a second set of port injectors in the manifold runners washes the valves and cuts particulates. Cold start: port + stratified DI for cat light-off; low speed: both; mid/high load: DI only. In-tank LPFP and fuel tank are modelled with fuel storage in Phase 7 (dossier system 8)."
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "Demand-controlled DUAL-injection fuel system — R4's headline: the EU/UK CJXC left the factory with direct injection PLUS a low-pressure port/MPI rail (200 cc port injectors); DI-only applies to North American cars, whose HPFP has a brass plug where the ROW pump feeds the MPI circuit (five agreeing sources; overturns R2's provisional DI-only claim). Single Hitachi Gen III HPFP at up to 200 bar feeds both rails, driven by a four-lobe exhaust-cam lobe via roller tappet."
   },
   "parts": [
     {
@@ -13,19 +17,49 @@
       "system": "engine",
       "assembly": "engine-fuel",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Single-piston HPFP driven by a four-lobe section of the exhaust camshaft, raising the ~4–6 bar lift-pump feed to ~200 bar rail pressure (up to ~2,900 psi under load) (dossier §2).",
+      "oemPartNumber": "06L127025T",
+      "description": "Hitachi Gen III single-piston pump, 06L127025R superseded by 06L127025T (R4). WARNING: 06L127027C is for GPF (facelift) cars only — do not fit to this pre-GPF CJXC. Max operating pressure 200 bar; contains the inlet metering/pressure-control valve, pulsation damper and mechanical relief. On this EU car its low-pressure MPI outlet feeds the port rail (US pumps are brass-plugged there). Mounting bolts are TTY, tightened staged/alternating — exact Nm NOT published in extracted tables, do not guess.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Internal wear/pressure drop under high load, especially on tuned/ethanol cars (dossier §2 failure list)"],
-      "explodeVector": { "direction": [0.6, 1, -0.2], "distance": 0.35 },
+      "knownIssues": [
+        "Wear → long crank, hesitation, P0087/P310B (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          1,
+          -0.2
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "hpfp",
       "geometryParams": {},
-      "transforms": [{ "position": [0.24, 0.278, -0.045], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.24,
+            0.278,
+            -0.045
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.14, 0.14, -0.08],
+      "calloutOffset": [
+        0.14,
+        0.14,
+        -0.08
+      ],
       "color": "#8d939c",
-      "tags": ["HPFP", "200bar", "cam-driven"]
+      "tags": [
+        "HPFP",
+        "200bar",
+        "cam-driven"
+      ]
     },
     {
       "id": "di-fuel-rail",
@@ -34,18 +68,48 @@
       "assembly": "engine-fuel",
       "subAssembly": "Direct injection",
       "oemPartNumber": null,
-      "description": "High-pressure common rail feeding the four in-chamber DI injectors.",
+      "description": "Forged-steel high-pressure rail atop the head. Exact CJXC part number NOT found (R4 warns 06L133317L circulating online is the OLDER FSI rail, not this engine). Rail bolts and high-pressure unions are staged — unions started lightly, pipes refitted stress-free to the same cylinder; exact Nm not published.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0.2, 1, 0.4], "distance": 0.45 },
+      "explodeVector": {
+        "direction": [
+          0.2,
+          1,
+          0.4
+        ],
+        "distance": 0.45
+      },
       "geometryRef": "fuelRail",
-      "geometryParams": { "lengthMm": 380 },
-      "transforms": [{ "position": [0, 0.145, 0.115], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "lengthMm": 380
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.145,
+            0.115
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [0.22, 0.12, 0.1],
+      "calloutOffset": [
+        0.22,
+        0.12,
+        0.1
+      ],
       "color": "#a8aeb6",
-      "tags": ["fuel-rail", "DI", "high-pressure"]
+      "tags": [
+        "fuel-rail",
+        "DI",
+        "high-pressure"
+      ]
     },
     {
       "id": "di-injectors",
@@ -53,44 +117,136 @@
       "system": "engine",
       "assembly": "engine-fuel",
       "subAssembly": "Direct injection",
-      "oemPartNumber": null,
-      "description": "One DI injector per cylinder spraying directly into the chamber — the charge-cooling benefit is why mid/high load runs DI only (dossier §2).",
+      "oemPartNumber": "06L906036AK",
+      "description": "Bosch direct injectors, 06L906036 family — Golf R revisions H→L→AB→AE→AJ→AK (AK current) (R4). Tip seals are PTFE (kit 06H998907B) and MUST be re-formed with the proper cone/sleeve tools after R&R or they leak. Unlike VAG diesels, like-for-like TSI injectors need NO IMA-style coding — the ECU relearns via fuel trims.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0, 0.8, 0.5], "distance": 0.32 },
+      "knownIssues": [
+        "Misfires/rough idle; PTFE seal leaks after R&R without forming tools → P030X/P0171 (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.8,
+          0.5
+        ],
+        "distance": 0.32
+      },
       "geometryRef": "injector",
-      "geometryParams": { "tipMm": 22 },
+      "geometryParams": {
+        "tipMm": 22
+      },
       "transforms": [
-        { "position": [-0.132, 0.1, 0.1], "rotationDeg": [-20, 0, 0] },
-        { "position": [-0.044, 0.1, 0.1], "rotationDeg": [-20, 0, 0] },
-        { "position": [0.044, 0.1, 0.1], "rotationDeg": [-20, 0, 0] },
-        { "position": [0.132, 0.1, 0.1], "rotationDeg": [-20, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            0.1,
+            0.1
+          ],
+          "rotationDeg": [
+            -20,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            0.1,
+            0.1
+          ],
+          "rotationDeg": [
+            -20,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            0.1,
+            0.1
+          ],
+          "rotationDeg": [
+            -20,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.1,
+            0.1
+          ],
+          "rotationDeg": [
+            -20,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 3,
-      "calloutOffset": [0.14, 0.08, 0.12],
+      "calloutOffset": [
+        0.14,
+        0.08,
+        0.12
+      ],
       "color": "#8d939c",
-      "tags": ["injectors", "DI", "in-chamber"]
+      "tags": [
+        "injectors",
+        "DI",
+        "in-chamber"
+      ]
     },
     {
       "id": "rail-pressure-sensor",
-      "name": "Rail pressure sensor",
+      "name": "Rail pressure sender G247",
       "system": "engine",
       "assembly": "engine-fuel",
       "subAssembly": "Direct injection",
       "oemPartNumber": null,
-      "description": "High-pressure rail sensor closing the ~200 bar control loop (dossier §2 fuel model list).",
+      "description": "High-pressure rail sender closing the pressure loop with the HPFP metering valve (R4). Exact Gen 3 TSI suffix NOT found — the 06J906051-series widely listed is the older FSI/early-TSI part. Fine thread; torque not published.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0.8, 0.6, 0.3], "distance": 0.4 },
+      "knownIssues": [
+        "P0087/P0190 pressure faults (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.8,
+          0.6,
+          0.3
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "railPressureSensor",
       "geometryParams": {},
-      "transforms": [{ "position": [0.185, 0.132, 0.115], "rotationDeg": [0, 0, -90] }],
+      "transforms": [
+        {
+          "position": [
+            0.185,
+            0.132,
+            0.115
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -90
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.12, 0.08, 0.08],
+      "calloutOffset": [
+        0.12,
+        0.08,
+        0.08
+      ],
       "color": "#83898f",
-      "tags": ["sensor", "rail-pressure"]
+      "tags": [
+        "sensor",
+        "rail-pressure"
+      ]
     },
     {
       "id": "port-fuel-rail",
@@ -99,18 +255,48 @@
       "assembly": "engine-fuel",
       "subAssembly": "Port injection",
       "oemPartNumber": null,
-      "description": "Low-pressure rail for the Gen 3's second injector set in the intake runners — the 'dual injection' that keeps intake valves washed and particulates down for Euro 6 (dossier §2).",
+      "description": "The low-pressure MPI rail — R4's headline confirmation: EU/UK CJXC cars HAVE factory port injection (five agreeing sources incl. the OEM port-injector number and ETKA notes that MPI was deleted only at the 2019 WLTP/DNUE change). The famous 'no MPI rail' photo was a US/Mexico engine. Rail PN itself NOT found.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.5], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.5
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "fuelRail",
-      "geometryParams": { "lengthMm": 380 },
-      "transforms": [{ "position": [0, 0.232, 0.232], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "lengthMm": 380
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.232,
+            0.232
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [-0.22, 0.12, 0.12],
+      "calloutOffset": [
+        -0.22,
+        0.12,
+        0.12
+      ],
       "color": "#a8aeb6",
-      "tags": ["fuel-rail", "port-injection", "MPI"]
+      "tags": [
+        "fuel-rail",
+        "port-injection",
+        "MPI"
+      ]
     },
     {
       "id": "port-injectors",
@@ -118,24 +304,237 @@
       "system": "engine",
       "assembly": "engine-fuel",
       "subAssembly": "Port injection",
-      "oemPartNumber": null,
-      "description": "Port injectors in the manifold runners; active on cold start (homogeneous mix for fast cat light-off) and at low speed alongside DI (dossier §2).",
+      "oemPartNumber": "06L906031D",
+      "description": "200 cc port injectors (06L906031D, also -A) washing the intake-valve backs — they run at light load after warm-up up to an rpm set point while DI dominates under load (R4/EcuTek: ~80/20 DI/port split on their R development car). No coding; governed by the port-injection fuel maps.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0, 1, 0.6], "distance": 0.38 },
+      "knownIssues": [
+        "Clogging → low-rpm misfire (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.6
+        ],
+        "distance": 0.38
+      },
       "geometryRef": "injector",
-      "geometryParams": { "tipMm": 12 },
+      "geometryParams": {
+        "tipMm": 12
+      },
       "transforms": [
-        { "position": [-0.132, 0.207, 0.213], "rotationDeg": [25, 0, 0] },
-        { "position": [-0.044, 0.207, 0.213], "rotationDeg": [25, 0, 0] },
-        { "position": [0.044, 0.207, 0.213], "rotationDeg": [25, 0, 0] },
-        { "position": [0.132, 0.207, 0.213], "rotationDeg": [25, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            0.207,
+            0.213
+          ],
+          "rotationDeg": [
+            25,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            0.207,
+            0.213
+          ],
+          "rotationDeg": [
+            25,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            0.207,
+            0.213
+          ],
+          "rotationDeg": [
+            25,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.207,
+            0.213
+          ],
+          "rotationDeg": [
+            25,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [0.16, 0.12, 0.14],
+      "calloutOffset": [
+        0.16,
+        0.12,
+        0.14
+      ],
       "color": "#8d939c",
-      "tags": ["injectors", "port", "valve-washing"]
+      "tags": [
+        "injectors",
+        "port",
+        "valve-washing"
+      ]
+    },
+    {
+      "id": "hpfp-roller-tappet",
+      "name": "HPFP roller tappet",
+      "system": "engine",
+      "assembly": "engine-fuel",
+      "subAssembly": "HPFP drive",
+      "oemPartNumber": null,
+      "description": "The roller cam follower between the exhaust cam's four-lobe drive and the HPFP piston (R4). The roller design is far less failure-prone than the EA113's infamous slider follower. OEM number not exposed.",
+      "material": "Steel, roller",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Wear is rare thanks to the roller design (R4) — worth a glance at any HPFP R&R anyway."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.5
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "hlaElement",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.24,
+            0.23300000000000004,
+            -0.045
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 7,
+      "calloutOffset": [
+        0.12,
+        -0.08,
+        0.1
+      ],
+      "color": "#aab0b8",
+      "tags": [
+        "roller-tappet",
+        "HPFP-drive",
+        "four-lobe"
+      ]
+    },
+    {
+      "id": "sensor-g410",
+      "name": "Low-pressure fuel sender G410",
+      "system": "engine",
+      "assembly": "engine-fuel",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Supply-side pressure sender letting the ECU trim the in-tank pump's duty via control module J538 — the low-pressure circuit only makes the pressure currently needed (R4). PN not found.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Supply-pressure faults (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.5,
+          0.8,
+          0.4
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.3,
+            0.258,
+            0.0050000000000000044
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 8,
+      "calloutOffset": [
+        0.12,
+        0.1,
+        0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "G410",
+        "fuel-pressure",
+        "low-pressure"
+      ]
+    },
+    {
+      "id": "n80-purge-valve",
+      "name": "EVAP purge valve N80",
+      "system": "engine",
+      "assembly": "engine-fuel",
+      "subAssembly": null,
+      "oemPartNumber": "06H906517AE",
+      "description": "Meters fuel-tank vapour from the charcoal canister into the intake (R4; MQB Gen 3 number, older cars 06E906517A). Engine bay, intake side.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "P0441, audible rattle, hard start or rough idle when stuck (R4)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.4,
+          1,
+          0.4
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.33999999999999997,
+            0.328,
+            0.05500000000000001
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 9,
+      "calloutOffset": [
+        0.12,
+        0.12,
+        0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "N80",
+        "EVAP",
+        "purge"
+      ]
     }
   ]
 }

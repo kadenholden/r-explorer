@@ -131,6 +131,7 @@ import {
   upperTimingCover,
   pcvModule,
 } from './headDetail'
+import { turboLines } from './systemDetail'
 import {
   floorpan,
   frontStructure,
@@ -269,6 +270,7 @@ registerRecipe('hlaElement', hlaElement)
 registerRecipe('sparkPlug', sparkPlug)
 registerRecipe('upperTimingCover', upperTimingCover)
 registerRecipe('pcvModule', pcvModule)
+registerRecipe('turboLines', turboLines)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)
