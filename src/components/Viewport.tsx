@@ -16,7 +16,7 @@ interface CameraPreset {
 export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   'front-three-quarter': { label: 'Overview', position: [3.1, 1.3, 2.9], target: [0, 0.1, -1.0] },
   engine: { label: 'Engine', position: [0.7, 0.42, 0.95], target: [0, 0.12, 0] },
-  intake: { label: 'Intake', position: [0.42, 0.95, 0.55], target: [0, 0.2, -0.18] },
+  intake: { label: 'Intake', position: [0.55, 0.5, 1.3], target: [0, 0.1, 0.22] },
   'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },
   'chain-end': { label: 'Chain end', position: [-0.6, 0.9, 0.55], target: [-0.28, 0.14, 0] },
   transmission: { label: 'Gearbox', position: [-0.9, -0.12, 1.05], target: [-0.45, -0.05, 0] },

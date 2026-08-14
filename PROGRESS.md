@@ -1,5 +1,25 @@
 # PROGRESS
 
+## CORRECTION: the engine flip was wrong — reverted (2026-08-15)
+
+The operator kept pushing ("downpipe too low and at the front", "turbo
+needs a 180", "isn't the turbo behind the engine?") and they were right
+every time: the Mk7 EA888 is INTAKE-FORWARD. The intake manifold faces
+the radiator (that's the black plastic you see bonnet-up, and why the
+walnut blast is done from the front), and the TURBO hangs at the REAR
+against the bulkhead — FCP Euro's IS38 guide says it plainly: "reach
+behind the cylinder head" for the turbo nuts. The 2026-08-14
+"exhaust-forward" flip was built on my false memory and has been fully
+reverted: all engine-side z-swaps undone, turbo rotation and
+wastegate/DV positions restored, original downpipe + charge-pipe
+geometry restored from git, lambdas and N493/coolant-pump back, intake
+camera restored. KEPT because they were independently correct: washer
+system nearside, expansion tank right (still operator-confirm),
+battery/fusebox/ECU rear-left, airbox front-left, upright oil filter.
+Process lesson recorded in memory: when the operator doubts a position,
+verify with sources before defending the model — owner eyes beat model
+priors, now four times running.
+
 ## Downpipe re-route, manifold verify, interior build-out (2026-08-14)
 
 Operator flagged the downpipe "too low and at the front" — correct

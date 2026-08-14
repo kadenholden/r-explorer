@@ -11,16 +11,11 @@ import { mergeParts, tubeThrough } from './shapes'
 /** Cast downpipe with the primary catalyst brick. */
 export function downpipeCat(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  // exhaust-forward Mk7 routing: off the front-mounted turbo, straight down
-  // behind the radiator pack, cat in the down-swept run under the engine's
-  // front, then rearward under the sump to the link pipe
   const pipe = tubeThrough(
     [
-      [0.045, -0.02, 0.3],
-      [0.05, -0.16, 0.33],
-      [0.03, -0.27, 0.2],
-      [0.01, -0.3, -0.05],
-      [0, -0.31, -0.3],
+      [-0.045, -0.03, -0.31],
+      [-0.04, -0.14, -0.36],
+      [-0.01, -0.25, -0.41],
       [0, -0.3, -0.47],
     ],
     0.03,
@@ -28,11 +23,11 @@ export function downpipeCat(_params: GeometryParams): THREE.BufferGeometry {
   parts.push(pipe)
   const cat = new THREE.CylinderGeometry(0.055, 0.055, 0.19, 20)
   cat.rotateX(Math.PI / 2)
-  cat.translate(0.02, -0.295, 0.05)
+  cat.translate(0, -0.305, -0.57)
   parts.push(cat)
   const flange = new THREE.CylinderGeometry(0.042, 0.042, 0.012, 16)
   flange.rotateX(Math.PI / 2)
-  flange.translate(0.045, -0.01, 0.295)
+  flange.translate(-0.045, -0.028, -0.3)
   parts.push(flange)
   return mergeParts(parts)
 }

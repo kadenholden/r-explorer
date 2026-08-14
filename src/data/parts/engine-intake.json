@@ -8,7 +8,7 @@
       0,
       0
     ],
-    "description": "The air/boost path (dossier §2): airbox → IHI IS38 turbo with motorised wastegate → front-mount intercooler → throttle body → the plastic variable-runner intake manifold (06L133201FP) with its V157 flap motor and G336 position sensor — the assembly behind the P2015 fault this project set out to explain. Select the manifold, flaps, V157 or G336 and use the flap/fault controls in the panel. ORIENTATION (operator QA, 2026-08-14): on the real Mk7 the EA888's exhaust/turbo side faces the RADIATOR and the intake manifold sits against the BULKHEAD — which is exactly why the walnut-blast and P2015 flap work are done leaning over the engine from the front."
+    "description": "The air/boost path (dossier §2): airbox → IHI IS38 turbo with motorised wastegate → front-mount intercooler → throttle body → the plastic variable-runner intake manifold (06L133201FP) with its V157 flap motor and G336 position sensor — the assembly behind the P2015 fault this project set out to explain. Select the manifold, flaps, V157 or G336 and use the flap/fault controls in the panel. ORIENTATION (operator + FCP Euro verified, 2026-08-15): the intake manifold faces the FRONT (you see it when the bonnet opens) and the TURBO hangs at the BACK against the bulkhead — reached from behind the cylinder head, which is why turbo work on these cars is cramped."
   },
   "parts": [
     {
@@ -68,7 +68,7 @@
       "assembly": "engine-intake",
       "subAssembly": "Turbo group",
       "oemPartNumber": "06K145702J",
-      "description": "IHI IS38 (RHF5) turbo on the head's integrated exhaust manifold — Golf R most commonly shipped 06K145702J / 06K145874F; the family spans 06K145702H/J/M/N, 06K145722A/H/T, 06K145874F/N and is shared with Audi S3 8V / TTS Mk3 (R3). Compressor wheel 45.2/58.0 mm, turbine 47.4/54.7 mm, plain journal bearing. Turbo-to-head M8 nuts 25 Nm (vendor-verified; renew self-locking nuts). Turbine outlet joins the downpipe with a V-band clamp — not nuts. Orientation fixed after operator QA: turbine flange faces the head, outlet faces front-down onto the downpipe, compressor toward the nearside airbox.",
+      "description": "IHI IS38 (RHF5) turbo on the head's integrated exhaust manifold — Golf R most commonly shipped 06K145702J / 06K145874F; the family spans 06K145702H/J/M/N, 06K145722A/H/T, 06K145874F/N and is shared with Audi S3 8V / TTS Mk3 (R3). Compressor wheel 45.2/58.0 mm, turbine 47.4/54.7 mm, plain journal bearing. Turbo-to-head M8 nuts 25 Nm (vendor-verified; renew self-locking nuts). Turbine outlet joins the downpipe with a V-band clamp — not nuts. Lives at the BACK of the engine against the bulkhead — you reach behind the cylinder head for its nuts (FCP Euro IS38 guide; operator-verified) — which is why turbo jobs on these cars are knuckle-scrapers.",
       "material": null,
       "torqueSpec": {
         "valueNm": 25,
@@ -83,7 +83,7 @@
         "direction": [
           0,
           -0.2,
-          1
+          -1
         ],
         "distance": 0.4
       },
@@ -94,11 +94,11 @@
           "position": [
             0,
             -0.015,
-            0.27
+            -0.27
           ],
           "rotationDeg": [
             0,
-            180,
+            0,
             0
           ]
         }
@@ -107,7 +107,7 @@
       "calloutOffset": [
         0.14,
         0.12,
-        0.14
+        -0.14
       ],
       "color": "#9aa1a9",
       "tags": [
@@ -143,9 +143,9 @@
       "transforms": [
         {
           "position": [
-            -0.09,
+            0.09,
             0.038,
-            0.26
+            -0.26
           ],
           "rotationDeg": [
             0,
@@ -156,9 +156,9 @@
       ],
       "callout": 3,
       "calloutOffset": [
-        -0.12,
+        0.14,
         0.1,
-        0.1
+        -0.1
       ],
       "color": "#5d6167",
       "tags": [
@@ -199,9 +199,9 @@
       "transforms": [
         {
           "position": [
-            -0.12,
+            0.12,
             0.05,
-            0.25
+            -0.25
           ],
           "rotationDeg": [
             0,
@@ -212,9 +212,9 @@
       ],
       "callout": 4,
       "calloutOffset": [
-        -0.1,
+        0.14,
         0.12,
-        0.06
+        -0.1
       ],
       "color": "#33363c",
       "tags": [
@@ -393,7 +393,7 @@
         "direction": [
           -1,
           0.3,
-          -0.3
+          0.3
         ],
         "distance": 0.3
       },
@@ -404,7 +404,7 @@
           "position": [
             -0.24,
             0.09,
-            -0.32
+            0.32
           ],
           "rotationDeg": [
             0,
@@ -417,7 +417,7 @@
       "calloutOffset": [
         -0.14,
         0.12,
-        -0.08
+        0.08
       ],
       "color": "#9aa1a9",
       "tags": [
@@ -443,7 +443,7 @@
         "direction": [
           0,
           0.35,
-          -1
+          1
         ],
         "distance": 0.42
       },
@@ -454,7 +454,7 @@
           "position": [
             0,
             0.185,
-            -0.17
+            0.17
           ],
           "rotationDeg": [
             0,
@@ -467,7 +467,7 @@
       "calloutOffset": [
         0.24,
         0.16,
-        -0.14
+        0.14
       ],
       "color": "#33363c",
       "tags": [
@@ -494,7 +494,7 @@
         "direction": [
           0,
           0.6,
-          -1
+          1
         ],
         "distance": 0.58
       },
@@ -505,7 +505,7 @@
           "position": [
             0,
             0.185,
-            -0.178
+            0.178
           ],
           "rotationDeg": [
             0,
@@ -518,7 +518,7 @@
       "calloutOffset": [
         0.16,
         0.2,
-        -0.16
+        0.16
       ],
       "color": "#4a4e55",
       "tags": [
@@ -544,7 +544,7 @@
         "direction": [
           -0.8,
           0.5,
-          -0.6
+          0.6
         ],
         "distance": 0.4
       },
@@ -555,7 +555,7 @@
           "position": [
             -0.218,
             0.172,
-            -0.185
+            0.185
           ],
           "rotationDeg": [
             0,
@@ -568,7 +568,7 @@
       "calloutOffset": [
         -0.16,
         0.14,
-        -0.12
+        0.12
       ],
       "color": "#3a3d44",
       "tags": [
@@ -595,7 +595,7 @@
         "direction": [
           0.6,
           0.6,
-          -1
+          1
         ],
         "distance": 0.5
       },
@@ -606,7 +606,7 @@
           "position": [
             0.172,
             0.173,
-            -0.193
+            0.193
           ],
           "rotationDeg": [
             0,
@@ -619,7 +619,7 @@
       "calloutOffset": [
         0.14,
         0.12,
-        -0.14
+        0.14
       ],
       "color": "#9aa1a9",
       "tags": [
@@ -648,7 +648,7 @@
         "direction": [
           0,
           0.4,
-          -1
+          1
         ],
         "distance": 0.7
       },
@@ -663,7 +663,7 @@
           "position": [
             -0.176,
             0.216,
-            -0.181
+            0.181
           ],
           "rotationDeg": [
             90,
@@ -675,7 +675,7 @@
           "position": [
             -0.088,
             0.216,
-            -0.181
+            0.181
           ],
           "rotationDeg": [
             90,
@@ -687,7 +687,7 @@
           "position": [
             0,
             0.216,
-            -0.181
+            0.181
           ],
           "rotationDeg": [
             90,
@@ -699,7 +699,7 @@
           "position": [
             0.088,
             0.216,
-            -0.181
+            0.181
           ],
           "rotationDeg": [
             90,
@@ -711,7 +711,7 @@
           "position": [
             0.176,
             0.216,
-            -0.181
+            0.181
           ],
           "rotationDeg": [
             90,
@@ -724,7 +724,7 @@
       "calloutOffset": [
         -0.12,
         0.18,
-        -0.14
+        0.14
       ],
       "color": "#98a2ae",
       "tags": [
@@ -800,7 +800,7 @@
         "direction": [
           0.4,
           1,
-          -0.5
+          0.5
         ],
         "distance": 0.55
       },
@@ -811,7 +811,7 @@
           "position": [
             0.1,
             0.215,
-            -0.21
+            0.21
           ],
           "rotationDeg": [
             0,
@@ -824,7 +824,7 @@
       "calloutOffset": [
         0.12,
         0.12,
-        -0.12
+        0.12
       ],
       "color": "#3a3d44",
       "tags": [
@@ -855,7 +855,7 @@
         "direction": [
           0.6,
           0.6,
-          0.6
+          -0.6
         ],
         "distance": 0.45
       },
@@ -866,7 +866,7 @@
           "position": [
             0.05,
             -0.02,
-            0.26
+            -0.26
           ],
           "rotationDeg": [
             0,
@@ -879,7 +879,7 @@
       "calloutOffset": [
         0.12,
         0.1,
-        0.12
+        -0.12
       ],
       "color": "#8d939c",
       "tags": [
@@ -910,7 +910,7 @@
         "direction": [
           -0.6,
           0.6,
-          0.6
+          -0.6
         ],
         "distance": 0.45
       },
@@ -921,7 +921,7 @@
           "position": [
             -0.09,
             -0.02,
-            0.26
+            -0.26
           ],
           "rotationDeg": [
             0,
@@ -934,7 +934,7 @@
       "calloutOffset": [
         -0.12,
         0.1,
-        0.12
+        -0.12
       ],
       "color": "#7d838b",
       "tags": [
