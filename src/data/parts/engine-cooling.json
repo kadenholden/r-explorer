@@ -599,7 +599,7 @@
           ],
           "rotationDeg": [
             0,
-            0,
+            180,
             0
           ]
         }
@@ -624,7 +624,7 @@
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "Small electric pump pressed into a rubber grommet on the bottle's inboard face. THE most common screen-wash leak: the grommet hardens and weeps, so the bottle slowly empties overnight. The pump pulls straight out of the grommet by hand; the grommet is a pennies part.",
+      "description": "Small electric pump pressed into a rubber grommet on the bottle's ARCH-FACING rear face — which is exactly why it's serviced from the wheel arch with the liner peeled back (operator QA corrected the face after the side-mirror move). THE most common screen-wash leak: the grommet hardens and weeps, so the bottle slowly empties overnight. The pump pulls straight out of the grommet by hand; the grommet is a pennies part.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -633,9 +633,9 @@
       ],
       "explodeVector": {
         "direction": [
-          0.6,
+          -0.3,
           -0.2,
-          -0.6
+          -1
         ],
         "distance": 0.4
       },
@@ -644,22 +644,22 @@
       "transforms": [
         {
           "position": [
-            -0.52,
-            -0.04,
-            0.44
+            -0.61,
+            -0.06,
+            0.4
           ],
           "rotationDeg": [
+            -90,
             0,
-            0,
-            -90
+            0
           ]
         }
       ],
       "callout": 13,
       "calloutOffset": [
-        0.12,
+        -0.12,
         -0.08,
-        -0.1
+        -0.12
       ],
       "color": "#26282c",
       "tags": [

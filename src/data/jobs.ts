@@ -137,7 +137,7 @@ export const JOBS: Job[] = [
           'Towel underneath — the bottle will empty. Unclip the hose and connector, then pull the pump STRAIGHT out of its rubber grommet by hand (the animation shows the motion). Hook the old grommet out; if it’s hardened or cracked you’ve found the leak. Press the new grommet in, wet the pump spigot with washer fluid, press the pump home.',
         isolate: ['washer-bottle', 'washer-pump'],
         focusPartId: 'washer-pump',
-        lifts: { 'washer-pump': [0.14, -0.02, -0.06] },
+        lifts: { 'washer-pump': [-0.05, -0.03, -0.16] },
       },
       {
         title: 'Refill and prove it',
