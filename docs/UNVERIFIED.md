@@ -140,12 +140,22 @@ fluid/service data. Still open:
 | G 055 → G 060 fluid supersession | community consensus only |
 | RDU/bevel tooth counts, driveshaft PNs | unverified (SSP 515 likely holds the counts) |
 
-## Phase 7 (hydraulics, cooling, fuel, electrical, interior)
+## Phase 7 (cooling, electrical, body) — LARGELY RESOLVED by R9/R10/R11 (2026-08-14)
 
-All OEM numbers `null`. Specific verify-items the dossier itself
-flags: **ECU identity** (MED 17.5.2 vs SIMOS 18 — read the label/VCDS),
-battery Ah spec, N493 current revision number, and the operator-side
-assumptions: **RHD** and the exact paint code for the white.
+- **ECU RESOLVED**: SIMOS 18.1, family 5G0906259 — NOT MED 17.5.2
+  (settle finally with a VCDS scan of this VIN).
+- **N493 resolved**: it IS the pump/thermostat module, 06L121111P;
+  impeller 06L121012M (generic 06L121012 does NOT fit — VIN-verify).
+  Coolant-pump pulley bolt is the car's only LEFT-HAND thread.
+- **Battery**: AGM 68 Ah/380 A, 000915105 family; swap needs the
+  19-Gateway adaptation (not registration).
+- **Paint**: Pure White LC9A / sticker 0Q0Q is the standard solid white —
+  operator to confirm on the service book / boot-floor sticker.
+- Still open: ACC radar exact suffix (J vs P; Bosch pre-FL only);
+  G62 PN vendor-sourced; expansion-cap bar rating; most cooling mount
+  torques NONE FOUND; N422 + heater-hose PNs; MC casting by VIN;
+  fuse-row maps, rear-light/tailgate-loom/small-sensor PNs (R10 NONE
+  FOUND list); rear final-drive fluid A1-vs-S2; **RHD still assumed**.
 
 ## Lubrication / sump (added 2026-08-04 after a real oil leak — R1-RESOLVED 2026-08-10)
 

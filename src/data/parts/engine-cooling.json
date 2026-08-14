@@ -8,7 +8,7 @@
       0,
       0
     ],
-    "description": "The Gen 3's signature cooling system (dossier §2): the N493 rotary-slide thermal-management module (two coupled rotary valves, one DC motor) holds coolant anywhere between ~80–110 °C and blocks block-flow during warm-up; the mechanical pump is driven off a balance shaft, NOT the accessory belt. Front stack front→rear: condenser, radiator, intercooler, fans."
+    "description": "Cooling & fluids per R9: coolant G13 (TL-VW 774 J), 10.0 L total — superseded by mixable G12evo; engine oil VW 502 00, 5.7 L with filter; A/C refrigerant R134a at 500 ±15 g (NOT R1234yf on this pre-facelift car), PAG oil differing by compressor brand (Sanden G 052 154 A2 75 cc vs Denso G 052 300 A2 110 cc — their N280 valves don't interchange). There is NO radiator drain screw on the Mk7: VW fills under vacuum with VAS 6096. See docs/research/R9-cooling-fluids.md."
   },
   "parts": [
     {
@@ -17,8 +17,8 @@
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "The Audi/Schaeffler rotary-slide valve module replacing a wax thermostat: valve 1 regulates oil-cooler/head/radiator flow (~80–110 °C, up to ~107 °C light-load for low friction), valve 2 couples the block in at ~145° of valve-1 rotation. Driven by one DC motor through a worm gear; 12 V / 1,000 Hz PWM control (dossier §2).",
+      "oemPartNumber": "06L121111P",
+      "description": "R9 RESOLUTION: the leak-prone plastic pump/thermostat unit IS the N493 module, standard on all EA888 Gen 3 (SSP 606 + erWin Rep. Gr. 19). Map-controlled coolant 85–107 °C with the wax safety thermostat only as a 113 °C fallback. Supersession 06L121111 → 06L121111P; module bolts 9 Nm. The Audi/Schaeffler rotary-slide valve module replacing a wax thermostat: valve 1 regulates oil-cooler/head/radiator flow (~80–110 °C, up to ~107 °C light-load for low friction), valve 2 couples the block in at ~145° of valve-1 rotation. Driven by one DC motor through a worm gear; 12 V / 1,000 Hz PWM control (dossier §2).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -69,10 +69,16 @@
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Mechanical pump on the cold side, belt-driven off a BALANCE SHAFT — famously absent from the accessory belt (dossier §2).",
+      "description": "The balance-shaft-driven impeller side of the N493 pump/thermostat module. R9: impeller sub-unit current number 06L121012M — with an explicit vendor warning that the generic 06L121012 pump 'does not fit the Mk7 Golf R'; VIN-verify before ordering. Pulley bolt 10 Nm + 90°, RENEW — and it is a LEFT-HAND thread, the only confirmed one on the car (R9/R12).",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 10,
+        "angle": "+90°",
+        "note": "Pulley bolt — LEFT-HAND thread, renew (R9/R12); module bolts 9 Nm"
+      },
+      "knownIssues": [
+        "Plastic housing cracks/seeps — coolant hides under the intake manifold and mimics other leaks (R9 + dossier §2)."
+      ],
       "explodeVector": {
         "direction": [
           0.6,
@@ -115,7 +121,7 @@
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": null,
-      "oemPartNumber": null,
+      "oemPartNumber": "5Q0121251GN",
       "description": "The R's uprated main radiator in the MQB front stack (dossier §8).",
       "material": null,
       "torqueSpec": null,
@@ -212,12 +218,12 @@
     },
     {
       "id": "aux-radiator",
-      "name": "Auxiliary radiator",
+      "name": "Auxiliary corner radiators ×2",
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "One of the market-dependent auxiliary radiators the R carries (dossier §8).",
+      "description": "R9 confirms TWO corner auxiliary radiators on the DSG car: left/DSG-side 5Q0121253H, right/engine-side 5Q0121251HA.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -239,6 +245,18 @@
         {
           "position": [
             -0.52,
+            -0.05,
+            0.6
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.52,
             -0.05,
             0.6
           ],
@@ -314,7 +332,7 @@
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Pressurised degas bottle up high on the left of the bay.",
+      "description": "Pressurised degas bottle up high on the left of the bay. R9: cap rating ~1.4–1.6 bar is unconfirmed against a primary source.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],

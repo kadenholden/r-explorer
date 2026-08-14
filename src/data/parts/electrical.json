@@ -13,12 +13,12 @@
   "parts": [
     {
       "id": "engine-ecu",
-      "name": "Engine ECU (Bosch MED 17.5.2)",
+      "name": "Engine ECU — SIMOS 18.1 (J623)",
       "system": "electrical",
       "assembly": "electrical",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Gasoline DI ECU (Infineon TriCore) running the dual injection, IS38 wastegate, AVS and N493 (dossier §7). Flash-tunable to ~600–650 WHP per RWC. Some sources cite SIMOS 18 on later cars — VERIFY from the ECU label / VCDS.",
+      "description": "R10 RESOLUTION of the dossier's open ECU question: the CJXC Golf R runs a Continental (Siemens VDO) SIMOS 18.1, part family 5G0906259 (e.g. -B/-F, software SC800H5100000 / SC800O3000000) — NOT Bosch MED 17.5.x. Beware the sibling trap: the S3 8V uses 8V0906259. Treat as settled pending a VCDS scan of this VIN.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -59,8 +59,9 @@
       "color": "#3a3d44",
       "tags": [
         "ECU",
-        "MED17.5.2",
-        "verify-SIMOS18"
+        "SIMOS-18.1",
+        "J623",
+        "R10-resolved"
       ]
     },
     {
@@ -70,7 +71,7 @@
       "assembly": "electrical",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "The central gateway bridging CAN-C powertrain (engine, DSG, ABS/ESC, Haldex), CAN-B comfort, infotainment CAN/MOST, LIN sub-buses and the diagnostic CAN to the OBD port (dossier §7). Phase 8 idea from the dossier: overlay the bus topology on the model.",
+      "description": "CAN gateway J533 (5Q0907530 family) — the hub between Powertrain CAN (500 kbit/s), Convenience, Infotainment and Diagnostic CAN. R10: the topology is pure CAN + LIN, NO FlexRay; the OBD port exposes only the Diagnostic CAN (ISO 15765-4, 500 kbaud, 11-bit). The central gateway bridging CAN-C powertrain (engine, DSG, ABS/ESC, Haldex), CAN-B comfort, infotainment CAN/MOST, LIN sub-buses and the diagnostic CAN to the OBD port (dossier §7). Phase 8 idea from the dossier: overlay the bus topology on the model.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -122,7 +123,7 @@
       "assembly": "electrical",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Front-left battery with management for the recuperation/start-stop system (dossier §7).",
+      "description": "AGM 68 Ah / 380 A (DIN) H6 battery, family 000915105 (e.g. 000915105FC; the 420 CCA figure on US listings is the SAE rating of the same battery) (R10). No BMW-style registration, but a battery or J367 monitor swap requires the 19-Gateway adaptation per VW TSB 2053976 / 27-19-01.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -259,6 +260,59 @@
       "tags": [
         "harness",
         "loom"
+      ]
+    },
+    {
+      "id": "acc-radar",
+      "name": "ACC radar unit (Bosch, front)",
+      "system": "electrical",
+      "assembly": "electrical",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "Front distance-control radar behind the bumper/badge area. R10: the pre-facelift R uses the BOSCH unit, controller family 5Q0907572 (J/P suffixes — exact one unconfirmed for this car; HW 3QF907572), housing 5Q0907541. The Continental 5Q0907561 is facelift-only — wrong part. After any bumper/radar disturbance it needs calibration: coding 14117 in address 13, 120 cm target, 0.00° ±0.80°. NOTE for this car's live fault: 'ACC not available' is a CATCH-ALL that also mirrors drivetrain faults (e.g. cam-adjuster codes) — scan address 13 AND 01 before condemning the radar.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Misalignment after light front impacts → ACC unavailable until recalibrated (R10).",
+        "'ACC not available' with no radar fault often traces to engine-side DTCs — check both controllers (R10)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.2,
+          1
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "ecuBox",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.05,
+            2.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        0.14,
+        0.1,
+        0.14
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "ACC",
+        "radar",
+        "bosch",
+        "operator-issue",
+        "calibration"
       ]
     }
   ]

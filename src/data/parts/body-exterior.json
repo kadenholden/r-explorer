@@ -8,7 +8,7 @@
       0,
       0
     ],
-    "description": "The operator's car outside (dossier §1): 5-door in white, with the R signatures — deeper front bumper with enlarged intakes, rear bumper with diffuser framing the quad tips, roof spoiler, gloss-black mirror caps, side skirts. L≈4,268 mm, W 1,799 mm, H≈1,470 mm in real life; the model wraps the compressed scene chassis. Hide Body systems via the tree to get the mechanical view back."
+    "description": "The operator's car outside (dossier §1): 5-door in white, with the R signatures — deeper front bumper with enlarged intakes, rear bumper with diffuser framing the quad tips, roof spoiler, gloss-black mirror caps, side skirts. L≈4,268 mm, W 1,799 mm, H≈1,470 mm in real life; the model wraps the compressed scene chassis. Hide Body systems via the tree to get the mechanical view back. R11 paint block: the UK pre-facelift R's standard solid white is PURE WHITE, L-code LC9A, sticker code 0Q0Q (the other white was Oryx White Mother-of-Pearl) — the operator should confirm LC9A on the service book / boot-floor sticker. Replacement panels come GRU (grey-primed)."
   },
   "parts": [
     {
@@ -17,11 +17,13 @@
       "system": "body",
       "assembly": "body-exterior",
       "subAssembly": "Closures",
-      "oemPartNumber": null,
+      "oemPartNumber": "5G0823031J",
       "description": "Bolt-on bonnet over the engine bay (dossier §1 closures).",
       "material": "Steel",
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Leading-edge stone chips — the R's soft paint is notorious (R11)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -64,8 +66,8 @@
       "system": "body",
       "assembly": "body-exterior",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Bolt-on front fender with the real wheel-arch cut over the 19\" Pretoria (dossier §1).",
+      "oemPartNumber": "5G0821106B",
+      "description": "Bolt-on front fender with the real wheel-arch cut over the 19\" Pretoria (dossier §1). R11 corrected the wing numbers to 5G0821105B/106B (the brief's 5G0821021/022 was wrong).",
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
@@ -116,8 +118,8 @@
       "system": "body",
       "assembly": "body-exterior",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Left-hand front fender.",
+      "oemPartNumber": "5G0821105B",
+      "description": "Left-hand front fender. R11 corrected the wing numbers to 5G0821105B/106B (the brief's 5G0821021/022 was wrong).",
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
@@ -217,7 +219,7 @@
       "assembly": "body-exterior",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "R rear bumper whose diffuser frames the quad exhaust tips — the R's defining rear signature (dossier §1). The tips emerge beneath it.",
+      "description": "R rear bumper whose diffuser frames the quad exhaust tips — the R's defining rear signature (dossier §1). The tips emerge beneath it. R11: cover family 5G6807421 (supersedes 5G6807417 AP/AR/BA/BQ) — R vs base differ by finish, quad-exhaust cutouts and PDC apertures; confirm the exact R suffix.",
       "material": "Plastic (painted)",
       "torqueSpec": null,
       "knownIssues": [],
@@ -268,7 +270,9 @@
       "description": "5-door front door — shorter than the 3-door's, with its own hinges and glass (dossier §1 notes the bodystyles differ in doors, hinges, mirrors and glass).",
       "material": "Steel",
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Kessy door-handle sensor water intrusion → intermittent keyless lock/unlock, especially the driver's door (R11; handle family 5G0837885, GRU primed)."
+      ],
       "explodeVector": {
         "direction": [
           1,
@@ -319,7 +323,9 @@
       "description": "Left front door.",
       "material": "Steel",
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Kessy door-handle sensor water intrusion → intermittent keyless lock/unlock, especially the driver's door (R11; handle family 5G0837885, GRU primed)."
+      ],
       "explodeVector": {
         "direction": [
           -1,
@@ -563,8 +569,8 @@
       "system": "body",
       "assembly": "body-exterior",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "The R's gloss-black mirror caps — one of its subtle tells (dossier §1).",
+      "oemPartNumber": "5G0072530",
+      "description": "The R's gloss-black mirror caps — one of its subtle tells (dossier §1). Satin-chrome caps standard on the R (set 5G0072530/-A); clips snap on careless removal (R11).",
       "material": "Plastic, gloss black",
       "torqueSpec": null,
       "knownIssues": [],
