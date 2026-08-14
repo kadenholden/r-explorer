@@ -131,7 +131,7 @@ import {
   upperTimingCover,
   pcvModule,
 } from './headDetail'
-import { turboLines } from './systemDetail'
+import { turboLines, cartridge, flexDisc } from './systemDetail'
 import {
   floorpan,
   frontStructure,
@@ -271,6 +271,8 @@ registerRecipe('sparkPlug', sparkPlug)
 registerRecipe('upperTimingCover', upperTimingCover)
 registerRecipe('pcvModule', pcvModule)
 registerRecipe('turboLines', turboLines)
+registerRecipe('cartridge', cartridge)
+registerRecipe('flexDisc', flexDisc)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)

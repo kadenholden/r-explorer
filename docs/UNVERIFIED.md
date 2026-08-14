@@ -78,15 +78,18 @@ and both lambda numbers. Still open:
 | Exhaust flap V-designation | electric confirmed but the V-number NOT found — do not assert "N321" |
 | UK '722S' turbo revision | reportedly IS20-style actuator — verify by connector orientation |
 
-## Transmission — DQ250 (Phase 3)
+## Transmission — DQ250 — LARGELY RESOLVED by R5 (2026-08-14)
 
-No OEM numbers or torque specs in the dossier for DSG internals; all 9
-records store `null`. Confirm the gearbox code (DQ250/0D9) from the
-bellhousing label.
+R5 delivered ratios, capacities, the clutch module (02E141029N/P,
+380 Nm), filter 02E305051C and the mechatronic solenoid map. Still open:
 
-| Part (id) | Missing |
+| Item | Status |
 | --- | --- |
-| All DQ250 records (`dsg-housing`, `dual-mass-damper`, `dual-clutch-pack`, `mechatronic-j743`, `input-shafts`, `gear-set-1`, `gear-set-2`, `final-drive-diff`, `pto-bevel`) | OEM numbers; ratios; service capacities |
+| Mechatronic PN | scan says 02E927770AS, vendors 02E325025AS — verify |
+| Drain plug torque | R5 40 Nm vs R12 chart 45 Nm — conflict |
+| Bevel box fluid | G 052 145 S2 (R5) vs A1 (R9 chart) — check the label; family corrected to 0CN 409 053 |
+| Ratios | single-forum-sourced; reverse ratio NONE FOUND |
+| Bellhousing / mount / driveshaft-flange torques, synchro cone counts | NONE FOUND — erWin needed |
 
 ## Body & exterior (Phase 6)
 
@@ -115,16 +118,20 @@ Dossier-verified on their parts: wheel bolts 120 Nm; hub/axle bolt
 | Subframes, ARBs, knuckles/carriers | OEM numbers; subframe bolt torques |
 | Pretoria wheels | OEM number; exact ET offset (dossier: ET45–50) |
 
-## Driveline — Haldex Gen 5 (Phase 4)
+## Driveline — Haldex Gen 5 — LARGELY RESOLVED by R6 (2026-08-14)
 
-Dossier-verified: the charge pump **0CQ598549** (recorded on its part).
-Everything else stores `null`.
+R6 confirmed the pump 0CQ598549, corrected the architecture (no
+accumulator/filter/pressure valve — strainer + CEH pump), resolved the
+propshaft (two-piece + flex disc 5Q0521307, not CVs) and gave the
+fluid/service data. Still open:
 
-| Part (id) | Missing |
+| Item | Status |
 | --- | --- |
-| Propshaft + centre bearing (`propshaft-front`, `-rear`, `center-bearing`) | OEM numbers |
-| RDU + Haldex internals (`rdu-housing`, `haldex-coupling`, `haldex-filter`, `haldex-controller`, `rear-diff-gears`) | OEM numbers; fluid part numbers + capacities |
-| Driveshafts (`rear-driveshafts`, `front-driveshaft-right`, `front-driveshaft-left`) | OEM numbers |
+| Propshaft flange torques | NONE FOUND — the circulating 55 Nm is Audi C6 RS6, rejected; erWin group 39 |
+| Rear-diff plug torque | ~30 Nm not primary-sourced; R12 carries a 19-vs-35 specialist conflict |
+| Clutch-pack disc count/friction spec | NONE FOUND |
+| G 055 → G 060 fluid supersession | community consensus only |
+| RDU/bevel tooth counts, driveshaft PNs | unverified (SSP 515 likely holds the counts) |
 
 ## Phase 7 (hydraulics, cooling, fuel, electrical, interior)
 

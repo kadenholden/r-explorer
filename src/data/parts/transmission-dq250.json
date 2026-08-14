@@ -13,7 +13,7 @@
       0,
       0
     ],
-    "description": "The operator's car runs the DQ250 6-speed wet dual-clutch (0D9 AWD variant) — the world's first mass-produced passenger-car DCT, designed for VAG engines up to ~350–380 Nm (dossier §3). K1 drives odd gears, K2 even, both packs submerged in oil; the J743 mechatronic unit pressurises the circuit to ~40–60 bar. Bolted to the engine's flywheel end; the AWD power take-off flange points rearward for Phase 4's Haldex driveline. Verify the gearbox code on the bellhousing label against DQ250 (a Mk7.5 would be DQ381)."
+    "description": "DQ250 (0D9) six-speed wet dual-clutch DSG. R5 filled the internals in: gears 1-2-3-4 run on output shaft 1 (~4.77 final drive), 5-6-R on shaft 2 (~3.44) — ratios 2.92 / 1.83 / 1.31 / 0.97 / 1.04 / 0.81 (forum-sourced, flagged). Fluid is G 052 182 A2 (Pentosin FFL-2), ~7.0–7.2 L total / ~5.5 L at service, level set by overflow at 35–45 °C, 40k-mile interval — at this car's ~92k it is due its third change. See docs/research/R5-dq250.md."
   },
   "parts": [
     {
@@ -23,9 +23,13 @@
       "assembly": "transmission-dq250",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Aluminium case: bellhousing mating the engine's flywheel-end face, main gear case, and end cover. Two separate oil circuits live in here — gear/diff oil (GL-type) and the mechatronic's own hydraulic oil (dossier §3).",
+      "description": "The DQ250 case with bellhousing and integral pan. Service data (R5): fluid G 052 182 A2, ~5.5 L at a change through the overflow-level procedure at 35–45 °C oil temp; pan bolts 8 Nm staged; oil-cooler bolts 20 Nm + 90°; mechatronic cover 5 Nm + ¼ turn. Bellhousing and mount torques NOT found — per erWin.",
       "material": "Cast aluminium",
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 8,
+        "angle": null,
+        "note": "Pan bolts, staged (R5). Drain plug 40 Nm (R5) — R12's chart says 45; verify before service"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -123,12 +127,12 @@
       "system": "transmission",
       "assembly": "transmission-dq250",
       "subAssembly": "Clutch & input",
-      "oemPartNumber": null,
-      "description": "Concentric multi-plate packs running in oil: K1 (outer) carries gears 1-3-5, K2 (inner) 2-4-6-R, so the next gear is pre-selected and the swap is a clutch handover. The wet design is why the DQ250 tolerates track abuse better than dry DSGs (dossier §3).",
+      "oemPartNumber": "02E141029P",
+      "description": "BorgWarner wet dual-clutch module (02E141029N/P), rated at exactly 380 Nm transferable torque — the number that matters on tuned cars (R5). OEM pack: 9 friction discs (4 on K1, 5 on K2) and 11 steels (5/6); shim kit 02E398321, carrier 02E398029C. After replacement: clutch adaptation (VCDS group 067 on SW ≥0800) plus the defined test drive is mandatory.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
-        "Clutch wear accelerates with hard launches from cold — let the oil warm before launching (dossier §3)"
+        "Slip/judder past the 380 Nm rating on remapped cars (R5)."
       ],
       "explodeVector": {
         "direction": [
@@ -175,11 +179,12 @@
       "assembly": "transmission-dq250",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "The DSG's brain and hydraulics in one: valve body, electric pump, pressure accumulator, shift/clutch solenoids, TCU and speed/pressure sensors, pressurising the circuit to ~40–60 bar (dossier §3). Uses its own hydraulic oil, separate from the gear oil.",
+      "description": "The J743 mechatronic — valve body, ECU and sensors in one, living in the fluid. R5's solenoid map: N215/N216 clutch-pressure regulators, N217/N218/N233 system pressure, N88–N92 shift solenoids, G509 temperature sensor. MQB-era UDS units are software-locked to the gearbox code. PART NUMBER DISAGREEMENT: a scan shows 02E927770AS while vendors list 02E325025AS — verify before ordering.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
-        "Pressure-accumulator wear is the documented DQ250 mechatronic weak point (dossier §3)"
+        "The pressure ACCUMULATOR is a known cracking failure on remapped R/S3 cars → sudden loss of drive/limp (R5).",
+        "Solenoid wear → harsh or flaring shifts (R5)."
       ],
       "explodeVector": {
         "direction": [
@@ -226,7 +231,7 @@
       "assembly": "transmission-dq250",
       "subAssembly": "Gear train",
       "oemPartNumber": null,
-      "description": "Two input shafts, one inside the other: the hollow outer shaft (from K1) carries the odd-gear pinions, the solid inner (K2) the even set — the packaging trick that makes a DCT possible (dossier §3).",
+      "description": "Concentric input shafts: outer shaft for K1 (odd gears), hollow inner for K2 (even). Gears 1-2-3-4 drive output shaft 1 (~4.77 final), 5-6-R output shaft 2 (~3.44) — the two-final-drive trick that keeps the box compact (R5).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -273,7 +278,7 @@
       "assembly": "transmission-dq250",
       "subAssembly": "Gear train",
       "oemPartNumber": null,
-      "description": "First output shaft with its synchronised gear pairs (odd ratios), driving the final-drive ring gear.",
+      "description": "Output shaft 1 gear cluster — 1st 2.92, 2nd 1.83, 3rd 1.31, 4th 0.97 into the ~4.77 final drive (R5; single-forum-sourced, flagged). Synchro cone counts per gear NOT found.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -323,7 +328,7 @@
       "assembly": "transmission-dq250",
       "subAssembly": "Gear train",
       "oemPartNumber": null,
-      "description": "Second output shaft carrying the even ratios and reverse, also meshing with the final-drive ring gear.",
+      "description": "Output shaft 2 cluster — 5th 1.04, 6th 0.81 and reverse into the ~3.44 final drive (R5). Reverse ratio NOT found.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -373,7 +378,7 @@
       "assembly": "transmission-dq250",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Ring gear and differential integrated in the case, splitting torque to the unequal-length front driveshafts (Phase 4/5 adds the shafts). Runs in the gear-oil circuit (dossier §3).",
+      "description": "Front differential fed by BOTH output shafts' final-drive pinions (~4.77 and ~3.44) — a signature DQ250 layout (R5).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -420,7 +425,7 @@
       "assembly": "transmission-dq250",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "The angle drive off the final drive that turns torque 90° rearward — its output flange is where Phase 4's propshaft bolts on, feeding the Haldex Gen 5 coupling at the rear axle (dossier §3–4).",
+      "description": "The power-take-off bevel box sending drive rearward to the propshaft. R5 CORRECTION: the family is 0CN 409 053 (the brief's 0CQ prefix was the Haldex side). Its own fluid: G 052 145 S2, ~0.9 L, plug N 90 281 802 — note R9's fluid chart lists G 052 145 A1 for a rear unit; the S2/A1 discrepancy is flagged, verify the label.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -459,6 +464,165 @@
         "PTO",
         "bevel-box",
         "4motion"
+      ]
+    },
+    {
+      "id": "dsg-oil-filter",
+      "name": "DSG oil filter cartridge",
+      "system": "transmission",
+      "assembly": "transmission-dq250",
+      "subAssembly": "Service",
+      "oemPartNumber": "02E305051C",
+      "description": "The external spin-in filter on top of the case, changed with every 40k fluid service (R5).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "A neglected filter starves the mechatronic of clean fluid — shift quality decays first (R5)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.4
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "cartridge",
+      "geometryParams": {
+        "radiusMm": 30,
+        "heightMm": 80
+      },
+      "transforms": [
+        {
+          "position": [
+            0.05,
+            0.12,
+            0.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 10,
+      "calloutOffset": [
+        0.1,
+        0.12,
+        0.1
+      ],
+      "color": "#c9a227",
+      "tags": [
+        "dsg-filter",
+        "40k-service",
+        "02E305051C"
+      ]
+    },
+    {
+      "id": "mechatronic-accumulator",
+      "name": "Mechatronic pressure accumulator",
+      "system": "transmission",
+      "assembly": "transmission-dq250",
+      "subAssembly": "Mechatronic",
+      "oemPartNumber": null,
+      "description": "The hydraulic accumulator inside the mechatronic storing clutch-apply pressure (R5). THE known DQ250 weak point on remapped cars.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Cracks on remapped R/S3 cars → pressure loss, sudden limp/no-drive; the classic 'mechatronic failure' (R5)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.3,
+          1
+        ],
+        "distance": 0.42
+      },
+      "geometryRef": "cartridge",
+      "geometryParams": {
+        "radiusMm": 24,
+        "heightMm": 60
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.02,
+            0.03,
+            0.19
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 11,
+      "calloutOffset": [
+        -0.1,
+        0.1,
+        0.14
+      ],
+      "color": "#8d939c",
+      "tags": [
+        "accumulator",
+        "mechatronic",
+        "known-issue",
+        "remap-risk"
+      ]
+    },
+    {
+      "id": "dsg-drain-plug",
+      "name": "DSG drain plug",
+      "system": "transmission",
+      "assembly": "transmission-dq250",
+      "subAssembly": "Service",
+      "oemPartNumber": null,
+      "description": "Pan drain plug. R5 gives 40 Nm; R12's chart carries 45 Nm — a flagged conflict, verify before service. Level is set separately via the overflow standpipe at 35–45 °C.",
+      "material": null,
+      "torqueSpec": {
+        "valueNm": 40,
+        "angle": null,
+        "note": "R5; R12 chart says 45 Nm — CONFLICT, verify"
+      },
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "drainPlug",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.02,
+            -0.21,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 12,
+      "calloutOffset": [
+        0.1,
+        -0.1,
+        0.1
+      ],
+      "color": "#98a2ae",
+      "tags": [
+        "drain-plug",
+        "dsg-service",
+        "torque-conflict"
       ]
     }
   ]
