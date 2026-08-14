@@ -1,5 +1,27 @@
 # PROGRESS
 
+## Operator QA round 2: THE BAY WAS BACKWARDS (2026-08-14)
+
+The operator's washer-side and expansion-tank catches unravelled a
+systemic error: the engine was modelled INTAKE-FORWARD, but the real
+Mk7 EA888 sits EXHAUST-FORWARD — turbo and downpipe face the radiator,
+the intake manifold sits against the bulkhead (exactly why the walnut
+blast and P2015 flap work are hard on the real car). Fixed with a
+selective side-swap across engine files: cams/valves/seals/AVS/N205 and
+cam sensors swapped sides; manifold + flaps + N316 + G336 + GX9 +
+throttle to the rear; turbo + wastegate + DV + service lines to the
+front; HPFP follows the exhaust cam; DI/MPI rails + N80 to the rear;
+PCV and starter rearward; charge pipes and downpipe yaw-mirrored;
+lambdas repositioned. Kept at the front deliberately (correct in
+reality): dipstick, oil filter housing, core plugs. Bay accessories to
+their real corners: expansion tank RIGHT by the strut tower, battery +
+fusebox + ECU rear-left against the bulkhead, airbox front-left, washer
+system mirrored to the NEARSIDE (filler front-left, bottle behind LF
+arch liner) with job/service texts updated (full RIGHT lock now).
+Intake camera re-aimed over the top. Also enriched from R10's bulb
+chart: headlight record (5G1998753D, D3S, AFS module + failures) and
+tail-light record (full bulb map + connector-corrosion issue).
+
 ## Liftable bonnet + guided jobs (2026-08-14, operator-requested)
 
 The app now works like the car: an **Open bonnet** chip hinges the real

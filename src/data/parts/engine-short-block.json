@@ -3,7 +3,11 @@
     "id": "engine-short-block",
     "name": "Engine — short block (EA888 Gen 3)",
     "system": "engine",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "EA888 Gen 3 (CJXC) short block: closed-deck grey cast iron block (82.5 mm bore × 92.8 mm stroke, 1,984 cc, firing order 1-3-4-2), forged flat-plane crankshaft on five 48 mm mains, cracked-cap rods with floating DLC wrist pins, 9.3:1 pistons with N522-gated oil-jet cooling, and twin counter-rotating balance shafts. R1 research (2026-08): there is NO one-piece ladder frame — five discrete main caps are cross-bolted at the sides and clamped from below by the structural aluminium upper sump. Torques here were resolved against erWin/Bentley-derived sources (see docs/research/R1-short-block.md) — still confirm in a licensed manual before real work."
   },
   "parts": [
@@ -21,14 +25,45 @@
         "Core-plug weep at very high mileage (R1).",
         "Aluminium bolts into the block (sump, flange) pull threads if over-torqued — always torque-check, never guess (R1)."
       ],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.03 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.03
+      },
       "geometryRef": "engineBlock",
-      "geometryParams": { "boreMm": 82.5 },
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "boreMm": 82.5
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.27, 0.1, 0.08],
+      "calloutOffset": [
+        0.27,
+        0.1,
+        0.08
+      ],
       "color": "#6a6f76",
-      "tags": ["block", "closed-deck", "GJL250", "82.5mm-bore"]
+      "tags": [
+        "block",
+        "closed-deck",
+        "GJL250",
+        "82.5mm-bore"
+      ]
     },
     {
       "id": "main-bearing-caps",
@@ -39,22 +74,97 @@
       "oemPartNumber": null,
       "description": "R1 correction: the Gen 3 bottom end is NOT a one-piece ladder/bedplate. Five separate lower main caps are cross-bolted at the sides for NVH and then clamped from below by the aluminium upper sump, which carries the upper main-bearing supports. Assembly order: seat the centre (thrust) cap first and set crank end-play (~0.003\"), vertical bolts to torque, THEN the cross bolts.",
       "material": null,
-      "torqueSpec": { "valueNm": 65, "angle": "+90°", "note": "Vertical cap bolts N91118902, TTY — REPLACE (erWin M12 = 65 Nm table via R1; the older published 60 Nm is a low-grade aggregator figure)" },
+      "torqueSpec": {
+        "valueNm": 65,
+        "angle": "+90°",
+        "note": "Vertical cap bolts N91118902, TTY — REPLACE (erWin M12 = 65 Nm table via R1; the older published 60 Nm is a low-grade aggregator figure)"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.5 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "mainBearingCap",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.176, -0.128, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.088, -0.128, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0, -0.128, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.088, -0.128, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.176, -0.128, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            -0.128,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.128,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.128,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.128,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.128,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 2,
-      "calloutOffset": [-0.26, -0.09, 0.09],
+      "calloutOffset": [
+        -0.26,
+        -0.09,
+        0.09
+      ],
       "color": "#7b8087",
-      "tags": ["main-caps", "cross-bolted", "no-ladder", "R1"]
+      "tags": [
+        "main-caps",
+        "cross-bolted",
+        "no-ladder",
+        "R1"
+      ]
     },
     {
       "id": "main-cap-bolts",
@@ -65,27 +175,163 @@
       "oemPartNumber": "N91118902",
       "description": "Two vertical TTY bolts per cap. Torqued 65 Nm + 90° and REPLACED every time — stretch bolts fail if reused (R1, erWin M12 = 65 Nm table).",
       "material": "Steel, torque-to-yield",
-      "torqueSpec": { "valueNm": 65, "angle": "+90°", "note": "TTY — replace after every use (R1)" },
-      "knownIssues": ["Stretch/failure if reused — one-time-use bolts (R1)."],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.68 },
+      "torqueSpec": {
+        "valueNm": 65,
+        "angle": "+90°",
+        "note": "TTY — replace after every use (R1)"
+      },
+      "knownIssues": [
+        "Stretch/failure if reused — one-time-use bolts (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.68
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 12, "shankLengthMm": 55, "headAcrossFlatsMm": 16 },
+      "geometryParams": {
+        "shankDiameterMm": 12,
+        "shankLengthMm": 55,
+        "headAcrossFlatsMm": 16
+      },
       "transforms": [
-        { "position": [-0.176, -0.155, -0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.176, -0.155, 0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.088, -0.155, -0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.088, -0.155, 0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [0, -0.155, -0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [0, -0.155, 0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [0.088, -0.155, -0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [0.088, -0.155, 0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [0.176, -0.155, -0.028], "rotationDeg": [180, 0, 0] },
-        { "position": [0.176, -0.155, 0.028], "rotationDeg": [180, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            -0.155,
+            -0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.176,
+            -0.155,
+            0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.155,
+            -0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.155,
+            0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.155,
+            -0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.155,
+            0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.155,
+            -0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.155,
+            0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.155,
+            -0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.155,
+            0.028
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 9,
-      "calloutOffset": [0.12, -0.18, 0.1],
+      "calloutOffset": [
+        0.12,
+        -0.18,
+        0.1
+      ],
       "color": "#98a2ae",
-      "tags": ["main-cap-bolts", "TTY", "replace", "65Nm"]
+      "tags": [
+        "main-cap-bolts",
+        "TTY",
+        "replace",
+        "65Nm"
+      ]
     },
     {
       "id": "main-cap-cross-bolts",
@@ -98,25 +344,154 @@
       "material": "Steel",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0, 1], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 8, "shankLengthMm": 35, "headAcrossFlatsMm": 13 },
+      "geometryParams": {
+        "shankDiameterMm": 8,
+        "shankLengthMm": 35,
+        "headAcrossFlatsMm": 13
+      },
       "transforms": [
-        { "position": [-0.176, -0.12, 0.1], "rotationDeg": [90, 0, 0] },
-        { "position": [-0.088, -0.12, 0.1], "rotationDeg": [90, 0, 0] },
-        { "position": [0, -0.12, 0.1], "rotationDeg": [90, 0, 0] },
-        { "position": [0.088, -0.12, 0.1], "rotationDeg": [90, 0, 0] },
-        { "position": [0.176, -0.12, 0.1], "rotationDeg": [90, 0, 0] },
-        { "position": [-0.176, -0.12, -0.1], "rotationDeg": [-90, 0, 0] },
-        { "position": [-0.088, -0.12, -0.1], "rotationDeg": [-90, 0, 0] },
-        { "position": [0, -0.12, -0.1], "rotationDeg": [-90, 0, 0] },
-        { "position": [0.088, -0.12, -0.1], "rotationDeg": [-90, 0, 0] },
-        { "position": [0.176, -0.12, -0.1], "rotationDeg": [-90, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            -0.12,
+            0.1
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.12,
+            0.1
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.12,
+            0.1
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.12,
+            0.1
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.12,
+            0.1
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.176,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.12,
+            -0.1
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 10,
-      "calloutOffset": [-0.14, -0.16, 0.16],
+      "calloutOffset": [
+        -0.14,
+        -0.16,
+        0.16
+      ],
       "color": "#98a2ae",
-      "tags": ["cross-bolts", "torque-unverified", "R1-flag"]
+      "tags": [
+        "cross-bolts",
+        "torque-unverified",
+        "R1-flag"
+      ]
     },
     {
       "id": "main-shells-upper",
@@ -128,21 +503,95 @@
       "description": "Bi-metal lead-free upper main shells, colour-graded select-fit: suffix -ROT (red), -WEI (white), -SWA (black), -GLB (yellow). Match the letter stamped on the block top to the shell colour — VW publishes no numeric thickness table (R1). Start-stop rated.",
       "material": "Bi-metal, lead-free",
       "torqueSpec": null,
-      "knownIssues": ["Wear is rare on stock power (R1)."],
-      "explodeVector": { "direction": [0, 0.35, 1], "distance": 0.42 },
+      "knownIssues": [
+        "Wear is rare on stock power (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.35,
+          1
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "bearingShell",
-      "geometryParams": { "journalMm": 48 },
+      "geometryParams": {
+        "journalMm": 48
+      },
       "transforms": [
-        { "position": [-0.176, -0.09, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.088, -0.09, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0, -0.09, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.088, -0.09, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.176, -0.09, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 11,
-      "calloutOffset": [0.2, 0.06, 0.14],
+      "calloutOffset": [
+        0.2,
+        0.06,
+        0.14
+      ],
       "color": "#d4b483",
-      "tags": ["main-shells", "select-fit", "colour-graded"]
+      "tags": [
+        "main-shells",
+        "select-fit",
+        "colour-graded"
+      ]
     },
     {
       "id": "main-shells-lower",
@@ -155,20 +604,92 @@
       "material": "Bi-metal, lead-free",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.5, 1], "distance": 0.46 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.5,
+          1
+        ],
+        "distance": 0.46
+      },
       "geometryRef": "bearingShell",
-      "geometryParams": { "journalMm": 48 },
+      "geometryParams": {
+        "journalMm": 48
+      },
       "transforms": [
-        { "position": [-0.176, -0.09, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.088, -0.09, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0, -0.09, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.088, -0.09, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.176, -0.09, 0], "rotationDeg": [180, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 12,
-      "calloutOffset": [-0.2, -0.14, 0.14],
+      "calloutOffset": [
+        -0.2,
+        -0.14,
+        0.14
+      ],
       "color": "#d4b483",
-      "tags": ["main-shells", "select-fit", "cap-side"]
+      "tags": [
+        "main-shells",
+        "select-fit",
+        "cap-side"
+      ]
     },
     {
       "id": "rod-bearing-shells",
@@ -180,24 +701,131 @@
       "description": "Select-fit big-end shells (suffix grades e.g. -GLB), two per rod (R1).",
       "material": "Bi-metal, lead-free",
       "torqueSpec": null,
-      "knownIssues": ["Spun bearing under oil starvation or aggressive tune (R1)."],
-      "explodeVector": { "direction": [0, -1, 0.5], "distance": 0.62 },
+      "knownIssues": [
+        "Spun bearing under oil starvation or aggressive tune (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.5
+        ],
+        "distance": 0.62
+      },
       "geometryRef": "bearingShell",
-      "geometryParams": { "journalMm": 44 },
+      "geometryParams": {
+        "journalMm": 44
+      },
       "transforms": [
-        { "position": [-0.132, -0.0436, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.132, -0.0436, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.044, -0.1364, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, -0.1364, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.044, -0.1364, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, -0.1364, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.132, -0.0436, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, -0.0436, 0], "rotationDeg": [180, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            -0.0436,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.132,
+            -0.0436,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            -0.1364,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            -0.1364,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            -0.1364,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            -0.1364,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            -0.0436,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            -0.0436,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 13,
-      "calloutOffset": [0.14, -0.2, 0.12],
+      "calloutOffset": [
+        0.14,
+        -0.2,
+        0.12
+      ],
       "color": "#d4b483",
-      "tags": ["rod-shells", "select-fit", "big-end"]
+      "tags": [
+        "rod-shells",
+        "select-fit",
+        "big-end"
+      ]
     },
     {
       "id": "crank-thrust-washers",
@@ -209,18 +837,57 @@
       "description": "Bi-metal thrust washers at the centre main controlling crank axial play — fitted with the centre cap and set to ~0.003\" end-play (R1). Thrust-face wear under abusive DSG launch-control use is a known Gen 3 concern.",
       "material": "Bi-metal",
       "torqueSpec": null,
-      "knownIssues": ["Thrust wear on abusive launches — known Gen 3 concern (R1); excessive crank end-play is the symptom."],
-      "explodeVector": { "direction": [0, -0.6, 1], "distance": 0.5 },
+      "knownIssues": [
+        "Thrust wear on abusive launches — known Gen 3 concern (R1); excessive crank end-play is the symptom."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.6,
+          1
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "thrustWasher",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.016, -0.09, 0], "rotationDeg": [0, 90, 0] },
-        { "position": [0.016, -0.09, 0], "rotationDeg": [0, 90, 0] }
+        {
+          "position": [
+            -0.016,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.016,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            90,
+            0
+          ]
+        }
       ],
       "callout": 14,
-      "calloutOffset": [0.1, -0.12, 0.16],
+      "calloutOffset": [
+        0.1,
+        -0.12,
+        0.16
+      ],
       "color": "#d4b483",
-      "tags": ["thrust-washers", "end-play", "launch-wear"]
+      "tags": [
+        "thrust-washers",
+        "end-play",
+        "launch-wear"
+      ]
     },
     {
       "id": "crankshaft",
@@ -232,15 +899,49 @@
       "description": "Forged steel, induction-hardened crankshaft with four counterweights (Gen 2 had eight) and five 48 mm mains — R1 flags that SSP's generic 52 mm figure belongs to other Gen 3 codes; 48 mm is correct for the R's high-output crank. Flat-plane I4: pins 1+4 and 2+3 oppose, firing order 1-3-4-2, 92.8 mm stroke.",
       "material": "Forged steel, induction hardened",
       "torqueSpec": null,
-      "knownIssues": ["Thrust-face wear under abusive DSG launches (rare) — see the thrust washers (R1)."],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.28 },
+      "knownIssues": [
+        "Thrust-face wear under abusive DSG launches (rare) — see the thrust washers (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.28
+      },
       "geometryRef": "crankshaft",
-      "geometryParams": { "mainJournalMm": 48, "strokeMm": 92.8 },
-      "transforms": [{ "position": [0, -0.09, 0], "rotationDeg": [0, 0, 0] }],
+      "geometryParams": {
+        "mainJournalMm": 48,
+        "strokeMm": 92.8
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [0.27, -0.05, 0.1],
+      "calloutOffset": [
+        0.27,
+        -0.05,
+        0.1
+      ],
       "color": "#aab0b8",
-      "tags": ["crankshaft", "forged", "48mm-mains", "flat-plane"]
+      "tags": [
+        "crankshaft",
+        "forged",
+        "48mm-mains",
+        "flat-plane"
+      ]
     },
     {
       "id": "connecting-rods",
@@ -251,21 +952,87 @@
       "oemPartNumber": "06H198401D",
       "description": "Fracture-split 36MnVS4 rods (sold as a set of 4), 144 mm centre-to-centre with a 23 mm trapezoidal small end and NO bronze bushing — the DLC-coated pin floats directly in the rod eye (R1). The split line is unique per rod, so caps never interchange. Stock rods documented to ~500 WHP.",
       "material": "36MnVS4 steel, fracture-split caps",
-      "torqueSpec": { "valueNm": 45, "angle": "+90°", "note": "Rod bolts WHT001319, TTY — REPLACE; lubricate thread + contact face. 30 Nm with the OLD bolt is only the radial-play measuring step (R1)" },
-      "knownIssues": ["Bent/stretched under detonation on tuned cars (R1)."],
-      "explodeVector": { "direction": [0, -1, 0], "distance": 0.56 },
+      "torqueSpec": {
+        "valueNm": 45,
+        "angle": "+90°",
+        "note": "Rod bolts WHT001319, TTY — REPLACE; lubricate thread + contact face. 30 Nm with the OLD bolt is only the radial-play measuring step (R1)"
+      },
+      "knownIssues": [
+        "Bent/stretched under detonation on tuned cars (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0
+        ],
+        "distance": 0.56
+      },
       "geometryRef": "connectingRod",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.132, -0.0436, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, -0.1364, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, -0.1364, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, -0.0436, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            -0.0436,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            -0.1364,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            -0.1364,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            -0.0436,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 4,
-      "calloutOffset": [0.1, -0.16, 0.12],
+      "calloutOffset": [
+        0.1,
+        -0.16,
+        0.12
+      ],
       "color": "#9aa0a8",
-      "tags": ["rods", "cracked-cap", "36MnVS4", "144mm"]
+      "tags": [
+        "rods",
+        "cracked-cap",
+        "36MnVS4",
+        "144mm"
+      ]
     },
     {
       "id": "rod-bolts",
@@ -276,25 +1043,139 @@
       "oemPartNumber": "WHT001319",
       "description": "Two stretch bolts per big-end cap. 45 Nm + 90°, one-time use, thread and contact face lubricated (R1, quoting the repair manual).",
       "material": "Steel, torque-to-yield",
-      "torqueSpec": { "valueNm": 45, "angle": "+90°", "note": "TTY — replace; lubricate thread + contact face (R1)" },
-      "knownIssues": ["Failure if reused — one-time-use stretch bolts (R1)."],
-      "explodeVector": { "direction": [0, -1, 0.2], "distance": 0.72 },
+      "torqueSpec": {
+        "valueNm": 45,
+        "angle": "+90°",
+        "note": "TTY — replace; lubricate thread + contact face (R1)"
+      },
+      "knownIssues": [
+        "Failure if reused — one-time-use stretch bolts (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -1,
+          0.2
+        ],
+        "distance": 0.72
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 9, "shankLengthMm": 40, "headAcrossFlatsMm": 13 },
+      "geometryParams": {
+        "shankDiameterMm": 9,
+        "shankLengthMm": 40,
+        "headAcrossFlatsMm": 13
+      },
       "transforms": [
-        { "position": [-0.15, -0.076, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.114, -0.076, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.062, -0.168, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [-0.026, -0.168, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.026, -0.168, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.062, -0.168, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.114, -0.076, 0], "rotationDeg": [180, 0, 0] },
-        { "position": [0.15, -0.076, 0], "rotationDeg": [180, 0, 0] }
+        {
+          "position": [
+            -0.15,
+            -0.076,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.114,
+            -0.076,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.062,
+            -0.168,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.026,
+            -0.168,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.026,
+            -0.168,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.062,
+            -0.168,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.114,
+            -0.076,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.15,
+            -0.076,
+            0
+          ],
+          "rotationDeg": [
+            180,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 15,
-      "calloutOffset": [-0.12, -0.2, 0.12],
+      "calloutOffset": [
+        -0.12,
+        -0.2,
+        0.12
+      ],
       "color": "#98a2ae",
-      "tags": ["rod-bolts", "TTY", "45Nm", "replace"]
+      "tags": [
+        "rod-bolts",
+        "TTY",
+        "45Nm",
+        "replace"
+      ]
     },
     {
       "id": "pistons",
@@ -306,20 +1187,84 @@
       "description": "Golf R-specific 9.3:1 pistons (GTI = 06L107065xx at 9.6:1), 82.5 mm, 29.6 mm compression height, coated skirts, sold complete with pin, rings and circlips; the R also runs higher-flow cooling jets (R1). The floating pin is retained by spring-steel circlips supplied with the piston — no separate part number exists.",
       "material": "Cast aluminium alloy, coated skirt",
       "torqueSpec": null,
-      "knownIssues": ["Cracked ringlands / holed crowns on high-torque IS38 tunes with low-octane fuel — typically cylinders 2–3 (R1)."],
-      "explodeVector": { "direction": [0, 0.95, 0.3], "distance": 0.38 },
+      "knownIssues": [
+        "Cracked ringlands / holed crowns on high-torque IS38 tunes with low-octane fuel — typically cylinders 2–3 (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.95,
+          0.3
+        ],
+        "distance": 0.38
+      },
       "geometryRef": "piston",
-      "geometryParams": { "boreMm": 82.5 },
+      "geometryParams": {
+        "boreMm": 82.5
+      },
       "transforms": [
-        { "position": [-0.132, 0.095, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, 0.048, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, 0.048, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, 0.095, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            0.095,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            0.048,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            0.048,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.095,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 5,
-      "calloutOffset": [0.12, 0.14, 0.14],
+      "calloutOffset": [
+        0.12,
+        0.14,
+        0.14
+      ],
       "color": "#c0c6ce",
-      "tags": ["pistons", "9.3:1", "oil-jets", "29.6mm-comp-height"]
+      "tags": [
+        "pistons",
+        "9.3:1",
+        "oil-jets",
+        "29.6mm-comp-height"
+      ]
     },
     {
       "id": "piston-ring-sets",
@@ -331,20 +1276,81 @@
       "description": "Per-piston ring pack: upper rectangular asymmetric-barrel compression ring, middle taper-face, lower two-piece oil-control ring — 1.2 / 1.2 / 2.0 mm (R1).",
       "material": "Steel / cast iron",
       "torqueSpec": null,
-      "knownIssues": ["Ringland crack / land collapse under knock (R1) — the classic tuned-car failure."],
-      "explodeVector": { "direction": [0, 1, 0.35], "distance": 0.5 },
+      "knownIssues": [
+        "Ringland crack / land collapse under knock (R1) — the classic tuned-car failure."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.35
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "pistonRingSet",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.132, 0.069, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, 0.022, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, 0.022, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, 0.069, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            0.069,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            0.022,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            0.022,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.069,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 16,
-      "calloutOffset": [-0.12, 0.12, 0.14],
+      "calloutOffset": [
+        -0.12,
+        0.12,
+        0.14
+      ],
       "color": "#aab0b8",
-      "tags": ["rings", "compression", "oil-control"]
+      "tags": [
+        "rings",
+        "compression",
+        "oil-control"
+      ]
     },
     {
       "id": "wrist-pins",
@@ -356,20 +1362,82 @@
       "description": "23 mm DLC-coated floating pins riding directly in the rod eye and piston — no small-end bushing on Gen 3 (R1). Included with piston 06K107065AG, retained by supplied circlips; no separate part number.",
       "material": "Steel, DLC-coated",
       "torqueSpec": null,
-      "knownIssues": ["Pin scuffing only under oil starvation (R1)."],
-      "explodeVector": { "direction": [1, 0.6, 0], "distance": 0.45 },
+      "knownIssues": [
+        "Pin scuffing only under oil starvation (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.6,
+          0
+        ],
+        "distance": 0.45
+      },
       "geometryRef": "wristPin",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.132, 0.045, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, -0.002, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, -0.002, 0], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, 0.045, 0], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            0.045,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            -0.002,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            -0.002,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.045,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 17,
-      "calloutOffset": [0.16, 0.06, 0.12],
+      "calloutOffset": [
+        0.16,
+        0.06,
+        0.12
+      ],
       "color": "#c0c6ce",
-      "tags": ["wrist-pins", "DLC", "floating", "23mm"]
+      "tags": [
+        "wrist-pins",
+        "DLC",
+        "floating",
+        "23mm"
+      ]
     },
     {
       "id": "piston-oil-jets",
@@ -381,20 +1449,81 @@
       "description": "Switchable piston-cooling jets fed from a second pressurised gallery, gated by a mechanical switching valve that solenoid N522 controls (R1). One per bore, aimed at the piston underside; the R runs a higher flow rate. Individual jet part number not isolated — removal per erWin §6.3.",
       "material": "Steel",
       "torqueSpec": null,
-      "knownIssues": ["Blockage under sludge (R1) — starves the piston crowns of cooling."],
-      "explodeVector": { "direction": [0, -0.3, 1], "distance": 0.3 },
+      "knownIssues": [
+        "Blockage under sludge (R1) — starves the piston crowns of cooling."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.3,
+          -1
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "oilJet",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.132, -0.045, 0.07], "rotationDeg": [0, 0, 0] },
-        { "position": [-0.044, -0.045, 0.07], "rotationDeg": [0, 0, 0] },
-        { "position": [0.044, -0.045, 0.07], "rotationDeg": [0, 0, 0] },
-        { "position": [0.132, -0.045, 0.07], "rotationDeg": [0, 0, 0] }
+        {
+          "position": [
+            -0.132,
+            -0.045,
+            -0.07
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            -0.045,
+            -0.07
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            -0.045,
+            -0.07
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            -0.045,
+            -0.07
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 6,
-      "calloutOffset": [0.1, -0.08, 0.16],
+      "calloutOffset": [
+        0.1,
+        -0.08,
+        -0.16
+      ],
       "color": "#8d939c",
-      "tags": ["oil-jets", "N522", "cooling"]
+      "tags": [
+        "oil-jets",
+        "N522",
+        "cooling"
+      ]
     },
     {
       "id": "balance-shaft-intake",
@@ -406,15 +1535,45 @@
       "description": "Spheroidal graphite cast iron balance shaft on Gen 3's new lower-friction roller/needle bearings, chain-driven at 2× crank speed to cancel second-order shake (R1). This one also drives the mechanical coolant pump. Module part number flagged in R1 as 06K103295-series (an older 06H198205 bin also appears) — verify against a live CJXC ETKA entry before ordering.",
       "material": "Spheroidal graphite cast iron",
       "torqueSpec": null,
-      "knownIssues": ["Bearing wear was a Gen 2 issue; Gen 3's roller/needle bearings were the redesign (R1)."],
-      "explodeVector": { "direction": [0, -0.2, 1], "distance": 0.34 },
+      "knownIssues": [
+        "Bearing wear was a Gen 2 issue; Gen 3's roller/needle bearings were the redesign (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.2,
+          -1
+        ],
+        "distance": 0.34
+      },
       "geometryRef": "balanceShaft",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.01, -0.04, 0.082], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.01,
+            -0.04,
+            -0.082
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [0.2, -0.02, 0.14],
+      "calloutOffset": [
+        0.2,
+        -0.02,
+        -0.14
+      ],
       "color": "#7d838b",
-      "tags": ["balance-shaft", "2x-crank", "coolant-pump-drive"]
+      "tags": [
+        "balance-shaft",
+        "2x-crank",
+        "coolant-pump-drive"
+      ]
     },
     {
       "id": "balance-shaft-exhaust",
@@ -427,14 +1586,41 @@
       "material": "Spheroidal graphite cast iron",
       "torqueSpec": null,
       "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.2, -1], "distance": 0.34 },
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.2,
+          1
+        ],
+        "distance": 0.34
+      },
       "geometryRef": "balanceShaft",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.01, -0.04, -0.082], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.01,
+            -0.04,
+            0.082
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [-0.2, -0.02, -0.14],
+      "calloutOffset": [
+        -0.2,
+        -0.02,
+        0.14
+      ],
       "color": "#7d838b",
-      "tags": ["balance-shaft", "counter-rotating"]
+      "tags": [
+        "balance-shaft",
+        "counter-rotating"
+      ]
     },
     {
       "id": "vibration-damper",
@@ -446,15 +1632,46 @@
       "description": "Steel damper with bonded rubber ring and poly-V pulley on the crank nose (Golf R bin, R1). Removal needs counterhold tool T10531; lubricate the O-ring on refit.",
       "material": "Steel damper + poly-V pulley",
       "torqueSpec": null,
-      "knownIssues": ["Rubber ring de-bonds at high mileage or after over-rev (R1) — belt wobble is the tell."],
-      "explodeVector": { "direction": [1, 0, 0], "distance": 0.45 },
+      "knownIssues": [
+        "Rubber ring de-bonds at high mileage or after over-rev (R1) — belt wobble is the tell."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "distance": 0.45
+      },
       "geometryRef": "vibrationDamper",
       "geometryParams": {},
-      "transforms": [{ "position": [0.268, -0.09, 0], "rotationDeg": [0, 0, 90] }],
+      "transforms": [
+        {
+          "position": [
+            0.268,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        }
+      ],
       "callout": 18,
-      "calloutOffset": [0.14, 0.1, 0.12],
+      "calloutOffset": [
+        0.14,
+        0.1,
+        0.12
+      ],
       "color": "#3a3d44",
-      "tags": ["damper", "crank-pulley", "poly-V", "T10531"]
+      "tags": [
+        "damper",
+        "crank-pulley",
+        "poly-V",
+        "T10531"
+      ]
     },
     {
       "id": "damper-centre-bolt",
@@ -465,16 +1682,55 @@
       "oemPartNumber": "WHT009475",
       "description": "The crank-nose centre bolt (class 10.9; supersedes WHT001760). Torque is property-class dependent — check the class stamped on the head: 8.8 = 150 Nm + 90°; 10.9 = 100 Nm + 180° on the DSG car (240 Nm + 180° manual). Always renewed; counterhold with T10531 (R1, erWin).",
       "material": "Steel, torque-to-yield",
-      "torqueSpec": { "valueNm": 100, "angle": "+180°", "note": "Class 10.9 on the DSG (AT) car; class 8.8 = 150 Nm + 90°; MT 10.9 = 240 Nm + 180°. TTY — replace (R1, erWin)" },
-      "knownIssues": ["Stretch/failure if reused (R1)."],
-      "explodeVector": { "direction": [1, 0, 0], "distance": 0.62 },
+      "torqueSpec": {
+        "valueNm": 100,
+        "angle": "+180°",
+        "note": "Class 10.9 on the DSG (AT) car; class 8.8 = 150 Nm + 90°; MT 10.9 = 240 Nm + 180°. TTY — replace (R1, erWin)"
+      },
+      "knownIssues": [
+        "Stretch/failure if reused (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "distance": 0.62
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 14, "shankLengthMm": 60, "headAcrossFlatsMm": 21 },
-      "transforms": [{ "position": [0.295, -0.09, 0], "rotationDeg": [0, 0, -90] }],
+      "geometryParams": {
+        "shankDiameterMm": 14,
+        "shankLengthMm": 60,
+        "headAcrossFlatsMm": 21
+      },
+      "transforms": [
+        {
+          "position": [
+            0.295,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            -90
+          ]
+        }
+      ],
       "callout": 19,
-      "calloutOffset": [0.14, -0.08, 0.1],
+      "calloutOffset": [
+        0.14,
+        -0.08,
+        0.1
+      ],
       "color": "#98a2ae",
-      "tags": ["centre-bolt", "TTY", "class-dependent", "replace"]
+      "tags": [
+        "centre-bolt",
+        "TTY",
+        "class-dependent",
+        "replace"
+      ]
     },
     {
       "id": "timing-front-cover",
@@ -486,15 +1742,45 @@
       "description": "Aluminium front cover at the pulley end, sealed to the block with liquid sealant — no gasket — and carrying the front crank seal (R1). Do not bend it on removal; old sealant must be fully cleaned before refitting.",
       "material": "Aluminium",
       "torqueSpec": null,
-      "knownIssues": ["Sealant leak if refitted without full cleaning (R1)."],
-      "explodeVector": { "direction": [1, 0.15, 0], "distance": 0.3 },
+      "knownIssues": [
+        "Sealant leak if refitted without full cleaning (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.15,
+          0
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "frontCover",
       "geometryParams": {},
-      "transforms": [{ "position": [0.234, -0.03, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.234,
+            -0.03,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 20,
-      "calloutOffset": [0.12, 0.14, 0.12],
+      "calloutOffset": [
+        0.12,
+        0.14,
+        0.12
+      ],
       "color": "#8d939c",
-      "tags": ["front-cover", "liquid-sealant", "pulley-end"]
+      "tags": [
+        "front-cover",
+        "liquid-sealant",
+        "pulley-end"
+      ]
     },
     {
       "id": "front-crank-seal",
@@ -506,15 +1792,45 @@
       "description": "PTFE/elastomer lip seal fitted in the front cover, riding on the crank nose behind the vibration damper (R1).",
       "material": "PTFE/elastomer",
       "torqueSpec": null,
-      "knownIssues": ["Front seal weep at high mileage (R1) — oil flung by the belt is the tell."],
-      "explodeVector": { "direction": [1, 0, 0], "distance": 0.36 },
+      "knownIssues": [
+        "Front seal weep at high mileage (R1) — oil flung by the belt is the tell."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "distance": 0.36
+      },
       "geometryRef": "crankSeal",
       "geometryParams": {},
-      "transforms": [{ "position": [0.252, -0.09, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.252,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 21,
-      "calloutOffset": [0.1, -0.12, 0.1],
+      "calloutOffset": [
+        0.1,
+        -0.12,
+        0.1
+      ],
       "color": "#26282c",
-      "tags": ["front-seal", "PTFE", "oil-leak"]
+      "tags": [
+        "front-seal",
+        "PTFE",
+        "oil-leak"
+      ]
     },
     {
       "id": "rear-main-seal-flange",
@@ -530,14 +1846,43 @@
         "PTFE lip leak at high mileage (dossier §2 + R1).",
         "Wrong installation (lubricated lip, no installer) = immediate leak and possible crank-sensor misalignment (R1)."
       ],
-      "explodeVector": { "direction": [-1, 0, 0], "distance": 0.4 },
+      "explodeVector": {
+        "direction": [
+          -1,
+          0,
+          0
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "rearSealFlange",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.24, -0.09, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.24,
+            -0.09,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 22,
-      "calloutOffset": [-0.14, 0.1, 0.12],
+      "calloutOffset": [
+        -0.14,
+        0.1,
+        0.12
+      ],
       "color": "#8d939c",
-      "tags": ["rear-main-seal", "sender-wheel", "fit-dry", "known-issue"]
+      "tags": [
+        "rear-main-seal",
+        "sender-wheel",
+        "fit-dry",
+        "known-issue"
+      ]
     },
     {
       "id": "sealing-flange-bolts",
@@ -548,25 +1893,139 @@
       "oemPartNumber": null,
       "description": "N-series M6 aluminium bolts holding the sealing flange, tightened ~15 Nm in an alternating pattern and RENEWED every time — aluminium bolts pull the block threads if over-torqued (R1).",
       "material": "Aluminium",
-      "torqueSpec": { "valueNm": 15, "angle": null, "note": "~15 Nm alternating pattern; single-use aluminium bolts — renew (R1)" },
-      "knownIssues": ["Thread pull if over-torqued (R1)."],
-      "explodeVector": { "direction": [-1, 0, 0], "distance": 0.58 },
+      "torqueSpec": {
+        "valueNm": 15,
+        "angle": null,
+        "note": "~15 Nm alternating pattern; single-use aluminium bolts — renew (R1)"
+      },
+      "knownIssues": [
+        "Thread pull if over-torqued (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -1,
+          0,
+          0
+        ],
+        "distance": 0.58
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 6, "shankLengthMm": 20, "headAcrossFlatsMm": 10 },
+      "geometryParams": {
+        "shankDiameterMm": 6,
+        "shankLengthMm": 20,
+        "headAcrossFlatsMm": 10
+      },
       "transforms": [
-        { "position": [-0.252, -0.038, 0], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.053, 0.037], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.09, 0.052], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.127, 0.037], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.142, 0], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.127, -0.037], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.09, -0.052], "rotationDeg": [0, 0, 90] },
-        { "position": [-0.252, -0.053, -0.037], "rotationDeg": [0, 0, 90] }
+        {
+          "position": [
+            -0.252,
+            -0.038,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.053,
+            0.037
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.09,
+            0.052
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.127,
+            0.037
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.142,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.127,
+            -0.037
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.09,
+            -0.052
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "position": [
+            -0.252,
+            -0.053,
+            -0.037
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        }
       ],
       "callout": 23,
-      "calloutOffset": [-0.12, -0.12, 0.1],
+      "calloutOffset": [
+        -0.12,
+        -0.12,
+        0.1
+      ],
       "color": "#98a2ae",
-      "tags": ["flange-bolts", "aluminium", "renew", "15Nm"]
+      "tags": [
+        "flange-bolts",
+        "aluminium",
+        "renew",
+        "15Nm"
+      ]
     },
     {
       "id": "core-plugs",
@@ -578,20 +2037,80 @@
       "description": "Drive-in steel cup plugs closing the block's casting cores — four shown on the intake face; the block carries several (R1: NONE FOUND as a part number).",
       "material": "Steel cup, drive-in",
       "torqueSpec": null,
-      "knownIssues": ["Weep/rust-out at very high mileage (R1)."],
-      "explodeVector": { "direction": [0, 0.1, 1], "distance": 0.35 },
+      "knownIssues": [
+        "Weep/rust-out at very high mileage (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.1,
+          1
+        ],
+        "distance": 0.35
+      },
       "geometryRef": "corePlug",
       "geometryParams": {},
       "transforms": [
-        { "position": [-0.176, -0.03, 0.119], "rotationDeg": [90, 0, 0] },
-        { "position": [-0.06, -0.03, 0.119], "rotationDeg": [90, 0, 0] },
-        { "position": [0.06, -0.03, 0.119], "rotationDeg": [90, 0, 0] },
-        { "position": [0.176, -0.03, 0.119], "rotationDeg": [90, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            -0.03,
+            0.119
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.06,
+            -0.03,
+            0.119
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.06,
+            -0.03,
+            0.119
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            -0.03,
+            0.119
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 24,
-      "calloutOffset": [0.12, 0.08, 0.14],
+      "calloutOffset": [
+        0.12,
+        0.08,
+        0.14
+      ],
       "color": "#aab0b8",
-      "tags": ["core-plugs", "freeze-plugs"]
+      "tags": [
+        "core-plugs",
+        "freeze-plugs"
+      ]
     },
     {
       "id": "dipstick-tube",
@@ -603,15 +2122,45 @@
       "description": "Transverse-installed engines keep a dipstick (longitudinal installs use a sealing cap instead, R1/SSP). Guide tube push-fits with a low bracket bolt. R1 lists 06L103663-series — verify the exact CJXC number before ordering.",
       "material": "Plastic / steel",
       "torqueSpec": null,
-      "knownIssues": ["Tube seal weep (R1)."],
-      "explodeVector": { "direction": [0.2, 1, 0.2], "distance": 0.5 },
+      "knownIssues": [
+        "Tube seal weep (R1)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.2,
+          1,
+          0.2
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "dipstickTube",
       "geometryParams": {},
-      "transforms": [{ "position": [0.17, 0.06, 0.1], "rotationDeg": [12, 0, -8] }],
+      "transforms": [
+        {
+          "position": [
+            0.17,
+            0.06,
+            0.1
+          ],
+          "rotationDeg": [
+            12,
+            0,
+            -8
+          ]
+        }
+      ],
       "callout": 25,
-      "calloutOffset": [0.12, 0.16, 0.1],
+      "calloutOffset": [
+        0.12,
+        0.16,
+        0.1
+      ],
       "color": "#c9a227",
-      "tags": ["dipstick", "guide-tube", "oil-measure"]
+      "tags": [
+        "dipstick",
+        "guide-tube",
+        "oil-measure"
+      ]
     }
   ]
 }
