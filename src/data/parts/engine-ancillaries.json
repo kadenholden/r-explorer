@@ -999,7 +999,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Filter housing with the oil-to-coolant cooler on the block, and mounting solenoid N522 (the piston-jet control valve). Sits ABOVE the sump, so when its seals weep the oil runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed. The dossier §2 failure list names filter-housing/oil-cooler weeps directly.",
+      "description": "Filter housing with the oil-to-coolant cooler on the block, and mounting solenoid N522 (the piston-jet control valve). Sits ABOVE the sump, so when its seals weep the oil runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed. The dossier §2 failure list names filter-housing/oil-cooler weeps directly. R9: the water/oil cooler is INTEGRAL to this housing, family 06L117021 (VIN-verify), and a cracked plastic housing produces an oil leak that mimics a rear-main leak — both called out as directly relevant to this car's leak hunt.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
