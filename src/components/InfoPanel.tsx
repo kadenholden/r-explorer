@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { PartRecord, TorqueSpec } from '../types/parts'
 import { systemDef } from '../data/taxonomy'
-import { ASSEMBLIES, partById, partWorldPosition } from '../data/loader'
+import { ASSEMBLIES, partById, partWorldDirection, partWorldPosition } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
 
 /** Focus / isolate action row shown on every part plate. */
@@ -16,7 +16,7 @@ function PartActions({ part }: { part: PartRecord }) {
   return (
     <div className="avs-toggle">
       <div className="p2015-readouts">
-        <button type="button" className="avs-btn" onClick={() => focusOn(partWorldPosition(part))}>
+        <button type="button" className="avs-btn" onClick={() => focusOn(partWorldPosition(part), partWorldDirection(part))}>
           Focus camera
         </button>
         <button
@@ -230,8 +230,9 @@ export function InfoPanel() {
       <div className="plate-body">
         <p className="plate-description">{first.assembly.description}</p>
         <p className="plate-hint">
-          Drag to orbit · scroll to zoom · click any part (or its numbered callout) for its data ·
-          pull the EXPLODE slider to take it apart.
+          Drag to orbit · right-drag (or two-finger drag) to pan anywhere · scroll dives toward
+          your cursor · double-click a part to fly to it · click any part (or its callout) for
+          its data · pull the EXPLODE slider to take it apart.
         </p>
       </div>
     </section>

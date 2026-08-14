@@ -57,10 +57,13 @@ interface AppState {
   servicePanelOpen: boolean
   setServicePanelOpen: (open: boolean) => void
 
-  /** Camera focus request: fly the orbit target to a world point. */
+  /** Camera focus request: fly the orbit target to a world point,
+   *  approaching from an optional world direction (the part's explode
+   *  vector — i.e. the side the part is extracted toward). */
   focusPoint: [number, number, number] | null
+  focusDir: [number, number, number] | null
   focusNonce: number
-  focusOn: (point: [number, number, number]) => void
+  focusOn: (point: [number, number, number], dir?: [number, number, number]) => void
 
   openNodes: Record<string, boolean>
   toggleOpen: (nodeId: string) => void
@@ -128,8 +131,10 @@ export const useAppStore = create<AppState>()(
       setServicePanelOpen: (open) => set({ servicePanelOpen: open }),
 
       focusPoint: null,
+      focusDir: null,
       focusNonce: 0,
-      focusOn: (point) => set((s) => ({ focusPoint: point, focusNonce: s.focusNonce + 1 })),
+      focusOn: (point, dir) =>
+        set((s) => ({ focusPoint: point, focusDir: dir ?? null, focusNonce: s.focusNonce + 1 })),
 
       openNodes: { brakes: true, 'brakes/front-brake-corner': true },
       toggleOpen: (nodeId) =>
@@ -188,18 +193,18 @@ export const useAppStore = create<AppState>()(
   ),
 )
 
-/** A part renders when neither it nor any ancestor node is hidden, and it
- *  falls under at least one isolated node (if any isolation is active). */
+/** With isolation active, the isolation set is the whole truth — explicitly
+ *  isolated parts show even if their branch is hidden (the MOT/service
+ *  cards isolate default-hidden panels like the windscreen). Otherwise a
+ *  part renders when neither it nor any ancestor node is hidden. */
 export function isPartVisible(
   part: PartRecord,
   hidden: Record<string, boolean>,
   isolated: Record<string, boolean>,
 ): boolean {
   const path = partNodePath(part)
-  if (path.some((node) => hidden[node])) return false
-  const keys = Object.keys(isolated)
-  if (keys.length === 0) return true
-  return path.some((node) => isolated[node])
+  if (Object.keys(isolated).length > 0) return path.some((node) => isolated[node])
+  return !path.some((node) => hidden[node])
 }
 
 export const prefersReducedMotion: boolean =

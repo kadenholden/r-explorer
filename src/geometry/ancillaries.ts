@@ -114,11 +114,14 @@ export function oilFilterHousing(_params: GeometryParams): THREE.BufferGeometry 
   const parts: THREE.BufferGeometry[] = []
   const body = new THREE.BoxGeometry(0.09, 0.08, 0.08)
   parts.push(body)
+  // Gen 3 cartridge filter stands UP out of the housing — the cap faces the
+  // sky and is changed from above with a 32 mm socket (operator-verified
+  // correction: it previously hung downward like an old spin-on)
   const canister = new THREE.CylinderGeometry(0.042, 0.042, 0.075, 18)
-  canister.translate(0, -0.06, 0)
+  canister.translate(0, 0.06, 0)
   parts.push(canister)
-  const cap = new THREE.CylinderGeometry(0.038, 0.038, 0.014, 12)
-  cap.translate(0, -0.104, 0)
+  const cap = new THREE.CylinderGeometry(0.04, 0.04, 0.016, 6)
+  cap.translate(0, 0.106, 0)
   parts.push(cap)
   // oil-to-coolant cooler stack on the side
   const cooler = new THREE.BoxGeometry(0.02, 0.055, 0.07)

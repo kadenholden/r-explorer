@@ -699,6 +699,12 @@ button {
   overflow: hidden;
 }
 
+.service-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px 0;
+}
+
 .service-disclaimer {
   padding: 10px 14px 0;
   margin: 0;
