@@ -1359,7 +1359,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": "06K103495BL",
-      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit on the cam bridge, not integrated (R2). Its spring-loaded diaphragm regulates crankcase pressure; oil drops back to the sump and clean vapour routes to the turbo inlet (boost) or manifold (vacuum). Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
+      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit sitting on TOP of the cam cover toward the REAR (bulkhead) side, with its turbo breather line leaving the BACK of the module (FCP Euro-verified; 7× T30 screws). Lift the plastic engine cover off its ball mounts and it's right there. Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
       "material": "Glass-reinforced plastic + rubber diaphragm",
       "torqueSpec": null,
       "knownIssues": [
@@ -1369,7 +1369,7 @@
         "direction": [
           0,
           1,
-          0.35
+          -0.3
         ],
         "distance": 1.5
       },
@@ -1378,22 +1378,22 @@
       "transforms": [
         {
           "position": [
-            0.09,
+            -0.05,
             0.365,
-            0.03
+            -0.05
           ],
           "rotationDeg": [
             0,
-            0,
+            180,
             0
           ]
         }
       ],
       "callout": 23,
       "calloutOffset": [
-        0.14,
+        -0.14,
         0.12,
-        0.12
+        -0.1
       ],
       "color": "#33363c",
       "tags": [

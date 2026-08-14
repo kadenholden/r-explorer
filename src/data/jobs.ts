@@ -37,7 +37,7 @@ export const JOBS: Job[] = [
     blurb:
       'The classic Gen 3 breather fix — and this car’s live leak suspect. A bolt-on module swap, no coding needed.',
     difficulty: 'Easy–moderate · ~45 min · engine COLD',
-    tools: 'T25/T30 Torx (verify on car), new module 06K103495BL/BM (seal included), gloves',
+    tools: 'T30 Torx (7 screws — FCP Euro-verified), new module 06K103495BL/BM (seal included), gloves',
     steps: [
       {
         title: 'Open the bonnet',
@@ -50,7 +50,7 @@ export const JOBS: Job[] = [
       {
         title: 'Find the module',
         text:
-          'The PCV / oil separator is the plastic module sitting on the cam cover with the breather hose leaving its side. Confirm the fault first if you haven’t: engine idling, lift the oil cap — strong suction and an idle change means the diaphragm is torn.',
+          'Lift the plastic engine cover straight up off its ball mounts. The PCV / oil separator is the plastic module on TOP of the cam cover toward the bulkhead, its turbo breather line leaving the back. Confirm the fault first if you haven’t: engine idling, lift the oil cap — strong suction and an idle change means the diaphragm is torn.',
         isolate: ['pcv-module', 'valve-cover-pcv', 'ignition-coils'],
         focusPartId: 'pcv-module',
         bonnet: true,
@@ -66,7 +66,7 @@ export const JOBS: Job[] = [
       {
         title: 'Remove the screws',
         text:
-          'Undo the perimeter screws (usually 7, Torx — verify the size on your car) working diagonally, a turn at a time, so the module lifts square. Keep them in order; they’re short and identical, but habits like this save engines.',
+          'Undo the seven T30 screws working diagonally, a turn at a time, so the module lifts square. Keep them in order; they’re short and identical, but habits like this save engines.',
         isolate: ['pcv-module', 'valve-cover-pcv'],
         focusPartId: 'pcv-module',
         bonnet: true,
