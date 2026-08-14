@@ -124,6 +124,14 @@ import {
   oRing,
 } from './shortBlockDetail'
 import {
+  valveSpring,
+  fingerFollower,
+  hlaElement,
+  sparkPlug,
+  upperTimingCover,
+  pcvModule,
+} from './headDetail'
+import {
   floorpan,
   frontStructure,
   bulkhead,
@@ -255,6 +263,12 @@ registerRecipe('oilPumpTwoStage', oilPumpTwoStage)
 registerRecipe('solenoidValve', solenoidValve)
 registerRecipe('windageTray', windageTray)
 registerRecipe('oRing', oRing)
+registerRecipe('valveSpring', valveSpring)
+registerRecipe('fingerFollower', fingerFollower)
+registerRecipe('hlaElement', hlaElement)
+registerRecipe('sparkPlug', sparkPlug)
+registerRecipe('upperTimingCover', upperTimingCover)
+registerRecipe('pcvModule', pcvModule)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)
