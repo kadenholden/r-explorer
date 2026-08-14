@@ -50,6 +50,12 @@ interface AppState {
   isolated: Record<string, boolean>
   toggleIsolate: (nodeId: string) => void
   clearIsolation: () => void
+  /** Replace the whole isolation set (used by the service tab's Show me). */
+  setIsolation: (nodeIds: string[]) => void
+
+  /** Service reference panel. */
+  servicePanelOpen: boolean
+  setServicePanelOpen: (open: boolean) => void
 
   /** Camera focus request: fly the orbit target to a world point. */
   focusPoint: [number, number, number] | null
@@ -115,6 +121,11 @@ export const useAppStore = create<AppState>()(
           return { isolated }
         }),
       clearIsolation: () => set({ isolated: {} }),
+      setIsolation: (nodeIds) =>
+        set({ isolated: Object.fromEntries(nodeIds.map((n) => [n, true])) }),
+
+      servicePanelOpen: false,
+      setServicePanelOpen: (open) => set({ servicePanelOpen: open }),
 
       focusPoint: null,
       focusNonce: 0,

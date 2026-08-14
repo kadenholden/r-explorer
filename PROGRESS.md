@@ -1,5 +1,18 @@
 # PROGRESS
 
+## Service tab (2026-08-14, operator-requested)
+
+New SERVICE button in the top bar opens the owner's service reference:
+15 cards (engine oil, spark plugs, air/pollen filters, DSG fluid+filter,
+HALDEX OIL + STRAINER, REAR DIFF OIL, front bevel-box oil, coolant,
+brake fluid, pads/discs w/ EPB warning, wheels, battery, wipers, PCV
+check) with fluids, capacities, plug part numbers, torques and intervals
+from the research — conflicts flagged, never smoothed. Each card's
+"Show me" isolates the involved parts and flies the camera to them —
+built specifically because the operator couldn't find the Haldex and
+rear-diff fill/drain locations on the real car. Data in
+src/data/service.ts; UI in ServicePanel.tsx.
+
 ## QA pass + camera & isolation overhaul (2026-08-14, operator-requested)
 
 **Audit (programmatic + visual, all 23 data files):** three real errors
