@@ -18,7 +18,7 @@
       "assembly": "fuel-storage",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Saddle-style plastic tank ahead of the rear axle (dossier §8).",
+      "description": "Saddle-style plastic tank ahead of the rear axle (dossier §8). R4 capacity conflict: VW US spec says 55 L, VW Australia literature 60 L for 4MOTION — verify against the UK owner's manual.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -64,11 +64,13 @@
       "system": "cooling-hvac",
       "assembly": "fuel-storage",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Electric low-pressure pump + level sender in a top-hat module; feeds the cam-driven HPFP at ~4–6 bar — stock LPFP good to ~400 WHP (dossier §2).",
+      "oemPartNumber": "5Q0919051BM",
+      "description": "In-tank fuel delivery module — Golf R 4Motion suffix BM (family 5Q0919051, also BH/BJ/CB/CC) (R4). Houses the low-pressure pump, suction-jet transfer for the saddle tank, level sender(s) and a lifetime mesh strainer — there is NO separate serviceable fuel filter on the Mk7 petrol. Pump speed is demand-controlled by module J538, not constant voltage.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Pump failure → no-start; sender faults → erratic gauge (R4)."
+      ],
       "explodeVector": {
         "direction": [
           0.3,

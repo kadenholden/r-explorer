@@ -3,7 +3,11 @@
     "id": "engine-intake",
     "name": "Engine — intake & boost (IS38, manifold w/ flaps)",
     "system": "engine",
-    "origin": [0, 0, 0],
+    "origin": [
+      0,
+      0,
+      0
+    ],
     "description": "The air/boost path (dossier §2): airbox → IHI IS38 turbo with motorised wastegate → front-mount intercooler → throttle body → the plastic variable-runner intake manifold (06L133201FP) with its V157 flap motor and G336 position sensor — the assembly behind the P2015 fault this project set out to explain. Select the manifold, flaps, V157 or G336 and use the flap/fault controls in the panel."
   },
   "parts": [
@@ -13,19 +17,49 @@
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Airbox feeding the turbo inlet. Gen 3 runs a MAP/speed-density load model with intake-air-temp/pressure sensing rather than a traditional MAF on most trims (dossier §2).",
+      "oemPartNumber": "5Q0129607AC",
+      "description": "Airbox with panel element, 5Q0129607AC (supersedes 5Q0129607AG) (R3). Fresh air enters via the front duct/snorkel (5Q0129617/18-series), through the filter and the turbo-inlet pipe to the IS38 compressor.",
       "material": "Plastic",
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0.4, 1, 0.5], "distance": 0.3 },
+      "knownIssues": [
+        "Cracks or a loose lid admit unmetered air (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.4,
+          1,
+          0.5
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "airbox",
       "geometryParams": {},
-      "transforms": [{ "position": [0.3, 0.1, 0.38], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.3,
+            0.1,
+            0.38
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 1,
-      "calloutOffset": [0.16, 0.12, 0.1],
+      "calloutOffset": [
+        0.16,
+        0.12,
+        0.1
+      ],
       "color": "#33363c",
-      "tags": ["airbox", "intake-tract", "speed-density"]
+      "tags": [
+        "airbox",
+        "intake-tract",
+        "speed-density"
+      ]
     },
     {
       "id": "turbo-is38",
@@ -33,59 +67,162 @@
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": "Turbo group",
-      "oemPartNumber": null,
-      "description": "Single-scroll, internally-wastegated IS38 integrated with the head's exhaust manifold; peak boost ~1.2 bar (dossier §2). Turbine 47.4/54.7 mm 8-blade; compressor 45.2/58.0 mm 6+6-blade. O2 sensor directly upstream of the turbine.",
+      "oemPartNumber": "06K145702J",
+      "description": "IHI IS38 (RHF5) turbo on the head's integrated exhaust manifold — Golf R most commonly shipped 06K145702J / 06K145874F; the family spans 06K145702H/J/M/N, 06K145722A/H/T, 06K145874F/N and is shared with Audi S3 8V / TTS Mk3 (R3). Compressor wheel 45.2/58.0 mm, turbine 47.4/54.7 mm, plain journal bearing. Turbo-to-head M8 nuts 25 Nm (vendor-verified; renew self-locking nuts). Turbine outlet joins the downpipe with a V-band clamp — not nuts.",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": ["Shaft/bearing wear and wastegate-actuator faults are the documented IS38 weak points; upgraded ball-bearing replacements are common (dossier §2)"],
-      "explodeVector": { "direction": [0, -0.2, -1], "distance": 0.4 },
+      "torqueSpec": {
+        "valueNm": 25,
+        "angle": null,
+        "note": "Turbo-to-head M8 nuts (R3, vendor DIY-verified — treat as strong indicative); renew self-locking nuts"
+      },
+      "knownIssues": [
+        "Wastegate/actuator-rod play → cold rattle on accel/decel; VAG issued anti-rattle clip service actions, and P0299 from link-plate play can mean turbo replacement (R3, TSB SB-10052519).",
+        "Journal-bearing/compressor-wheel failure on tuned or oil-starved cars (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.2,
+          -1
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "is38Turbo",
       "geometryParams": {},
-      "transforms": [{ "position": [0, -0.015, -0.27], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.015,
+            -0.27
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 2,
-      "calloutOffset": [0.14, 0.12, -0.14],
+      "calloutOffset": [
+        0.14,
+        0.12,
+        -0.14
+      ],
       "color": "#9aa1a9",
-      "tags": ["turbo", "IS38", "IHI", "wastegate"]
+      "tags": [
+        "turbo",
+        "IS38",
+        "IHI",
+        "wastegate"
+      ]
     },
     {
       "id": "wastegate-actuator",
-      "name": "Wastegate actuator (motorised, position feedback)",
+      "name": "Charge pressure actuator V465 (electric wastegate)",
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": "Turbo group",
-      "oemPartNumber": null,
-      "description": "The ECU drives wastegate position directly via this motorised actuator with position feedback (06K145xxx family, dossier §2). On replacement the ECU must re-calibrate the actuator or it throws a wastegate fault — exact variant number not in the dossier.",
+      "oemPartNumber": "06K145725T",
+      "description": "The DC-motor electric wastegate actuator — there is NO vacuum N75 on this engine (R3). After any turbo/actuator work the rod must be mechanically pre-set (door to contact, then 1.5 turns per APR, jam nut tight, ≈3.6 V on the acknowledgment channel) and then stop-learned in VCDS: Basic Settings → 'First Adaptation of charge pressure actuator' (IDE04304) — otherwise P2563/EPC. SSP says replace the actuator if the rod nuts are loosened. HANON cross-refs 06K145614G/06L145614B/D. Note the UK '722S' turbo revision reportedly carries an IS20-style actuator — verify by connector orientation.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0.6, 0.8, -0.4], "distance": 0.28 },
+      "knownIssues": [
+        "Rattle, seized rod, or lost stop-adaptation → P2563 (Turbo Boost Control Position Sensor Implausible) / EPC (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          0.8,
+          -0.4
+        ],
+        "distance": 0.28
+      },
       "geometryRef": "wastegateActuator",
       "geometryParams": {},
-      "transforms": [{ "position": [0.09, 0.038, -0.26], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.09,
+            0.038,
+            -0.26
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 3,
-      "calloutOffset": [0.12, 0.1, -0.1],
+      "calloutOffset": [
+        0.12,
+        0.1,
+        -0.1
+      ],
       "color": "#5d6167",
-      "tags": ["wastegate", "actuator", "06K145xxx"]
+      "tags": [
+        "V465",
+        "wastegate",
+        "electric",
+        "P2563",
+        "stop-learn"
+      ]
     },
     {
       "id": "diverter-valve",
-      "name": "Diverter valve (electric, recirculating)",
+      "name": "Turbo air recirculation valve N249 (diverter)",
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": "Turbo group",
       "oemPartNumber": null,
-      "description": "Electric recirculating diverter valve on the compressor housing — vents boost back to the inlet on throttle lift (dossier §2).",
+      "description": "Electric recirculation/diverter valve on the compressor housing venting boost on lift-off (R3). 06H145710-series with a GENUINE revision disagreement: the famous 'Rev D' piston upgrade is for Gen 1/2 and reportedly does NOT fit Gen 3 — Gen 3 cars shipped 06H145710C (later J). Verify before ordering. 3× M6 screws (4 mm hex) at 9 Nm.",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0.5, 1, -0.2], "distance": 0.26 },
+      "torqueSpec": {
+        "valueNm": 9,
+        "angle": null,
+        "note": "3× M6, 4 mm hex (R3, vendor-verified)"
+      },
+      "knownIssues": [
+        "Torn diaphragm (early revisions), cracked plastic or electrical fault → P0299/P0033 (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.5,
+          1,
+          -0.2
+        ],
+        "distance": 0.26
+      },
       "geometryRef": "diverterValve",
       "geometryParams": {},
-      "transforms": [{ "position": [0.12, 0.05, -0.25], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.12,
+            0.05,
+            -0.25
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 4,
-      "calloutOffset": [0.1, 0.12, -0.06],
+      "calloutOffset": [
+        0.1,
+        0.12,
+        -0.06
+      ],
       "color": "#33363c",
-      "tags": ["diverter-valve", "DV", "recirculating"]
+      "tags": [
+        "N249",
+        "diverter",
+        "recirculation",
+        "revision-conflict"
+      ]
     },
     {
       "id": "charge-pipe-hot",
@@ -94,18 +231,47 @@
       "assembly": "engine-intake",
       "subAssembly": "Charge-air path",
       "oemPartNumber": null,
-      "description": "Boost plumbing from the compressor outlet to the intercooler's left end tank (dossier §2 charge-air path: hard pipes, silicone couplers, clamps).",
+      "description": "Plastic turbo-outlet pipe, 5Q0145770-series (e.g. 5Q0145770A) (R3 — verify suffix). The turbo-muffler/'pancake' coupler on this run is a classic MQB boost-leak point under raised boost.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0.6, -0.4, 0.3], "distance": 0.3 },
+      "knownIssues": [
+        "Coupler blow-off under boost — the reason aftermarket aluminium pipe kits exist (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          -0.4,
+          0.3
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "chargePipeHot",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 5,
-      "calloutOffset": [0.2, -0.12, 0.1],
+      "calloutOffset": [
+        0.2,
+        -0.12,
+        0.1
+      ],
       "color": "#5d6167",
-      "tags": ["charge-pipe", "hot-side"]
+      "tags": [
+        "charge-pipe",
+        "hot-side"
+      ]
     },
     {
       "id": "intercooler",
@@ -114,18 +280,48 @@
       "assembly": "engine-intake",
       "subAssembly": "Charge-air path",
       "oemPartNumber": null,
-      "description": "Front-mount air-to-air intercooler in the MQB cooling stack (dossier §2, §8): core, end tanks, and stub connections modelled; sits ahead of the radiator in the real car.",
+      "description": "Front-mount air-to-air intercooler, 5Q0145803-series (supersessions S/P/L → AA → AE; shared R/S3/GTI) (R3 — verify suffix). Mounted low in the front stack.",
       "material": "Aluminium core, plastic end tanks",
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [0, -0.3, 1], "distance": 0.4 },
+      "knownIssues": [
+        "Condensation pooling → cold/humid-morning misfires; end-tank cracks (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.3,
+          1
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "intercooler",
       "geometryParams": {},
-      "transforms": [{ "position": [0, -0.045, 0.55], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.045,
+            0.55
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 6,
-      "calloutOffset": [0.24, 0.12, 0.1],
+      "calloutOffset": [
+        0.24,
+        0.12,
+        0.1
+      ],
       "color": "#aab0b8",
-      "tags": ["intercooler", "FMIC", "charge-air"]
+      "tags": [
+        "intercooler",
+        "FMIC",
+        "charge-air"
+      ]
     },
     {
       "id": "charge-pipe-cold",
@@ -134,38 +330,101 @@
       "assembly": "engine-intake",
       "subAssembly": "Charge-air path",
       "oemPartNumber": null,
-      "description": "Cooled charge air from the intercooler's right end tank up to the throttle body.",
+      "description": "Cold-side charge pipe from intercooler up to the throttle, 5Q0145762-series (R3 — verify suffix; APR's MS100194 replaces it). Carries the G31 charge-pressure sender. Clamp torques not found — per WSM.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
-      "explodeVector": { "direction": [-0.7, 0.2, 0.4], "distance": 0.3 },
+      "knownIssues": [
+        "Coupler failure and cracking under boost (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.7,
+          0.2,
+          0.4
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "chargePipeCold",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0, 0], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 7,
-      "calloutOffset": [-0.2, 0.1, 0.12],
+      "calloutOffset": [
+        -0.2,
+        0.1,
+        0.12
+      ],
       "color": "#5d6167",
-      "tags": ["charge-pipe", "cold-side"]
+      "tags": [
+        "charge-pipe",
+        "cold-side"
+      ]
     },
     {
       "id": "throttle-body",
-      "name": "Throttle body (electronic)",
+      "name": "Throttle body J338 / GX3",
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Electronic throttle on the plenum inlet. Dossier §2: throttle-body T30 bolts torque ~7 Nm.",
+      "description": "Drive-by-wire throttle module (J338, with integral G187/G188 position senders), 06L133063-series — exact CJXC number needs a VIN check (R3). Gasket 06K133073 — the number the original brief mistook for the manifold. Re-run VCDS throttle adaptation after cleaning or removal.",
       "material": null,
-      "torqueSpec": { "valueNm": 7, "angle": null, "note": "Dossier: throttle-body T30 bolts" },
-      "knownIssues": [],
-      "explodeVector": { "direction": [-1, 0.3, 0.3], "distance": 0.3 },
+      "torqueSpec": {
+        "valueNm": 7,
+        "angle": null,
+        "note": "Indicative M6-class only — R3 could not extract the manual's value (per WSM before real work)"
+      },
+      "knownIssues": [
+        "Carbon on the plate → sticky/hunting idle; actuator wear (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.3,
+          0.3
+        ],
+        "distance": 0.3
+      },
       "geometryRef": "throttleBody",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.24, 0.09, 0.32], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.24,
+            0.09,
+            0.32
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 8,
-      "calloutOffset": [-0.14, 0.12, 0.08],
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        0.08
+      ],
       "color": "#9aa1a9",
-      "tags": ["throttle", "drive-by-wire", "7Nm"]
+      "tags": [
+        "throttle",
+        "drive-by-wire",
+        "7Nm"
+      ]
     },
     {
       "id": "intake-manifold",
@@ -174,18 +433,49 @@
       "assembly": "engine-intake",
       "subAssembly": "Manifold unit",
       "oemPartNumber": "06L133201FP",
-      "description": "Plastic manifold with integrated variable runner flaps. 06L133201FP is the current genuine complete assembly (supersedes 06L133201T → EM → FA → CM; original CJXC fitment 06L133201AH) and includes the V157 flap motor — the motor/linkage is NOT sold separately, which is why a worn flap arm means a complete manifold (dossier §2). Manifold-to-head T30 bolts ~9 Nm.",
+      "description": "Glass-filled polyamide manifold, two shells plastic-welded, with integral tumble flaps, N316 actuator and G336 sensor — 06L133201FP is the best-documented CJXC fit (R3 confirms the recorded number; supersedes T/CM/EM/FA, and the later 06L133201FR ships complete with gasket, solenoid and sensor). Flap internals are not separately serviceable, so a seized flap means a manifold. Manifold-to-head bolt torque NOT found — per WSM (generic M6 = 10 Nm class).",
       "material": "Glass-fibre-reinforced plastic",
       "torqueSpec": null,
-      "knownIssues": ["P2015 flap-position faults: the Gen 3 manifold is a revised, less-failure-prone design than Gen 1–2 but not immune (dossier §2). See the fault demo on this part."],
-      "explodeVector": { "direction": [0, 0.35, 1], "distance": 0.42 },
+      "knownIssues": [
+        "P2015 sets two ways (R3): (a) carbon binding the flap shaft — the mechanical failure; (b) lost end-stop adaptation after service (exactly this car's walnut-blast scenario) — fixed with NO parts via VCDS Basic Settings Group 142 / G336 guided adaptation."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.35,
+          1
+        ],
+        "distance": 0.42
+      },
       "geometryRef": "intakeManifold",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.185, 0.17], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.185,
+            0.17
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 9,
-      "calloutOffset": [0.24, 0.16, 0.14],
+      "calloutOffset": [
+        0.24,
+        0.16,
+        0.14
+      ],
       "color": "#33363c",
-      "tags": ["p2015", "manifold", "variable-runner", "06L133201FP"]
+      "tags": [
+        "p2015",
+        "manifold",
+        "variable-runner",
+        "06L133201FP"
+      ]
     },
     {
       "id": "runner-flaps",
@@ -194,38 +484,99 @@
       "assembly": "engine-intake",
       "subAssembly": "Manifold unit",
       "oemPartNumber": null,
-      "description": "Four butterfly flaps on a common shaft inside the runners, swung by the V157 motor: ~0% at idle to ~99% actuated (VCDS measuring block 142 tracks specified vs actual). Only supplied as part of the complete manifold. Use the flap controls in this panel to cycle them — and the P2015 toggle to jam them.",
+      "description": "Tumble/charge-motion flaps on a common shaft inside each runner, with the external return spring, linkage and end stops the ECU's adaptation relearns (R3). Closed at idle/low load for tumble and stable idle; open above the load threshold for flow. Not sold separately.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["A worn/detached flap arm is one of the two classic P2015 roots — fix is the complete manifold 06L133201FP (dossier §2)"],
-      "explodeVector": { "direction": [0, 0.6, 1], "distance": 0.58 },
+      "knownIssues": [
+        "A worn/detached flap arm is one of the two classic P2015 roots — fix is the complete manifold 06L133201FP (dossier §2)"
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.6,
+          1
+        ],
+        "distance": 0.58
+      },
       "geometryRef": "runnerFlaps",
       "geometryParams": {},
-      "transforms": [{ "position": [0, 0.185, 0.178], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.185,
+            0.178
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 10,
-      "calloutOffset": [0.16, 0.2, 0.16],
+      "calloutOffset": [
+        0.16,
+        0.2,
+        0.16
+      ],
       "color": "#4a4e55",
-      "tags": ["p2015", "runner-flap", "tumble-flaps"]
+      "tags": [
+        "p2015",
+        "runner-flap",
+        "tumble-flaps"
+      ]
     },
     {
       "id": "flap-motor-v157",
-      "name": "Intake manifold flap motor V157",
+      "name": "Intake flap actuator N316",
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": "Manifold unit",
       "oemPartNumber": null,
-      "description": "The electric actuator (VW component code V157) that swings the runner-flap shaft. NOT available separately — only as part of the complete 06L133201FP manifold (dossier §2). Ross-Tech lists 'V157 stuck/faulty' among P2015's possible causes; VCDS Output Test [03] commands it directly to prove the linkage moves.",
+      "description": "R3 DESIGNATION CORRECTION: on this MQB petrol engine SSP 606 calls the flap actuator N316 — 'V157' is the old PQ-platform TDI name. A DC motor and reduction gears driving the flap shaft, integral to the manifold; VW sells no standalone motor, so a stalled motor means a manifold. The ECU closed-loops its commanded position against G336's measured angle.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["If Output Test [03] shows no flap movement, V157/linkage is implicated → complete manifold replacement"],
-      "explodeVector": { "direction": [-0.8, 0.5, 0.6], "distance": 0.4 },
+      "knownIssues": [
+        "If Output Test [03] shows no flap movement, V157/linkage is implicated → complete manifold replacement"
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.8,
+          0.5,
+          0.6
+        ],
+        "distance": 0.4
+      },
       "geometryRef": "flapMotorV157",
       "geometryParams": {},
-      "transforms": [{ "position": [-0.218, 0.172, 0.185], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            -0.218,
+            0.172,
+            0.185
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 11,
-      "calloutOffset": [-0.16, 0.14, 0.12],
+      "calloutOffset": [
+        -0.16,
+        0.14,
+        0.12
+      ],
       "color": "#3a3d44",
-      "tags": ["p2015", "V157", "flap-motor"]
+      "tags": [
+        "p2015",
+        "N316",
+        "flap-motor",
+        "R3-correction"
+      ]
     },
     {
       "id": "sensor-g336",
@@ -234,18 +585,49 @@
       "assembly": "engine-intake",
       "subAssembly": "Manifold unit",
       "oemPartNumber": "06K907386D",
-      "description": "The G336 position sensor on the passenger side of the manifold — available SEPARATELY as 06K907386D (previous revision 06K907386B), which is why a pure sensor fault is the cheap fix (dossier §2). Healthy readings: ~5 V ref; signal ~4.5 V closed → ~1.2 V open; below ~0.4 V indicates over-travel past the stop.",
+      "description": "The flap-position potentiometer the P2015 plausibility check reads: ~4.5 V flaps closed falling to ~1.2 V open (forum-grade curve — the 0.76/0.38 V figures online are the TDI unit). The ONLY serviceable flap part: it pulls out of the manifold after bending aside retaining tabs (R3). PART NUMBER CONFLICT: the dossier recorded 06K907386D, but R3 found no standalone PN — VW sells the sensor with the manifold. Verify against ETKA before ordering. After any manifold/G336 work, re-run the Group 142 adaptation.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": ["Implausible G336 signal with an intact linkage → replace the sensor alone (06K907386D), then re-run Group 142 basic settings (dossier §2)"],
-      "explodeVector": { "direction": [0.6, 0.6, 1], "distance": 0.5 },
+      "knownIssues": [
+        "Implausible G336 signal with an intact linkage → replace the sensor alone (06K907386D), then re-run Group 142 basic settings (dossier §2)"
+      ],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          0.6,
+          1
+        ],
+        "distance": 0.5
+      },
       "geometryRef": "sensorG336",
       "geometryParams": {},
-      "transforms": [{ "position": [0.172, 0.173, 0.193], "rotationDeg": [0, 0, 0] }],
+      "transforms": [
+        {
+          "position": [
+            0.172,
+            0.173,
+            0.193
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 12,
-      "calloutOffset": [0.14, 0.12, 0.14],
+      "calloutOffset": [
+        0.14,
+        0.12,
+        0.14
+      ],
       "color": "#9aa1a9",
-      "tags": ["p2015", "G336", "sensor", "06K907386D"]
+      "tags": [
+        "p2015",
+        "G336",
+        "sensor",
+        "pn-conflict"
+      ]
     },
     {
       "id": "manifold-bolts",
@@ -256,22 +638,309 @@
       "oemPartNumber": null,
       "description": "T30 bolts fixing the manifold flange to the head. Dossier §2: intake-manifold-to-head T30 bolts torque to ~9 Nm.",
       "material": null,
-      "torqueSpec": { "valueNm": 9, "angle": null, "note": "Dossier: intake-manifold-to-head T30 bolts" },
+      "torqueSpec": {
+        "valueNm": 9,
+        "angle": null,
+        "note": "Dossier value — R3 could not extract the manual's manifold-bolt table (RG24), so treat as indicative; per WSM before real work"
+      },
       "knownIssues": [],
-      "explodeVector": { "direction": [0, 0.4, 1], "distance": 0.7 },
+      "explodeVector": {
+        "direction": [
+          0,
+          0.4,
+          1
+        ],
+        "distance": 0.7
+      },
       "geometryRef": "hexBolt",
-      "geometryParams": { "shankDiameterMm": 6, "shankLengthMm": 25, "headAcrossFlatsMm": 10 },
+      "geometryParams": {
+        "shankDiameterMm": 6,
+        "shankLengthMm": 25,
+        "headAcrossFlatsMm": 10
+      },
       "transforms": [
-        { "position": [-0.176, 0.216, 0.181], "rotationDeg": [90, 0, 0] },
-        { "position": [-0.088, 0.216, 0.181], "rotationDeg": [90, 0, 0] },
-        { "position": [0, 0.216, 0.181], "rotationDeg": [90, 0, 0] },
-        { "position": [0.088, 0.216, 0.181], "rotationDeg": [90, 0, 0] },
-        { "position": [0.176, 0.216, 0.181], "rotationDeg": [90, 0, 0] }
+        {
+          "position": [
+            -0.176,
+            0.216,
+            0.181
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.088,
+            0.216,
+            0.181
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0,
+            0.216,
+            0.181
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.088,
+            0.216,
+            0.181
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.176,
+            0.216,
+            0.181
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        }
       ],
       "callout": 13,
-      "calloutOffset": [-0.12, 0.18, 0.14],
+      "calloutOffset": [
+        -0.12,
+        0.18,
+        0.14
+      ],
       "color": "#98a2ae",
-      "tags": ["fastener", "T30", "9Nm"]
+      "tags": [
+        "fastener",
+        "T30",
+        "9Nm"
+      ]
+    },
+    {
+      "id": "sensor-g31",
+      "name": "Charge-pressure sender G31",
+      "system": "engine",
+      "assembly": "engine-intake",
+      "subAssembly": "Sensors",
+      "oemPartNumber": "06K906051E",
+      "description": "Bosch charge-pressure sender in the pipe between intercooler and throttle (R3). One of TWO 'MAP' sensors on the car — the other is the manifold's combined GX9 module. The ECU closed-loops boost on this plus the manifold sender.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Carbon fouling and drift (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          0.5,
+          1
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.265,
+            0.06,
+            0.37
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 14,
+      "calloutOffset": [
+        -0.12,
+        0.1,
+        0.14
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "G31",
+        "boost-sensor",
+        "bosch"
+      ]
+    },
+    {
+      "id": "sensor-gx9",
+      "name": "Combined manifold sender GX9 (G71 + G42)",
+      "system": "engine",
+      "assembly": "engine-intake",
+      "subAssembly": "Sensors",
+      "oemPartNumber": null,
+      "description": "The manifold-side TMAP module: G71 intake-manifold pressure + G42 intake-air temperature in one push-fit sensor (R3; 04E906051/06K-series — verify exact number).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Implausible-signal P0106 when failing (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.4,
+          1,
+          0.5
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.1,
+            0.215,
+            0.21
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 15,
+      "calloutOffset": [
+        0.12,
+        0.12,
+        0.12
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "GX9",
+        "G71",
+        "G42",
+        "TMAP"
+      ]
+    },
+    {
+      "id": "turbo-oil-lines",
+      "name": "Turbo oil feed & return lines",
+      "system": "engine",
+      "assembly": "engine-intake",
+      "subAssembly": "Turbo services",
+      "oemPartNumber": null,
+      "description": "Oil feed (06K145735-series) and return (06K145757-series) lines — R3 CORRECTION: OEM MQB lines are O-ring/bracket fittings at 9 Nm (8 mm triple-square), NOT banjo bolts (banjos are aftermarket-kit hardware). Seals WHT-006-113 ×2 / gasket WHT-006-112.",
+      "material": "Steel/braided + hose",
+      "torqueSpec": {
+        "valueNm": 9,
+        "angle": null,
+        "note": "All turbo line fitting bolts (R3, vendor-verified)"
+      },
+      "knownIssues": [
+        "Feed-line coking/blockage → turbo bearing failure — why oil choice and intervals matter on these cars (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          0.6,
+          -0.6
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "turboLines",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.05,
+            -0.02,
+            -0.26
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 16,
+      "calloutOffset": [
+        0.12,
+        0.1,
+        -0.12
+      ],
+      "color": "#8d939c",
+      "tags": [
+        "turbo-lines",
+        "oil",
+        "coking",
+        "R3-correction"
+      ]
+    },
+    {
+      "id": "turbo-coolant-lines",
+      "name": "Turbo coolant feed & return lines",
+      "system": "engine",
+      "assembly": "engine-intake",
+      "subAssembly": "Turbo services",
+      "oemPartNumber": null,
+      "description": "Coolant feed (06K121497-series) and return (06K121496-series) to the water-cooled turbo bearing housing; O-ring fittings, bolts 9 Nm (R3). Seals WHT-006-114 / WHT-006-124.",
+      "material": "Steel + hose",
+      "torqueSpec": {
+        "valueNm": 9,
+        "angle": null,
+        "note": "Fitting bolts, T30 (R3, vendor-verified)"
+      },
+      "knownIssues": [
+        "Leaks at the O-ring fittings (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          0.6,
+          -0.6
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "turboLines",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.09,
+            -0.02,
+            -0.26
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
+      "callout": 17,
+      "calloutOffset": [
+        -0.12,
+        0.1,
+        -0.12
+      ],
+      "color": "#7d838b",
+      "tags": [
+        "turbo-lines",
+        "coolant"
+      ]
     }
   ]
 }

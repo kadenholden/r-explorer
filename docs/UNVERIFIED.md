@@ -59,28 +59,24 @@ open from R2's own flags:
 | G300 sensor number | NONE FOUND |
 | Injection type | R2 says pre-facelift CJXC is DI-only; **R4 overturns this with five agreeing sources** (EU = dual injection, DI-only is North America) — model follows R4 + dossier |
 
-## Intake / fuel / exhaust (Phase 2)
+## Intake / fuel / exhaust — LARGELY RESOLVED by R3+R4 (2026-08-14)
 
-Two numbers ARE dossier-verified and recorded on their parts: the
-complete manifold **06L133201FP** and the G336 sensor **06K907386D**.
-The V157 motor and runner flaps intentionally carry `null` — they are
-only sold inside the complete manifold (dossier §2).
+R3 confirmed the manifold 06L133201FP and delivered the IS38 family,
+V465/N249/N316 designations and the P2015 adaptation story; R4 settled
+dual injection (EU CJXC = DI + port; DI-only is North America — five
+agreeing sources overturning R2), electric exhaust flaps (4H0133246J)
+and both lambda numbers. Still open:
 
-| Part (id) | Missing |
+| Item | Status |
 | --- | --- |
-| Airbox (`airbox`) | OEM number |
-| Turbo (`turbo-is38`) | OEM number (IS38 is the model; exact 06K unit varies) |
-| Wastegate actuator (`wastegate-actuator`) | exact 06K145xxx variant |
-| Diverter valve (`diverter-valve`) | OEM number |
-| Charge pipes (`charge-pipe-hot`, `-cold`) | OEM numbers, materials |
-| Intercooler (`intercooler`) | OEM number |
-| Throttle body (`throttle-body`) | OEM number |
-| Manifold bolts (`manifold-bolts`) | OEM number, exact class/length |
-| HPFP (`hpfp`) | OEM number |
-| Fuel rails + injectors (`di-fuel-rail`, `di-injectors`, `port-fuel-rail`, `port-injectors`) | OEM numbers |
-| Rail pressure sensor (`rail-pressure-sensor`) | OEM number |
-| Exhaust line (`downpipe-cat`, `link-pipe`, `resonator`, `rear-silencer`, `exhaust-flap-actuators`, `quad-tips`) | OEM numbers |
-| Lambda sensors (`lambda-sensors`) | OEM numbers |
+| G336 sensor number | CONFLICT: dossier says 06K907386D; R3 found no standalone PN (sold with manifold) — verify in ETKA |
+| Diverter valve N249 revision | genuine disagreement: Gen 3 shipped 06H145710C (later J); 'Rev D' reportedly does NOT fit Gen 3 |
+| DI rail + G247 exact Gen 3 numbers | NONE FOUND (widely-listed 06L133317L and 06J906051-series are OLDER FSI parts) |
+| HPFP bolts, injector clamps, rail bolts, G247, V-band clamp, lambda, manifold-to-head, throttle-body, charge-pipe clamps | torques NOT published in extracted tables — staged/diagonal procedure only; "per WSM", do not guess |
+| Fuel tank capacity | 55 L (VW US) vs 60 L (VW Australia, 4Motion) — check UK owner's manual |
+| Throttle body / air filter / ducts / charge pipes / heat shield | series-level numbers only — verify suffix by VIN |
+| Exhaust flap V-designation | electric confirmed but the V-number NOT found — do not assert "N321" |
+| UK '722S' turbo revision | reportedly IS20-style actuator — verify by connector orientation |
 
 ## Transmission — DQ250 (Phase 3)
 
