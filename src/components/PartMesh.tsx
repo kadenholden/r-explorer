@@ -65,8 +65,11 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
   const select = useAppStore((s) => s.select)
   const setHoveredPart = useAppStore((s) => s.setHoveredPart)
   const explode = useAppStore((s) => s.explode)
-  const faultActive = useAppStore((s) => s.p2015) && part.tags.includes('p2015')
+  const p2015Fault = useAppStore((s) => s.p2015) && part.tags.includes('p2015')
+  const pcvFault = useAppStore((s) => s.pcvTorn) && part.tags.includes('PCV')
+  const faultActive = p2015Fault || pcvFault
   const isFlap = part.tags.includes('runner-flap')
+  const isPcv = part.tags.includes('PCV')
 
   const hoverOn = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
@@ -106,6 +109,16 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
       const angle = state.p2015 ? -0.62 : state.flapsOpen ? -1.38 : 0
       if (prefersReducedMotion) spinGroup.current.rotation.x = angle
       else damp(spinGroup.current.rotation, 'x', angle, 0.22, delta)
+    }
+
+    // torn PCV diaphragm: the module flutters as crankcase pressure hunts
+    if (isPcv && spinGroup.current) {
+      if (state.pcvTorn && !prefersReducedMotion) {
+        const t = performance.now() / 1000
+        spinGroup.current.scale.y = 1 + Math.sin(t * 26) * 0.05
+      } else {
+        spinGroup.current.scale.y = 1
+      }
     }
   })
 

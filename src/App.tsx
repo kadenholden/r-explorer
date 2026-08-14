@@ -4,6 +4,7 @@ import { InfoPanel } from './components/InfoPanel'
 import { ExplodeControl } from './components/ExplodeControl'
 import { Viewport } from './components/Viewport'
 import { P2015Overlay } from './components/P2015Overlay'
+import { PcvOverlay } from './components/PcvOverlay'
 import { HoverTag } from './components/HoverTag'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <InfoPanel />
       <ExplodeControl />
       <P2015Overlay />
+      <PcvOverlay />
       <HoverTag />
     </div>
   )
