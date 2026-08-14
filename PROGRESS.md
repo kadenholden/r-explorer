@@ -1,5 +1,23 @@
 # PROGRESS
 
+## Liftable bonnet + guided jobs (2026-08-14, operator-requested)
+
+The app now works like the car: an **Open bonnet** chip hinges the real
+shell hood about its true rear-edge line (pivot computed from the GLB's
+bounding box — world (0, 0.60, -0.21)), revealing the bay exactly as the
+operator sees it. New **Guided jobs** tab (Service panel): step-by-step
+procedures where every step drives the 3D scene — isolation, camera
+fly-to, the bonnet, and per-part lift animations. Two jobs shipped:
+**PCV module replacement** (7 steps, the module physically lifts off the
+cam bridge; torque honesty preserved — screw size/figure flagged
+unverified) and **screen-wash leak trace** (5 steps — built after the
+operator asked; required modelling the washer system first: filler
+neck, bottle and pump/grommet now exist in engine-cooling, with the
+behind-the-arch-liner access story and the grommet-is-the-leak wisdom).
+Screen wash added to the Service tab. Debug lesson recorded: draco GLB
+decode takes several seconds after a dev-server restart — a "missing"
+shell is usually just still loading.
+
 ## Orientation fix, free-roam camera, Pre-MOT tab (2026-08-14, operator QA)
 
 The operator caught the oil filter hanging DOWNWARD like an old spin-on

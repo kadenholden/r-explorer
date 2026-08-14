@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MOT_ITEMS, SERVICE_ITEMS } from '../data/service'
+import { JOBS, startJob } from '../data/jobs'
 import type { ServiceItem } from '../data/service'
 import { partById, partWorldDirection, partWorldPosition } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
@@ -72,20 +73,24 @@ export function ServicePanel() {
   const open = useAppStore((s) => s.servicePanelOpen)
   const setOpen = useAppStore((s) => s.setServicePanelOpen)
   const clearIsolation = useAppStore((s) => s.clearIsolation)
-  const [tab, setTab] = useState<'service' | 'mot'>('service')
+  const [tab, setTab] = useState<'service' | 'mot' | 'jobs'>('service')
   if (!open) return null
 
-  const items = tab === 'service' ? SERVICE_ITEMS : MOT_ITEMS
+  const items = tab === 'mot' ? MOT_ITEMS : SERVICE_ITEMS
   const ruleLabel = tab === 'service' ? 'Interval' : 'MOT rule'
 
   return (
     <aside className="service-panel" aria-label="Service and MOT reference">
       <div className="p2015-header">
-        <span className="p2015-code">{tab === 'service' ? 'SERVICE' : 'MOT'}</span>
+        <span className="p2015-code">
+          {tab === 'service' ? 'SERVICE' : tab === 'mot' ? 'MOT' : 'JOBS'}
+        </span>
         <span className="p2015-title">
           {tab === 'service'
             ? 'Everything you routinely service — with real numbers'
-            : 'Pre-MOT walk-round — this car\u2019s known weak points included'}
+            : tab === 'mot'
+              ? 'Pre-MOT walk-round — this car\u2019s known weak points included'
+              : 'Guided jobs — the 3D car walks you through the work'}
         </span>
         <button
           type="button"
@@ -118,16 +123,52 @@ export function ServicePanel() {
         >
           Pre-MOT check
         </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'jobs'}
+          className={`avs-btn${tab === 'jobs' ? ' is-large' : ''}`}
+          onClick={() => setTab('jobs')}
+        >
+          Guided jobs
+        </button>
       </div>
       <p className="plate-note service-disclaimer">
         {tab === 'service'
           ? 'Values come from the project\u2019s research with sources on each part; anything marked as a conflict or unverified must be confirmed in erWin/Bentley before real spanner work. "Show me" hides everything except the parts involved \u2014 the \u2715 or the "show all" chip brings the car back.'
-          : 'Work top to bottom the week before the test \u2014 most of these cost pennies to fix in advance and a retest if the tester finds them first. "Show me" flies the camera to the parts being checked.'}
+          : tab === 'mot'
+            ? 'Work top to bottom the week before the test \u2014 most of these cost pennies to fix in advance and a retest if the tester finds them first. "Show me" flies the camera to the parts being checked.'
+            : 'Each job steps the 3D car through the real procedure \u2014 the bonnet opens, the camera moves, parts lift off as you would lift them. Read every step once before touching the car.'}
       </p>
       <div className="service-list">
-        {items.map((item) => (
-          <ServiceCard key={item.id} item={item} ruleLabel={ruleLabel} />
-        ))}
+        {tab === 'jobs'
+          ? JOBS.map((job) => (
+              <article key={job.id} className="service-card">
+                <div className="service-card-head">
+                  <h3>{job.title}</h3>
+                  <button
+                    type="button"
+                    className="avs-btn is-large"
+                    onClick={() => {
+                      setOpen(false)
+                      startJob(job.id)
+                    }}
+                  >
+                    Start ›
+                  </button>
+                </div>
+                <p className="plate-note">{job.blurb}</p>
+                <div className="plate-row">
+                  <span className="plate-label">Difficulty</span>
+                  <span className="plate-value">{job.difficulty}</span>
+                </div>
+                <div className="plate-row">
+                  <span className="plate-label">You need</span>
+                  <span className="plate-value">{job.tools}</span>
+                </div>
+              </article>
+            ))
+          : items.map((item) => <ServiceCard key={item.id} item={item} ruleLabel={ruleLabel} />)}
       </div>
     </aside>
   )

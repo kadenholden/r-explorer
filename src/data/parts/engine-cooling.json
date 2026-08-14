@@ -516,6 +516,157 @@
         "AC",
         "refrigerant"
       ]
+    },
+    {
+      "id": "washer-filler-neck",
+      "name": "Screen-wash filler neck",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": "Screen wash",
+      "oemPartNumber": null,
+      "description": "The blue-capped filler at the front-right of the engine bay — the only part of the washer system you can see with the bonnet up. It feeds down through the inner wing to the bottle hidden behind the right-front wheel-arch liner.",
+      "material": "Plastic",
+      "torqueSpec": null,
+      "knownIssues": [
+        "A split at the neck-to-bottle joint leaks only when you overfill — one of the classic 'mystery' washer leaks."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.3,
+          1,
+          0.3
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "washerNeck",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.56,
+            0.02,
+            0.6
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 11,
+      "calloutOffset": [
+        0.12,
+        0.14,
+        0.1
+      ],
+      "color": "#3f6ea5",
+      "tags": [
+        "screen-wash",
+        "filler"
+      ]
+    },
+    {
+      "id": "washer-bottle",
+      "name": "Screen-wash bottle (behind RF arch liner)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": "Screen wash",
+      "oemPartNumber": null,
+      "description": "The reservoir does NOT live in the engine bay — it hides behind the right-front wheel-arch liner, ahead of the wheel. Access = steering on full left lock, arch-liner screws out, liner peeled back. Part number to verify by VIN.",
+      "material": "Plastic",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Cracks from freezing when filled with plain water — use proper mix year-round."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.2,
+          0.4
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "washerBottle",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.6,
+            -0.02,
+            0.5
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 12,
+      "calloutOffset": [
+        0.14,
+        0.1,
+        0.12
+      ],
+      "color": "#e8e4da",
+      "tags": [
+        "screen-wash",
+        "reservoir",
+        "arch-liner-access"
+      ]
+    },
+    {
+      "id": "washer-pump",
+      "name": "Washer pump & grommet",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": "Screen wash",
+      "oemPartNumber": null,
+      "description": "Small electric pump pressed into a rubber grommet on the bottle's inboard face. THE most common screen-wash leak: the grommet hardens and weeps, so the bottle slowly empties overnight. The pump pulls straight out of the grommet by hand; the grommet is a pennies part.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Hardened grommet → slow leak that empties the bottle while parked — the number-one cause.",
+        "Dead pump → no spray at all (listen for the whirr when you pull the stalk)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.6,
+          -0.2,
+          -0.6
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.52,
+            -0.04,
+            0.44
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        }
+      ],
+      "callout": 13,
+      "calloutOffset": [
+        -0.12,
+        -0.08,
+        -0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "screen-wash",
+        "pump",
+        "grommet",
+        "known-issue"
+      ]
     }
   ]
 }

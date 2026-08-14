@@ -70,6 +70,7 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
   const faultActive = p2015Fault || pcvFault
   const isFlap = part.tags.includes('runner-flap')
   const isPcv = part.tags.includes('PCV')
+  const isBonnet = part.id === 'shell-hood'
 
   const focusOn = useAppStore((s) => s.focusOn)
   const focusHere = (e: { stopPropagation: () => void }) => {
@@ -111,6 +112,12 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
     const state = useAppStore.getState()
     target.copy(dir).multiplyScalar(part.explodeVector.distance * state.explode).add(base)
     if (avsShift > 0 && state.avsLargeLobe) target.x += avsShift
+    const lift = state.jobLifts[part.id]
+    if (lift) {
+      target.x += lift[0]
+      target.y += lift[1]
+      target.z += lift[2]
+    }
     if (prefersReducedMotion) g.position.copy(target)
     else damp3(g.position, target, 0.18, delta)
 
@@ -119,6 +126,27 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
       const angle = state.p2015 ? -0.62 : state.flapsOpen ? -1.38 : 0
       if (prefersReducedMotion) spinGroup.current.rotation.x = angle
       else damp(spinGroup.current.rotation, 'x', angle, 0.22, delta)
+    }
+
+    // liftable bonnet: hinge the shell hood about its rear-edge line. The
+    // pivot is in the GLB anchor's local frame (hood rear edge at world
+    // (0, 0.60, -0.21); anchor (0, -0.33, -1.2))
+    if (isBonnet && spinGroup.current) {
+      const HY = 0.93
+      const HZ = 0.99
+      const targetAngle = state.bonnetOpen ? -0.85 : 0
+      const g2 = spinGroup.current
+      const current = (g2.userData['bonnetAngle'] as number | undefined) ?? 0
+      const a = prefersReducedMotion
+        ? targetAngle
+        : current + (targetAngle - current) * Math.min(1, delta * 4)
+      g2.userData['bonnetAngle'] = a
+      g2.rotation.x = a
+      g2.position.set(
+        0,
+        HY - (HY * Math.cos(a) - HZ * Math.sin(a)),
+        HZ - (HY * Math.sin(a) + HZ * Math.cos(a)),
+      )
     }
 
     // torn PCV diaphragm: the module flutters as crankcase pressure hunts

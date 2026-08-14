@@ -92,6 +92,16 @@ interface AppState {
   /** PCV fault simulation: breather diaphragm torn (R13 fault library). */
   pcvTorn: boolean
   togglePcv: () => void
+
+  /** Bonnet open/closed — hinges the real shell hood. */
+  bonnetOpen: boolean
+  toggleBonnet: () => void
+
+  /** Guided-job mode (jobs.ts drives these). */
+  activeJob: string | null
+  jobStep: number
+  /** Per-part position offsets applied by the current job step. */
+  jobLifts: Record<string, [number, number, number]>
 }
 
 export const useAppStore = create<AppState>()(
@@ -170,6 +180,13 @@ export const useAppStore = create<AppState>()(
 
       pcvTorn: false,
       togglePcv: () => set((s) => ({ pcvTorn: !s.pcvTorn })),
+
+      bonnetOpen: false,
+      toggleBonnet: () => set((s) => ({ bonnetOpen: !s.bonnetOpen })),
+
+      activeJob: null,
+      jobStep: 0,
+      jobLifts: {},
     }),
     {
       name: 'r-explorer-ui',
