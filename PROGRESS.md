@@ -1,5 +1,27 @@
 # PROGRESS
 
+## Downpipe re-route, manifold verify, interior build-out (2026-08-14)
+
+Operator flagged the downpipe "too low and at the front" — correct
+catch: the orientation flip had yaw-mirrored the OLD rear-turbo path,
+leaving it jutting forward. Redrawn properly for the exhaust-forward
+car: off the front turbo, straight down behind the radiator pack, cat
+in the down-swept run under the engine's front, then rearward under the
+sump to the link pipe; both charge pipes redrawn the same honest way
+(hot = short front hop turbo→IC; cold = up the nearside and over the
+gearbox to the rear throttle); lambdas repositioned on the new path.
+Intake-manifold move double-checked and verified visually: manifold +
+flaps + N316 + G336 + throttle + both fuel rails all at the bulkhead
+side, HPFP on the (now front) exhaust cam — consistent with SSP
+exhaust-forward layout and the operator's own walnut-blast experience.
+
+NEXT BIG BUILD started — interior: 9 new records (instrument cluster
+w/ immobiliser-coding note, MIB head unit w/ component protection,
+driver/passenger/curtain airbags + front belts & pretensioners with the
+never-DIY SRS warning and MOT tug-test, rear bench w/ ISOFIX, front +
+rear door cards w/ Kessy-access route). New reusable `simpleBox`
+recipe. Interior 5 → 14 records; model at 260 parts.
+
 ## Operator QA round 2: THE BAY WAS BACKWARDS (2026-08-14)
 
 The operator's washer-side and expansion-tank catches unravelled a

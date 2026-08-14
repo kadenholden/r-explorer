@@ -45,6 +45,14 @@ export function cartridge(params: GeometryParams): THREE.BufferGeometry {
   return mergeParts(parts)
 }
 
+/** Generic box: the workhorse for interior panels and modules. */
+export function simpleBox(params: GeometryParams): THREE.BufferGeometry {
+  const w = ((params.widthMm as number | undefined) ?? 100) / 1000
+  const h = ((params.heightMm as number | undefined) ?? 100) / 1000
+  const dep = ((params.depthMm as number | undefined) ?? 100) / 1000
+  return new THREE.BoxGeometry(w, h, dep)
+}
+
 /** Screen-wash bottle: tall tank tucked behind the right-front arch. */
 export function washerBottle(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []

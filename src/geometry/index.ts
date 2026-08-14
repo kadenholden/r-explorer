@@ -131,7 +131,7 @@ import {
   upperTimingCover,
   pcvModule,
 } from './headDetail'
-import { turboLines, cartridge, flexDisc, washerBottle, washerNeck } from './systemDetail'
+import { turboLines, cartridge, flexDisc, washerBottle, washerNeck, simpleBox } from './systemDetail'
 import {
   floorpan,
   frontStructure,
@@ -275,6 +275,7 @@ registerRecipe('cartridge', cartridge)
 registerRecipe('flexDisc', flexDisc)
 registerRecipe('washerBottle', washerBottle)
 registerRecipe('washerNeck', washerNeck)
+registerRecipe('simpleBox', simpleBox)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)
