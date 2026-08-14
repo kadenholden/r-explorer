@@ -28,7 +28,7 @@ export function PartMesh({ part }: { part: PartRecord }) {
   useEffect(() => () => geometry?.dispose(), [geometry])
 
   const hidden = useAppStore((s) => s.hidden)
-  const isolated = useAppStore((s) => s.isolatedNodeId)
+  const isolated = useAppStore((s) => s.isolated)
   if (!isPartVisible(part, hidden, isolated)) return null
 
   return (
@@ -70,6 +70,16 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
   const faultActive = p2015Fault || pcvFault
   const isFlap = part.tags.includes('runner-flap')
   const isPcv = part.tags.includes('PCV')
+
+  const focusOn = useAppStore((s) => s.focusOn)
+  const focusHere = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation()
+    const g = group.current
+    if (!g) return
+    const w = g.getWorldPosition(new THREE.Vector3())
+    select(part.id)
+    focusOn([w.x, w.y, w.z])
+  }
 
   const hoverOn = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
@@ -149,6 +159,7 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                   e.stopPropagation()
                   select(part.id)
                 }}
+                onDoubleClick={focusHere}
                 onPointerOver={hoverOn}
                 onPointerOut={hoverOff}
               >
@@ -171,6 +182,7 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                 e.stopPropagation()
                 select(part.id)
               }}
+              onDoubleClick={focusHere}
               onPointerOver={hoverOn}
               onPointerOut={hoverOff}
             >

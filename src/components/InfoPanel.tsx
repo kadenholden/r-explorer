@@ -1,8 +1,53 @@
 import { useMemo } from 'react'
 import type { PartRecord, TorqueSpec } from '../types/parts'
 import { systemDef } from '../data/taxonomy'
-import { ASSEMBLIES, partById } from '../data/loader'
+import { ASSEMBLIES, partById, partWorldPosition } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
+
+/** Focus / isolate action row shown on every part plate. */
+function PartActions({ part }: { part: PartRecord }) {
+  const focusOn = useAppStore((s) => s.focusOn)
+  const toggleIsolate = useAppStore((s) => s.toggleIsolate)
+  const clearIsolation = useAppStore((s) => s.clearIsolation)
+  const isolatedThis = useAppStore((s) => !!s.isolated[part.id])
+  const isolationActive = useAppStore((s) => Object.keys(s.isolated).length > 0)
+  const assemblyNode = `${part.system}/${part.assembly}`
+  const isolatedAssembly = useAppStore((s) => !!s.isolated[assemblyNode])
+  return (
+    <div className="avs-toggle">
+      <div className="p2015-readouts">
+        <button type="button" className="avs-btn" onClick={() => focusOn(partWorldPosition(part))}>
+          Focus camera
+        </button>
+        <button
+          type="button"
+          className={`avs-btn${isolatedThis ? ' is-large' : ''}`}
+          onClick={() => toggleIsolate(part.id)}
+          aria-pressed={isolatedThis}
+        >
+          {isolatedThis ? '+ shown alone' : 'Isolate part'}
+        </button>
+        <button
+          type="button"
+          className={`avs-btn${isolatedAssembly ? ' is-large' : ''}`}
+          onClick={() => toggleIsolate(assemblyNode)}
+          aria-pressed={isolatedAssembly}
+        >
+          {isolatedAssembly ? '+ assembly shown' : 'Isolate assembly'}
+        </button>
+        {isolationActive && (
+          <button type="button" className="avs-btn avs-btn--fault" onClick={clearIsolation}>
+            Show all
+          </button>
+        )}
+      </div>
+      <p className="plate-note">
+        Isolate stacks: keep pressing Isolate on other parts or assemblies to build a custom
+        view. Double-click any part in the 3D view to fly the camera to it.
+      </p>
+    </div>
+  )
+}
 
 /** ETKA-plate-style info panel: breadcrumb, callout number, and the part's
  *  full metadata. With nothing selected it introduces the assembly. */
@@ -134,6 +179,7 @@ function PartPlate({ part }: { part: PartRecord }) {
         <Row label="Material" value={part.material ?? '—'} />
         <Row label="Quantity" value={`${part.transforms.length}`} />
         <Row label="Geometry" value={part.geometryRef} mono />
+        <PartActions part={part} />
         {part.tags.includes('avs') && <AvsToggle />}
         {part.tags.includes('p2015') && <FlapControls />}
         {part.tags.includes('PCV') && <PcvControls />}

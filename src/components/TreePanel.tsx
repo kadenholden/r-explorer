@@ -53,7 +53,7 @@ function TreeRow({ nodeId, depth, label, count, expandable, onActivate, isSelect
   const toggleOpen = useAppStore((s) => s.toggleOpen)
   const hiddenState = useAppStore((s) => !!s.hidden[nodeId])
   const toggleHidden = useAppStore((s) => s.toggleHidden)
-  const isolated = useAppStore((s) => s.isolatedNodeId === nodeId)
+  const isolated = useAppStore((s) => !!s.isolated[nodeId])
   const toggleIsolate = useAppStore((s) => s.toggleIsolate)
 
   return (

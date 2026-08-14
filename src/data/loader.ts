@@ -217,3 +217,17 @@ export function partNodePath(part: PartRecord): string[] {
   path.push(part.id)
   return path
 }
+
+/** World position of a part's first placed instance (assembly origin +
+ *  yaw-rotated local position — assemblies only ever rotate about Y). */
+export function partWorldPosition(part: PartRecord): [number, number, number] {
+  const entry = ASSEMBLIES.find((a) => a.assembly.id === part.assembly)
+  const tr = part.transforms[0]
+  if (!entry || !tr) return [0, 0, 0]
+  const { origin, rotationDeg } = entry.assembly
+  const ry = ((rotationDeg?.[1] ?? 0) * Math.PI) / 180
+  const [x, y, z] = tr.position
+  const wx = x * Math.cos(ry) + z * Math.sin(ry)
+  const wz = -x * Math.sin(ry) + z * Math.cos(ry)
+  return [origin[0] + wx, origin[1] + y, origin[2] + wz]
+}

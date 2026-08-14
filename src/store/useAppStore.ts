@@ -10,6 +10,22 @@ import { partNodePath } from '../data/loader'
 
 export type ColorMode = 'real' | 'system'
 
+/** Presets whose cameras sit inside the bodywork; the shell auto-hides for
+ *  these and returns for exterior views. */
+export const INTERIOR_PRESETS = new Set([
+  'engine',
+  'intake',
+  'engine-top',
+  'chain-end',
+  'transmission',
+  'driveline',
+  'exhaust-line',
+  'sump',
+  'cabin',
+  'rear-axle',
+  'suspension',
+])
+
 interface AppState {
   selectedPartId: string | null
   select: (id: string | null) => void
@@ -30,9 +46,15 @@ interface AppState {
   hidden: Record<string, boolean>
   toggleHidden: (nodeId: string) => void
 
-  /** Isolate mode: only parts under this node render. */
-  isolatedNodeId: string | null
+  /** Isolate mode: only parts under any of these nodes render (multi-select). */
+  isolated: Record<string, boolean>
   toggleIsolate: (nodeId: string) => void
+  clearIsolation: () => void
+
+  /** Camera focus request: fly the orbit target to a world point. */
+  focusPoint: [number, number, number] | null
+  focusNonce: number
+  focusOn: (point: [number, number, number]) => void
 
   openNodes: Record<string, boolean>
   toggleOpen: (nodeId: string) => void
@@ -84,9 +106,19 @@ export const useAppStore = create<AppState>()(
       toggleHidden: (nodeId) =>
         set((s) => ({ hidden: { ...s.hidden, [nodeId]: !s.hidden[nodeId] } })),
 
-      isolatedNodeId: null,
+      isolated: {},
       toggleIsolate: (nodeId) =>
-        set((s) => ({ isolatedNodeId: s.isolatedNodeId === nodeId ? null : nodeId })),
+        set((s) => {
+          const isolated = { ...s.isolated }
+          if (isolated[nodeId]) delete isolated[nodeId]
+          else isolated[nodeId] = true
+          return { isolated }
+        }),
+      clearIsolation: () => set({ isolated: {} }),
+
+      focusPoint: null,
+      focusNonce: 0,
+      focusOn: (point) => set((s) => ({ focusPoint: point, focusNonce: s.focusNonce + 1 })),
 
       openNodes: { brakes: true, 'brakes/front-brake-corner': true },
       toggleOpen: (nodeId) =>
@@ -101,7 +133,13 @@ export const useAppStore = create<AppState>()(
       cameraPreset: 'front-three-quarter',
       presetNonce: 0,
       applyPreset: (name) =>
-        set((s) => ({ cameraPreset: name, presetNonce: s.presetNonce + 1 })),
+        set((s) => ({
+          cameraPreset: name,
+          presetNonce: s.presetNonce + 1,
+          // interior presets sit inside the bodywork — auto-hide the shell so
+          // the view is never a white panel; exterior presets bring it back
+          hidden: { ...s.hidden, 'body/body-shell': INTERIOR_PRESETS.has(name) },
+        })),
 
       treeDrawerOpen: false,
       setTreeDrawerOpen: (open) => set({ treeDrawerOpen: open }),
@@ -124,21 +162,33 @@ export const useAppStore = create<AppState>()(
         cameraPreset: s.cameraPreset,
         colorMode: s.colorMode,
       }),
+      // hidden isn't persisted, so re-derive the shell rule for the restored
+      // preset — otherwise reloading inside an interior view starts you
+      // staring at the inside of a white panel
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          state.hidden = {
+            ...state.hidden,
+            'body/body-shell': INTERIOR_PRESETS.has(state.cameraPreset),
+          }
+        }
+      },
     },
   ),
 )
 
 /** A part renders when neither it nor any ancestor node is hidden, and it
- *  falls under the isolated node (if isolate mode is active). */
+ *  falls under at least one isolated node (if any isolation is active). */
 export function isPartVisible(
   part: PartRecord,
   hidden: Record<string, boolean>,
-  isolatedNodeId: string | null,
+  isolated: Record<string, boolean>,
 ): boolean {
   const path = partNodePath(part)
   if (path.some((node) => hidden[node])) return false
-  if (isolatedNodeId === null) return true
-  return path.includes(isolatedNodeId)
+  const keys = Object.keys(isolated)
+  if (keys.length === 0) return true
+  return path.some((node) => isolated[node])
 }
 
 export const prefersReducedMotion: boolean =
