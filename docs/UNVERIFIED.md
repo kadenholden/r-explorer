@@ -151,6 +151,8 @@ fluid/service data. Still open:
   19-Gateway adaptation (not registration).
 - **Paint**: Pure White LC9A / sticker 0Q0Q is the standard solid white —
   operator to confirm on the service book / boot-floor sticker.
+- **Expansion tank side**: modelled RIGHT/offside opposite the battery (MQB references);
+  operator unsure — confirm against the battery side at the next bonnet-up.
 - Still open: ACC radar exact suffix (J vs P; Bosch pre-FL only);
   G62 PN vendor-sourced; expansion-cap bar rating; most cooling mount
   torques NONE FOUND; N422 + heater-hose PNs; MC casting by VIN;

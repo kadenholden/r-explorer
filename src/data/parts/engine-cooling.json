@@ -332,7 +332,7 @@
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Coolant expansion tank on the RIGHT side of the bay by the suspension tower (operator QA correction — it was modelled on the wrong side). Cold-check the level here; cap rating ~1.4–1.6 bar is unconfirmed against a primary source (R9).",
+      "description": "Coolant expansion tank — modelled on the RIGHT (offside) by the suspension turret, opposite the battery, per the MQB layout references. OPERATOR TO CONFIRM: next time the bonnet is up, check whether it sits on the same side as the battery (then this is wrong — tell the model) or opposite (then it's right). Cold-check the level here; cap rating ~1.4–1.6 bar unconfirmed (R9).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -369,7 +369,8 @@
       "color": "#c8ccd2",
       "tags": [
         "expansion-tank",
-        "G13"
+        "G13",
+        "operator-confirm"
       ]
     },
     {
