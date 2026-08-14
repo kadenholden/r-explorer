@@ -5,9 +5,19 @@ export function ExplodeControl() {
   const setExplode = useAppStore((s) => s.setExplode)
   const isolatedCount = useAppStore((s) => Object.keys(s.isolated).length)
   const clearIsolation = useAppStore((s) => s.clearIsolation)
+  const bonnetOpen = useAppStore((s) => s.bonnetOpen)
+  const toggleBonnet = useAppStore((s) => s.toggleBonnet)
 
   return (
     <div className="explode-control">
+      <button
+        type="button"
+        className="isolation-chip"
+        onClick={toggleBonnet}
+        title="Hinge the bonnet open or closed"
+      >
+        {bonnetOpen ? 'Close bonnet' : 'Open bonnet'}
+      </button>
       {isolatedCount > 0 && (
         <button
           type="button"

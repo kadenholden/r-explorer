@@ -45,6 +45,38 @@ export function cartridge(params: GeometryParams): THREE.BufferGeometry {
   return mergeParts(parts)
 }
 
+/** Screen-wash bottle: tall tank tucked behind the right-front arch. */
+export function washerBottle(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const tank = new THREE.BoxGeometry(0.14, 0.26, 0.16)
+  parts.push(tank)
+  const shoulder = new THREE.BoxGeometry(0.1, 0.06, 0.12)
+  shoulder.translate(-0.01, 0.16, 0)
+  parts.push(shoulder)
+  const stub = new THREE.CylinderGeometry(0.016, 0.016, 0.05, 12)
+  stub.translate(-0.02, 0.21, 0.02)
+  parts.push(stub)
+  return mergeParts(parts)
+}
+
+/** Washer filler neck: angled tube from the bay top down toward the bottle, with cap. */
+export function washerNeck(_params: GeometryParams): THREE.BufferGeometry {
+  const parts: THREE.BufferGeometry[] = []
+  const tube = tubeThrough(
+    [
+      [0, 0.3, 0],
+      [0.01, 0.12, -0.03],
+      [0.03, -0.05, -0.1],
+    ],
+    0.014,
+  )
+  parts.push(tube)
+  const cap = new THREE.CylinderGeometry(0.022, 0.022, 0.014, 14)
+  cap.translate(0, 0.31, 0)
+  parts.push(cap)
+  return mergeParts(parts)
+}
+
 /** Propshaft rubber flex disc (Giubo): thick ring with three bolt bosses. */
 export function flexDisc(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
