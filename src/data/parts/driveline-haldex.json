@@ -8,7 +8,7 @@
       0,
       0
     ],
-    "description": "The AWD path (dossier §4): the gearbox's bevel box sends torque down a two-piece propshaft to the rear final drive, where the Haldex Gen 5 electro-hydraulic coupling sits AHEAD of the rear differential — pre-emptively clutching up to ~50% of torque rearward before slip happens. Plus the front and rear driveshafts with their CV joints. The coupling's pump and fine-mesh filter are the famous service item: they clog on hard-driven cars and fail with no dash warning."
+    "description": "Haldex Gen 5 AWD. R6's architecture correction: Gen 5 DELETED the accumulator, the serviceable filter AND the pressure-control valve of earlier generations — one centrifugal electro-hydraulic pump (6-piston axial, BLDC) applies the wet clutch directly; motor speed IS the pressure setpoint, and the only filtration is an inlet strainer gauze. Fluid G 060 175 A2, ~850 ml dry / ~650–700 ml refill, ~3 yr/30k service WITH the strainer cleaned every time (VW's book says fluid only — the strainer is why pumps die). See docs/research/R6-haldex.md."
   },
   "parts": [
     {
@@ -18,7 +18,7 @@
       "assembly": "driveline-haldex",
       "subAssembly": "Propshaft",
       "oemPartNumber": null,
-      "description": "Front section of the two-piece propshaft, from the bevel-box flange down under the floor to the centre bearing, with flexible couplings at each end (dossier §4).",
+      "description": "Front section of the two-piece propshaft from the bevel box, running on the centre support bearing (R6). Flange stretch bolts (N 10329102 / WHT 005 179, 12-point) renew on assembly; flange torques NOT found — the circulating '55 Nm' is an Audi C6 RS6 figure, rejected. Get the real value from erWin group 39.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -68,7 +68,9 @@
       "description": "Rubber-isolated centre bearing carrying the propshaft's midpoint on the underbody.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Centre-bearing wear → driveline vibration at speed (R6)."
+      ],
       "explodeVector": {
         "direction": [
           1,
@@ -112,7 +114,7 @@
       "assembly": "driveline-haldex",
       "subAssembly": "Propshaft",
       "oemPartNumber": null,
-      "description": "Rear section from the centre bearing to the Haldex input flange on the rear final drive.",
+      "description": "Rear section ending at the RDU through a 3-bolt rubber FLEX DISC — not a CV joint (R6 correction). Same renew-bolts rule; torques not found.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -158,9 +160,13 @@
       "assembly": "driveline-haldex",
       "subAssembly": "Rear final drive",
       "oemPartNumber": null,
-      "description": "Housing carrying the Haldex coupling in its nose and the rear differential behind it. Two fluids live here and must never mix up in service: the Haldex's own oil (service-interval item) and the diff's GL-5 gear oil (dossier §4).",
+      "description": "Rear drive unit, 0BR525010x family (R6). Service plugs: drain N 910 827 01 (8 mm hex) 32 Nm, fill N 902 818 02 (5 mm hex) 15 Nm — both with new crush washers. Note the rear-diff (bevel gear) side's own plug torque is only ~30 Nm forum-grade, and R12 carries a 19-vs-35 Nm specialist conflict — verify in erWin.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 32,
+        "angle": null,
+        "note": "Haldex drain plug (fill 15 Nm), new crush washers (R6)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -205,8 +211,8 @@
       "system": "drivetrain",
       "assembly": "driveline-haldex",
       "subAssembly": "Rear final drive",
-      "oemPartNumber": null,
-      "description": "Electro-hydraulically clamped wet multi-plate clutch ahead of the rear diff: friction + steel plates squeezed by an annular piston, controlled pre-emptively (up to ~50% torque rearward before slip occurs) by its own controller (dossier §4).",
+      "oemPartNumber": "0BR525554",
+      "description": "The Haldex unit itself (0BR525554, also -A): wet multi-plate clutch pack applied by an annular piston — pump pressure in, clamp force out, torque to the rear axle (R6). Clutch disc count and friction spec NOT found.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -257,11 +263,15 @@
       "assembly": "driveline-haldex",
       "subAssembly": "Rear final drive",
       "oemPartNumber": "0CQ598549",
-      "description": "The electric feed/charge pump that pressurises the coupling — dossier §4 gives its part number directly: 0CQ598549. THE Gen 5 service item: its fine mesh filter clogs on tuned/hard-driven Rs and kills the pump.",
+      "description": "The centrifugal electro-hydraulic (CEH) pump — 6-piston axial design on a BLDC motor whose SPEED is the pressure command; Gen 5 has no separate pressure-control valve (R6, BorgWarner primary sources). Part number 0CQ598549 CONFIRMED as the genuine BorgWarner repair kit; seal/bolt kit alone is 0CQ598305. Pump bolts 9.5 Nm, single-use.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 9.5,
+        "angle": null,
+        "note": "Pump bolts, single-use (R6)"
+      },
       "knownIssues": [
-        "Pump failure symptoms: front-wheel spin, axle tramp off the line, usually NO dash warning (stored code only). Fix: pump + fluid + filter/screen clean, then a VCDS 'pump learn' basic-settings re-adaptation (dossier §4)."
+        "THE dominant Gen 5 failure chain (R6): clutch debris clogs the inlet strainer → pump starves → motor dies → rear drive lost. DTCs P16671/P16668/P16666/P16670, C111307. Clean the strainer at every fluid change and the pump lives."
       ],
       "explodeVector": {
         "direction": [
@@ -303,16 +313,16 @@
     },
     {
       "id": "haldex-filter",
-      "name": "Haldex filter / suction screen",
+      "name": "Haldex inlet strainer (gauze)",
       "system": "drivetrain",
       "assembly": "driveline-haldex",
       "subAssembly": "Rear final drive",
       "oemPartNumber": null,
-      "description": "The fine mesh screen protecting the pump — and the thing that clogs. Cleaning it at every Haldex fluid change is the community-standard preventative (dossier §4).",
+      "description": "R6 CORRECTION: Gen 5 has NO serviceable filter cartridge — the brief's 'filter' is really this inlet strainer gauze on the pump. Held by T10 screws; CLEAN it (don't replace — nothing to buy) at every fluid change, which VW's own schedule fails to mention.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
-        "Clogged screen starves the pump → coupling can't clamp → quietly front-wheel-drive until the stored code is read"
+        "Clogs with clutch-pack debris — step one of the pump-death chain (R6)."
       ],
       "explodeVector": {
         "direction": [
@@ -346,10 +356,10 @@
       ],
       "color": "#b08968",
       "tags": [
-        "haldex",
-        "filter",
-        "screen",
-        "service-item"
+        "strainer",
+        "R6-correction",
+        "clean-not-replace",
+        "known-issue"
       ]
     },
     {
@@ -358,8 +368,8 @@
       "system": "drivetrain",
       "assembly": "driveline-haldex",
       "subAssembly": "Rear final drive",
-      "oemPartNumber": null,
-      "description": "The coupling's own control unit on the RDU, deciding clamp pressure from wheel speeds and drivetrain CAN data; brake-based EDS/XDS+ vectoring runs through the ESC instead (dossier §4).",
+      "oemPartNumber": "0CQ907554J",
+      "description": "AWD control module J492 — on Gen 5 it is integrated with the unit; 0CQ907554J supersedes -H (R6). Reads yaw/wheel-speed/throttle over CAN and commands the pump motor speed.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -454,9 +464,13 @@
       "assembly": "driveline-haldex",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Rear axle shafts: inner tripod plunge joints at the diff, outer Rzeppa ball CVs at the hubs, boots at both (dossier §4).",
+      "description": "Rear driveshafts from the RDU flanges to the hubs. Inner-CV M10 flange bolts: 70 Nm (R12's correction — the 10→40 Nm figure applies to M8 shafts; R6's forum range 60–70 agrees). Outer hub bolt WHT 005 437 (12-point M16×1.5×70): 200 Nm + 180°, single-use — but physically check the bolt first: a ribbed ~10.9 variant exists that takes only 70 Nm + 90° (R6/R12).",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 70,
+        "angle": null,
+        "note": "Inner-CV M10 flange bolts (R12); hub bolt WHT005437 = 200 Nm + 180°, single-use — verify variant first"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -516,7 +530,7 @@
       "assembly": "driveline-haldex",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "The long right-hand front axle shaft with its intermediate support bearing — the classic unequal-length transverse layout (dossier §4). Runs out to the front-right hub, where the modelled brake corner lives.",
+      "description": "The long right-hand front axle shaft with its intermediate support bearing — the classic unequal-length transverse layout (dossier §4). Runs out to the front-right hub, where the modelled brake corner lives. Inner-CV M10 flange bolts 70 Nm, renew (R12); outer hub bolt shared with the rear corners — WHT005437, 200 Nm + 180°, single-use.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -567,7 +581,7 @@
       "assembly": "driveline-haldex",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "The short left-hand front shaft straight off the diff flange.",
+      "description": "The short left-hand front shaft straight off the diff flange. Inner-CV M10 flange bolts 70 Nm, renew (R12); outer hub bolt shared with the rear corners — WHT005437, 200 Nm + 180°, single-use.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -608,6 +622,56 @@
         "driveshaft",
         "front",
         "short"
+      ]
+    },
+    {
+      "id": "propshaft-flex-disc",
+      "name": "Propshaft flex disc (rear, 3-bolt)",
+      "system": "drivetrain",
+      "assembly": "driveline-haldex",
+      "subAssembly": null,
+      "oemPartNumber": "5Q0521307",
+      "description": "The rubber flex coupling between propshaft rear section and RDU input — R6 resolved this joint as a 3-bolt flex disc, not a CV. Stretch bolts N 10329102 / WHT 005 179 renew on assembly.",
+      "material": "Rubber + steel",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Rubber perishes/cracks with age → clunk on throttle reversal, vibration (R6)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.4,
+          1
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "flexDisc",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            -0.275,
+            -2.43
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 13,
+      "calloutOffset": [
+        0.12,
+        -0.08,
+        0.12
+      ],
+      "color": "#26282c",
+      "tags": [
+        "flex-disc",
+        "5Q0521307",
+        "R6-resolved"
       ]
     }
   ]
