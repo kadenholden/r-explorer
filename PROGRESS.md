@@ -30,9 +30,33 @@ is now answered:
 Cross-return conflicts are recorded on the parts themselves and in
 UNVERIFIED.md rather than silently resolved.
 
-**Still pending**: R13 (fault library → animations) and R14 (mesh
-sources) — their transcription agents hit the session usage limit;
-re-run after reset, then build fault demos and plan hero meshes.
+**R13 + R14 landed later the same day**, completing the batch. R13
+(12-fault library) merged in PR #14 together with the first new fault
+demo built from it — the PCV diaphragm (the operator's live fault):
+store flag, fluttering module, info-plate toggle and a diagnosis
+overlay. Eleven more faults are transcribed and ready to become demos
+the same way (water-pump leak stages, Haldex strainer clog, DSG
+accumulator, three IS38 modes, EPB service mode…).
+
+**Hero-mesh plan (from R14)** — in licence-safety order, since the repo
+and site are public:
+
+1. **Backbone: photogrammetry of the operator's OWN car** (Polycam /
+   RealityScan on a phone) — engine bay, wheels/calipers, interior.
+   Owner-generated = zero licence risk and exact-this-car likeness; R14
+   calls it the recommended backbone. NEEDS THE OPERATOR (10–15 min of
+   slow phone panning per area, good even light).
+2. **Free cross-section references** to sharpen the procedural recipes:
+   SSP 606/522/515/308 + Google Patents US8708123B2 (Haldex pump),
+   US9103243B2 (Valvelift), US9726074B2 (IHI turbo) — public documents.
+3. **TraceParts DIN/ISO STEP fasteners** as dimensional reference for
+   the R12 library (reference only — no redistribution).
+4. **Sketchfab MK7 Golf R intake scan** (CC-BY-SA — viral licence, keep
+   OUT of the shipped bundle; reference/tracing only).
+5. **Never ship**: GrabCAD (private/non-commercial), PARTcommunity
+   (contract bans redistribution AND AI-training), store meshes with
+   no-redistribution clauses; TurboSquid VW-branded assets carry
+   editorial caveats. Reference-only, originals redrawn.
 **Polish backlog (new)**: chain-end and driveline camera presets sit
 inside the body-shell panels — add shell auto-hide for interior presets
 or move the cameras.
