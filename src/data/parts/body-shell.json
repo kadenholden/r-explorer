@@ -267,11 +267,14 @@
       "system": "body",
       "assembly": "body-shell",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Complete lamp units — reflectors, lenses, trim line recoloured R-blue. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "oemPartNumber": "5G1998753D",
+      "description": "Bi-xenon headlights with LED DRLs and dynamic cornering (AFS) — standard on the UK pre-facelift R (R10; Euro xenon+LED housing set 5G1998753D, D3S igniter 8K0941597E, AFS/levelling module 3D0941329A, controller J745 with axle height sensors). Bulbs: D3S 35W low/high, H7 cornering, PWY24W front indicators. Xenon cars must have working headlamp washers for the MOT.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Xenon ballast/igniter death — one side dimmer or flickering pink before it dies (R10).",
+        "AFS motor faults → levelling error on the dash; headlamp condensation after seal age (R10)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -318,10 +321,12 @@
       "assembly": "body-shell",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Both tail lamp clusters. Real Mk7 mesh, draco-compressed; clickable and explodable like every schematic part.",
+      "description": "Dark-tinted conventional-bulb tail lights (the facelift went full LED) (R10). Bulbs: brake W21W (P21W in some markets), rear fog W21W, indicator WY21W, reverse W16W — though one 2014 owner found a P21W holder, so check your own before buying. Number-plate lamps W5W; the high-level brake light is a sealed LED unit. Individual L/R housing numbers unverified.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Tail-light connector corrosion → random single-lamp MOT failures (R10)."
+      ],
       "explodeVector": {
         "direction": [
           0,

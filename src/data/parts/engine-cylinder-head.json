@@ -301,7 +301,7 @@
         "direction": [
           0,
           1,
-          0.15
+          -0.15
         ],
         "distance": 0.9
       },
@@ -314,7 +314,7 @@
           "position": [
             0,
             0.24,
-            0.045
+            -0.045
           ],
           "rotationDeg": [
             0,
@@ -327,7 +327,7 @@
       "calloutOffset": [
         0.25,
         0.1,
-        0.12
+        -0.12
       ],
       "color": "#a8aeb6",
       "tags": [
@@ -355,7 +355,7 @@
         "direction": [
           0,
           1,
-          -0.15
+          0.15
         ],
         "distance": 0.96
       },
@@ -368,7 +368,7 @@
           "position": [
             0,
             0.24,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -381,7 +381,7 @@
       "calloutOffset": [
         -0.25,
         0.12,
-        -0.12
+        0.12
       ],
       "color": "#a8aeb6",
       "tags": [
@@ -406,7 +406,7 @@
         "direction": [
           0,
           1,
-          -0.3
+          0.3
         ],
         "distance": 0.8
       },
@@ -419,7 +419,7 @@
           "position": [
             -0.132,
             0.24,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -431,7 +431,7 @@
           "position": [
             -0.044,
             0.24,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -443,7 +443,7 @@
           "position": [
             0.044,
             0.24,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -455,7 +455,7 @@
           "position": [
             0.132,
             0.24,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -468,7 +468,7 @@
       "calloutOffset": [
         0.14,
         0.16,
-        -0.14
+        0.14
       ],
       "color": "#c8ced6",
       "tags": [
@@ -495,7 +495,7 @@
         "direction": [
           0,
           1,
-          -0.2
+          0.2
         ],
         "distance": 1.02
       },
@@ -506,7 +506,7 @@
           "position": [
             -0.114,
             0.285,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -518,7 +518,7 @@
           "position": [
             -0.026,
             0.285,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -530,7 +530,7 @@
           "position": [
             0.062,
             0.285,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -542,7 +542,7 @@
           "position": [
             0.15,
             0.285,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -555,7 +555,7 @@
       "calloutOffset": [
         -0.12,
         0.2,
-        -0.16
+        0.16
       ],
       "color": "#83898f",
       "tags": [
@@ -581,7 +581,7 @@
         "direction": [
           0,
           1,
-          0.45
+          -0.45
         ],
         "distance": 0.62
       },
@@ -594,7 +594,7 @@
           "position": [
             -0.15,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -606,7 +606,7 @@
           "position": [
             -0.114,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -618,7 +618,7 @@
           "position": [
             -0.062,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -630,7 +630,7 @@
           "position": [
             -0.026,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -642,7 +642,7 @@
           "position": [
             0.026,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -654,7 +654,7 @@
           "position": [
             0.062,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -666,7 +666,7 @@
           "position": [
             0.114,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -678,7 +678,7 @@
           "position": [
             0.15,
             0.125,
-            0.028
+            -0.028
           ],
           "rotationDeg": [
             0,
@@ -691,7 +691,7 @@
       "calloutOffset": [
         0.2,
         0.12,
-        0.16
+        -0.16
       ],
       "color": "#c3c9d1",
       "tags": [
@@ -717,7 +717,7 @@
         "direction": [
           0,
           1,
-          -0.45
+          0.45
         ],
         "distance": 0.62
       },
@@ -730,7 +730,7 @@
           "position": [
             -0.15,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -742,7 +742,7 @@
           "position": [
             -0.114,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -754,7 +754,7 @@
           "position": [
             -0.062,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -766,7 +766,7 @@
           "position": [
             -0.026,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -778,7 +778,7 @@
           "position": [
             0.026,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -790,7 +790,7 @@
           "position": [
             0.062,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -802,7 +802,7 @@
           "position": [
             0.114,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -814,7 +814,7 @@
           "position": [
             0.15,
             0.125,
-            -0.028
+            0.028
           ],
           "rotationDeg": [
             0,
@@ -827,7 +827,7 @@
       "calloutOffset": [
         -0.2,
         0.1,
-        -0.16
+        0.16
       ],
       "color": "#b4bac2",
       "tags": [
@@ -1060,142 +1060,6 @@
         "direction": [
           0,
           1,
-          0.3
-        ],
-        "distance": 0.72
-      },
-      "geometryRef": "oRing",
-      "geometryParams": {
-        "ringDiameterMm": 13
-      },
-      "transforms": [
-        {
-          "position": [
-            -0.15,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            -0.114,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            -0.062,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            -0.026,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            0.026,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            0.062,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            0.114,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "position": [
-            0.15,
-            0.168,
-            0.028
-          ],
-          "rotationDeg": [
-            0,
-            0,
-            0
-          ]
-        }
-      ],
-      "callout": 14,
-      "calloutOffset": [
-        0.14,
-        0.1,
-        0.12
-      ],
-      "color": "#26282c",
-      "tags": [
-        "stem-seals",
-        "intake",
-        "oil-control"
-      ]
-    },
-    {
-      "id": "exhaust-stem-seals",
-      "name": "Exhaust valve stem seals ×8",
-      "system": "engine",
-      "assembly": "engine-cylinder-head",
-      "subAssembly": "Valvetrain",
-      "oemPartNumber": "06L109675C",
-      "description": "Exhaust-side stem seals, 06L109675C from 03/2016 (early 2014 builds: combined 036109675A) (R2).",
-      "material": "Viton/rubber-steel",
-      "torqueSpec": null,
-      "knownIssues": [
-        "Hardening → blue smoke (R2)."
-      ],
-      "explodeVector": {
-        "direction": [
-          0,
-          1,
           -0.3
         ],
         "distance": 0.72
@@ -1302,11 +1166,147 @@
           ]
         }
       ],
+      "callout": 14,
+      "calloutOffset": [
+        0.14,
+        0.1,
+        -0.12
+      ],
+      "color": "#26282c",
+      "tags": [
+        "stem-seals",
+        "intake",
+        "oil-control"
+      ]
+    },
+    {
+      "id": "exhaust-stem-seals",
+      "name": "Exhaust valve stem seals ×8",
+      "system": "engine",
+      "assembly": "engine-cylinder-head",
+      "subAssembly": "Valvetrain",
+      "oemPartNumber": "06L109675C",
+      "description": "Exhaust-side stem seals, 06L109675C from 03/2016 (early 2014 builds: combined 036109675A) (R2).",
+      "material": "Viton/rubber-steel",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Hardening → blue smoke (R2)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.72
+      },
+      "geometryRef": "oRing",
+      "geometryParams": {
+        "ringDiameterMm": 13
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.15,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.114,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.062,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.026,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.026,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.062,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.114,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.15,
+            0.168,
+            0.028
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
       "callout": 15,
       "calloutOffset": [
         -0.14,
         0.1,
-        -0.12
+        0.12
       ],
       "color": "#26282c",
       "tags": [
@@ -2116,7 +2116,7 @@
         "direction": [
           -1,
           0.3,
-          0.3
+          -0.3
         ],
         "distance": 0.5
       },
@@ -2127,7 +2127,7 @@
           "position": [
             -0.258,
             0.24,
-            0.045
+            -0.045
           ],
           "rotationDeg": [
             0,
@@ -2140,7 +2140,7 @@
       "calloutOffset": [
         -0.14,
         0.1,
-        0.12
+        -0.12
       ],
       "color": "#3a3d44",
       "tags": [
@@ -2166,7 +2166,7 @@
         "direction": [
           -1,
           0.5,
-          -0.3
+          0.3
         ],
         "distance": 0.6
       },
@@ -2177,7 +2177,7 @@
           "position": [
             -0.235,
             0.267,
-            -0.045
+            0.045
           ],
           "rotationDeg": [
             0,
@@ -2190,7 +2190,7 @@
       "calloutOffset": [
         -0.12,
         0.12,
-        -0.12
+        0.12
       ],
       "color": "#3a3d44",
       "tags": [
@@ -2216,7 +2216,7 @@
         "direction": [
           -1,
           0.5,
-          0.3
+          -0.3
         ],
         "distance": 0.6
       },
@@ -2227,7 +2227,7 @@
           "position": [
             -0.235,
             0.267,
-            0.045
+            -0.045
           ],
           "rotationDeg": [
             0,
@@ -2240,7 +2240,7 @@
       "calloutOffset": [
         -0.12,
         0.12,
-        0.12
+        -0.12
       ],
       "color": "#3a3d44",
       "tags": [

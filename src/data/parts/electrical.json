@@ -39,9 +39,9 @@
       "transforms": [
         {
           "position": [
-            -0.66,
-            0.34,
-            0.12
+            -0.33,
+            0.44,
+            -0.3
           ],
           "rotationDeg": [
             0,
@@ -123,7 +123,7 @@
       "assembly": "electrical",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "AGM 68 Ah / 380 A (DIN) H6 battery, family 000915105 (e.g. 000915105FC; the 420 CCA figure on US listings is the SAE rating of the same battery) (R10). No BMW-style registration, but a battery or J367 monitor swap requires the 19-Gateway adaptation per VW TSB 2053976 / 27-19-01.",
+      "description": "AGM 68 Ah / 380 A (DIN) H6 battery, family 000915105 (e.g. 000915105FC; the 420 CCA figure on US listings is the SAE rating of the same battery) (R10). No BMW-style registration, but a battery or J367 monitor swap requires the 19-Gateway adaptation per VW TSB 2053976 / 27-19-01. Sits at the REAR-LEFT of the bay against the bulkhead, on top of the gearbox (operator QA corrected the station).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -140,9 +140,9 @@
       "transforms": [
         {
           "position": [
-            -0.52,
+            -0.5,
             0.3,
-            0.34
+            -0.2
           ],
           "rotationDeg": [
             0,
@@ -192,9 +192,9 @@
       "transforms": [
         {
           "position": [
-            -0.52,
-            0.42,
-            0.2
+            -0.5,
+            0.44,
+            -0.12
           ],
           "rotationDeg": [
             0,

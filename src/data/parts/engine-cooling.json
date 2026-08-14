@@ -26,9 +26,9 @@
       ],
       "explodeVector": {
         "direction": [
-          1,
-          0.5,
-          0.2
+          0.3,
+          0.4,
+          -1
         ],
         "distance": 0.45
       },
@@ -37,9 +37,9 @@
       "transforms": [
         {
           "position": [
-            0.31,
-            -0.02,
-            0.06
+            0.06,
+            0.0,
+            -0.17
           ],
           "rotationDeg": [
             0,
@@ -81,9 +81,9 @@
       ],
       "explodeVector": {
         "direction": [
-          0.6,
-          -0.5,
-          0.4
+          -0.3,
+          0.2,
+          -1
         ],
         "distance": 0.4
       },
@@ -92,9 +92,9 @@
       "transforms": [
         {
           "position": [
-            0.2,
             -0.06,
-            0.12
+            -0.05,
+            -0.16
           ],
           "rotationDeg": [
             0,
@@ -332,14 +332,14 @@
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Pressurised degas bottle up high on the left of the bay. R9: cap rating ~1.4–1.6 bar is unconfirmed against a primary source.",
+      "description": "Coolant expansion tank on the RIGHT side of the bay by the suspension tower (operator QA correction — it was modelled on the wrong side). Cold-check the level here; cap rating ~1.4–1.6 bar is unconfirmed against a primary source (R9).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
       "explodeVector": {
         "direction": [
-          -0.4,
-          1,
+          0.8,
+          0.8,
           0.2
         ],
         "distance": 0.38
@@ -349,9 +349,9 @@
       "transforms": [
         {
           "position": [
-            -0.42,
-            0.4,
-            0.18
+            0.48,
+            0.36,
+            0.05
           ],
           "rotationDeg": [
             0,
@@ -524,7 +524,7 @@
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "The blue-capped filler at the front-right of the engine bay — the only part of the washer system you can see with the bonnet up. It feeds down through the inner wing to the bottle hidden behind the right-front wheel-arch liner.",
+      "description": "The blue-capped filler at the front-LEFT (nearside) of the engine bay — operator QA corrected the side. It feeds down through the inner wing to the bottle hidden behind the left-front wheel-arch liner.",
       "material": "Plastic",
       "torqueSpec": null,
       "knownIssues": [
@@ -532,7 +532,7 @@
       ],
       "explodeVector": {
         "direction": [
-          0.3,
+          -0.3,
           1,
           0.3
         ],
@@ -543,7 +543,7 @@
       "transforms": [
         {
           "position": [
-            0.56,
+            -0.56,
             0.02,
             0.6
           ],
@@ -556,7 +556,7 @@
       ],
       "callout": 11,
       "calloutOffset": [
-        0.12,
+        -0.12,
         0.14,
         0.1
       ],
@@ -568,12 +568,12 @@
     },
     {
       "id": "washer-bottle",
-      "name": "Screen-wash bottle (behind RF arch liner)",
+      "name": "Screen-wash bottle (behind LF arch liner)",
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "The reservoir does NOT live in the engine bay — it hides behind the right-front wheel-arch liner, ahead of the wheel. Access = steering on full left lock, arch-liner screws out, liner peeled back. Part number to verify by VIN.",
+      "description": "The reservoir does NOT live in the engine bay — it hides behind the LEFT-front (nearside) wheel-arch liner, ahead of the wheel. Access = steering on full right lock, arch-liner screws out, liner peeled back. Part number to verify by VIN.",
       "material": "Plastic",
       "torqueSpec": null,
       "knownIssues": [
@@ -581,7 +581,7 @@
       ],
       "explodeVector": {
         "direction": [
-          1,
+          -1,
           -0.2,
           0.4
         ],
@@ -592,7 +592,7 @@
       "transforms": [
         {
           "position": [
-            0.6,
+            -0.6,
             -0.02,
             0.5
           ],
@@ -605,7 +605,7 @@
       ],
       "callout": 12,
       "calloutOffset": [
-        0.14,
+        -0.14,
         0.1,
         0.12
       ],
@@ -632,7 +632,7 @@
       ],
       "explodeVector": {
         "direction": [
-          -0.6,
+          0.6,
           -0.2,
           -0.6
         ],
@@ -643,20 +643,20 @@
       "transforms": [
         {
           "position": [
-            0.52,
+            -0.52,
             -0.04,
             0.44
           ],
           "rotationDeg": [
             0,
             0,
-            90
+            -90
           ]
         }
       ],
       "callout": 13,
       "calloutOffset": [
-        -0.12,
+        0.12,
         -0.08,
         -0.1
       ],
