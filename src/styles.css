@@ -683,6 +683,25 @@ button {
   z-index: 20;
 }
 
+.isolation-chip {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.isolation-chip:hover {
+  background: color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
 .explode-control label {
   font-family: var(--display);
   font-weight: 600;

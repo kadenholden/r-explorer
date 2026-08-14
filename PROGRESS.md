@@ -1,5 +1,30 @@
 # PROGRESS
 
+## QA pass + camera & isolation overhaul (2026-08-14, operator-requested)
+
+**Audit (programmatic + visual, all 23 data files):** three real errors
+found and fixed — the ACC radar was floating 1 m in front of the car
+(z 2.05 → 0.86, behind the bumper), the Haldex strainer poked below
+ground, and the schematic body panels sat ~10 cm too wide (pulled to the
+real 0.895 m half-width; mirrors kept at the true ±1.01 m mirror span).
+Also verified clean: callout numbering (no duplicates anywhere), the
+sump stack order, lambda placements, DMF-to-seal-flange spacing, and
+the head's new valvetrain stack (seals → springs → followers → cams).
+
+**Camera:** interior presets now auto-hide the body shell (and re-derive
+that rule on reload), so no view ever opens inside a white panel. The
+chain-end preset was re-aimed from above (the cam chain is physically
+between engine and gearbox — a side view can never see it; the new view
+shows the serviceable chain-end items: N205, cam sensors, upper timing
+cover). The gearbox preset now approaches from front-low, under the
+battery that genuinely sits on top of the DSG. Plus: **Focus camera** on
+every part plate and **double-click any part** to fly the orbit target
+to it.
+
+**Isolation UX:** isolation is now a STACKING multi-set — Isolate
+part / Isolate assembly buttons on every part plate, tree isolate
+toggles add rather than replace, and an "Isolating N — show all" chip
+next to the explode bar clears everything in one click.
 ## R2–R11 batch ingested — the whole car is documented (2026-08-14)
 
 All remaining research returns landed as image PDFs, were transcribed by
