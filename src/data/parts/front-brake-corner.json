@@ -22,8 +22,8 @@
       "system": "brakes",
       "assembly": "front-brake-corner",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Ventilated front disc, 340 mm diameter × 30 mm thick (dossier §6), modelled with its real interfaces: 5×112 wheel-bolt pattern and 57.1 mm centre bore (dossier §5 wheel data), radial cooling vanes between the friction cheeks. Grey cast iron is typical for this application but the material is not stated in the dossier, so it is left unverified.",
+      "oemPartNumber": "5Q0615301C",
+      "description": "340 × 30 mm vented front disc, wear minimum 28 mm, height 50 mm (R8; supersession family 5Q0615301G, Audi cross 8V0615301). Shared with GTI Performance Pack and S3 8V. Note the Bentley volume has no distinct 340 mm R table — dimensions are dealer/OE-supplier sourced.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -83,8 +83,8 @@
       "system": "brakes",
       "assembly": "front-brake-corner",
       "subAssembly": "Caliper unit",
-      "oemPartNumber": null,
-      "description": "Single-piston floating (sliding) caliper in aluminium, painted blue with the R script (dossier §6). Slides on guide pins in the carrier; one piston on the inboard side clamps both pads against the disc. Modelled following the disc curvature with bridge ribs, pad window, guide-pin ears and bleed nipple.",
+      "oemPartNumber": "5G0615124D",
+      "description": "Black R-logo front caliper, right side (5G0615124D) (R8; family 5G0615123D LH / 5G0615124D RH).",
       "material": "Aluminium (painted blue)",
       "torqueSpec": null,
       "knownIssues": [],
@@ -133,7 +133,7 @@
       "assembly": "front-brake-corner",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Carrier (bracket) bolted rigidly to the wheel bearing housing; the caliper slides on guide pins seated in the carrier and the pads locate in its machined abutments. Modelled in the real H-form: rails either side of the disc rim, over-rim bridges, and radial arms down to the two mounting ears. Material not stated in the dossier.",
+      "description": "Caliper carrier on the knuckle — its ribbed bolts are torqued staged 15 → 200 Nm and renewed (R8/R12).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -179,8 +179,8 @@
       "system": "brakes",
       "assembly": "front-brake-corner",
       "subAssembly": "Caliper unit",
-      "oemPartNumber": null,
-      "description": "Outboard pad: steel backing plate with end lugs locating in the carrier abutments, bonded friction material. (Note from dossier §6: it is the REAR pads that are R-specific and not interchangeable with the GTI Performance Pack.)",
+      "oemPartNumber": "5Q0698151K",
+      "description": "Outboard pad: steel backing plate with end lugs locating in the carrier abutments, bonded friction material. (Note from dossier §6: it is the REAR pads that are R-specific and not interchangeable with the GTI Performance Pack.) Sold as the axle set 5Q0698151K (supersedes 5Q0698151G), shared R / GTI-PP / S3 8V (R8).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -229,8 +229,8 @@
       "system": "brakes",
       "assembly": "front-brake-corner",
       "subAssembly": "Caliper unit",
-      "oemPartNumber": null,
-      "description": "Inboard pad, acted on directly by the caliper piston. Steel backing plate with end lugs and bonded friction material.",
+      "oemPartNumber": "5Q0698151K",
+      "description": "Inboard pad, acted on directly by the caliper piston. Steel backing plate with end lugs and bonded friction material. Sold as the axle set 5Q0698151K (supersedes 5Q0698151G), shared R / GTI-PP / S3 8V (R8).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -281,12 +281,12 @@
       "assembly": "front-brake-corner",
       "subAssembly": "Caliper unit",
       "oemPartNumber": null,
-      "description": "Guide (slide) pin bolts securing the floating caliper to the carrier, seated in the caliper's guide-pin ears. Torque from dossier §2 table: caliper-to-carrier 35 Nm.",
+      "description": "Caliper guide/slider bolts. R8/R12 CONFLICT: Bentley says 30 Nm while the dossier and mygolfmk7-style vendor guides say 35 Nm — the model shows Bentley's figure; verify before real work. Renew.",
       "material": null,
       "torqueSpec": {
-        "valueNm": 35,
+        "valueNm": 30,
         "angle": null,
-        "note": "Dossier: front caliper-to-carrier"
+        "note": "Bentley figure (R8/R12); the dossier and vendor guides say 35 Nm — CONFLICT, verify before wrench work. Replace bolts"
       },
       "knownIssues": [],
       "explodeVector": {
@@ -355,7 +355,7 @@
       "torqueSpec": {
         "valueNm": 200,
         "angle": null,
-        "note": "Dossier: front caliper-to-bearing-housing"
+        "note": "Staged 15 → 200 Nm, ribbed bolts, RENEW (R8/R12 — matches the dossier's 200)"
       },
       "knownIssues": [],
       "explodeVector": {

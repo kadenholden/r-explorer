@@ -13,7 +13,7 @@
       0,
       0
     ],
-    "description": "Four-link independent rear axle (dossier §5): per side, a longitudinal trailing link plus three lateral links (upper, lower/spring link, toe link), with the coil spring SEPARATE from the passive damper, all on the rear subframe that also carries the Haldex final drive. Bushings tuned for lateral rigidity on the R."
+    "description": "Four-link independent rear axle (dossier §5): per side, a longitudinal trailing link plus three lateral links (upper, lower/spring link, toe link), with the coil spring SEPARATE from the passive damper, all on the rear subframe that also carries the Haldex final drive. Bushings tuned for lateral rigidity on the R. R7 rule for every bush-carrying pivot here: final-tighten at ride height, never at full droop, or the bushes are pre-wound and fail early."
   },
   "parts": [
     {
@@ -25,7 +25,11 @@
       "oemPartNumber": null,
       "description": "Rear subframe carrying the lateral links, ARB, and the rear final drive unit.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 70,
+        "angle": "+180°",
+        "note": "Subframe-to-body — TTY, always replace (R7)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -75,8 +79,14 @@
       "oemPartNumber": null,
       "description": "Per-side longitudinal link from the body bush forward of the axle back to the wheel carrier (dossier §5).",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 90,
+        "angle": "+90°",
+        "note": "Trailing-arm bolt (bracket-to-body 50 Nm + 90°) — renew (R7)"
+      },
+      "knownIssues": [
+        "Trailing-arm bushes perish at UK mileages → clunk, shifting rear alignment (R7)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -134,7 +144,11 @@
       "oemPartNumber": null,
       "description": "Upper camber links, subframe to carrier top (dossier §5: three lateral links per side).",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 90,
+        "angle": "+90°",
+        "note": "Upper transverse link — renew; tighten at ride height (R7)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -196,7 +210,11 @@
       "oemPartNumber": null,
       "description": "The lower lateral links that carry the coil-spring seats — on this axle the spring sits on the link, not the damper (dossier §5).",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 90,
+        "angle": "+90°",
+        "note": "Lower spring link — renew; tighten at ride height (R7); family 5Q0505311/312"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -258,8 +276,14 @@
       "oemPartNumber": null,
       "description": "The third lateral link per side, setting rear toe — the rear axle's alignment adjustment point.",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 95,
+        "angle": null,
+        "note": "Toe-link ECCENTRIC nut — renew and re-align after (R7)"
+      },
+      "knownIssues": [
+        "The eccentric adjusters seize with UK corrosion — a known alignment-day surprise (R7)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -381,9 +405,13 @@
       "assembly": "suspension-rear",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Passive sport dampers (no DCC on this car), mounted separately behind the springs, carrier to body.",
+      "description": "Passive sport dampers (no DCC on this car), mounted separately behind the springs, carrier to body. R7: standard (non-DCC) family 5Q0513045; upper mount 180 Nm, lower bolt 50 Nm + 90° renew.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 180,
+        "angle": null,
+        "note": "Upper mount (lower bolt 50 Nm + 90°, renew) (R7)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -441,9 +469,13 @@
       "assembly": "suspension-rear",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Rear ARB on the subframe with short links to the spring links (links simplified into this part).",
+      "description": "Rear ARB on the subframe with short links to the spring links (links simplified into this part). R7: family 5Q0511305, Ø ~21.7 mm (vendor-sized, verify).",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 25,
+        "angle": "+90°",
+        "note": "ARB clamp bolts, renew (R7). R12 flags a 20 Nm + 90° variant — CONFLICT, verify"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -496,7 +528,7 @@
       "torqueSpec": {
         "valueNm": 200,
         "angle": "+180°",
-        "note": "Main hub/axle bolt (dossier)"
+        "note": "Hub bolt WHT005437 — same single-use bolt and ribbed-variant warning as the front (R6/R12)"
       },
       "knownIssues": [],
       "explodeVector": {

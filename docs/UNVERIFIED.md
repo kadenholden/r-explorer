@@ -17,13 +17,16 @@ JSON when confirmed.
 | Caliper guide bolts (`front-caliper-guide-bolts`) | OEM number, exact class/length | Torque 35 Nm is dossier-confirmed |
 | Carrier bolts (`front-carrier-bolts`) | OEM number, replace-after-use status | Torque 200 Nm is dossier-confirmed |
 
-## Remaining brake corners (operator-requested addition)
+## Remaining brake corners — RESOLVED by R8 (2026-08-14)
 
-Front-left mirrors the front-right (same missing items). Rear corners
-additionally need: **rear disc thickness** (modelled at a typical 22 mm
-— not in the dossier), rear caliper/carrier bolt torques (dossier
-states front only), EPB actuator part number, and the R-specific rear
-pad number (the one that is NOT the GTI Performance Pack pad).
+Rear disc **310 × 22 mm min 20 confirmed** (Bentley p.83 — the modelled
+22 mm guess was right), rear carrier 90 Nm + 90° TTY, rear guide 35 Nm
++ threadlocker, EPB motors 3Q0998281/-281A, R-specific rear pad
+5Q0698451T (GTI-PP pad confirmed different, its number still unfound).
+Open: front caliper guide-bolt torque CONFLICT (Bentley 30 vs
+dossier/vendor 35 — recorded as 30 with the conflict on the part);
+ABS line-union torque and small fastener PNs NONE FOUND; MC casting
+1K1614019K vs 5Q1614019 family — VIN check.
 
 ## Engine — short block (Phase 1) — LARGELY RESOLVED by R1 (2026-08-10)
 
@@ -105,18 +108,22 @@ rail). Sump-area numbers now come from R1 (see above). Still `null`:
 valve cover/PCV, coils, FEAD belt + tensioner, alternator, A/C
 compressor, starter, mounts, dogbone.
 
-## Suspension, steering & wheels (Phase 5)
+## Suspension, steering & wheels — LARGELY RESOLVED by R7 (2026-08-14)
 
-Dossier-verified on their parts: wheel bolts 120 Nm; hub/axle bolt
-200 Nm +180°; geometry facts (8J×19 Pretoria, 235/35 R19, 5×112,
-57.1 mm, ride height −20 mm). Everything else `null`:
+R7 delivered the passive strut family (5Q0413031EC), LCA 5Q0407151J,
+subframe 70 Nm + 180° TTY + alignment-pin rule, the rear-link torque
+family (90+90 / 95 eccentric / 180 & 50+90 shocks), progressive-rack
+details and wear items. Still open:
 
-| Part group | Missing |
+| Item | Status |
 | --- | --- |
-| Struts, dampers, springs | OEM numbers; spring rates |
-| Arms/links (LCA, trailing, upper/spring/toe, tie rods) | OEM numbers; pinch/pivot bolt torques |
-| Subframes, ARBs, knuckles/carriers | OEM numbers; subframe bolt torques |
-| Pretoria wheels | OEM number; exact ET offset (dossier: ET45–50) |
+| Strut-to-knuckle clamp, ball-joint clamp, top-mount nuts, inner tie-rod + locknut | torques NONE FOUND verbatim — per erWin (drive types known from R12) |
+| Rack-to-subframe | 50+90 (R7) vs 70+90 (R12 chart) — conflict |
+| Rear ARB clamp | 25+90 (R7) vs 20+90 (R12-flagged variant) — conflict |
+| Hub bolt | 200+180 confirmed for smooth WHT005437; ElsaWin +90° variant and ribbed 70+90 variant — physically identify first |
+| Wheel bolts | 120 Nm (2014 manual) confirmed; later-manual 140 Nm flagged |
+| ARB diameters (23.2 / ~21.7), spring rates, several link PNs | vendor-sized / family-level — verify by VIN; Pretoria exact ET still open |
+| Front caster | ~7°45′ forum-only; rear-toe tolerance truncated in source |
 
 ## Driveline — Haldex Gen 5 — LARGELY RESOLVED by R6 (2026-08-14)
 

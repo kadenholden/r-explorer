@@ -22,8 +22,8 @@
       "system": "brakes",
       "assembly": "rear-brake-corner-right",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "310 mm ventilated rear disc (dossier §6), 5×112 / 57.1 mm bore. Thickness not stated in the dossier — modelled at a typical 22 mm, flagged unverified.",
+      "oemPartNumber": "5Q0615601E",
+      "description": "310 × 22 mm vented rear disc, wear minimum 20 mm, height 48.5 mm, centre bore 65 mm — R8 primary-sourced from the Bentley Jan-2014 book p.83 (CII 41 17\" PR 1KW), confirming the 22 mm the model had carried as an unverified guess.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -83,8 +83,8 @@
       "system": "brakes",
       "assembly": "rear-brake-corner-right",
       "subAssembly": "Caliper unit",
-      "oemPartNumber": null,
-      "description": "Single-piston floating rear caliper carrying the EPB motor on its piston side (dossier §6). Blue with R script like the fronts. Schematic note: modelled with the front caliper's proportions.",
+      "oemPartNumber": "5Q0615424",
+      "description": "ATE 41 mm-piston rear caliper with integrated EPB motor mount, right side (5Q0615424; variants 3Q0615423F / 5QM615423 by equipment) (R8). Pistons are PUSHED back with a flat tool — never wound — and only in VCDS/ODIS 'lining change mode'.",
       "material": "Aluminium (painted blue)",
       "torqueSpec": null,
       "knownIssues": [],
@@ -132,11 +132,13 @@
       "system": "brakes",
       "assembly": "rear-brake-corner-right",
       "subAssembly": "Caliper unit",
-      "oemPartNumber": null,
-      "description": "Electronic parking brake: an electric motor + gearbox on the caliper screws the piston out to clamp (dossier §6). Commanded by the EPB control unit (Phase 7 electronics).",
+      "oemPartNumber": "3Q0998281A",
+      "description": "Electric parking-brake motor, separately replaceable (3Q0998281A, 12-Torx, sold with 2 bolts + sealing ring) (R8). Any rear pad/disc job REQUIRES the scan-tool 'Start/End lining change mode'; there is no manual emergency release on MQB. Faults 721152/C1011 appearing mid-procedure are normal.",
       "material": null,
       "torqueSpec": null,
-      "knownIssues": [],
+      "knownIssues": [
+        "Motor failure or a lining-change done without the scan-tool procedure → EPB fault, seized rear brakes (R8)."
+      ],
       "explodeVector": {
         "direction": [
           -0.4,
@@ -184,7 +186,11 @@
       "oemPartNumber": null,
       "description": "Rear carrier on the wheel bearing housing.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 90,
+        "angle": "+90°",
+        "note": "Internal-multipoint (12-pt XZN) carrier-to-hub bolts — TTY, REPLACE: 'snaps if reused' (R8)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -228,8 +234,8 @@
       "system": "brakes",
       "assembly": "rear-brake-corner-right",
       "subAssembly": "Caliper unit",
-      "oemPartNumber": null,
-      "description": "Rear pad pair. Dossier §6: the R's rear pads have larger guide tabs/hooks and are NOT interchangeable with the manual-handbrake GTI Performance Pack even though disc sizes match — a classic parts-ordering trap.",
+      "oemPartNumber": "5Q0698451T",
+      "description": "EPB-specific rear pads 5Q0698451T, shared with S3 8V — NOT the GTI Performance Pack rear pad, which R8 confirmed is a different part (its number remains unfound). Rear pad pair. Dossier §6: the R's rear pads have larger guide tabs/hooks and are NOT interchangeable with the manual-handbrake GTI Performance Pack even though disc sizes match — a classic parts-ordering trap.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -296,7 +302,11 @@
       "oemPartNumber": null,
       "description": "Guide pin bolts, rear caliper to carrier. The dossier states 35 Nm for the FRONT only; rear figure not stated.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 35,
+        "angle": null,
+        "note": "Self-locking guide bolts — replace + thread-locker (micro-encapsulated) (R8/R12)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -361,7 +371,11 @@
       "oemPartNumber": null,
       "description": "Carrier to rear bearing housing. Rear torque not stated in the dossier.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 90,
+        "angle": "+90°",
+        "note": "12-pt XZN, TTY — replace (R8)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
