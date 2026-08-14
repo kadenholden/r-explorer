@@ -8,7 +8,7 @@
       0,
       0
     ],
-    "description": "Cabin basics (dossier §9 grouping): dashboard with cluster binnacle and MIB2 touchscreen, RHD steering wheel and column down to the progressive rack, DSG pedal box (no clutch), centre console with the DSG selector (the S program the operator drives), and the HVAC unit behind the dash. Seats come from the donor mesh in the body shell."
+    "description": "Cabin basics (dossier §9 grouping): dashboard with cluster binnacle and MIB2 touchscreen, RHD steering wheel and column down to the progressive rack, DSG pedal box (no clutch), centre console with the DSG selector (the S program the operator drives), and the HVAC unit behind the dash. Seats come from the donor mesh in the body shell. Interior build-out (2026-08-14): cluster, MIB head unit, the SRS set (driver/passenger/curtain airbags, belts + pretensioners with the never-DIY warning), rear bench and door cards — the visible donor seats remain the body-shell GLB."
   },
   "parts": [
     {
@@ -247,6 +247,531 @@
       "tags": [
         "HVAC",
         "Climatronic"
+      ]
+    },
+    {
+      "id": "instrument-cluster",
+      "name": "Instrument cluster",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "Dashboard",
+      "oemPartNumber": null,
+      "description": "The analogue cluster with the colour MFD between the dials (pre-facelift R; the Virtual Cockpit came with the facelift). Removal is two Torx behind a trim strip — but coding it to the car is immobiliser-linked, so clusters are not casually swappable.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Pixel-fade on the MFD at high mileage."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.6,
+          0.6
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 280,
+        "heightMm": 120,
+        "depthMm": 55
+      },
+      "transforms": [
+        {
+          "position": [
+            0.35,
+            0.45,
+            -0.545
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        0.14,
+        0.12,
+        0.1
+      ],
+      "color": "#1c1e22",
+      "tags": [
+        "cluster",
+        "MFD",
+        "immobiliser-coded"
+      ]
+    },
+    {
+      "id": "head-unit",
+      "name": "Infotainment head unit (Composition/Discover)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "Dashboard",
+      "oemPartNumber": null,
+      "description": "The MIB touchscreen unit in the centre stack. Feature codes and component protection live server-side with VW — second-hand units need dealer-level adaptation.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Touch layer failure/delamination on early MIB units."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.5,
+          0.7
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 220,
+        "heightMm": 150,
+        "depthMm": 60
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.38,
+            -0.5
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 7,
+      "calloutOffset": [
+        0.12,
+        0.12,
+        0.1
+      ],
+      "color": "#1c1e22",
+      "tags": [
+        "MIB",
+        "infotainment",
+        "component-protection"
+      ]
+    },
+    {
+      "id": "steering-airbag",
+      "name": "Driver airbag (steering wheel)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "SRS",
+      "oemPartNumber": null,
+      "description": "The driver's frontal airbag in the wheel hub. SRS golden rule: NEVER work on airbags or pretensioners DIY — battery off, wait, and scan-tool territory; a stored airbag fault is also an MOT fail.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Clock-spring wear behind the wheel → airbag light + dead horn/buttons — a classic Mk7 fault."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.5,
+          0.7
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 160,
+        "heightMm": 50,
+        "depthMm": 160
+      },
+      "transforms": [
+        {
+          "position": [
+            0.35,
+            0.41,
+            -0.665
+          ],
+          "rotationDeg": [
+            70,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 8,
+      "calloutOffset": [
+        0.12,
+        0.1,
+        0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "airbag",
+        "SRS",
+        "clock-spring"
+      ]
+    },
+    {
+      "id": "passenger-airbag",
+      "name": "Passenger airbag (dash top)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "SRS",
+      "oemPartNumber": null,
+      "description": "Frontal airbag under the passenger-side dash top. SRS golden rule: NEVER work on airbags or pretensioners DIY — battery off, wait, and scan-tool territory; a stored airbag fault is also an MOT fail.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.7,
+          0.4
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 300,
+        "heightMm": 60,
+        "depthMm": 150
+      },
+      "transforms": [
+        {
+          "position": [
+            -0.3,
+            0.44,
+            -0.5
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 9,
+      "calloutOffset": [
+        -0.14,
+        0.1,
+        0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "airbag",
+        "SRS"
+      ]
+    },
+    {
+      "id": "curtain-airbags",
+      "name": "Curtain airbags ×2 (roof rails)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "SRS",
+      "oemPartNumber": null,
+      "description": "Head-protection curtains folded along both roof rails, A-pillar to C-pillar. SRS golden rule: NEVER work on airbags or pretensioners DIY — battery off, wait, and scan-tool territory; a stored airbag fault is also an MOT fail.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 45,
+        "heightMm": 45,
+        "depthMm": 1400
+      },
+      "transforms": [
+        {
+          "position": [
+            0.62,
+            0.72,
+            -1.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.62,
+            0.72,
+            -1.1
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 10,
+      "calloutOffset": [
+        0.12,
+        0.12,
+        0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "airbag",
+        "SRS",
+        "curtain"
+      ]
+    },
+    {
+      "id": "front-seatbelts",
+      "name": "Front seatbelts + pretensioners ×2",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "SRS",
+      "oemPartNumber": null,
+      "description": "Belt reels with pyrotechnic pretensioners in the B-pillar bases. MOT: sharp tug must lock the reel; webbing edges fray-free. SRS golden rule: NEVER work on airbags or pretensioners DIY — battery off, wait, and scan-tool territory; a stored airbag fault is also an MOT fail.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Slow-retracting belts from dirty webbing — wash, don't lubricate."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.6,
+          0.4,
+          0
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 70,
+        "heightMm": 200,
+        "depthMm": 90
+      },
+      "transforms": [
+        {
+          "position": [
+            0.68,
+            0.15,
+            -1.15
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.68,
+            0.15,
+            -1.15
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 11,
+      "calloutOffset": [
+        0.12,
+        0.14,
+        0.1
+      ],
+      "color": "#33363c",
+      "tags": [
+        "seatbelt",
+        "pretensioner",
+        "SRS",
+        "MOT"
+      ]
+    },
+    {
+      "id": "rear-bench",
+      "name": "Rear bench & backrest (split-fold)",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "Seating",
+      "oemPartNumber": null,
+      "description": "60/40 split-fold rear bench. ISOFIX anchors between base and backrest on the outer seats.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          0.4,
+          -0.8
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 1250,
+        "heightMm": 380,
+        "depthMm": 550
+      },
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.02,
+            -1.8
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 12,
+      "calloutOffset": [
+        0.2,
+        0.2,
+        0.14
+      ],
+      "color": "#26282c",
+      "tags": [
+        "rear-seats",
+        "ISOFIX",
+        "split-fold"
+      ]
+    },
+    {
+      "id": "door-cards-front",
+      "name": "Door cards, front ×2",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "Trim",
+      "oemPartNumber": null,
+      "description": "Front inner door trims with the window/mirror switch packs and puddle lamps. Come off with a trim tool + hidden Torx behind the handle cup — the usual route to a dead Kessy handle or window regulator.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Rattles from loose clips after previous removals — replace snapped clips, don't reuse."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.2,
+          0
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 25,
+        "heightMm": 450,
+        "depthMm": 850
+      },
+      "transforms": [
+        {
+          "position": [
+            0.71,
+            0.25,
+            -0.75
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.71,
+            0.25,
+            -0.75
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 13,
+      "calloutOffset": [
+        0.12,
+        0.16,
+        0.1
+      ],
+      "color": "#2b2e33",
+      "tags": [
+        "door-card",
+        "trim",
+        "kessy-access"
+      ]
+    },
+    {
+      "id": "door-cards-rear",
+      "name": "Door cards, rear ×2",
+      "system": "interior",
+      "assembly": "interior",
+      "subAssembly": "Trim",
+      "oemPartNumber": null,
+      "description": "Rear inner door trims (5-door).",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.2,
+          0
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "simpleBox",
+      "geometryParams": {
+        "widthMm": 25,
+        "heightMm": 430,
+        "depthMm": 720
+      },
+      "transforms": [
+        {
+          "position": [
+            0.71,
+            0.25,
+            -1.45
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.71,
+            0.25,
+            -1.45
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 14,
+      "calloutOffset": [
+        0.12,
+        0.16,
+        -0.1
+      ],
+      "color": "#2b2e33",
+      "tags": [
+        "door-card",
+        "trim"
       ]
     }
   ]

@@ -45,27 +45,29 @@ export function intercooler(_params: GeometryParams): THREE.BufferGeometry {
 /** Hot-side charge pipe: turbo compressor outlet → intercooler left tank.
  *  Authored in world coordinates (record sits at the origin). */
 export function chargePipeHot(_params: GeometryParams): THREE.BufferGeometry {
+  // front-mounted turbo down to the intercooler inlet — a short hot-side hop
   return tubeThrough(
     [
-      [0.14, -0.02, -0.26],
-      [0.31, -0.06, -0.12],
-      [0.35, -0.08, 0.2],
-      [0.28, -0.045, 0.5],
+      [0.03, 0.02, 0.3],
+      [0.12, -0.01, 0.42],
+      [0.16, -0.04, 0.54],
     ],
-    0.019,
+    0.024,
   )
 }
 
 /** Cold-side charge pipe: intercooler right tank → throttle body. */
 export function chargePipeCold(_params: GeometryParams): THREE.BufferGeometry {
+  // intercooler outlet up the nearside and back over the gearbox to the
+  // rear-mounted throttle body
   return tubeThrough(
     [
-      [-0.28, -0.045, 0.5],
-      [-0.35, -0.02, 0.42],
-      [-0.31, 0.06, 0.34],
-      [-0.245, 0.1, 0.315],
+      [-0.16, -0.04, 0.54],
+      [-0.3, 0.0, 0.38],
+      [-0.33, 0.05, 0.05],
+      [-0.28, 0.08, -0.24],
     ],
-    0.02,
+    0.024,
   )
 }
 
