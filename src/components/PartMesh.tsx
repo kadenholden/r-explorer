@@ -78,7 +78,7 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
     if (!g) return
     const w = g.getWorldPosition(new THREE.Vector3())
     select(part.id)
-    focusOn([w.x, w.y, w.z])
+    focusOn([w.x, w.y, w.z], part.explodeVector.direction as [number, number, number])
   }
 
   const hoverOn = (e: { stopPropagation: () => void }) => {

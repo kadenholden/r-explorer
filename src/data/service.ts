@@ -22,6 +22,121 @@ export interface ServiceItem {
   focusPartId?: string
 }
 
+/** Pre-MOT walk-round: UK class-4 test items, tuned to THIS car's known
+ *  weak points from the research. `interval` carries the pass/fail rule. */
+export const MOT_ITEMS: ServiceItem[] = [
+  {
+    id: 'mot-warning-lights',
+    title: 'Dashboard warning lights',
+    interval: 'FAIL if EML, ABS, airbag, EPS or brake warning stays lit with engine running',
+    where:
+      'Turn the ignition on: every lamp should light, then go out after start. THIS CAR’S TRAP: a P2015 intake-flap code relights the EML and is an instant fail — and the fix after a clean is usually the free VCDS Group 142 adaptation, not parts.',
+    notes: 'An "ACC not available" message is NOT an MOT item — but see the fault demo before spending money on it.',
+    showTargets: ['intake-manifold', 'sensor-g336'],
+    focusPartId: 'sensor-g336',
+  },
+  {
+    id: 'mot-lights',
+    title: 'All exterior lights',
+    interval: 'FAIL for any lamp out, wrong colour, or headlamp aim off',
+    where:
+      'Walk-round with a helper (or a wall/reflection): dipped, main, DRLs, indicators front/rear/side, both brake lights PLUS the high-level, number-plate lamps, rear fog, reverse. Xenon cars must have working washers.',
+    flags: 'R10 left one open: the reverse-lamp bulb is W16W vs P21W by holder — check yours before buying spares.',
+    showTargets: [],
+  },
+  {
+    id: 'mot-screen-wipers',
+    title: 'Windscreen, wipers & washers',
+    interval: 'FAIL: chip/crack >10 mm in the driver’s sweep zone, >40 mm anywhere swept; smearing wipers; dry washers',
+    where:
+      'Check the glass low in the driver’s wiper arc where stone chips hide. Blades are Bosch A864S (650/450 mm) — a tenner now beats an advisory later. Fill the washer bottle before the test.',
+    showTargets: ['windscreen'],
+    focusPartId: 'windscreen',
+  },
+  {
+    id: 'mot-tyres',
+    title: 'Tyres & wheels',
+    interval: 'FAIL below 1.6 mm across the central ¾ of the tread, or any cut/bulge/cord',
+    where:
+      '235/35 R19 — and CHECK THE INNER EDGES with the wheel on lock or a phone camera: the R’s camber eats inner shoulders while the outside still looks legal. Match tyres across each axle. Wheel bolts 120 Nm after any wheel-off check.',
+    showTargets: ['suspension/wheels-pretoria'],
+    focusPartId: 'tyres-right',
+  },
+  {
+    id: 'mot-brakes',
+    title: 'Brakes',
+    interval: 'FAIL: efficiency/imbalance on the rollers, pads at metal, discs below limits, leaks, perished hoses',
+    where:
+      'Look through the Pretorias: decent pad meat on ALL four (rears wear faster than people expect with the EPB), discs not lipped/scored below limits (fronts min 28 mm, rears min 20). Squeeze the flexi hoses — no cracks or bulges. EPB must hold on the roller test; pull it with the engine running.',
+    notes: 'If pads are borderline, do them BEFORE the test — and remember rears need the scan-tool lining-change mode.',
+    showTargets: ['brakes/front-brake-corner', 'brakes/rear-brake-corner-right'],
+    focusPartId: 'front-brake-pad-outer',
+  },
+  {
+    id: 'mot-suspension',
+    title: 'Suspension knocks & wear',
+    interval: 'FAIL: broken spring, leaking damper, excessive play in any bush/joint',
+    where:
+      'THE Mk7 advisory list (R7): front LCA rear console bushes (knock + vague steering — the classic), drop links (rattle over small bumps), strut top mounts (creak on full lock), rear trailing-arm bushes. Bounce each corner — one clean rebound. Torch the springs for the snapped-coil surprise.',
+    showTargets: ['suspension/suspension-front', 'suspension/suspension-rear'],
+    focusPartId: 'front-lcas',
+  },
+  {
+    id: 'mot-steering',
+    title: 'Steering',
+    interval: 'FAIL: free play, split rack gaiters, torn track-rod-end boots, EPS warning lamp',
+    where:
+      'Rock the wheel with the car on the ground — no clonks or dead spot. On lock, look behind each front wheel: rack gaiters and track-rod-end boots must be untorn (a split boot is a cheap part but a guaranteed fail).',
+    showTargets: ['eps-rack', 'front-tie-rods'],
+    focusPartId: 'front-tie-rods',
+  },
+  {
+    id: 'mot-exhaust-emissions',
+    title: 'Exhaust & emissions',
+    interval: 'FAIL: blowing joints, missing cat, emissions over petrol limits',
+    where:
+      'Cold start it the morning of the test and get it HOT before you arrive — a fully-lit cat is the difference on the gas bench. Listen for blow at the V-band, flex section and sleeve joints; rattly rear-box flaps are an advisory-magnet but not a fail.',
+    notes: 'A tired PCV or heavy carbon can push idle emissions — the 30-second oil-cap check costs nothing (see Service tab).',
+    showTargets: ['engine/engine-exhaust'],
+    focusPartId: 'downpipe-cat',
+  },
+  {
+    id: 'mot-leaks',
+    title: 'Fluid leaks',
+    interval: 'FAIL only for a MAJOR leak (dripping); weeps and misting = advisory',
+    where:
+      'This car’s specialist subject. The full suspect map from the research: PCV module and cam-bridge sealant up top, oil-filter housing/cooler mid-height (mimics a rear-main leak), sump joints and the plastic bayonet drain plug below, N493 coolant seep hiding under the intake manifold. Wipe everything clean a week before the test so fresh weeps show their true origin.',
+    showTargets: ['pcv-module', 'oil-filter-housing', 'upper-sump', 'lower-sump', 'n493-module'],
+    focusPartId: 'oil-filter-housing',
+  },
+  {
+    id: 'mot-cabin',
+    title: 'Seatbelts, horn, mirrors, doors',
+    interval: 'FAIL: frayed/non-latching belt, dead horn, missing/insecure mirror, door that won’t open',
+    where:
+      'Tug-test every belt (they must lock on a sharp pull) and check webbing edges for fraying. Horn works, both door mirrors secure (the R’s satin caps rattle when clips break), doors open from inside AND outside, tailgate stays up.',
+    flags: 'Kessy handles with water ingress can make a door intermittent from outside (R11) — test all four before the tester does.',
+    showTargets: ['mirror-caps'],
+    focusPartId: 'mirror-caps',
+  },
+  {
+    id: 'mot-plates-vin',
+    title: 'Number plates & VIN',
+    interval: 'FAIL: illegible/incorrectly-spaced plates, unreadable VIN',
+    where: 'Both plates clean, correct font/spacing, both plate lamps working. VIN readable at the windscreen base.',
+    showTargets: [],
+  },
+  {
+    id: 'mot-battery-wiring',
+    title: 'Battery & visible wiring',
+    interval: 'FAIL: insecure battery, exposed/chafing wiring, leaking battery',
+    where:
+      'The AGM battery on top of the gearbox must be clamped tight — testers check. Glance over visible looms in the bay for chafe, especially near the strut towers.',
+    showTargets: ['battery'],
+    focusPartId: 'battery',
+  },
+]
+
 export const SERVICE_ITEMS: ServiceItem[] = [
   {
     id: 'engine-oil',

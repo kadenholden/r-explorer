@@ -231,3 +231,14 @@ export function partWorldPosition(part: PartRecord): [number, number, number] {
   const wz = -x * Math.sin(ry) + z * Math.cos(ry)
   return [origin[0] + wx, origin[1] + y, origin[2] + wz]
 }
+
+/** The part's explode direction rotated into world space — the natural
+ *  side to view the part from (a drain plug from below, glass from outside). */
+export function partWorldDirection(part: PartRecord): [number, number, number] {
+  const entry = ASSEMBLIES.find((a) => a.assembly.id === part.assembly)
+  const ry = (((entry?.assembly.rotationDeg?.[1] ?? 0) * Math.PI) / 180)
+  const [x, y, z] = part.explodeVector.direction
+  const wx = x * Math.cos(ry) + z * Math.sin(ry)
+  const wz = -x * Math.sin(ry) + z * Math.cos(ry)
+  return [wx, y, wz]
+}

@@ -33,6 +33,7 @@ function CameraRig() {
   const preset = useAppStore((s) => s.cameraPreset)
   const nonce = useAppStore((s) => s.presetNonce)
   const focusPoint = useAppStore((s) => s.focusPoint)
+  const focusDir = useAppStore((s) => s.focusDir)
   const focusNonce = useAppStore((s) => s.focusNonce)
   const camera = useThree((s) => s.camera)
   const controls = useThree((s) => s.controls) as OrbitControlsImpl | null
@@ -50,13 +51,15 @@ function CameraRig() {
   useEffect(() => {
     if (!focusPoint || !controls) return
     const target = new THREE.Vector3(...focusPoint)
-    const dir = camera.position.clone().sub(controls.target)
+    const dir = focusDir
+      ? new THREE.Vector3(...focusDir).normalize().add(new THREE.Vector3(0, 0.3, 0))
+      : camera.position.clone().sub(controls.target)
     if (dir.lengthSq() < 1e-6) dir.set(0.6, 0.4, 0.6)
-    dir.normalize().multiplyScalar(0.55)
+    dir.normalize().multiplyScalar(0.7)
     controls.target.copy(target)
     camera.position.copy(target.clone().add(dir))
     controls.update()
-  }, [focusPoint, focusNonce, camera, controls])
+  }, [focusPoint, focusDir, focusNonce, camera, controls])
 
   return null
 }
@@ -105,8 +108,11 @@ export function Viewport() {
         makeDefault
         enableDamping
         dampingFactor={0.08}
-        minDistance={0.12}
-        maxDistance={4}
+        minDistance={0.08}
+        maxDistance={5}
+        zoomToCursor
+        screenSpacePanning
+        panSpeed={0.9}
         target={initial?.target}
       />
       <CameraRig />

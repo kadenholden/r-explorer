@@ -1,5 +1,22 @@
 # PROGRESS
 
+## Orientation fix, free-roam camera, Pre-MOT tab (2026-08-14, operator QA)
+
+The operator caught the oil filter hanging DOWNWARD like an old spin-on
+— on the real Gen 3 the cartridge cap faces UP and is changed from above
+with a 32 mm socket. Recipe fixed (hex cap up); other service-part
+orientations audited clean (DSG filter up, plugs down, spark plugs
+vertical). Camera freed up: zoom-to-cursor (scroll dives at what you
+point at), screen-space panning, wider zoom range — and part fly-tos now
+approach along the part's EXPLODE DIRECTION, so a drain plug is viewed
+from below and glass from outside instead of wherever the camera
+happened to be. New PRE-MOT CHECK tab beside Servicing: 12 walk-round
+cards with pass/fail rules and this car's known weak points (P2015
+relights the EML = fail; inner-edge tyre wear; the R7 advisory bush
+list; the full leak-suspect map), each with Show-me. Isolation now
+overrides hidden state so MOT cards can show default-hidden panels like
+the windscreen.
+
 ## Service tab (2026-08-14, operator-requested)
 
 New SERVICE button in the top bar opens the owner's service reference:

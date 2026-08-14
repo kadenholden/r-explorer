@@ -1,6 +1,7 @@
-import { SERVICE_ITEMS } from '../data/service'
+import { useState } from 'react'
+import { MOT_ITEMS, SERVICE_ITEMS } from '../data/service'
 import type { ServiceItem } from '../data/service'
-import { partById, partWorldPosition } from '../data/loader'
+import { partById, partWorldDirection, partWorldPosition } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
 
 /**
@@ -9,7 +10,7 @@ import { useAppStore } from '../store/useAppStore'
  * button that isolates the involved parts and flies the camera to them.
  */
 
-function ServiceCard({ item }: { item: ServiceItem }) {
+function ServiceCard({ item, ruleLabel }: { item: ServiceItem; ruleLabel: string }) {
   const setIsolation = useAppStore((s) => s.setIsolation)
   const select = useAppStore((s) => s.select)
   const focusOn = useAppStore((s) => s.focusOn)
@@ -21,7 +22,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
       const part = partById(item.focusPartId)
       if (part) {
         select(part.id)
-        focusOn(partWorldPosition(part))
+        focusOn(partWorldPosition(part), partWorldDirection(part))
       }
     }
   }
@@ -38,7 +39,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
       </div>
       <div className="service-rows">
         <div className="plate-row">
-          <span className="plate-label">Interval</span>
+          <span className="plate-label">{ruleLabel}</span>
           <span className="plate-value">{item.interval}</span>
         </div>
         {item.fluid && (
@@ -71,13 +72,21 @@ export function ServicePanel() {
   const open = useAppStore((s) => s.servicePanelOpen)
   const setOpen = useAppStore((s) => s.setServicePanelOpen)
   const clearIsolation = useAppStore((s) => s.clearIsolation)
+  const [tab, setTab] = useState<'service' | 'mot'>('service')
   if (!open) return null
 
+  const items = tab === 'service' ? SERVICE_ITEMS : MOT_ITEMS
+  const ruleLabel = tab === 'service' ? 'Interval' : 'MOT rule'
+
   return (
-    <aside className="service-panel" aria-label="Service reference">
+    <aside className="service-panel" aria-label="Service and MOT reference">
       <div className="p2015-header">
-        <span className="p2015-code">SERVICE</span>
-        <span className="p2015-title">Everything you routinely service — with real numbers</span>
+        <span className="p2015-code">{tab === 'service' ? 'SERVICE' : 'MOT'}</span>
+        <span className="p2015-title">
+          {tab === 'service'
+            ? 'Everything you routinely service — with real numbers'
+            : 'Pre-MOT walk-round — this car\u2019s known weak points included'}
+        </span>
         <button
           type="button"
           className="panel-close"
@@ -90,15 +99,34 @@ export function ServicePanel() {
           ✕
         </button>
       </div>
+      <div className="service-tabs" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'service'}
+          className={`avs-btn${tab === 'service' ? ' is-large' : ''}`}
+          onClick={() => setTab('service')}
+        >
+          Servicing
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'mot'}
+          className={`avs-btn${tab === 'mot' ? ' is-large' : ''}`}
+          onClick={() => setTab('mot')}
+        >
+          Pre-MOT check
+        </button>
+      </div>
       <p className="plate-note service-disclaimer">
-        Values come from the project's research with sources on each part; anything marked as a
-        conflict or unverified must be confirmed in erWin/Bentley before real spanner work.
-        "Show me" hides everything except the parts involved — the ✕ or the "show all" chip
-        brings the car back.
+        {tab === 'service'
+          ? 'Values come from the project\u2019s research with sources on each part; anything marked as a conflict or unverified must be confirmed in erWin/Bentley before real spanner work. "Show me" hides everything except the parts involved \u2014 the \u2715 or the "show all" chip brings the car back.'
+          : 'Work top to bottom the week before the test \u2014 most of these cost pennies to fix in advance and a retest if the tester finds them first. "Show me" flies the camera to the parts being checked.'}
       </p>
       <div className="service-list">
-        {SERVICE_ITEMS.map((item) => (
-          <ServiceCard key={item.id} item={item} />
+        {items.map((item) => (
+          <ServiceCard key={item.id} item={item} ruleLabel={ruleLabel} />
         ))}
       </div>
     </aside>
