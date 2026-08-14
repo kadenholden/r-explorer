@@ -1,5 +1,42 @@
 # PROGRESS
 
+## R2–R11 batch ingested — the whole car is documented (2026-08-14)
+
+All remaining research returns landed as image PDFs, were transcribed by
+parallel agents into `docs/research/`, and ingested across five PRs
+(#9–#13), one system chunk each. Coverage moved from **224 parts / ~30
+OEM numbers** to **248 records / 482 placed instances / 82 OEM numbers /
+58 torque specs** — and more importantly, almost every carried question
+is now answered:
+
+- **R2**: head-bolt torque RESOLVED (six stages, 40→80→slacken→50→90→90,
+  renew); "valve cover" corrected to cam bridge + separate PCV module;
+  followers/HVAs/springs/seals/plugs/N205/sensors/timing-cover added.
+- **R3+R4**: dual injection CONFIRMED for the EU car (overturns R2's
+  DI-only); N316/V465/N249 designations fixed; both P2015 mechanisms
+  recorded; electric exhaust flaps 4H0133246J; both lambdas numbered;
+  G336 dossier number flagged as conflicted.
+- **R5+R6**: DQ250 ratios/capacities/380 Nm clutch/mechatronic map +
+  accumulator failure; Haldex Gen 5 architecture corrected (strainer +
+  CEH pump, no accumulator/filter/valve), flex-disc propshaft joint.
+- **R7+R8**: rear disc 22 mm guess CONFIRMED primary-sourced; EPB motors
+  + lining-change-mode; R-specific rear pad 5Q0698451T; subframe TTY +
+  alignment pins; ride-height rule; front guide-bolt 30-vs-35 conflict.
+- **R9–R11**: N493 = the pump module (LEFT-HAND-thread pulley bolt!);
+  oil cooler integral to filter housing (mimics rear-main leak); ECU
+  RESOLVED as SIMOS 18.1; ACC radar added w/ catch-all warning; paint
+  Pure White LC9A/0Q0Q pending sticker check.
+
+Cross-return conflicts are recorded on the parts themselves and in
+UNVERIFIED.md rather than silently resolved.
+
+**Still pending**: R13 (fault library → animations) and R14 (mesh
+sources) — their transcription agents hit the session usage limit;
+re-run after reset, then build fault demos and plan hero meshes.
+**Polish backlog (new)**: chain-end and driveline camera presets sit
+inside the body-shell panels — add shell auto-hide for interior presets
+or move the cameras.
+
 ## R1 ingested — short block goes from skeleton to documented (2026-08-10)
 
 The first deep-research return (R1, engine short block) landed and was
