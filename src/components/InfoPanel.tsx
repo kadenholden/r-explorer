@@ -44,6 +44,30 @@ function AvsToggle() {
   )
 }
 
+function PcvControls() {
+  const pcvTorn = useAppStore((s) => s.pcvTorn)
+  const togglePcv = useAppStore((s) => s.togglePcv)
+  return (
+    <div className="avs-toggle">
+      <span className="plate-label">PCV diaphragm demo</span>
+      <button
+        type="button"
+        className={`avs-btn avs-btn--fault${pcvTorn ? ' is-faulted' : ''}`}
+        onClick={togglePcv}
+        aria-pressed={pcvTorn}
+      >
+        {pcvTorn ? 'DIAPHRAGM TORN — clear fault' : 'Simulate torn diaphragm'}
+      </button>
+      <p className="plate-note">
+        Healthy, the spring-loaded diaphragm holds ~100 mbar of crankcase
+        depression. Torn, manifold vacuum pulls straight through — whistle,
+        hunting idle, oil-cap suction, and oil pushed past the seals. The R13
+        fault card walks the diagnosis.
+      </p>
+    </div>
+  )
+}
+
 function FlapControls() {
   const flapsOpen = useAppStore((s) => s.flapsOpen)
   const toggleFlaps = useAppStore((s) => s.toggleFlaps)
@@ -112,6 +136,7 @@ function PartPlate({ part }: { part: PartRecord }) {
         <Row label="Geometry" value={part.geometryRef} mono />
         {part.tags.includes('avs') && <AvsToggle />}
         {part.tags.includes('p2015') && <FlapControls />}
+        {part.tags.includes('PCV') && <PcvControls />}
         {part.knownIssues.length > 0 && (
           <div className="plate-issues">
             <span className="plate-label">Known issues</span>

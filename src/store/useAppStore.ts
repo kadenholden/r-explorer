@@ -57,6 +57,10 @@ interface AppState {
   /** P2015 fault simulation: flaps jam and G336 reads implausible. */
   p2015: boolean
   toggleP2015: () => void
+
+  /** PCV fault simulation: breather diaphragm torn (R13 fault library). */
+  pcvTorn: boolean
+  togglePcv: () => void
 }
 
 export const useAppStore = create<AppState>()(
@@ -109,6 +113,9 @@ export const useAppStore = create<AppState>()(
       toggleFlaps: () => set((s) => ({ flapsOpen: !s.flapsOpen })),
       p2015: false,
       toggleP2015: () => set((s) => ({ p2015: !s.p2015 })),
+
+      pcvTorn: false,
+      togglePcv: () => set((s) => ({ pcvTorn: !s.pcvTorn })),
     }),
     {
       name: 'r-explorer-ui',
