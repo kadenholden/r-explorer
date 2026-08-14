@@ -40,20 +40,24 @@ on the parts. What remains open from R1's own flags:
 | Upper-sump-to-block bolt torque | aluminium single-use bolts; value not captured |
 | Main journal 48 mm | R-specific (SSP's generic 52 mm belongs to other Gen 3 codes) — noted, adopted |
 
-## Engine — head & valvetrain (awaiting R2)
+## Engine — head & valvetrain — LARGELY RESOLVED by R2 (2026-08-14)
 
-The dossier gives materials/dimensions but no OEM numbers; records store
-`null` until the R2 return lands.
+R2 (docs/research/R2-head-valvetrain.md) supplied ~15 OEM numbers and
+RESOLVED the head-bolt torque conflict: six stages, 40 → 80 → slacken
+180° → 50 → +90° → +90°, new TTY bolts (both '40+90+90' and '60+180'
+were aggregator errors). Head-bolt PN WHT005305B came from R12. Still
+open from R2's own flags:
 
-| Part (id) | Missing |
+| Item | Status |
 | --- | --- |
-| Cylinder head (`cylinder-head-casting`) | OEM number |
-| Head gasket (`head-gasket`) | OEM number |
-| Head bolts (`head-bolts`) | OEM number, material, definitive torque (40+90+90 vs 60+180 — R1 explicitly carried this flag to R2) |
-| Camshafts (`intake-camshaft`, `exhaust-camshaft`) | OEM numbers, material |
-| AVS elements + actuators (`avs-cam-elements`, `avs-actuators`) | OEM numbers, material |
-| Valves (`intake-valves`, `exhaust-valves`) | OEM numbers |
-| Chain drive (`timing-chain`, `crank-sprocket`, `chain-tensioner`, `chain-guide-rails`) | OEM numbers; tensioner latest-revision number especially worth pinning down |
+| Cam-bridge bolt torque | 8 Nm + 90° renew (erWin snippet) vs generic M6/M7/M8 = 10/15/20 Nm (Spoolas) — the longest-carried open flag |
+| Phaser ranges | intake 30° / exhaust 60° (Australiancar) vs the inverse on forums — contested |
+| Tensioner bolt torque | conflicting 10 Nm vs 50 Nm + angle — unverified, do not guess |
+| Cam-cover + guide-rail bolt torques | NONE FOUND from the Gen 3 manual (guide rails ~20 Nm forum-grade) |
+| Springs/retainers/collets/seats/guides, followers, HVAs, AVS actuators | no exposed OEM numbers (head assy / kits only) |
+| Ignition coil | 06H905110P (R dealer catalogue) vs 06K905110K (GTI/family) — confirm by VIN |
+| G300 sensor number | NONE FOUND |
+| Injection type | R2 says pre-facelift CJXC is DI-only; **R4 overturns this with five agreeing sources** (EU = dual injection, DI-only is North America) — model follows R4 + dossier |
 
 ## Intake / fuel / exhaust (Phase 2)
 

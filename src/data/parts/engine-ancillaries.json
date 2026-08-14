@@ -13,16 +13,20 @@
   "parts": [
     {
       "id": "valve-cover-pcv",
-      "name": "Valve cover with integrated PCV",
+      "name": "Camshaft bearing bridge / cam carrier",
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
-      "oemPartNumber": null,
-      "description": "Cam cover with the crankcase-ventilation diaphragm built in (dossier §2). A torn PCV diaphragm is a classic all-generations EA888 fault: rough idle, boost/vacuum codes, oil consumption. The AVS actuators and ignition coils mount through it.",
-      "material": "Plastic",
-      "torqueSpec": null,
+      "oemPartNumber": "06K103144D",
+      "description": "R2 CORRECTION: the Gen 3 'valve cover' is really the camshaft bearing bridge/ladder (06K103144D; variants -A/-B, later 06L103144H) sealed to the head with ANAEROBIC SEALANT (VW D174003M2) — there is no conventional cover-plus-gasket. A 'valve cover leak' therefore means removing the bridge, cleaning both faces and re-sealing with new one-time-use bolts, not a gasket swap. The AVS actuators, coils and the bolt-on PCV module mount through/on it.",
+      "material": "Aluminium",
+      "torqueSpec": {
+        "valueNm": 8,
+        "angle": "+90°",
+        "note": "erWin snippet — renew bolts, diagonal in stages. DISAGREEMENT: Spoolas generic table says M6=10/M7=15/M8=20 Nm; treat 8 Nm + 90° as head-specific pending the manual's full table (R2)"
+      },
       "knownIssues": [
-        "PCV diaphragm tears → rough idle, boost/vacuum faults, oil consumption (dossier §2 failure list). Whistle from the cover is the classic symptom."
+        "Sealant-surface degradation → oil weep — with the PCV diaphragm, one of the two most likely explanations R2 gives for the operator's oil leak."
       ],
       "explodeVector": {
         "direction": [
@@ -56,9 +60,10 @@
       ],
       "color": "#33363c",
       "tags": [
-        "valve-cover",
-        "PCV",
-        "breather",
+        "cam-bridge",
+        "anaerobic-sealant",
+        "R2-correction",
+        "oil-leak",
         "known-issue"
       ]
     },
@@ -68,11 +73,17 @@
       "system": "engine",
       "assembly": "engine-ancillaries",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "Pencil coils down the plug wells, one per cylinder (dossier §2 ignition). Firing order 1-3-4-2.",
+      "oemPartNumber": "06H905110P",
+      "description": "Pencil coils down the plug wells, one per cylinder, firing order 1-3-4-2. R2: the VW dealer catalogue shows 06H905110P for the Golf R while the GTI/family is frequently 06K905110K — confirm against this car's VIN before ordering. Hold-down ~10 Nm.",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 10,
+        "angle": null,
+        "note": "Coil hold-down, family value (R2)"
+      },
+      "knownIssues": [
+        "Misfires — coils are a common wear item on tuned EA888s (R2)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -1339,6 +1350,58 @@
         "o-ring",
         "N0282222",
         "oil-leak"
+      ]
+    },
+    {
+      "id": "pcv-module",
+      "name": "PCV / oil separator module",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": "06K103495BL",
+      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit on the cam bridge, not integrated (R2). Its spring-loaded diaphragm regulates crankcase pressure; oil drops back to the sump and clean vapour routes to the turbo inlet (boost) or manifold (vacuum). Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
+      "material": "Glass-reinforced plastic + rubber diaphragm",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Diaphragm rupture → whistle, rough idle, boost/vacuum faults, oil pushed past seals (rear main especially), smoking under hard cornering — the classic Gen 3 PCV failure (R2, and the dossier's §2 list)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.35
+        ],
+        "distance": 1.5
+      },
+      "geometryRef": "pcvModule",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.09,
+            0.365,
+            0.03
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 23,
+      "calloutOffset": [
+        0.14,
+        0.12,
+        0.12
+      ],
+      "color": "#33363c",
+      "tags": [
+        "PCV",
+        "oil-separator",
+        "known-issue",
+        "operator-issue",
+        "06K103495BL"
       ]
     }
   ]
