@@ -18,9 +18,13 @@
       "assembly": "suspension-front",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Front subframe carrying the control arms, rack, and ARB; aluminium content on the MQB front axle (dossier §5). The engine's dogbone mount also lands here (mount modelled with engine ancillaries in Phase 7).",
+      "description": "Front subframe carrying the control arms, rack, and ARB; aluminium content on the MQB front axle (dossier §5). The engine's dogbone mount also lands here (mount modelled with engine ancillaries in Phase 7). R7: the subframe must be located on its alignment pins when refitted or the steering sits off-centre.",
       "material": "Aluminium / steel hybrid",
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 70,
+        "angle": "+180°",
+        "note": "Subframe-to-body and console-to-body — TTY, ALWAYS replace (R7)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [
@@ -67,11 +71,17 @@
       "system": "suspension",
       "assembly": "suspension-front",
       "subAssembly": "Struts",
-      "oemPartNumber": null,
-      "description": "Strut units: coil spring over a passive sport damper (no DCC on this car — DCC cars get electronically-valved dampers instead, dossier §5), with the top mount and bearing that let the whole strut steer.",
+      "oemPartNumber": "5Q0413031EC",
+      "description": "Passive sport front struts, 5Q0413031EC — the dealer catalogue's 'Golf R without DCC' family, correct for this car (confirm via the absent J250 module) (R7). ~20 mm lower than GTI. Strut piston-rod nut 60 Nm (M14×1.5); the strut-to-knuckle clamp bolt takes a 14 mm triple-square (R12) but its torque was NOT found verbatim — per erWin. ",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 60,
+        "angle": null,
+        "note": "Strut piston-rod nut M14×1.5 (R7); strut-to-knuckle clamp torque NONE FOUND — per erWin"
+      },
+      "knownIssues": [
+        "Top-mount bearings creak/knock on full lock — a known Mk7 wear item (R7)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -128,11 +138,17 @@
       "system": "suspension",
       "assembly": "suspension-front",
       "subAssembly": null,
-      "oemPartNumber": null,
-      "description": "The Mk7's newly-developed low wishbone with track-stabilising scrub radius (dossier §5): two inboard bushes on the subframe, ball joint outboard under the knuckle.",
+      "oemPartNumber": "5Q0407151J",
+      "description": "The Mk7's newly-developed low wishbone with track-stabilising scrub radius (dossier §5): two inboard bushes on the subframe, ball joint outboard under the knuckle. R7: left arm 5Q0407151J (also 151R, superseded 5WA407151); the right side 5Q0407152J is an inferred mirror — verify. Console/rear bush bolts 70 Nm + 180° TTY, renew.",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 70,
+        "angle": "+180°",
+        "note": "LCA console-to-body — TTY, renew (R7); front pivot bolt N10640501 M12×1.5×80"
+      },
+      "knownIssues": [
+        "Rear (console) bush wear — the classic Mk7 MOT advisory: knock + vague steering (R7)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -189,12 +205,12 @@
       "assembly": "suspension-front",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Uprights tying strut, ball joint, tie rod and hub together; the driveshaft's outer CV splines into the hub here. Torque shown is the main hub/axle bolt (dossier §2 table).",
+      "description": "Uprights tying strut, ball joint, tie rod and hub together; the driveshaft's outer CV splines into the hub here. Torque shown is the main hub/axle bolt (dossier §2 table). Hub-unit-to-knuckle bolts 70 Nm + 90° (R7).",
       "material": null,
       "torqueSpec": {
         "valueNm": 200,
         "angle": "+180°",
-        "note": "Main hub/axle bolt (dossier) — clamps the driveshaft outer CV into the hub"
+        "note": "Hub/axle bolt WHT005437 (smooth-face 8.8, 12-pt M16×1.5×70), single-use (R6/R12). ElsaWin shows a +90° variant, and a RIBBED ~10.9 bolt exists taking only 70 Nm + 90° — physically identify the bolt before torquing"
       },
       "knownIssues": [],
       "explodeVector": {
@@ -254,7 +270,7 @@
       "assembly": "suspension-front",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Front ARB on the subframe, coupled to the struts through drop links (dossier §5).",
+      "description": "Front ARB on the subframe, coupled to the struts through drop links (dossier §5). R7: family 5Q0411303, Ø ~23.2 mm on the 4WD car — vendor-sized (Powerflex), not VW-published; verify.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -307,8 +323,14 @@
       "oemPartNumber": null,
       "description": "Short ball-jointed links from the ARB ends up to the strut bodies.",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 65,
+        "angle": null,
+        "note": "Drop-link nuts — always replace (R7)"
+      },
+      "knownIssues": [
+        "Knock over small bumps when worn — cheap fix, common at UK mileages (R7)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -364,10 +386,16 @@
       "assembly": "suspension-front",
       "subAssembly": "Steering",
       "oemPartNumber": null,
-      "description": "Rack-mounted-motor EPS with the progressive-ratio rack — variable-pitch teeth quicken the ratio off-centre (dossier §5). Column and intermediate shaft arrive with the interior in Phase 7. Rack flipped for the operator's RHD car.",
+      "description": "Rack-mounted parallel-axis (APA) electromechanical steering with the R's PROGRESSIVE variable-pitch rack as standard — 2.1 turns / 380° lock-to-lock, ratio quickening off-centre (R7). Family 5Q1423051/053 with control unit J500 integrated on the rack; any rack replacement or alignment needs coding + the G85 steering-angle basic setting. ",
       "material": null,
-      "torqueSpec": null,
-      "knownIssues": [],
+      "torqueSpec": {
+        "valueNm": 50,
+        "angle": "+90°",
+        "note": "Rack-to-subframe, renew (R7). R12's chart carries 70 Nm + 90° — CONFLICT, verify"
+      },
+      "knownIssues": [
+        "MQB EPS rack knock over rough surfaces — subject of a VW TSB (R7)."
+      ],
       "explodeVector": {
         "direction": [
           0,
@@ -414,7 +442,11 @@
       "oemPartNumber": null,
       "description": "Tie rods from the rack ends to the knuckles' steering arms; the outer ends are the toe-adjustment point.",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 20,
+        "angle": "+90°",
+        "note": "Track-rod end to knuckle (R7). Inner tie-rod and locknut torques NONE FOUND — per erWin; steering-UJ pinch bolt 30 Nm (M8×35, renew)"
+      },
       "knownIssues": [],
       "explodeVector": {
         "direction": [

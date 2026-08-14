@@ -274,7 +274,7 @@
       "torqueSpec": {
         "valueNm": 120,
         "angle": null,
-        "note": "Dossier: wheel bolts — well-documented MQB spec"
+        "note": "120 Nm confirmed by the 2014 owner's manual (R7/R12, matching the dossier). Later manuals reportedly print 140 Nm — flagged; 120 is primary for this MY"
       },
       "knownIssues": [],
       "explodeVector": {
@@ -340,7 +340,7 @@
       "torqueSpec": {
         "valueNm": 120,
         "angle": null,
-        "note": "Dossier: wheel bolts"
+        "note": "120 Nm confirmed by the 2014 owner's manual (R7/R12, matching the dossier). Later manuals reportedly print 140 Nm — flagged; 120 is primary for this MY"
       },
       "knownIssues": [],
       "explodeVector": {
