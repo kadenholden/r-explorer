@@ -7,6 +7,8 @@ export function TopBar() {
   const setTreeDrawerOpen = useAppStore((s) => s.setTreeDrawerOpen)
   const colorMode = useAppStore((s) => s.colorMode)
   const setColorMode = useAppStore((s) => s.setColorMode)
+  const servicePanelOpen = useAppStore((s) => s.servicePanelOpen)
+  const setServicePanelOpen = useAppStore((s) => s.setServicePanelOpen)
 
   return (
     <header className="topbar">
@@ -38,6 +40,13 @@ export function TopBar() {
           System
         </button>
       </div>
+      <button
+        type="button"
+        className={`preset-btn service-btn${servicePanelOpen ? ' is-active' : ''}`}
+        onClick={() => setServicePanelOpen(!servicePanelOpen)}
+      >
+        Service
+      </button>
       <nav className="preset-bar" aria-label="Camera presets">
         {Object.entries(CAMERA_PRESETS).map(([name, p]) => (
           <button
