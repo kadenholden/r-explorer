@@ -287,6 +287,62 @@
         "EPB",
         "ECU"
       ]
+    },
+    {
+      "id": "brake-fluid-reservoir",
+      "name": "Brake fluid reservoir (DOT 4)",
+      "system": "brakes",
+      "assembly": "brake-hydraulics",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The translucent reservoir on top of the master cylinder, driver's side at the bulkhead — the yellow-capped one in the operator's photos. Check the level COLD against MIN/MAX: a slowly dropping level with no leak usually just means the pads have worn and the caliper pistons have moved out. DOT 4, changed every 2–3 years because it absorbs water and boils sooner as it ages.",
+      "material": "Translucent plastic",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Level below MIN with no visible leak → check pad thickness before chasing a leak.",
+        "Old dark fluid = water content; boils under hard use and gives a long pedal."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.2,
+          1,
+          0.2
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "cartridge",
+      "geometryParams": {
+        "radiusMm": 45,
+        "heightMm": 70
+      },
+      "transforms": [
+        {
+          "position": [
+            0.35,
+            0.37,
+            -0.15999999999999998
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        0.14,
+        0.12,
+        0.1
+      ],
+      "color": "#e6e7e2",
+      "opacity": 0.7,
+      "tags": [
+        "brake-fluid",
+        "DOT4",
+        "reservoir",
+        "service"
+      ]
     }
   ]
 }

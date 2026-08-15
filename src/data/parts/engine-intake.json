@@ -993,6 +993,58 @@
         "racingline",
         "boost-leak"
       ]
+    },
+    {
+      "id": "maf-sensor",
+      "name": "Mass air-flow sensor G70",
+      "system": "engine",
+      "assembly": "engine-intake",
+      "subAssembly": "Sensors",
+      "oemPartNumber": null,
+      "description": "Hot-film air-mass meter clamped into the intake tract just downstream of the filter box — on this car that is in the RACINGLINE pipe. The ECU trims fuelling and boost from it, so a dirty or failing MAF shows up as flat mid-range, hesitation and lambda drift rather than a hard fault. VW designation G70; part number to verify by VIN.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Contamination from over-oiled aftermarket filters is the classic killer — clean with MAF cleaner only, never touch the film.",
+        "Reads low when the intake has a leak downstream, which mimics a tired MAF; check clamps first (R3)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.7,
+          0.6,
+          0.3
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.315,
+            0.075,
+            0.245
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            90
+          ]
+        }
+      ],
+      "callout": 19,
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "MAF",
+        "G70",
+        "intake",
+        "racingline"
+      ]
     }
   ]
 }

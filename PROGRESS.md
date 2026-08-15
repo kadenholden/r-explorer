@@ -1,5 +1,27 @@
 # PROGRESS
 
+## Operator's annotated engine diagram checked against the model (2026-08-15)
+
+The operator produced an annotated overhead photo of their own bay with
+13 components numbered. Cross-checked every one against the model: 12
+were already present (including the oil filler cap and the turbo inlet
+hose added earlier today). Added the one gap — **MAF sensor G70** in the
+Racingline intake tract, with the over-oiled-filter contamination issue
+and the "reads low when there's a leak downstream" trap. Also split the
+**brake fluid reservoir** out as its own clickable part, since it is a
+distinct thing owners look for and a service item in its own right
+(level dropping with no leak usually just means worn pads).
+
+OPEN QUESTION recorded rather than guessed: the annotated photo's own
+labels disagree about which way round it is — the air filter box and the
+brake fluid reservoir sit on the same side of that image, but on the real
+car they are on opposite sides. So the diagram cannot settle which side
+the oil filter housing is on, and nothing was moved on its basis. Asked
+the operator the one decisive question: standing at the front of the car,
+is the oil filter cap on the same side as the air box, or the opposite
+side? Model currently has filter housing + dipstick + filler cap on the
+driver's side (offside).
+
 ## Oil caps found, plus side labels so the model can be read (2026-08-15)
 
 Operator couldn't find the oil cap or filter in the model and was
