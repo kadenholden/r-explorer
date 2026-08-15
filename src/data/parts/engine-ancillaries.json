@@ -1359,7 +1359,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": "06K103495BL",
-      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit sitting on TOP of the cam cover — PHOTO-VERIFIED on this car: the round black diaphragm dome sits mid-cover, slightly forward of centre, with the four ignition coils in a row BEHIND it (toward the bulkhead), the HPFP to its right and the oil-filler cap to its left; its breather line runs back toward the turbo (FCP Euro; 7× T30 screws). Lift the plastic engine cover off its ball mounts and it's the first thing you see. Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
+      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit sitting on TOP of the cam cover — PHOTO-VERIFIED on this car: the round black diaphragm dome sits mid-cover, slightly toward the PASSENGER (nearside) half, with the four ignition coils in a row BEHIND it (toward the bulkhead), the HPFP to its right and the oil-filler cap to its left; its breather line runs back toward the turbo (FCP Euro; 7× T30 screws). Lift the plastic engine cover off its ball mounts and it's the first thing you see. Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
       "material": "Glass-reinforced plastic + rubber diaphragm",
       "torqueSpec": null,
       "knownIssues": [
@@ -1378,7 +1378,7 @@
       "transforms": [
         {
           "position": [
-            0.03,
+            -0.06,
             0.365,
             0.02
           ],

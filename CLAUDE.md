@@ -116,3 +116,20 @@ npm run dev        # local dev server
 npm run build      # type-check + production build (must pass before any PR)
 npm run preview    # serve the production build locally
 ```
+
+## World frame — READ THIS BEFORE PLACING ANYTHING
+
+Part data is authored in CAR space: **+X = the car's RIGHT (driver's side,
+RHD)**, +Y up, +Z the nose. Because +Z is the nose in a Y-up right-handed
+scene, that axis would naturally render on the car's LEFT — so `Viewport`
+wraps the whole scene in a single **render mirror** (`scale={[-1,1,1]}`),
+and `CameraRig` flips x for presets and focus points. Net effect: what the
+data calls "right" is what you see on the car's right, with the bonnet-up
+view matching the operator's own photos (docs/reference/bay-2026-08-15/).
+
+Consequences to respect:
+- Never "fix" a side by negating x in data unless the real car disagrees —
+  check the reference photos first.
+- Materials render `DoubleSide` because the mirror flips triangle winding.
+- Anything reading a rendered world position (`getWorldPosition`) must
+  negate x to get back to car space.

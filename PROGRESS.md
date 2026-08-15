@@ -1,5 +1,35 @@
 # PROGRESS
 
+## THE MODEL WAS MIRRORED — fixed globally (2026-08-15)
+
+The operator: "you're putting things on the (uk) passenger side, but the
+coolant and wash fluid are on the driver's side and the battery on the
+passenger." Tested it properly this time — put the model camera exactly
+where their photo was taken (front, bonnet up) and compared: the blue
+washer cap sat on the RIGHT of frame in the model and the LEFT in the
+photo. Mirrored.
+
+Root cause, and it was systemic: part data is authored as "+x = the car's
+RIGHT" (CLAUDE.md), but with +z as the nose in a Y-up right-handed scene
+that axis renders on the car's LEFT. Every internal relationship was
+already correct (gearbox under the battery, coolant opposite it, steering
+column with the coolant) — the whole car was simply built as its own
+mirror image, i.e. displayed as LHD.
+
+Fix is one transformation rather than 20 files of sign-flips: `Viewport`
+wraps the scene in `scale={[-1,1,1]}`, `CameraRig` flips x for presets and
+focus points, `PartMesh.focusHere` converts the rendered position back to
+car space, and materials (procedural + GLB) render DoubleSide because the
+mirror flips triangle winding. Net effect: every "right/left" label in the
+data — brake corners, driver's-side rack, RHD interior — becomes truthful
+at once, and the bonnet-up view matches the operator's photos.
+
+Verified by isolating five markers in the front view: coolant tank + blue
+washer filler LEFT, battery + intake RIGHT, steering wheel on the coolant
+side (RHD). Body shell re-checked for inside-out faces: clean. PCV also
+nudged slightly to the passenger half per IMG_7692/7693. The frame rule is
+now written into CLAUDE.md so it cannot recur.
+
 ## Photo round 2: tank/washer were out by the arch — fixed properly (2026-08-15)
 
 The operator called it again: "the expansion tank seems near the wheel

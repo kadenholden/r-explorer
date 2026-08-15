@@ -79,7 +79,7 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
     if (!g) return
     const w = g.getWorldPosition(new THREE.Vector3())
     select(part.id)
-    focusOn([w.x, w.y, w.z], part.explodeVector.direction as [number, number, number])
+    focusOn([-w.x, w.y, w.z], part.explodeVector.direction as [number, number, number])
   }
 
   const hoverOn = (e: { stopPropagation: () => void }) => {
@@ -216,6 +216,7 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
             >
               <meshStandardMaterial
                 color={color}
+                side={THREE.DoubleSide}
                 metalness={0.35}
                 roughness={0.55}
                 transparent={part.opacity !== null}
@@ -289,7 +290,20 @@ function GlbPart({
   hovered: boolean
 }) {
   const { scene } = useGLTF(url, true)
-  const cloned = useMemo(() => scene.clone(true), [scene])
+  const cloned = useMemo(() => {
+    const c = scene.clone(true)
+    // the whole scene renders through an x-mirror, which flips triangle
+    // winding — GLB materials must draw both faces or panels turn inside-out
+    c.traverse((obj) => {
+      const mesh = obj as THREE.Mesh
+      if (!mesh.isMesh) return
+      const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
+      mats.forEach((m) => {
+        m.side = THREE.DoubleSide
+      })
+    })
+    return c
+  }, [scene])
 
   useEffect(() => {
     const materials = new Set<THREE.Material>()

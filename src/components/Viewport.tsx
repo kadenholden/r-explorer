@@ -41,8 +41,10 @@ function CameraRig() {
   useEffect(() => {
     const p = CAMERA_PRESETS[preset]
     if (!p || !controls) return
-    camera.position.set(...p.position)
-    controls.target.set(...p.target)
+    // presets are authored in CAR space (+x = car's right); the scene is
+    // mirrored for display, so flip x on the way to the camera
+    camera.position.set(-p.position[0], p.position[1], p.position[2])
+    controls.target.set(-p.target[0], p.target[1], p.target[2])
     controls.update()
   }, [preset, nonce, camera, controls])
 
@@ -50,9 +52,11 @@ function CameraRig() {
   // the part and step the camera in to a close working distance
   useEffect(() => {
     if (!focusPoint || !controls) return
-    const target = new THREE.Vector3(...focusPoint)
+    const target = new THREE.Vector3(-focusPoint[0], focusPoint[1], focusPoint[2])
     const dir = focusDir
-      ? new THREE.Vector3(...focusDir).normalize().add(new THREE.Vector3(0, 0.3, 0))
+      ? new THREE.Vector3(-focusDir[0], focusDir[1], focusDir[2])
+          .normalize()
+          .add(new THREE.Vector3(0, 0.3, 0))
       : camera.position.clone().sub(controls.target)
     if (dir.lengthSq() < 1e-6) dir.set(0.6, 0.4, 0.6)
     dir.normalize().multiplyScalar(0.7)
@@ -93,6 +97,12 @@ export function Viewport() {
         fadeStrength={2.5}
       />
       <ContactShadows position={[0, -0.325, 0]} opacity={0.5} scale={3.4} blur={2.4} far={0.9} resolution={512} />
+      {/* MIRROR (2026-08-15, operator photo-verified): part data is authored
+          in CAR space where +x is the car's RIGHT (driver's side, RHD) — but
+          with +z as the nose and +y up, that axis renders on the car's left.
+          One mirror here puts every part on its true side, so the bonnet-up
+          view matches the operator's own photos. */}
+      <group scale={[-1, 1, 1]}>
       {ASSEMBLIES.map((a) => (
         <group
           key={a.assembly.id}
@@ -104,6 +114,7 @@ export function Viewport() {
           ))}
         </group>
       ))}
+      </group>
       <OrbitControls
         makeDefault
         enableDamping
