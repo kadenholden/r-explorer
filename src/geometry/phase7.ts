@@ -156,20 +156,39 @@ export function fanShroud(_params: GeometryParams): THREE.BufferGeometry {
 /** Expansion / degas tank with cap. */
 export function expansionTank(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  // photo-matched (2026-08-15): a proper translucent tank standing in the
-  // offside gutter, with the big round screw cap on its top face
-  const body = new THREE.BoxGeometry(0.15, 0.19, 0.13)
+  // Mk7 coolant bottle: a softly-rounded translucent tank (taller than it is
+  // wide, oval in plan), a stepped shoulder, the big screw-cap neck offset to
+  // one side, and the two hose stubs low down. Photo-matched to the
+  // operator's car — see docs/reference/bay-2026-08-15/IMG_7689.
+  const body = new THREE.CylinderGeometry(0.072, 0.066, 0.16, 20)
+  body.scale(1, 1, 0.82)
   parts.push(body)
-  const shoulder = new THREE.BoxGeometry(0.13, 0.04, 0.11)
-  shoulder.translate(0, 0.105, 0)
-  parts.push(shoulder)
-  const cap = new THREE.CylinderGeometry(0.042, 0.042, 0.028, 20)
-  cap.translate(0.01, 0.135, 0)
-  parts.push(cap)
-  const outlet = new THREE.CylinderGeometry(0.014, 0.014, 0.05, 12)
-  outlet.rotateZ(Math.PI / 2)
-  outlet.translate(-0.09, -0.06, 0)
-  parts.push(outlet)
+
+  // rounded top and bottom so it reads as a blow-moulded bottle
+  const dome = new THREE.SphereGeometry(0.072, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2)
+  dome.scale(1, 0.55, 0.82)
+  dome.translate(0, 0.08, 0)
+  parts.push(dome)
+  const base = new THREE.SphereGeometry(0.066, 20, 10, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2)
+  base.scale(1, 0.45, 0.82)
+  base.translate(0, -0.08, 0)
+  parts.push(base)
+
+  // filler neck, offset toward the engine side
+  const neck = new THREE.CylinderGeometry(0.036, 0.04, 0.035, 16)
+  neck.translate(-0.022, 0.115, 0)
+  parts.push(neck)
+
+  // hose stubs low on the tank (feed + return)
+  const stubA = new THREE.CylinderGeometry(0.014, 0.014, 0.05, 12)
+  stubA.rotateZ(Math.PI / 2)
+  stubA.translate(-0.085, -0.05, 0.02)
+  parts.push(stubA)
+  const stubB = new THREE.CylinderGeometry(0.011, 0.011, 0.045, 12)
+  stubB.rotateX(Math.PI / 2)
+  stubB.translate(0.03, -0.06, -0.06)
+  parts.push(stubB)
+
   return mergeParts(parts)
 }
 

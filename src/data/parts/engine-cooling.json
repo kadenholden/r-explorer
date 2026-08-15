@@ -333,7 +333,7 @@
       "subAssembly": null,
       "oemPartNumber": null,
       "description": "Coolant expansion tank — PHOTO-MATCHED to the operator's car (2026-08-15): it sits in the OFFSIDE gutter BESIDE THE ENGINE, not out by the wheel arch — roughly level with the front of the engine, with the brake-fluid reservoir behind it toward the bulkhead and the blue screen-wash filler ahead of it. Big round screw cap with the coolant warning symbol; cold-check the level here. Cap rating ~1.4–1.6 bar unconfirmed (R9).",
-      "material": null,
+      "material": "Translucent moulded plastic",
       "torqueSpec": null,
       "knownIssues": [],
       "explodeVector": {
@@ -366,12 +366,13 @@
         0.14,
         0.1
       ],
-      "color": "#c8ccd2",
+      "color": "#e6e7e2",
       "tags": [
         "expansion-tank",
         "G13",
         "photo-verified"
-      ]
+      ],
+      "opacity": 0.72
     },
     {
       "id": "coolant-hoses",
@@ -668,6 +669,59 @@
         "pump",
         "grommet",
         "known-issue"
+      ]
+    },
+    {
+      "id": "expansion-tank-cap",
+      "name": "Expansion tank cap (pressure cap)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": null,
+      "oemPartNumber": null,
+      "description": "The big black screw cap on the coolant tank — it is a PRESSURE cap, not just a lid: it holds the system at roughly 1.4–1.6 bar (rating unconfirmed against a primary source, R9) which raises the coolant's boiling point. NEVER open it on a hot engine. A tired cap seal lets the system lose pressure and boil early, which reads like a much scarier fault.",
+      "material": "Plastic with rubber seal",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Perished cap seal → pressure loss, coolant weeping around the neck, early boiling and phantom overheating."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.35
+      },
+      "geometryRef": "cartridge",
+      "geometryParams": {
+        "radiusMm": 41,
+        "heightMm": 26
+      },
+      "transforms": [
+        {
+          "position": [
+            0.418,
+            0.245,
+            0.22
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 14,
+      "calloutOffset": [
+        0.12,
+        0.12,
+        0.1
+      ],
+      "color": "#1f2126",
+      "tags": [
+        "coolant",
+        "pressure-cap",
+        "never-open-hot"
       ]
     }
   ]

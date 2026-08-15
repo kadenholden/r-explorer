@@ -1,5 +1,21 @@
 # PROGRESS
 
+## Expansion tank redrawn as an actual tank (2026-08-15)
+
+Operator: "why does the expansion tank look like a completely different
+part now?" — fair. My photo-match pass had replaced the old squashed
+sphere with a plain rectangular slab, which read as a grey box rather
+than a coolant bottle. Redrawn from IMG_7689 as a blow-moulded
+translucent bottle: oval-in-plan body with domed top and rounded base,
+the big filler neck offset toward the engine, and the two hose stubs low
+down. The record now carries `opacity: 0.72` and a milky colour so it
+reads as translucent plastic like the real one.
+
+Split the black screw cap out as its own part (one part = one colour, and
+the cap is genuinely serviceable): it carries the pressure-cap story —
+holds ~1.4–1.6 bar to raise the boiling point, NEVER open hot, and a
+perished seal causes pressure loss, weeping and phantom overheating.
+
 ## THE MODEL WAS MIRRORED — fixed globally (2026-08-15)
 
 The operator: "you're putting things on the (uk) passenger side, but the
