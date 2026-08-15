@@ -1359,7 +1359,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": "06K103495BL",
-      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit sitting on TOP of the cam cover toward the REAR (bulkhead) side, with its turbo breather line leaving the BACK of the module (FCP Euro-verified; 7× T30 screws). Lift the plastic engine cover off its ball mounts and it's right there. Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
+      "description": "The crankcase-ventilation/oil-separator module — a SEPARATE bolt-on unit sitting on TOP of the cam cover — PHOTO-VERIFIED on this car: the round black diaphragm dome sits mid-cover, slightly forward of centre, with the four ignition coils in a row BEHIND it (toward the bulkhead), the HPFP to its right and the oil-filler cap to its left; its breather line runs back toward the turbo (FCP Euro; 7× T30 screws). Lift the plastic engine cover off its ball mounts and it's the first thing you see. Revision chain 06K103495 → AC/AH → AP → BK → BL → BM, each fighting diaphragm rupture and cornering carry-over — owners retrofit the BL/BM or later Gen 4 evo unit. Seal 06E103484-series, renew on R&R. R2's advice for the operator's leak: test/replace this FIRST, then re-seal the cam bridge if the leak persists.",
       "material": "Glass-reinforced plastic + rubber diaphragm",
       "torqueSpec": null,
       "knownIssues": [
@@ -1369,7 +1369,7 @@
         "direction": [
           0,
           1,
-          -0.3
+          0.2
         ],
         "distance": 1.5
       },
@@ -1378,22 +1378,22 @@
       "transforms": [
         {
           "position": [
-            -0.05,
+            0.03,
             0.365,
-            -0.05
+            0.02
           ],
           "rotationDeg": [
             0,
-            180,
+            0,
             0
           ]
         }
       ],
       "callout": 23,
       "calloutOffset": [
-        -0.14,
+        0.14,
         0.12,
-        -0.1
+        0.1
       ],
       "color": "#33363c",
       "tags": [
@@ -1401,7 +1401,8 @@
         "oil-separator",
         "known-issue",
         "operator-issue",
-        "06K103495BL"
+        "06K103495BL",
+        "photo-verified"
       ]
     }
   ]

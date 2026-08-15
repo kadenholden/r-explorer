@@ -332,7 +332,7 @@
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Coolant expansion tank — modelled on the RIGHT (offside) by the suspension turret, opposite the battery, per the MQB layout references. OPERATOR TO CONFIRM: next time the bonnet is up, check whether it sits on the same side as the battery (then this is wrong — tell the model) or opposite (then it's right). Cold-check the level here; cap rating ~1.4–1.6 bar unconfirmed (R9).",
+      "description": "Coolant expansion tank — PHOTO-VERIFIED on the operator's car (2026-08-15): OFFSIDE (driver's/right side of the car), low in the front-right corner of the bay ahead of the brake-fluid reservoir, with the black warning-symbol cap. Cold-check the level here; cap rating ~1.4–1.6 bar unconfirmed (R9). (I had this on the wrong side twice — the operator's instinct was right.)",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
@@ -340,7 +340,7 @@
         "direction": [
           0.8,
           0.8,
-          0.2
+          0.3
         ],
         "distance": 0.38
       },
@@ -349,9 +349,9 @@
       "transforms": [
         {
           "position": [
-            0.48,
-            0.36,
-            0.05
+            0.52,
+            0.2,
+            0.3
           ],
           "rotationDeg": [
             0,
@@ -362,15 +362,15 @@
       ],
       "callout": 7,
       "calloutOffset": [
-        -0.14,
         0.14,
+        0.12,
         0.1
       ],
       "color": "#c8ccd2",
       "tags": [
         "expansion-tank",
         "G13",
-        "operator-confirm"
+        "photo-verified"
       ]
     },
     {
@@ -525,7 +525,7 @@
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "The blue-capped filler at the front-LEFT (nearside) of the engine bay — operator QA corrected the side. It feeds down through the inner wing to the bottle hidden behind the left-front wheel-arch liner.",
+      "description": "The blue-capped screen-wash filler — PHOTO-VERIFIED: OFFSIDE (driver's/right side), front corner just inboard of the coolant tank, its neck running down through the inner wing to the bottle behind the RIGHT-front wheel-arch liner. (Second correction on this part — the photos settle it.)",
       "material": "Plastic",
       "torqueSpec": null,
       "knownIssues": [
@@ -533,7 +533,7 @@
       ],
       "explodeVector": {
         "direction": [
-          -0.3,
+          0.3,
           1,
           0.3
         ],
@@ -544,9 +544,9 @@
       "transforms": [
         {
           "position": [
-            -0.56,
+            0.52,
             0.02,
-            0.6
+            0.5
           ],
           "rotationDeg": [
             0,
@@ -557,24 +557,25 @@
       ],
       "callout": 11,
       "calloutOffset": [
-        -0.12,
+        0.12,
         0.14,
         0.1
       ],
       "color": "#3f6ea5",
       "tags": [
         "screen-wash",
-        "filler"
+        "filler",
+        "photo-verified"
       ]
     },
     {
       "id": "washer-bottle",
-      "name": "Screen-wash bottle (behind LF arch liner)",
+      "name": "Screen-wash bottle (behind RF arch liner)",
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "The reservoir does NOT live in the engine bay — it hides behind the LEFT-front (nearside) wheel-arch liner, ahead of the wheel. Access = steering on full right lock, arch-liner screws out, liner peeled back. Part number to verify by VIN.",
+      "description": "The reservoir hides behind the RIGHT-front (offside) wheel-arch liner, ahead of the wheel — photo-verified via its offside filler neck. Access = steering on full LEFT lock, arch-liner screws out, liner peeled back. Part number to verify by VIN.",
       "material": "Plastic",
       "torqueSpec": null,
       "knownIssues": [
@@ -582,7 +583,7 @@
       ],
       "explodeVector": {
         "direction": [
-          -1,
+          1,
           -0.2,
           0.4
         ],
@@ -593,20 +594,20 @@
       "transforms": [
         {
           "position": [
-            -0.6,
+            0.6,
             -0.02,
             0.5
           ],
           "rotationDeg": [
             0,
-            180,
+            0,
             0
           ]
         }
       ],
       "callout": 12,
       "calloutOffset": [
-        -0.14,
+        0.14,
         0.1,
         0.12
       ],
@@ -624,7 +625,7 @@
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "Small electric pump pressed into a rubber grommet on the bottle's ARCH-FACING rear face — which is exactly why it's serviced from the wheel arch with the liner peeled back (operator QA corrected the face after the side-mirror move). THE most common screen-wash leak: the grommet hardens and weeps, so the bottle slowly empties overnight. The pump pulls straight out of the grommet by hand; the grommet is a pennies part.",
+      "description": "Small electric pump pressed into a rubber grommet on the bottle's ARCH-FACING rear face — which is exactly why it's serviced from the wheel arch with the liner peeled back (offside bottle, photo-verified). THE most common screen-wash leak: the grommet hardens and weeps, so the bottle slowly empties overnight. The pump pulls straight out of the grommet by hand; the grommet is a pennies part.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -633,7 +634,7 @@
       ],
       "explodeVector": {
         "direction": [
-          -0.3,
+          0.3,
           -0.2,
           -1
         ],
@@ -644,7 +645,7 @@
       "transforms": [
         {
           "position": [
-            -0.61,
+            0.61,
             -0.06,
             0.4
           ],
@@ -657,7 +658,7 @@
       ],
       "callout": 13,
       "calloutOffset": [
-        -0.12,
+        0.12,
         -0.08,
         -0.12
       ],

@@ -13,16 +13,16 @@
   "parts": [
     {
       "id": "airbox",
-      "name": "Air filter box & intake tract",
+      "name": "Intake — Racingline aftermarket system (this car)",
       "system": "engine",
       "assembly": "engine-intake",
       "subAssembly": null,
-      "oemPartNumber": "5Q0129607AC",
-      "description": "Airbox with panel element, 5Q0129607AC (supersedes 5Q0129607AG) (R3). Fresh air enters via the front duct/snorkel (5Q0129617/18-series), through the filter and the turbo-inlet pipe to the IS38 compressor.",
+      "oemPartNumber": null,
+      "description": "PHOTO-VERIFIED: the operator's car does NOT run the stock 5Q0129607AC airbox — it has a RACINGLINE (VWR) High Performance Induction System: sealed black box on the nearside with a carbon-look silicone inlet elbow feeding the turbo. Serviced with Racingline's own panel filter, not the VW element. Stock airbox lives in the same nearside-front spot on unmodified cars.",
       "material": "Plastic",
       "torqueSpec": null,
       "knownIssues": [
-        "Cracks or a loose lid admit unmetered air (R3)."
+        "Aftermarket intake — keep the lid clips/seals tight; an unmetered leak here throws lean codes."
       ],
       "explodeVector": {
         "direction": [
@@ -56,9 +56,10 @@
       ],
       "color": "#33363c",
       "tags": [
-        "airbox",
-        "intake-tract",
-        "speed-density"
+        "intake",
+        "racingline",
+        "aftermarket",
+        "photo-verified"
       ]
     },
     {

@@ -1,5 +1,31 @@
 # PROGRESS
 
+## GROUND TRUTH ARRIVES: operator's bay photos (2026-08-15)
+
+Eight photos of the real car with the bonnet up — kept permanently in
+`docs/reference/bay-2026-08-15/` with an index README. They settled
+every open placement question at once and beat two of my "fixes":
+
+- Engine INTAKE-FORWARD, turbo behind the coils at the bulkhead —
+  confirmed (the day-old revert was right).
+- Coolant tank: OFFSIDE front corner (I had it wrong TWICE — the
+  operator's doubt was correct).
+- Screen-wash filler: OFFSIDE too, inboard of the coolant tank (also
+  wrong twice — moved back; job/service texts now say offside + full
+  LEFT lock; pump/bottle/animation mirrored back).
+- Battery: nearside mid-bay in a felt jacket, fuse box directly behind
+  it — positions adjusted.
+- The car runs a RACINGLINE aftermarket intake, not the stock airbox —
+  record renamed and described honestly (stock PN removed).
+- PCV module: the round diaphragm dome mid-cam-cover with the coils in a
+  row BEHIND it, HPFP right, oil-filler left — repositioned + job text
+  rewritten to what the photo shows.
+- Brake reservoir: offside rear behind the coolant tank — service text
+  fixed.
+
+Lesson (recorded in memory): the operator's eyes and phone beat model
+priors AND my web-derived corrections. Photos first, always.
+
 ## CORRECTION: the engine flip was wrong — reverted (2026-08-15)
 
 The operator kept pushing ("downpipe too low and at the front", "turbo

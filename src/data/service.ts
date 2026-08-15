@@ -223,7 +223,7 @@ export const SERVICE_ITEMS: ServiceItem[] = [
     fluid: 'DOT 4',
     capacity: '~1.2 L for a full flush',
     where:
-      'Reservoir on the master cylinder at the back of the engine bay, driver’s side. Bleeding sequence and the ABS unit’s involvement make a pressure bleeder the sane tool.',
+      'Reservoir with the yellow DOT 4 cap at the back-right (offside) of the bay behind the coolant tank — photo-verified. Bleeding sequence and the ABS unit’s involvement make a pressure bleeder the sane tool.',
     showTargets: ['booster-master', 'abs-esc-unit'],
     focusPartId: 'booster-master',
   },

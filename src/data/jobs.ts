@@ -50,7 +50,7 @@ export const JOBS: Job[] = [
       {
         title: 'Find the module',
         text:
-          'Lift the plastic engine cover straight up off its ball mounts. The PCV / oil separator is the plastic module on TOP of the cam cover toward the bulkhead, its turbo breather line leaving the back. Confirm the fault first if you haven’t: engine idling, lift the oil cap — strong suction and an idle change means the diaphragm is torn.',
+          'Lift the plastic engine cover straight up off its ball mounts. The PCV / oil separator is the round black diaphragm dome sitting mid-way along the top of the cam cover — the four ignition coils in a row behind it, the fuel pump to its right, the oil-filler cap to its left; its breather line runs back toward the turbo. Confirm the fault first if you haven’t: engine idling, lift the oil cap — strong suction and an idle change means the diaphragm is torn.',
         isolate: ['pcv-module', 'valve-cover-pcv', 'ignition-coils'],
         focusPartId: 'pcv-module',
         bonnet: true,
@@ -111,7 +111,7 @@ export const JOBS: Job[] = [
       {
         title: 'Open the bonnet & find the filler',
         text:
-          'The blue-capped filler neck at the front-LEFT (nearside) of the bay is the only visible piece — the bottle itself hides behind the left-front wheel-arch liner. That’s why the leak “can’t be found” from above.',
+          'The blue-capped filler neck at the front-RIGHT (offside, driver’s side) of the bay — just inboard of the coolant tank — is the only visible piece; the bottle itself hides behind the right-front wheel-arch liner. That’s why the leak “can’t be found” from above.',
         bonnet: true,
         shell: true,
         isolate: [],
@@ -119,7 +119,7 @@ export const JOBS: Job[] = [
       {
         title: 'Fill and watch',
         text:
-          'Fill the bottle to the brim and immediately look under the left-front (nearside) corner with a torch. Drips within a minute = grommet/pump area or a split neck joint. No drips until you use the washers = a hose joint further along instead.',
+          'Fill the bottle to the brim and immediately look under the right-front (offside) corner with a torch. Drips within a minute = grommet/pump area or a split neck joint. No drips until you use the washers = a hose joint further along instead.',
         isolate: ['washer-filler-neck', 'washer-bottle', 'washer-pump'],
         focusPartId: 'washer-bottle',
         bonnet: true,
@@ -127,7 +127,7 @@ export const JOBS: Job[] = [
       {
         title: 'Get behind the arch liner',
         text:
-          'Steering on FULL RIGHT lock so the left wheel swings clear. Remove the arch-liner screws along the liner’s front half and peel it back — the bottle and pump are right there, ahead of the wheel. (No need to remove the wheel or the whole liner.)',
+          'Steering on FULL LEFT lock so the right wheel swings clear. Remove the arch-liner screws along the liner’s front half and peel it back — the bottle and pump are right there, ahead of the wheel. (No need to remove the wheel or the whole liner.)',
         isolate: ['washer-bottle', 'washer-pump', 'suspension/wheels-pretoria'],
         focusPartId: 'washer-bottle',
       },
@@ -137,7 +137,7 @@ export const JOBS: Job[] = [
           'Towel underneath — the bottle will empty. Unclip the hose and connector, then pull the pump STRAIGHT out of its rubber grommet by hand (the animation shows the motion). Hook the old grommet out; if it’s hardened or cracked you’ve found the leak. Press the new grommet in, wet the pump spigot with washer fluid, press the pump home.',
         isolate: ['washer-bottle', 'washer-pump'],
         focusPartId: 'washer-pump',
-        lifts: { 'washer-pump': [-0.05, -0.03, -0.16] },
+        lifts: { 'washer-pump': [0.05, -0.03, -0.16] },
       },
       {
         title: 'Refill and prove it',
