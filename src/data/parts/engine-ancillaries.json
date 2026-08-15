@@ -999,7 +999,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Filter housing with the oil-to-coolant cooler, and the mount for solenoid N522. PHOTO-VERIFIED position: OFFSIDE (driver's side), high up just inboard of the engine cover edge and directly above the alternator — you reach it from above, and its black hex cap has 25 Nm moulded into it. Because it sits ABOVE the sump, a weep here runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed (dossier §2 names filter-housing/oil-cooler weeps directly). R9: cooler is integral to the housing, family 06L117021 (VIN-verify).",
+      "description": "Filter housing with the oil-to-coolant cooler, and the mount for solenoid N522. OPERATOR-CONFIRMED position (2026-08-15, checked at the car): OFFSIDE (driver's side), the opposite side to the air filter box and the same side as the coolant tank and brake fluid reservoir, high up just inboard of the engine cover edge and directly above the alternator — you reach it from above, and its black hex cap has 25 Nm moulded into it. Because it sits ABOVE the sump, a weep here runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed (dossier §2 names filter-housing/oil-cooler weeps directly). R9: cooler is integral to the housing, family 06L117021 (VIN-verify).",
       "material": null,
       "torqueSpec": {
         "valueNm": 25,
@@ -1046,7 +1046,8 @@
         "known-issue",
         "misdiagnosis-suspect",
         "photo-verified",
-        "25Nm-cap"
+        "25Nm-cap",
+        "operator-confirmed"
       ]
     },
     {
@@ -1418,7 +1419,7 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "The black screw cap you pour oil into, on top of the cam cover at the OFFSIDE (driver's-side) end — photo-verified on the operator's car, the one with the yellow oil-can symbol and the Castrol recommendation ring. It is also your free diagnostic tool: with the engine idling, lift it. A healthy engine gives light resistance; strong suction that grabs the cap and changes the idle means the PCV diaphragm has torn.",
+      "description": "The black screw cap you pour oil into, on top of the cam cover at the OFFSIDE (driver's-side) end — photo-verified on the operator's car, the one with the yellow oil-can symbol and the Castrol recommendation ring. It is also your free diagnostic tool: with the engine idling, lift it. A healthy engine gives light resistance; strong suction that grabs the cap and changes the idle means the PCV diaphragm has torn. Side operator-confirmed 2026-08-15: driver's side (offside) — opposite the air filter box.",
       "material": "Plastic with rubber O-ring",
       "torqueSpec": null,
       "knownIssues": [
@@ -1463,7 +1464,8 @@
         "oil-filler",
         "photo-verified",
         "oil-cap-test",
-        "PCV-diagnostic"
+        "PCV-diagnostic",
+        "operator-confirmed"
       ]
     }
   ]

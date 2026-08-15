@@ -24,6 +24,14 @@ Facts these photos settled (all applied to the model):
 - Intake: aftermarket RACINGLINE system, not the stock 5Q0129607AC airbox.
 - PCV module: mid-cover, coils behind it, HPFP right, filler cap left.
 - Brake reservoir: offside rear, behind the coolant tank.
+- OPERATOR-CONFIRMED at the car (2026-08-15): the oil filter cap, oil
+  filler cap and dipstick are all on the OFFSIDE (driver's side) — the
+  opposite side to the air filter box, same side as the coolant tank and
+  brake fluid. The model already had this right.
+- CAUTION on the operator's annotated overhead photo: its own labels imply
+  contradictory orientations (air box and brake reservoir appear on the
+  same image side, but they are on opposite sides of the real car), so use
+  it as a component checklist, not as a source for which side things are on.
 - OFFSIDE GUTTER ORDER (rear → front), from IMG_7687/7689: brake-fluid
   reservoir at the bulkhead, then the COOLANT EXPANSION TANK mid-bay, then
   the blue-capped SCREEN-WASH FILLER forward of it. All three sit in the
