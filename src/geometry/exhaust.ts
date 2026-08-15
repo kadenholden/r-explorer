@@ -11,12 +11,14 @@ import { mergeParts, tubeThrough } from './shapes'
 /** Cast downpipe with the primary catalyst brick. */
 export function downpipeCat(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
+  // off the turbine outlet (offside, behind the engine), down past the
+  // bellhousing and back under the floor to the centre section
   const pipe = tubeThrough(
     [
-      [-0.045, -0.03, -0.31],
-      [-0.04, -0.14, -0.36],
-      [-0.01, -0.25, -0.41],
-      [0, -0.3, -0.47],
+      [0.045, -0.045, -0.318],
+      [0.04, -0.16, -0.36],
+      [0.015, -0.26, -0.40],
+      [0, -0.30, -0.47],
     ],
     0.03,
   )
@@ -27,7 +29,7 @@ export function downpipeCat(_params: GeometryParams): THREE.BufferGeometry {
   parts.push(cat)
   const flange = new THREE.CylinderGeometry(0.042, 0.042, 0.012, 16)
   flange.rotateX(Math.PI / 2)
-  flange.translate(-0.045, -0.028, -0.3)
+  flange.translate(0.045, -0.03, -0.312)
   parts.push(flange)
   return mergeParts(parts)
 }
@@ -64,17 +66,30 @@ export function resonator(_params: GeometryParams): THREE.BufferGeometry {
  *  quad tips. */
 export function rearSilencer(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
+  // tail pipe from the resonator outlet, over the rear axle, to the box —
+  // this whole section used to stop under the middle of the car, left over
+  // from before the chassis was re-based to real dimensions
+  const tail = tubeThrough(
+    [
+      [0, -0.33, -1.46],
+      [0, -0.335, -1.9],
+      [0, -0.345, -2.35],
+      [0, -0.35, -2.6],
+    ],
+    0.027,
+  )
+  parts.push(tail)
   const body = new THREE.BoxGeometry(0.52, 0.17, 0.26)
-  body.translate(0, -0.33, -1.59)
+  body.translate(0, -0.35, -2.78)
   parts.push(body)
   const inlet = new THREE.CylinderGeometry(0.027, 0.027, 0.08, 14)
   inlet.rotateX(Math.PI / 2)
-  inlet.translate(0, -0.33, -1.44)
+  inlet.translate(0, -0.35, -2.63)
   parts.push(inlet)
   for (const x of [-0.17, 0.17]) {
-    const outlet = new THREE.CylinderGeometry(0.024, 0.024, 0.05, 14)
+    const outlet = new THREE.CylinderGeometry(0.024, 0.024, 0.06, 14)
     outlet.rotateX(Math.PI / 2)
-    outlet.translate(x, -0.33, -1.74)
+    outlet.translate(x, -0.34, -2.95)
     parts.push(outlet)
   }
   return mergeParts(parts)

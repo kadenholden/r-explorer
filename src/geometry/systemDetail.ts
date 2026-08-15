@@ -32,6 +32,20 @@ export function turboLines(_params: GeometryParams): THREE.BufferGeometry {
   return mergeParts(parts)
 }
 
+/** Turbo inlet pipe: airbox outlet down the nearside to the compressor. */
+export function turboInletPipe(_params: GeometryParams): THREE.BufferGeometry {
+  return tubeThrough(
+    [
+      [-0.33, 0.10, 0.33],
+      [-0.31, 0.05, 0.14],
+      [-0.24, 0.01, -0.08],
+      [-0.16, -0.01, -0.20],
+      [-0.115, -0.015, -0.262],
+    ],
+    0.031,
+  )
+}
+
 /** Small cylindrical cartridge (DSG oil filter, mechatronic accumulator). */
 export function cartridge(params: GeometryParams): THREE.BufferGeometry {
   const r = ((params.radiusMm as number | undefined) ?? 32) / 1000

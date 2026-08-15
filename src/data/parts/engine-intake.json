@@ -942,6 +942,57 @@
         "turbo-lines",
         "coolant"
       ]
+    },
+    {
+      "id": "turbo-inlet-pipe",
+      "name": "Turbo inlet pipe (airbox → compressor)",
+      "system": "engine",
+      "assembly": "engine-intake",
+      "subAssembly": "Charge-air path",
+      "oemPartNumber": null,
+      "description": "The pipe that was missing from the model: it carries filtered air from the intake box down the nearside of the bay to the turbo's compressor inlet at the back of the engine. On this car it is the RACINGLINE silicone elbow and pipe rather than the VW part — the big black hose visible on the nearside in the operator's photos.",
+      "material": "Silicone / plastic",
+      "torqueSpec": null,
+      "knownIssues": [
+        "A loose clamp or split here is unmetered air straight into the turbo — lean codes and poor running; check both ends whenever the intake has been off."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.8,
+          0.5,
+          0.2
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "turboInletPipe",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 18,
+      "calloutOffset": [
+        -0.14,
+        0.14,
+        0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "intake",
+        "turbo-inlet",
+        "racingline",
+        "boost-leak"
+      ]
     }
   ]
 }

@@ -11,14 +11,15 @@ import { mergeParts } from './shapes'
 export function is38Turbo(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
 
-  // compressor volute + axial inlet
+  // compressor volute + axial inlet on the NEARSIDE, facing the airbox that
+  // actually feeds it (operator photos: intake hose runs down the nearside)
   const compVolute = new THREE.TorusGeometry(0.042, 0.023, 12, 28)
   compVolute.rotateY(Math.PI / 2)
-  compVolute.translate(0.045, 0, 0)
+  compVolute.translate(-0.045, 0, 0)
   parts.push(compVolute)
   const inlet = new THREE.CylinderGeometry(0.026, 0.032, 0.045, 20)
   inlet.rotateZ(Math.PI / 2)
-  inlet.translate(0.095, 0, 0)
+  inlet.translate(-0.095, 0, 0)
   parts.push(inlet)
 
   // centre housing (CHRA)
@@ -26,17 +27,18 @@ export function is38Turbo(_params: GeometryParams): THREE.BufferGeometry {
   chra.rotateZ(Math.PI / 2)
   parts.push(chra)
 
-  // turbine volute + inlet flange toward the head (+Z side) and outlet stub
+  // turbine volute offside, its inlet flange facing the head (+Z) and the
+  // outlet stub pointing down/back onto the downpipe
   const turbVolute = new THREE.TorusGeometry(0.036, 0.021, 12, 28)
   turbVolute.rotateY(Math.PI / 2)
-  turbVolute.translate(-0.045, 0, 0)
+  turbVolute.translate(0.045, 0, 0)
   parts.push(turbVolute)
   const inletFlange = new THREE.BoxGeometry(0.055, 0.05, 0.016)
-  inletFlange.translate(-0.045, 0, 0.05)
+  inletFlange.translate(0.045, 0, 0.05)
   parts.push(inletFlange)
   const outlet = new THREE.CylinderGeometry(0.032, 0.038, 0.04, 18)
   outlet.rotateX(Math.PI / 2)
-  outlet.translate(-0.045, -0.015, -0.055)
+  outlet.translate(0.045, -0.015, -0.055)
   parts.push(outlet)
 
   // oil feed line hint on top

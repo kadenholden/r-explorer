@@ -1,5 +1,30 @@
 # PROGRESS
 
+## Connection pass: pipes now actually join up (2026-08-15)
+
+Final-touches QA before the next version. Wrote a script that extracts
+every tube path baked into the geometry recipes, transforms the ends into
+world space and measures them against the parts they are supposed to meet
+— that turned up four real disconnects:
+
+- **Charge pipes stopped 10 cm short of the intercooler.** Both runs now
+  land within 7 mm of its end-tank stubs.
+- **No intake pipe existed at all** between the airbox and the turbo. Added
+  it (the Racingline hose on this car), routed down the nearside.
+- **The turbo faced the wrong way for its own plumbing**: compressor inlet
+  pointed offside while the airbox is nearside. Recipe mirrored so the
+  compressor faces the intake and the turbine keeps its flange to the head;
+  downpipe and pre-cat lambda moved to the turbine outlet to match.
+- **The rear silencer was still sitting under the middle of the car** —
+  legacy from before the chassis was re-based to real dimensions — leaving
+  a 1.3 m gap to the tips. The whole rear section now runs over the rear
+  axle to the valance, with a proper tail pipe; flap actuators and tips
+  moved onto it. Link pipe and resonator also had 9–14 cm sideways steps
+  against the cat; both pulled back to the centreline.
+
+Verified numerically (endpoints within tolerance of their targets) and
+visually from the engine, top and rear-axle views. Model at 265 parts.
+
 ## Camera panning made obvious (2026-08-15)
 
 Operator: "it pivots only — I want to move the camera to the right."

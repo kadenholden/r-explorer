@@ -86,7 +86,7 @@
       "transforms": [
         {
           "position": [
-            -0.09,
+            0,
             0,
             0
           ],
@@ -132,7 +132,7 @@
       "transforms": [
         {
           "position": [
-            -0.14,
+            0,
             0,
             0
           ],
@@ -161,7 +161,7 @@
       "assembly": "engine-exhaust",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "The valved quad-exit rear box. No OEM number confirmed for the pre-facelift hatch (R4). Flaps open under Race/Sport, higher rpm and load to cut backpressure; closed for quiet running.",
+      "description": "The valved quad-exit rear box. No OEM number confirmed for the pre-facelift hatch (R4). Flaps open under Race/Sport, higher rpm and load to cut backpressure; closed for quiet running. (Placement corrected 2026-08-15: this section was still sitting under the middle of the car from before the chassis was re-based to real dimensions — it now runs over the rear axle to the valance like the real system.)",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
@@ -231,8 +231,8 @@
         {
           "position": [
             -0.12,
-            -0.235,
-            -2.66
+            -0.25,
+            -2.72
           ],
           "rotationDeg": [
             0,
@@ -243,8 +243,8 @@
         {
           "position": [
             0.12,
-            -0.235,
-            -2.66
+            -0.25,
+            -2.72
           ],
           "rotationDeg": [
             0,
@@ -292,8 +292,8 @@
         {
           "position": [
             -0.17,
-            -0.33,
-            -3.05
+            -0.34,
+            -3.02
           ],
           "rotationDeg": [
             0,
@@ -304,8 +304,8 @@
         {
           "position": [
             0.17,
-            -0.33,
-            -3.05
+            -0.34,
+            -3.02
           ],
           "rotationDeg": [
             0,
@@ -353,9 +353,9 @@
       "transforms": [
         {
           "position": [
-            -0.045,
-            0.035,
-            -0.245
+            0.05,
+            -0.02,
+            -0.3
           ],
           "rotationDeg": [
             -25,
