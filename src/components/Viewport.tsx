@@ -38,6 +38,14 @@ function CameraRig() {
   const camera = useThree((s) => s.camera)
   const controls = useThree((s) => s.controls) as OrbitControlsImpl | null
 
+  // arrow keys pan the camera — the easiest possible escape from a view
+  // that has something in the way
+  useEffect(() => {
+    if (!controls) return
+    controls.keyPanSpeed = 14
+    controls.listenToKeyEvents?.(window as unknown as HTMLElement)
+  }, [controls])
+
   useEffect(() => {
     const p = CAMERA_PRESETS[preset]
     if (!p || !controls) return
@@ -70,6 +78,7 @@ function CameraRig() {
 
 export function Viewport() {
   const select = useAppStore((s) => s.select)
+  const panMode = useAppStore((s) => s.panMode)
   const initial = CAMERA_PRESETS['front-three-quarter']
 
   return (
@@ -123,7 +132,16 @@ export function Viewport() {
         maxDistance={5}
         zoomToCursor
         screenSpacePanning
-        panSpeed={0.9}
+        panSpeed={1.1}
+        mouseButtons={{
+          LEFT: panMode ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE,
+          MIDDLE: THREE.MOUSE.DOLLY,
+          RIGHT: THREE.MOUSE.PAN,
+        }}
+        touches={{
+          ONE: panMode ? THREE.TOUCH.PAN : THREE.TOUCH.ROTATE,
+          TWO: THREE.TOUCH.DOLLY_PAN,
+        }}
         target={initial?.target}
       />
       <CameraRig />

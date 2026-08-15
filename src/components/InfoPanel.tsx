@@ -230,9 +230,9 @@ export function InfoPanel() {
       <div className="plate-body">
         <p className="plate-description">{first.assembly.description}</p>
         <p className="plate-hint">
-          Drag to orbit · right-drag (or two-finger drag) to pan anywhere · scroll dives toward
-          your cursor · double-click a part to fly to it · click any part (or its callout) for
-          its data · pull the EXPLODE slider to take it apart.
+          Drag to orbit · switch to PAN MODE (or right-drag, or arrow keys) to slide the camera
+          when something is in the way · scroll dives toward your cursor · double-click a part to
+          fly to it · click any part for its data · pull EXPLODE to take it apart.
         </p>
       </div>
     </section>

@@ -97,6 +97,11 @@ interface AppState {
   bonnetOpen: boolean
   toggleBonnet: () => void
 
+  /** Left-drag behaviour: false = orbit around the target, true = pan the
+   *  camera sideways/up (right-drag always pans regardless). */
+  panMode: boolean
+  togglePanMode: () => void
+
   /** Guided-job mode (jobs.ts drives these). */
   activeJob: string | null
   jobStep: number
@@ -183,6 +188,9 @@ export const useAppStore = create<AppState>()(
 
       bonnetOpen: false,
       toggleBonnet: () => set((s) => ({ bonnetOpen: !s.bonnetOpen })),
+
+      panMode: false,
+      togglePanMode: () => set((s) => ({ panMode: !s.panMode })),
 
       activeJob: null,
       jobStep: 0,

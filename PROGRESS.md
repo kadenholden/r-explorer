@@ -1,5 +1,16 @@
 # PROGRESS
 
+## Camera panning made obvious (2026-08-15)
+
+Operator: "it pivots only — I want to move the camera to the right."
+Right-drag panning existed but nobody finds it, so panning is now a
+first-class mode: an **⟳ Orbit / ✥ Pan** chip by the explode bar swaps
+what left-drag does (and swaps one-finger touch to pan on mobile), and
+the **arrow keys always pan** regardless of mode (keyPanSpeed 14).
+Right-drag / two-finger drag still pan as before, pan speed nudged up.
+Hint text rewritten to lead with pan mode. Verified: arrow keys visibly
+slide the view, and the chip lights up when pan mode is active.
+
 ## Screen-wash system researched and rebuilt (2026-08-15)
 
 The operator is fixing a washer leak first, so this got proper research

@@ -800,6 +800,11 @@ button {
   white-space: nowrap;
 }
 
+.isolation-chip.is-on {
+  background: var(--accent);
+  color: #0d1013;
+}
+
 .isolation-chip:hover {
   background: color-mix(in srgb, var(--accent) 26%, transparent);
 }

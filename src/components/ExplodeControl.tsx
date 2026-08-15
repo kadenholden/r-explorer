@@ -7,9 +7,19 @@ export function ExplodeControl() {
   const clearIsolation = useAppStore((s) => s.clearIsolation)
   const bonnetOpen = useAppStore((s) => s.bonnetOpen)
   const toggleBonnet = useAppStore((s) => s.toggleBonnet)
+  const panMode = useAppStore((s) => s.panMode)
+  const togglePanMode = useAppStore((s) => s.togglePanMode)
 
   return (
     <div className="explode-control">
+      <button
+        type="button"
+        className={`isolation-chip${panMode ? ' is-on' : ''}`}
+        onClick={togglePanMode}
+        title="Switch drag between orbiting the car and sliding the camera (arrow keys always pan; right-drag pans too)"
+      >
+        {panMode ? '✥ Pan mode' : '⟳ Orbit mode'}
+      </button>
       <button
         type="button"
         className="isolation-chip"
