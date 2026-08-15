@@ -24,3 +24,9 @@ Facts these photos settled (all applied to the model):
 - Intake: aftermarket RACINGLINE system, not the stock 5Q0129607AC airbox.
 - PCV module: mid-cover, coils behind it, HPFP right, filler cap left.
 - Brake reservoir: offside rear, behind the coolant tank.
+- OFFSIDE GUTTER ORDER (rear → front), from IMG_7687/7689: brake-fluid
+  reservoir at the bulkhead, then the COOLANT EXPANSION TANK mid-bay, then
+  the blue-capped SCREEN-WASH FILLER forward of it. All three sit in the
+  narrow gutter BETWEEN THE ENGINE AND THE INNER WING — nowhere near the
+  wheel arch (strut tower is at x≈0.69 in the model; the tank belongs at
+  x≈0.44).

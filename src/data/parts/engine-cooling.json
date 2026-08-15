@@ -332,15 +332,15 @@
       "assembly": "engine-cooling",
       "subAssembly": null,
       "oemPartNumber": null,
-      "description": "Coolant expansion tank — PHOTO-VERIFIED on the operator's car (2026-08-15): OFFSIDE (driver's/right side of the car), low in the front-right corner of the bay ahead of the brake-fluid reservoir, with the black warning-symbol cap. Cold-check the level here; cap rating ~1.4–1.6 bar unconfirmed (R9). (I had this on the wrong side twice — the operator's instinct was right.)",
+      "description": "Coolant expansion tank — PHOTO-MATCHED to the operator's car (2026-08-15): it sits in the OFFSIDE gutter BESIDE THE ENGINE, not out by the wheel arch — roughly level with the front of the engine, with the brake-fluid reservoir behind it toward the bulkhead and the blue screen-wash filler ahead of it. Big round screw cap with the coolant warning symbol; cold-check the level here. Cap rating ~1.4–1.6 bar unconfirmed (R9).",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [],
       "explodeVector": {
         "direction": [
-          0.8,
-          0.8,
-          0.3
+          0.7,
+          0.9,
+          0.2
         ],
         "distance": 0.38
       },
@@ -349,9 +349,9 @@
       "transforms": [
         {
           "position": [
-            0.52,
-            0.2,
-            0.3
+            0.44,
+            0.1,
+            0.22
           ],
           "rotationDeg": [
             0,
@@ -363,7 +363,7 @@
       "callout": 7,
       "calloutOffset": [
         0.14,
-        0.12,
+        0.14,
         0.1
       ],
       "color": "#c8ccd2",
@@ -525,7 +525,7 @@
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "The blue-capped screen-wash filler — PHOTO-VERIFIED: OFFSIDE (driver's/right side), front corner just inboard of the coolant tank, its neck running down through the inner wing to the bottle behind the RIGHT-front wheel-arch liner. (Second correction on this part — the photos settle it.)",
+      "description": "Screen-wash filler — PHOTO-MATCHED: the chunky white funnel with the BLUE CAP standing in the offside gutter AHEAD of the coolant expansion tank (the two sit in a line: brake reservoir at the back, coolant tank mid-bay, washer filler forward). Its tube drops outboard through the inner wing to the bottle behind the right-front arch liner.",
       "material": "Plastic",
       "torqueSpec": null,
       "knownIssues": [
@@ -533,7 +533,7 @@
       ],
       "explodeVector": {
         "direction": [
-          0.3,
+          0.4,
           1,
           0.3
         ],
@@ -544,9 +544,9 @@
       "transforms": [
         {
           "position": [
-            0.52,
+            0.42,
             0.02,
-            0.5
+            0.46
           ],
           "rotationDeg": [
             0,
@@ -557,8 +557,8 @@
       ],
       "callout": 11,
       "calloutOffset": [
-        0.12,
         0.14,
+        0.16,
         0.1
       ],
       "color": "#3f6ea5",
@@ -584,8 +584,8 @@
       "explodeVector": {
         "direction": [
           1,
-          -0.2,
-          0.4
+          -0.1,
+          0.3
         ],
         "distance": 0.5
       },
@@ -595,8 +595,8 @@
         {
           "position": [
             0.6,
-            -0.02,
-            0.5
+            -0.1,
+            0.38
           ],
           "rotationDeg": [
             0,
@@ -607,9 +607,9 @@
       ],
       "callout": 12,
       "calloutOffset": [
-        0.14,
+        0.16,
         0.1,
-        0.12
+        0.1
       ],
       "color": "#e8e4da",
       "tags": [
@@ -634,9 +634,9 @@
       ],
       "explodeVector": {
         "direction": [
-          0.3,
+          1,
           -0.2,
-          -1
+          -0.4
         ],
         "distance": 0.4
       },
@@ -645,9 +645,9 @@
       "transforms": [
         {
           "position": [
-            0.61,
-            -0.06,
-            0.4
+            0.66,
+            -0.13,
+            0.34
           ],
           "rotationDeg": [
             -90,
@@ -658,9 +658,9 @@
       ],
       "callout": 13,
       "calloutOffset": [
-        0.12,
+        0.14,
         -0.08,
-        -0.12
+        -0.1
       ],
       "color": "#26282c",
       "tags": [

@@ -1,5 +1,23 @@
 # PROGRESS
 
+## Photo round 2: tank/washer were out by the arch — fixed properly (2026-08-15)
+
+The operator called it again: "the expansion tank seems near the wheel
+and I can't see the screen wash at all." Cropping IMG_7687/7689 settled
+it — the offside gutter runs brake reservoir (bulkhead) → coolant tank
+(mid-bay) → blue washer filler (forward), all tucked BETWEEN the engine
+and the inner wing. I'd had the tank at x=0.52 with the strut tower at
+x=0.69, i.e. jammed against the arch, and the washer neck was a thin
+tube swallowed by the wing.
+
+Fixed: tank → x=0.44, y=0.10, z=0.22; washer filler → x=0.42, z=0.46
+(ahead of the tank, as photographed); bottle + pump moved with them
+behind the RF arch liner. Both recipes redrawn to match the photo — the
+tank is now a proper moulded tank with its big round screw cap, and the
+filler is the chunky funnel with the prominent blue cap instead of a
+hairline tube. Verified from a temporary QA camera at the same angle as
+the operator's photo (scaffolding removed before commit).
+
 ## GROUND TRUTH ARRIVES: operator's bay photos (2026-08-15)
 
 Eight photos of the real car with the bonnet up — kept permanently in

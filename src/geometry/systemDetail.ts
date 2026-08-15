@@ -69,19 +69,31 @@ export function washerBottle(_params: GeometryParams): THREE.BufferGeometry {
 
 /** Washer filler neck: angled tube from the bay top down toward the bottle, with cap. */
 export function washerNeck(_params: GeometryParams): THREE.BufferGeometry {
+  // photo-matched: the visible piece in the bay is a chunky funnel moulding
+  // with the blue cap on top; the tube then drops outboard to the bottle
+  // behind the arch liner. Origin sits at the funnel base.
   const parts: THREE.BufferGeometry[] = []
-  const tube = tubeThrough(
-    [
-      [0, 0.3, 0],
-      [0.01, 0.12, -0.03],
-      [0.03, -0.05, -0.1],
-    ],
-    0.014,
-  )
-  parts.push(tube)
-  const cap = new THREE.CylinderGeometry(0.022, 0.022, 0.014, 14)
-  cap.translate(0, 0.31, 0)
+  const funnel = new THREE.CylinderGeometry(0.045, 0.032, 0.15, 18)
+  funnel.translate(0, 0.075, 0)
+  parts.push(funnel)
+  const collar = new THREE.CylinderGeometry(0.05, 0.05, 0.018, 18)
+  collar.translate(0, 0.155, 0)
+  parts.push(collar)
+  const cap = new THREE.CylinderGeometry(0.044, 0.044, 0.022, 18)
+  cap.translate(0, 0.176, 0)
   parts.push(cap)
+  const tab = new THREE.BoxGeometry(0.05, 0.012, 0.02)
+  tab.translate(0.035, 0.176, 0)
+  parts.push(tab)
+  const drop = tubeThrough(
+    [
+      [0, 0.0, 0],
+      [0.06, -0.09, -0.02],
+      [0.13, -0.16, -0.05],
+    ],
+    0.013,
+  )
+  parts.push(drop)
   return mergeParts(parts)
 }
 

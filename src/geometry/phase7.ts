@@ -156,12 +156,20 @@ export function fanShroud(_params: GeometryParams): THREE.BufferGeometry {
 /** Expansion / degas tank with cap. */
 export function expansionTank(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
-  const body = new THREE.SphereGeometry(0.06, 16, 12)
-  body.scale(1.2, 0.8, 1)
+  // photo-matched (2026-08-15): a proper translucent tank standing in the
+  // offside gutter, with the big round screw cap on its top face
+  const body = new THREE.BoxGeometry(0.15, 0.19, 0.13)
   parts.push(body)
-  const cap = new THREE.CylinderGeometry(0.022, 0.022, 0.02, 12)
-  cap.translate(0.03, 0.05, 0)
+  const shoulder = new THREE.BoxGeometry(0.13, 0.04, 0.11)
+  shoulder.translate(0, 0.105, 0)
+  parts.push(shoulder)
+  const cap = new THREE.CylinderGeometry(0.042, 0.042, 0.028, 20)
+  cap.translate(0.01, 0.135, 0)
   parts.push(cap)
+  const outlet = new THREE.CylinderGeometry(0.014, 0.014, 0.05, 12)
+  outlet.rotateZ(Math.PI / 2)
+  outlet.translate(-0.09, -0.06, 0)
+  parts.push(outlet)
   return mergeParts(parts)
 }
 
