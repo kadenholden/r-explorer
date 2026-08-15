@@ -9,9 +9,19 @@ export function ExplodeControl() {
   const toggleBonnet = useAppStore((s) => s.toggleBonnet)
   const panMode = useAppStore((s) => s.panMode)
   const togglePanMode = useAppStore((s) => s.togglePanMode)
+  const showOrientation = useAppStore((s) => s.showOrientation)
+  const toggleOrientation = useAppStore((s) => s.toggleOrientation)
 
   return (
     <div className="explode-control">
+      <button
+        type="button"
+        className={`isolation-chip${showOrientation ? ' is-on' : ''}`}
+        onClick={toggleOrientation}
+        title="Show FRONT / DRIVER / PASSENGER / REAR labels around the car"
+      >
+        ⊕ Sides
+      </button>
       <button
         type="button"
         className={`isolation-chip${panMode ? ' is-on' : ''}`}

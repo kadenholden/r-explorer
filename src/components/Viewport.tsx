@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import * as THREE from 'three'
 import { Canvas, useThree } from '@react-three/fiber'
-import { ContactShadows, Grid, OrbitControls } from '@react-three/drei'
+import { ContactShadows, Grid, Html, OrbitControls } from '@react-three/drei'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { ASSEMBLIES } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
@@ -27,6 +27,31 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
   cabin: { label: 'Cabin', position: [1.1, 1.7, 0.5], target: [0.15, 0.1, -0.75] },
   sump: { label: 'Sump', position: [0.72, -0.62, 0.62], target: [0, -0.22, 0] },
+}
+
+/** Standing labels so any view can be matched to the real car. UK terms:
+ *  nearside = passenger/kerb side, offside = driver's side on a RHD car. */
+function OrientationLabels() {
+  const show = useAppStore((s) => s.showOrientation)
+  if (!show) return null
+  const marks: [string, string, [number, number, number]][] = [
+    ['FRONT', 'radiator end', [0, -0.1, 1.45]],
+    ['REAR', 'tailgate end', [0, -0.1, -4.05]],
+    ["DRIVER'S SIDE", 'offside · right', [1.45, -0.1, -1.2]],
+    ['PASSENGER SIDE', 'nearside · left', [-1.45, -0.1, -1.2]],
+  ]
+  return (
+    <>
+      {marks.map(([label, sub, pos]) => (
+        <Html key={label} position={pos} center zIndexRange={[5, 0]}>
+          <div className="orient-label">
+            <span>{label}</span>
+            <em>{sub}</em>
+          </div>
+        </Html>
+      ))}
+    </>
+  )
 }
 
 function CameraRig() {
@@ -112,6 +137,7 @@ export function Viewport() {
           One mirror here puts every part on its true side, so the bonnet-up
           view matches the operator's own photos. */}
       <group scale={[-1, 1, 1]}>
+      <OrientationLabels />
       {ASSEMBLIES.map((a) => (
         <group
           key={a.assembly.id}

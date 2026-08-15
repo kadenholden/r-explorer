@@ -1,5 +1,25 @@
 # PROGRESS
 
+## Oil caps found, plus side labels so the model can be read (2026-08-15)
+
+Operator couldn't find the oil cap or filter in the model and was
+struggling to translate between the 3D view and the real bay.
+
+- **The oil filler cap did not exist as a part.** Added from the photos:
+  black cap on the OFFSIDE end of the cam cover (the one with the yellow
+  oil-can symbol), carrying the free PCV diagnostic — lift it at idle and
+  strong suction means a torn diaphragm.
+- **The oil filter housing was too low.** IMG_7691 puts it high on the
+  offside, just inboard of the engine-cover edge and directly above the
+  alternator, reached from above — moved to match. Its cap also has
+  **25 Nm moulded into it** in the photo, so that torque is now recorded
+  as photo-verified rather than unknown.
+- **Orientation labels**: FRONT / REAR / DRIVER'S SIDE (offside) /
+  PASSENGER SIDE (nearside) now float around the car, inside the render
+  mirror so they name the true physical sides. Toggle with the ⊕ Sides
+  chip. This is the fix for "it's hard to convert" — every view now says
+  which way round it is.
+
 ## Connection pass: pipes now actually join up (2026-08-15)
 
 Final-touches QA before the next version. Wrote a script that extracts

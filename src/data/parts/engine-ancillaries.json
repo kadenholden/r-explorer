@@ -999,9 +999,13 @@
       "assembly": "engine-ancillaries",
       "subAssembly": "Lubrication",
       "oemPartNumber": null,
-      "description": "Filter housing with the oil-to-coolant cooler on the block, and mounting solenoid N522 (the piston-jet control valve). Sits ABOVE the sump, so when its seals weep the oil runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed. The dossier §2 failure list names filter-housing/oil-cooler weeps directly. R9: the water/oil cooler is INTEGRAL to this housing, family 06L117021 (VIN-verify), and a cracked plastic housing produces an oil leak that mimics a rear-main leak — both called out as directly relevant to this car's leak hunt.",
+      "description": "Filter housing with the oil-to-coolant cooler, and the mount for solenoid N522. PHOTO-VERIFIED position: OFFSIDE (driver's side), high up just inboard of the engine cover edge and directly above the alternator — you reach it from above, and its black hex cap has 25 Nm moulded into it. Because it sits ABOVE the sump, a weep here runs down the block and pools on the sump flange — the single most common reason an upper-sump leak is misdiagnosed (dossier §2 names filter-housing/oil-cooler weeps directly). R9: cooler is integral to the housing, family 06L117021 (VIN-verify).",
       "material": null,
-      "torqueSpec": null,
+      "torqueSpec": {
+        "valueNm": 25,
+        "angle": null,
+        "note": "Filter cap — PHOTO-VERIFIED: 25 Nm is moulded into the cap on the operator's own car (IMG_7691)"
+      },
       "knownIssues": [
         "Oil-cooler / filter-housing weeps are on the dossier's known-issues list (§2). Because it drips downward onto the sump area, ALWAYS rule this out before resealing a sump."
       ],
@@ -1018,9 +1022,9 @@
       "transforms": [
         {
           "position": [
-            0.19,
-            -0.06,
-            0.11
+            0.24,
+            0.11,
+            0.15
           ],
           "rotationDeg": [
             0,
@@ -1040,7 +1044,9 @@
         "oil-filter",
         "oil-cooler",
         "known-issue",
-        "misdiagnosis-suspect"
+        "misdiagnosis-suspect",
+        "photo-verified",
+        "25Nm-cap"
       ]
     },
     {
@@ -1403,6 +1409,61 @@
         "operator-issue",
         "06K103495BL",
         "photo-verified"
+      ]
+    },
+    {
+      "id": "oil-filler-cap",
+      "name": "Oil filler cap",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The black screw cap you pour oil into, on top of the cam cover at the OFFSIDE (driver's-side) end — photo-verified on the operator's car, the one with the yellow oil-can symbol and the Castrol recommendation ring. It is also your free diagnostic tool: with the engine idling, lift it. A healthy engine gives light resistance; strong suction that grabs the cap and changes the idle means the PCV diaphragm has torn.",
+      "material": "Plastic with rubber O-ring",
+      "torqueSpec": null,
+      "knownIssues": [
+        "A perished cap O-ring weeps oil down the cam cover and gets blamed on the cover seal.",
+        "Cross-threading it on a hot engine is easy — it only needs a quarter turn to seat."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.3,
+          1,
+          0.2
+        ],
+        "distance": 0.5
+      },
+      "geometryRef": "cartridge",
+      "geometryParams": {
+        "radiusMm": 42,
+        "heightMm": 34
+      },
+      "transforms": [
+        {
+          "position": [
+            0.17,
+            0.372,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 24,
+      "calloutOffset": [
+        0.14,
+        0.12,
+        0.1
+      ],
+      "color": "#1f2126",
+      "tags": [
+        "oil-filler",
+        "photo-verified",
+        "oil-cap-test",
+        "PCV-diagnostic"
       ]
     }
   ]

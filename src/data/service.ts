@@ -146,7 +146,7 @@ export const SERVICE_ITEMS: ServiceItem[] = [
     capacity: '5.7 L with filter (R9)',
     torque: 'OEM plastic bayonet drain plug: quarter-turn, torque UNVERIFIED; aftermarket steel-pan plug = 30 Nm',
     where:
-      'Filter lives UP TOP in the filter housing on the block front (with the oil cooler) — no need to crawl under for it. The drain is the plastic quarter-turn bayonet in the lower sump pan; it has NO crush washer.',
+      'Filter cap: OFFSIDE (driver\u2019s side), high up above the alternator — black hex cap with 25 Nm moulded on it, reached from above with a 32 mm socket. Oil filler cap: offside end of the cam cover (yellow oil-can symbol). Drain: plastic quarter-turn bayonet in the lower sump pan, NO crush washer.',
     notes:
       'While the old oil drains, glance at the pan for curb damage — the lower pan is plastic (R1). The N522 solenoid screen behind the filter housing is where sludge does damage.',
     showTargets: ['oil-filter-housing', 'oil-drain-plug', 'lower-sump'],

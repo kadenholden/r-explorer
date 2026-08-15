@@ -102,6 +102,11 @@ interface AppState {
   panMode: boolean
   togglePanMode: () => void
 
+  /** FRONT / DRIVER / PASSENGER / REAR labels floating around the car, so a
+   *  view can always be matched to the real thing. */
+  showOrientation: boolean
+  toggleOrientation: () => void
+
   /** Guided-job mode (jobs.ts drives these). */
   activeJob: string | null
   jobStep: number
@@ -191,6 +196,9 @@ export const useAppStore = create<AppState>()(
 
       panMode: false,
       togglePanMode: () => set((s) => ({ panMode: !s.panMode })),
+
+      showOrientation: true,
+      toggleOrientation: () => set((s) => ({ showOrientation: !s.showOrientation })),
 
       activeJob: null,
       jobStep: 0,

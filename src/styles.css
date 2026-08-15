@@ -785,6 +785,36 @@ button {
   color: #d6a54f;
 }
 
+.orient-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 4px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  backdrop-filter: blur(3px);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.orient-label span {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--text);
+}
+
+.orient-label em {
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
 .isolation-chip {
   font-family: var(--display);
   font-weight: 600;
