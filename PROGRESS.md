@@ -1,5 +1,29 @@
 # PROGRESS
 
+## Screen-wash system researched and rebuilt (2026-08-15)
+
+The operator is fixing a washer leak first, so this got proper research
+(notes + sources in docs/reference/washer-system-notes.md) rather than
+assumption. Two corrections and a lot of missing hardware:
+
+- The operator was right that you pour straight into a tank: the Mk7
+  reservoir is TWO parts — an UPPER tank in the offside gutter with the
+  blue cap on top, feeding the big LOWER tank behind the arch liner.
+  Redrew the bay piece as that upper tank (was a funnel + hose).
+- The system was missing everything except one pump. Added: headlight
+  washer pump V11 (this car has xenons, so it has headlamp washers —
+  MOT-relevant), washer level sender G33, and the telescopic headlamp
+  jets in the bumper. The existing pump is correctly V59 and, usefully,
+  feeds BOTH windscreen and rear screen from two colour-coded outlets.
+- Guided job rewritten around the real procedure: wheel off + T25 liner
+  fixings (VW's bumper-and-headlight route is only for swapping the whole
+  reservoir), leak triage that tells you what's leaking from WHEN it
+  leaks, the grommet-into-the-tank trap, and a proof step that exercises
+  front, rear and headlamp washers before closing up.
+
+Capacity ~3.7 L. Side confirmed offside from the operator's photos (one
+VW manual page says otherwise; the photos win, and that's recorded).
+
 ## Expansion tank redrawn as an actual tank (2026-08-15)
 
 Operator: "why does the expansion tank look like a completely different

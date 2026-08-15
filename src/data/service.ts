@@ -294,8 +294,15 @@ export const SERVICE_ITEMS: ServiceItem[] = [
     interval: 'Top up monthly; proper mix year-round (plain water cracks the bottle in frost)',
     where:
       'Blue-capped filler at the front-right of the bay — but the BOTTLE and pump hide behind the right-front arch liner, which is why leaks "can\'t be found" from above. A bottle that empties overnight is almost always the pump grommet — see the guided job.',
-    showTargets: ['washer-filler-neck', 'washer-bottle', 'washer-pump'],
-    focusPartId: 'washer-filler-neck',
+    showTargets: [
+      'washer-filler-neck',
+      'washer-bottle',
+      'washer-pump',
+      'washer-pump-headlight',
+      'washer-level-sender',
+      'headlight-washer-jets',
+    ],
+    focusPartId: 'washer-bottle',
   },
   {
     id: 'wipers',

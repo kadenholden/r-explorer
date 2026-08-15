@@ -69,31 +69,27 @@ export function washerBottle(_params: GeometryParams): THREE.BufferGeometry {
 
 /** Washer filler neck: angled tube from the bay top down toward the bottle, with cap. */
 export function washerNeck(_params: GeometryParams): THREE.BufferGeometry {
-  // photo-matched: the visible piece in the bay is a chunky funnel moulding
-  // with the blue cap on top; the tube then drops outboard to the bottle
-  // behind the arch liner. Origin sits at the funnel base.
+  // Mk7 washer reservoir is TWO parts: this is the UPPER reservoir that sits
+  // in the engine bay — you pour straight into it through the blue cap on its
+  // top — and it feeds the lower tank behind the arch liner through a wide
+  // throat. Origin at the base of the throat.
   const parts: THREE.BufferGeometry[] = []
-  const funnel = new THREE.CylinderGeometry(0.045, 0.032, 0.15, 18)
-  funnel.translate(0, 0.075, 0)
-  parts.push(funnel)
-  const collar = new THREE.CylinderGeometry(0.05, 0.05, 0.018, 18)
-  collar.translate(0, 0.155, 0)
-  parts.push(collar)
-  const cap = new THREE.CylinderGeometry(0.044, 0.044, 0.022, 18)
-  cap.translate(0, 0.176, 0)
+  const body = new THREE.BoxGeometry(0.085, 0.115, 0.075)
+  body.translate(0, 0.135, 0)
+  parts.push(body)
+  const shoulder = new THREE.CylinderGeometry(0.045, 0.052, 0.03, 16)
+  shoulder.translate(0, 0.2, 0)
+  parts.push(shoulder)
+  const cap = new THREE.CylinderGeometry(0.043, 0.043, 0.026, 18)
+  cap.translate(0, 0.226, 0)
   parts.push(cap)
-  const tab = new THREE.BoxGeometry(0.05, 0.012, 0.02)
-  tab.translate(0.035, 0.176, 0)
-  parts.push(tab)
-  const drop = tubeThrough(
-    [
-      [0, 0.0, 0],
-      [0.06, -0.09, -0.02],
-      [0.13, -0.16, -0.05],
-    ],
-    0.013,
-  )
-  parts.push(drop)
+  const grip = new THREE.BoxGeometry(0.09, 0.014, 0.022)
+  grip.translate(0, 0.234, 0)
+  parts.push(grip)
+  const throat = new THREE.CylinderGeometry(0.028, 0.03, 0.12, 14)
+  throat.rotateZ(-0.35)
+  throat.translate(0.024, 0.02, 0)
+  parts.push(throat)
   return mergeParts(parts)
 }
 

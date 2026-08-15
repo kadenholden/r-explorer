@@ -521,16 +521,16 @@
     },
     {
       "id": "washer-filler-neck",
-      "name": "Screen-wash filler neck",
+      "name": "Screen-wash UPPER reservoir & filler cap",
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "Screen-wash filler — PHOTO-MATCHED: the chunky white funnel with the BLUE CAP standing in the offside gutter AHEAD of the coolant expansion tank (the two sit in a line: brake reservoir at the back, coolant tank mid-bay, washer filler forward). Its tube drops outboard through the inner wing to the bottle behind the right-front arch liner.",
-      "material": "Plastic",
+      "description": "The Mk7 washer reservoir is TWO parts, and this is the upper one — so yes, the blue cap sits directly on top of a tank and you pour straight into it. This upper reservoir lives in the offside gutter of the engine bay and feeds the much larger LOWER tank behind the right-front arch liner through a wide throat. Total system ~3.7 L on the R/S3 (VW quote ~3–6 L for cars with headlight washers).",
+      "material": "Translucent moulded plastic",
       "torqueSpec": null,
       "knownIssues": [
-        "A split at the neck-to-bottle joint leaks only when you overfill — one of the classic 'mystery' washer leaks."
+        "The throat/joint between upper and lower tank is a leak path — it often only shows when you fill right to the brim, which is why such a leak seems to come and go."
       ],
       "explodeVector": {
         "direction": [
@@ -545,9 +545,9 @@
       "transforms": [
         {
           "position": [
-            0.42,
+            0.45,
             0.02,
-            0.46
+            0.44
           ],
           "rotationDeg": [
             0,
@@ -562,25 +562,27 @@
         0.16,
         0.1
       ],
-      "color": "#3f6ea5",
+      "color": "#dfe3e6",
       "tags": [
         "screen-wash",
+        "upper-reservoir",
         "filler",
         "photo-verified"
-      ]
+      ],
+      "opacity": 0.72
     },
     {
       "id": "washer-bottle",
-      "name": "Screen-wash bottle (behind RF arch liner)",
+      "name": "Screen-wash LOWER reservoir (behind RF arch liner)",
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "The reservoir hides behind the RIGHT-front (offside) wheel-arch liner, ahead of the wheel — photo-verified via its offside filler neck. Access = steering on full LEFT lock, arch-liner screws out, liner peeled back. Part number to verify by VIN.",
-      "material": "Plastic",
+      "description": "The tank that actually holds the fluid, hidden behind the RIGHT-front (offside) wheel-arch liner. Access: front wheel off, arch-liner screws out (T25 Torx) and the liner folded back — the pumps and level sender are then right in front of you. (VW's book removes the front bumper and headlight for a FULL reservoir swap; owners doing pumps/seals go through the arch.)",
+      "material": "Moulded plastic",
       "torqueSpec": null,
       "knownIssues": [
-        "Cracks from freezing when filled with plain water — use proper mix year-round."
+        "Cracks from stone strikes and from freezing when filled with plain water — a hairline crack weeps only when the tank is full."
       ],
       "explodeVector": {
         "direction": [
@@ -595,9 +597,9 @@
       "transforms": [
         {
           "position": [
-            0.6,
-            -0.1,
-            0.38
+            0.58,
+            -0.14,
+            0.4
           ],
           "rotationDeg": [
             0,
@@ -621,17 +623,17 @@
     },
     {
       "id": "washer-pump",
-      "name": "Washer pump & grommet",
+      "name": "Windscreen & rear washer pump V59",
       "system": "cooling-hvac",
       "assembly": "engine-cooling",
       "subAssembly": "Screen wash",
       "oemPartNumber": null,
-      "description": "Small electric pump pressed into a rubber grommet on the bottle's ARCH-FACING rear face — which is exactly why it's serviced from the wheel arch with the liner peeled back (offside bottle, photo-verified). THE most common screen-wash leak: the grommet hardens and weeps, so the bottle slowly empties overnight. The pump pulls straight out of the grommet by hand; the grommet is a pennies part.",
+      "description": "ONE pump (VW designation V59) feeds BOTH the windscreen and the rear screen — it has two outlets with colour-coded hoses, so note which hose goes where before pulling them off. It pushes into a rubber grommet low on the tank and pulls straight out by hand once the hoses and plug are off. THE classic leak: that grommet hardens with age and weeps.",
       "material": null,
       "torqueSpec": null,
       "knownIssues": [
-        "Hardened grommet → slow leak that empties the bottle while parked — the number-one cause.",
-        "Dead pump → no spray at all (listen for the whirr when you pull the stalk)."
+        "Hardened/split pump grommet → slow leak that empties the bottle while parked (the number-one cause of a Mk7 washer leak).",
+        "Fitting trap: do NOT push the grommet into the tank while refitting the pump — you cannot fish it back out without dropping the whole reservoir. Wet it with washer fluid and press the pump in gently."
       ],
       "explodeVector": {
         "direction": [
@@ -646,9 +648,9 @@
       "transforms": [
         {
           "position": [
-            0.66,
-            -0.13,
-            0.34
+            0.52,
+            -0.22,
+            0.38
           ],
           "rotationDeg": [
             -90,
@@ -666,6 +668,7 @@
       "color": "#26282c",
       "tags": [
         "screen-wash",
+        "V59",
         "pump",
         "grommet",
         "known-issue"
@@ -722,6 +725,175 @@
         "coolant",
         "pressure-cap",
         "never-open-hot"
+      ]
+    },
+    {
+      "id": "washer-pump-headlight",
+      "name": "Headlight washer pump V11 (high pressure)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": "Screen wash",
+      "oemPartNumber": null,
+      "description": "Because this car has XENON headlights it also has a headlamp washer system — and that means a SECOND, high-pressure pump (V11) on the outboard face of the tank, nearest the wing, opposite the windscreen pump. Cars without headlight washers get a smaller tank and only one pump. Working headlamp washers are an MOT requirement on xenon cars.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Same grommet story as V59 — and because it runs at higher pressure, a tired grommet here leaks sooner and faster.",
+        "Often killed or left unplugged after front-end/bumper work — worth testing before an MOT."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          -0.2,
+          -0.3
+        ],
+        "distance": 0.45
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.65,
+            -0.17,
+            0.4
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 15,
+      "calloutOffset": [
+        0.14,
+        -0.08,
+        -0.1
+      ],
+      "color": "#26282c",
+      "tags": [
+        "screen-wash",
+        "V11",
+        "headlight-washer",
+        "MOT",
+        "known-issue"
+      ]
+    },
+    {
+      "id": "washer-level-sender",
+      "name": "Washer fluid level sender (G33)",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": "Screen wash",
+      "oemPartNumber": null,
+      "description": "Float sender in the side of the lower tank that lights the 'top up washer fluid' warning. It sits just ABOVE the windscreen pump — a useful landmark once the liner is off. Its seal is another small leak path, and a stuck float gives a false warning on a full tank. G33 is the standard VAG designation for this sender — verify against ETKA for the exact part number.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Perished sender seal weeps; a stuck float reports empty when the tank is full."
+      ],
+      "explodeVector": {
+        "direction": [
+          0.8,
+          0.2,
+          -0.4
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "solenoidValve",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.52,
+            -0.12,
+            0.37
+          ],
+          "rotationDeg": [
+            -90,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 16,
+      "calloutOffset": [
+        0.12,
+        0.1,
+        -0.1
+      ],
+      "color": "#3a3d44",
+      "tags": [
+        "screen-wash",
+        "G33",
+        "level-sender",
+        "designation-unverified"
+      ]
+    },
+    {
+      "id": "headlight-washer-jets",
+      "name": "Headlamp washer jets (telescopic) ×2",
+      "system": "cooling-hvac",
+      "assembly": "engine-cooling",
+      "subAssembly": "Screen wash",
+      "oemPartNumber": null,
+      "description": "Telescopic nozzles hidden in the front bumper below each headlight — they pop out under pressure when V11 runs (with the lights on), then retract. Fed from the same tank, which is why using the headlamp washers drains the bottle so quickly.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Seized or stuck-out nozzles and snapped covers after a bumper knock; a nozzle stuck open dribbles fluid away and looks like a tank leak (and is an MOT fail on a xenon car)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          -0.2,
+          1
+        ],
+        "distance": 0.4
+      },
+      "geometryRef": "cartridge",
+      "geometryParams": {
+        "radiusMm": 13,
+        "heightMm": 55
+      },
+      "transforms": [
+        {
+          "position": [
+            0.52,
+            -0.06,
+            0.86
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.52,
+            -0.06,
+            0.86
+          ],
+          "rotationDeg": [
+            90,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 17,
+      "calloutOffset": [
+        0.12,
+        0.1,
+        0.12
+      ],
+      "color": "#1f2126",
+      "tags": [
+        "screen-wash",
+        "headlight-washer",
+        "MOT"
       ]
     }
   ]

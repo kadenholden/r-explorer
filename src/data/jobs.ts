@@ -104,47 +104,55 @@ export const JOBS: Job[] = [
     id: 'screenwash-leak',
     title: 'Trace & fix a screen-wash leak',
     blurb:
-      'The bottle empties itself overnight? Nine times out of ten it’s the pump grommet — a pennies part behind the arch liner.',
-    difficulty: 'Easy · ~40 min · axle stands not required (full lock is enough)',
-    tools: 'Torx for arch-liner screws, trim tool, new pump grommet (+ pump if dead), towel',
+      'Bottle empties itself? On the Mk7 it is almost always a pump grommet — a pennies part. The tank is two pieces and hides behind the offside arch liner.',
+    difficulty: 'Easy–moderate · ~1 hr · front wheel off',
+    tools:
+      'Jack + axle stand, 17mm socket for the wheel, T25 Torx for the liner, spare trim clips, new pump grommet(s) (+ pump if dead), towel, torch',
     steps: [
       {
-        title: 'Open the bonnet & find the filler',
+        title: 'Understand what you are dealing with',
         text:
-          'The blue-capped filler neck at the front-RIGHT (offside, driver’s side) of the bay — just inboard of the coolant tank — is the only visible piece; the bottle itself hides behind the right-front wheel-arch liner. That’s why the leak “can’t be found” from above.',
+          'The Mk7 reservoir is TWO tanks: the small upper one in the offside gutter of the bay (the blue cap sits straight on top of it — you pour right in), and the big lower one hidden behind the RIGHT-front wheel-arch liner. Because this car has xenons it also has headlamp washers, so there are TWO pumps on that lower tank: V59 for the windscreen AND rear screen, and the high-pressure V11 for the headlamp jets.',
         bonnet: true,
         shell: true,
         isolate: [],
       },
       {
-        title: 'Fill and watch',
+        title: 'Fill it and watch where it runs',
         text:
-          'Fill the bottle to the brim and immediately look under the right-front (offside) corner with a torch. Drips within a minute = grommet/pump area or a split neck joint. No drips until you use the washers = a hose joint further along instead.',
-        isolate: ['washer-filler-neck', 'washer-bottle', 'washer-pump'],
+          'Fill to the brim and look under the offside front corner with a torch straight away. Drips within a minute = pump grommet, level-sender seal or a cracked tank. Nothing until you USE the washers = a hose joint or a jet. Leak only when brim-full = the upper-to-lower throat joint. Decide which it is now — it sets how far you strip.',
+        isolate: ['washer-filler-neck', 'washer-bottle', 'washer-pump', 'washer-pump-headlight', 'washer-level-sender'],
         focusPartId: 'washer-bottle',
         bonnet: true,
       },
       {
-        title: 'Get behind the arch liner',
+        title: 'Get the wheel and liner out of the way',
         text:
-          'Steering on FULL LEFT lock so the right wheel swings clear. Remove the arch-liner screws along the liner’s front half and peel it back — the bottle and pump are right there, ahead of the wheel. (No need to remove the wheel or the whole liner.)',
-        isolate: ['washer-bottle', 'washer-pump', 'suspension/wheels-pretoria'],
+          'Chock the rears, loosen the offside front wheel bolts, jack and support the car on a stand, wheel off. The arch-liner fixings are T25 Torx plus clips — take out the front half and fold the liner back. No need to remove the bumper: that is VW’s route for swapping the whole reservoir, not for pumps and seals.',
+        isolate: ['washer-bottle', 'washer-pump', 'washer-pump-headlight', 'washer-level-sender', 'suspension/wheels-pretoria'],
         focusPartId: 'washer-bottle',
       },
       {
-        title: 'Pull the pump & renew the grommet',
+        title: 'Identify the three fittings on the tank',
         text:
-          'Towel underneath — the bottle will empty. Unclip the hose and connector, then pull the pump STRAIGHT out of its rubber grommet by hand (the animation shows the motion). Hook the old grommet out; if it’s hardened or cracked you’ve found the leak. Press the new grommet in, wet the pump spigot with washer fluid, press the pump home.',
-        isolate: ['washer-bottle', 'washer-pump'],
+          'With the liner folded back you are looking at the lower tank. Low down: the windscreen/rear pump V59 with two colour-coded hoses. Just above it: the level sender G33. On the far (wing) side: the headlamp pump V11. Wipe everything dry, then have someone work the washers — the wet one is your culprit.',
+        isolate: ['washer-bottle', 'washer-pump', 'washer-pump-headlight', 'washer-level-sender'],
         focusPartId: 'washer-pump',
-        lifts: { 'washer-pump': [0.05, -0.03, -0.16] },
       },
       {
-        title: 'Refill and prove it',
+        title: 'Pull the pump and renew its grommet',
         text:
-          'Hose and connector back on, refill to the brim, and give it five minutes with the torch before the liner goes back — a fixed leak stays bone dry at the grommet. Run the washers to check the spray, then refit the liner screws.',
-        isolate: ['washer-filler-neck', 'washer-bottle', 'washer-pump'],
+          'Towel underneath — what is left in the tank will come out. Note which colour hose is on which outlet, unclip both and the plug, then pull the pump STRAIGHT out of its rubber grommet by hand (the animation shows the motion). Hook the old grommet out; hardened or split = found it. CRITICAL: do not shove the new grommet into the tank — you cannot fish it back without dropping the whole reservoir. Wet it with washer fluid, seat it, then press the pump home.',
+        isolate: ['washer-bottle', 'washer-pump'],
         focusPartId: 'washer-pump',
+        lifts: { 'washer-pump': [-0.1, -0.03, -0.12] },
+      },
+      {
+        title: 'Prove it before you close up',
+        text:
+          'Hoses back on the right way round, plug in, refill to the brim and leave it five minutes with the torch — a fixed leak stays bone dry. Then run the front washers, the rear washer, and (lights on) the headlamp washers, checking the jets pop out and retract. Only then refit the liner, wheel and torque the bolts to 120 Nm.',
+        isolate: ['washer-filler-neck', 'washer-bottle', 'washer-pump', 'washer-pump-headlight', 'headlight-washer-jets'],
+        focusPartId: 'washer-pump-headlight',
       },
     ],
   },
