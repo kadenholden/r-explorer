@@ -141,6 +141,15 @@ import {
   turboInletPipe,
 } from './systemDetail'
 import {
+  engineCover,
+  wiringLoom,
+  coilConnectors,
+  rigidFuelLine,
+  heatShield,
+  liftingEye,
+  breatherHose,
+} from './dressing'
+import {
   floorpan,
   frontStructure,
   bulkhead,
@@ -285,6 +294,13 @@ registerRecipe('washerBottle', washerBottle)
 registerRecipe('washerNeck', washerNeck)
 registerRecipe('simpleBox', simpleBox)
 registerRecipe('turboInletPipe', turboInletPipe)
+registerRecipe('engineCover', engineCover)
+registerRecipe('wiringLoom', wiringLoom)
+registerRecipe('coilConnectors', coilConnectors)
+registerRecipe('rigidFuelLine', rigidFuelLine)
+registerRecipe('heatShield', heatShield)
+registerRecipe('liftingEye', liftingEye)
+registerRecipe('breatherHose', breatherHose)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)

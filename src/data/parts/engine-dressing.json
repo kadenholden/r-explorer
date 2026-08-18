@@ -1,0 +1,412 @@
+{
+  "assembly": {
+    "id": "engine-dressing",
+    "name": "Engine — covers, harness & shields",
+    "system": "engine",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "description": "The dressing on top of the engine: the plastic cover, the wiring conduit, the rigid fuel line, the heat shield, the lifting eyes and the breather hose. These are what you actually SEE with the bonnet up — the mechanicals underneath were modelled first, which is why the engine top didn't look like the real thing until now. Hide this whole branch with the eye icon to get back to the bare mechanicals."
+  },
+  "parts": [
+    {
+      "id": "engine-cover",
+      "name": "Engine top cover (TSI / R badged)",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Covers",
+      "oemPartNumber": null,
+      "description": "The moulded plastic cover that is the FIRST thing you see with the bonnet up — it hides the cam cover, coils and PCV entirely. It just pulls straight up off four rubber ball mounts, no tools, and every top-end job starts by lifting it. Also an acoustic cover: it is why the injectors and HPFP are so much quieter from outside than under it.",
+      "material": "Moulded plastic",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Ball-mount grommets perish and the cover rattles at idle — cheap grommets, not a new cover.",
+        "Refitting it out of line snaps the locating pegs; press it down evenly over all four mounts."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.2
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "engineCover",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0.435,
+            0.02
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 1,
+      "calloutOffset": [
+        0.2,
+        0.14,
+        0.12
+      ],
+      "color": "#26282c",
+      "tags": [
+        "engine-cover",
+        "acoustic-cover",
+        "pull-off-first"
+      ]
+    },
+    {
+      "id": "engine-wiring-loom",
+      "name": "Engine wiring loom & conduit",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Harness",
+      "oemPartNumber": null,
+      "description": "The corrugated conduit that snakes across the cam cover feeding the coils, injectors and sensors, then drops down the offside to the ECU. Most of what looks like clutter on top of a modern engine is this. Worth tracing before you unplug anything — connectors are colour-keyed and only fit one way, but the conduit hides chafe points against the heat shield.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Chafe where the loom crosses brackets or the heat shield — a classic cause of intermittent misfire and sensor faults that VCDS reports as implausible signals."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.3
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "wiringLoom",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 2,
+      "calloutOffset": [
+        -0.18,
+        0.14,
+        -0.12
+      ],
+      "color": "#1f2126",
+      "tags": [
+        "harness",
+        "loom",
+        "conduit"
+      ]
+    },
+    {
+      "id": "coil-connectors",
+      "name": "Coil connectors ×4",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Harness",
+      "oemPartNumber": null,
+      "description": "The small plugs on top of each ignition coil. Squeeze the tab and lift — they are the first thing off when changing plugs or coils, and the tabs go brittle with heat, so support the connector rather than yanking the wire.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [
+        "Brittle locking tabs snap on old connectors; a loose plug gives a misfire that moves when you wiggle the loom."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.2
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "coilConnectors",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.132,
+            0.352,
+            0.0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            -0.044,
+            0.352,
+            0.0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.044,
+            0.352,
+            0.0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.132,
+            0.352,
+            0.0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 3,
+      "calloutOffset": [
+        0.14,
+        0.1,
+        0.1
+      ],
+      "color": "#2b2e33",
+      "tags": [
+        "harness",
+        "connectors",
+        "coils"
+      ]
+    },
+    {
+      "id": "rigid-fuel-line",
+      "name": "High-pressure fuel line (rigid)",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Fuel plumbing",
+      "oemPartNumber": null,
+      "description": "The rigid steel line from the HPFP across to the fuel rail — the shiny thin pipe you can see running over the head. It carries up to 200 bar, so it is never bent, reused stressed, or cracked loose while the system holds pressure.",
+      "material": "Steel",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Never re-bend or re-use a stressed HP line; unions are started by hand and torqued last (exact figure not published — see the fuel-system parts)."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "rigidFuelLine",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 4,
+      "calloutOffset": [
+        0.12,
+        0.14,
+        0.12
+      ],
+      "color": "#aab0b8",
+      "tags": [
+        "fuel",
+        "high-pressure",
+        "rigid-line"
+      ]
+    },
+    {
+      "id": "turbo-heat-shield",
+      "name": "Turbo / manifold heat shield",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Shields",
+      "oemPartNumber": null,
+      "description": "The folded stainless shield along the back of the head that keeps turbo and manifold heat off the loom and the bulkhead — the bright metal you see at the rear of the bay. Comes off for turbo work and is usually the reason a rattle appears afterwards.",
+      "material": "Stainless steel",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Cracks around the bolt holes and rattles like a loose exhaust; also chafes the loom if refitted out of position."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          -0.4
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "heatShield",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.02,
+            0.19,
+            -0.235
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 5,
+      "calloutOffset": [
+        0.14,
+        0.12,
+        -0.1
+      ],
+      "color": "#c8ccd2",
+      "tags": [
+        "heat-shield",
+        "turbo",
+        "rattle"
+      ]
+    },
+    {
+      "id": "lifting-eyes",
+      "name": "Engine lifting eyes ×2",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Shields",
+      "oemPartNumber": null,
+      "description": "The two tan hooks bolted to the head — the ones you can see in the bay and probably never thought about. They are the lifting points for engine removal, and handy landmarks when describing where something sits.",
+      "material": null,
+      "torqueSpec": null,
+      "knownIssues": [],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "liftingEye",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.205,
+            0.34,
+            -0.03
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "position": [
+            0.205,
+            0.34,
+            0.05
+          ],
+          "rotationDeg": [
+            0,
+            180,
+            0
+          ]
+        }
+      ],
+      "callout": 6,
+      "calloutOffset": [
+        -0.12,
+        0.12,
+        0.1
+      ],
+      "color": "#c2ab7a",
+      "tags": [
+        "lifting-eye",
+        "landmark"
+      ]
+    },
+    {
+      "id": "breather-hose",
+      "name": "Breather / vacuum hose run",
+      "system": "engine",
+      "assembly": "engine-dressing",
+      "subAssembly": "Hoses",
+      "oemPartNumber": null,
+      "description": "The soft hose looping from the PCV module across the front of the engine — part of the crankcase-ventilation path. Rubber goes hard with heat and age, and a split here behaves exactly like a torn PCV diaphragm: whistle, rough idle, lean codes.",
+      "material": "Rubber",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Hardened or split hose mimics a failed PCV — squeeze it cold before condemning the module."
+      ],
+      "explodeVector": {
+        "direction": [
+          0,
+          1,
+          0.3
+        ],
+        "distance": 0.55
+      },
+      "geometryRef": "breatherHose",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 7,
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        0.12
+      ],
+      "color": "#1f2126",
+      "tags": [
+        "breather",
+        "vacuum",
+        "hose",
+        "PCV-related"
+      ]
+    }
+  ]
+}

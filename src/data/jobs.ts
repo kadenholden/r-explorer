@@ -51,9 +51,10 @@ export const JOBS: Job[] = [
         title: 'Find the module',
         text:
           'Lift the plastic engine cover straight up off its ball mounts. The PCV / oil separator is the round black diaphragm dome sitting mid-way along the top of the cam cover — the four ignition coils in a row behind it, the fuel pump to its right, the oil-filler cap to its left; its breather line runs back toward the turbo. Confirm the fault first if you haven’t: engine idling, lift the oil cap — strong suction and an idle change means the diaphragm is torn.',
-        isolate: ['pcv-module', 'valve-cover-pcv', 'ignition-coils'],
+        isolate: ['pcv-module', 'valve-cover-pcv', 'ignition-coils', 'engine-cover'],
         focusPartId: 'pcv-module',
         bonnet: true,
+        lifts: { 'engine-cover': [0, 0.32, 0.16] },
       },
       {
         title: 'Disconnect the breather hose',

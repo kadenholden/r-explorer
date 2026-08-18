@@ -1,5 +1,27 @@
 # PROGRESS
 
+## Engine dressing pack — the bit that makes it look real (2026-08-15)
+
+Operator: "the top of the engine doesn't remind me of what mine looks
+like… probably all the minor things missing like covers, cables." Exactly
+right — every mechanical part was modelled before any of the stuff you
+actually SEE. New `engine-dressing` assembly (7 parts, own branch so it
+can be hidden to get back to bare mechanicals):
+
+- **Engine top cover** — the single biggest visual item in the bay and it
+  simply did not exist. Pulls off four ball mounts; the PCV guided job now
+  animates it lifting away as step 2.
+- **Wiring loom & conduit** — the corrugated runs across the cam cover that
+  make up most of the visual "clutter", with the chafe-point warning.
+- **Coil connectors ×4**, **rigid high-pressure fuel line**, **turbo heat
+  shield** (with its rattle/chafe failure), **lifting eyes** (the tan hooks
+  — useful landmarks when describing positions), and the **breather hose**
+  whose splits mimic a failed PCV.
+
+Model at 275 parts. Next dressing candidates, in visual-impact order: bay
+periphery (slam-panel trim, battery cover, fuse-box lid, cowl and wiper
+arms), then interior trim, then underbody trays.
+
 ## Operator's annotated engine diagram checked against the model (2026-08-15)
 
 The operator produced an annotated overhead photo of their own bay with
