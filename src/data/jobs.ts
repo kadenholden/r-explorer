@@ -32,6 +32,73 @@ export interface Job {
 
 export const JOBS: Job[] = [
   {
+    id: 'find-oil-leak',
+    title: 'Find where the oil is actually leaking from',
+    blurb:
+      'Six steps that stop you buying the wrong part. Oil runs downhill and blows backwards, so the wet patch is almost never the source — this is how you prove it.',
+    difficulty: 'Easy · an evening plus a drive · no dismantling',
+    tools:
+      'Brake cleaner or degreaser + rags, a good torch, ramps or stands to get underneath, optional UV dye kit and blacklight (~£15)',
+    steps: [
+      {
+        title: 'Do the free test first',
+        text:
+          'Before anything else, rule the PCV in or out — a torn diaphragm pressurises the crankcase and pushes oil past seals that were coping, so it can be the real cause of a leak you find somewhere else entirely. Engine idling, lift the oil filler cap. Light resistance is normal. Strong suction that grabs the cap and drops the idle, or a whistle from the top of the engine, means the diaphragm has gone — fix that BEFORE chasing anything below.',
+        isolate: ['pcv-module', 'oil-filler-cap', 'breather-hose'],
+        focusPartId: 'pcv-module',
+        bonnet: true,
+      },
+      {
+        title: 'Clean everything — properly',
+        text:
+          'You cannot find a leak in a dirty engine bay, and this is the step everyone skips. Degrease the whole top of the engine, both ends, the back of the block and the sump flange, then get underneath and clean the bellhousing area too. Take the undertray off while you are there. Dry it all with rags. What you want at the end is bare, dry metal everywhere oil could appear.',
+        isolate: [],
+        shell: true,
+        bonnet: true,
+      },
+      {
+        title: 'Drive it, then look from the TOP down',
+        text:
+          'A 20-minute drive to get everything hot and pressurised, then park up and go straight at it with a torch. Look from the top down, not the bottom up: find the HIGHEST wet point, because everything below it is just the trail. Photograph what you find — fresh oil on clean metal is unmistakable a day later, and you will want the comparison.',
+        isolate: [],
+        shell: false,
+        bonnet: true,
+        focusPartId: 'valve-cover-pcv',
+      },
+      {
+        title: 'Still not obvious? Use dye',
+        text:
+          'If the whole side of the block is misted rather than showing one trail, add UV dye to the oil, drive it 100–200 miles, then go over it in the dark with a blacklight. The dye glows at the exact joint it escapes from and nowhere else. This is what a garage would charge you a diagnostic hour for, and the kit costs less than that.',
+        isolate: [],
+        shell: false,
+        bonnet: true,
+      },
+      {
+        title: 'Work the top-end suspects',
+        text:
+          'On this engine the top-end candidates in order are: the cam bridge sealant seam (there is no valve-cover gasket — it is sealed with anaerobic compound), the upper timing cover seals at the gearbox end, the oil filter housing joint on the driver’s side, and the vacuum pump gasket on the end of the head. Feel each joint with a clean finger and look at the metal directly BELOW it. Oil at the timing cover very often starts at the cam bridge above it.',
+        isolate: [
+          'valve-cover-pcv',
+          'timing-cover-seals',
+          'upper-timing-cover',
+          'oil-filter-housing-gasket',
+          'oil-filter-housing',
+          'vacuum-pump',
+        ],
+        focusPartId: 'timing-cover-seals',
+        bonnet: true,
+      },
+      {
+        title: 'Only now think about the rear main seal',
+        text:
+          'Oil on the bellhousing is what makes people fear the worst — but the filter housing, the vacuum pump and the cam bridge all drip onto exactly that spot from above, and all three are a fraction of the cost. Only call it a rear main seal when those three are proven bone dry after a clean-and-drive cycle. And if the PCV was torn, fix that first: a new seal behind a bad PCV will leak again.',
+        isolate: ['rear-main-seal-flange', 'oil-filter-housing-gasket', 'vacuum-pump', 'valve-cover-pcv'],
+        focusPartId: 'rear-main-seal-flange',
+        bonnet: true,
+      },
+    ],
+  },
+  {
     id: 'pcv-change',
     title: 'Replace the PCV / oil-separator module',
     blurb:

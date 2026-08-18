@@ -2298,6 +2298,59 @@
         "oil-leak",
         "plastic"
       ]
+    },
+    {
+      "id": "timing-cover-seals",
+      "name": "Upper timing cover seals",
+      "system": "engine",
+      "assembly": "engine-cylinder-head",
+      "subAssembly": "Chain drive",
+      "oemPartNumber": null,
+      "description": "The sealing set for the upper timing cover: the big outer bead that seals the cover to the head, plus the two O-rings around the cam-adjuster magnet openings. These are serviceable on their own — you do not need a new cover. THE KEY POINT for leak hunting: oil that has escaped the cam bridge above runs DOWN INTO this cover and comes out here, so oil at the timing cover very often means the cam-bridge sealant is the real fault. Clean both and re-look before buying parts.",
+      "material": "Moulded rubber",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Outer bead hardens with heat cycles and weeps down the gearbox end of the engine.",
+        "Cam-adjuster magnet O-rings leak less often, but when they do the oil appears in the same place — which is why the two get confused."
+      ],
+      "explodeVector": {
+        "direction": [
+          -1,
+          0.2,
+          0
+        ],
+        "distance": 0.9
+      },
+      "geometryRef": "timingCoverSeals",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            -0.249,
+            0.17,
+            0
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 24,
+      "calloutOffset": [
+        -0.16,
+        0.12,
+        0.08
+      ],
+      "color": "#c65b4a",
+      "tags": [
+        "seal",
+        "oil-leak",
+        "timing-cover",
+        "cam-adjuster",
+        "drip-path"
+      ]
     }
   ]
 }

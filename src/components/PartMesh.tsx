@@ -7,6 +7,7 @@ import type { PartRecord, PartTransform } from '../types/parts'
 import { systemDef } from '../data/taxonomy'
 import { resolveRecipe } from '../geometry'
 import { isPartVisible, prefersReducedMotion, useAppStore } from '../store/useAppStore'
+import { LEAK_RANK_BY_PART, OIL_SUSPECTS, OIL_SYSTEM_SET, RANK_META } from '../data/leaks'
 
 export const ACCENT = '#4d7fe3' // Lapiz-derived interactive accent
 
@@ -161,8 +162,40 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
   })
 
   const colorMode = useAppStore((s) => s.colorMode)
+  const leakMode = useAppStore((s) => s.leakMode)
+  const leakSuspectId = useAppStore((s) => s.leakSuspectId)
+  // leak finder: light the oil system by likelihood and ghost everything
+  // else, so the suspects read against the real engine instead of floating
+  // in space with no context
+  const leak = useMemo(() => {
+    if (!leakMode) return null
+    const rank = LEAK_RANK_BY_PART[part.id]
+    const inSystem = OIL_SYSTEM_SET.has(part.id)
+    const focused = leakSuspectId
+      ? (() => {
+          const s = OIL_SUSPECTS.find((x) => x.id === leakSuspectId)
+          return !!s && (s.partId === part.id || (s.alsoShow ?? []).includes(part.id))
+        })()
+      : null
+    if (rank !== undefined) {
+      const m = RANK_META[rank]
+      // when one suspect is open, the others step back but stay readable
+      const dim = focused === false
+      return {
+        color: m.color,
+        opacity: dim ? m.opacity * 0.4 : m.opacity,
+        glow: dim ? m.glow * 0.25 : m.glow,
+        ghost: false,
+      }
+    }
+    if (inSystem) return { color: '#7d8797', opacity: 0.75, glow: 0.08, ghost: false }
+    // ghosts stay just visible enough to give the suspects context
+    return { color: '#59616e', opacity: 0.16, glow: 0, ghost: true }
+  }, [leakMode, leakSuspectId, part.id])
+
   const color =
-    colorMode === 'system' ? systemDef(part.system).color : (part.color ?? '#8b929e')
+    leak?.color ??
+    (colorMode === 'system' ? systemDef(part.system).color : (part.color ?? '#8b929e'))
   const rotation = useMemo(
     () =>
       new THREE.Euler(
@@ -206,6 +239,8 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
           ) : geometry ? (
             <mesh
               geometry={geometry}
+              // ghosted parts must not steal clicks from the suspects
+              raycast={leak?.ghost ? () => null : undefined}
               onClick={(e) => {
                 e.stopPropagation()
                 select(part.id)
@@ -217,13 +252,37 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
               <meshStandardMaterial
                 color={color}
                 side={THREE.DoubleSide}
-                metalness={0.35}
-                roughness={0.55}
-                transparent={part.opacity !== null}
-                opacity={part.opacity ?? 1}
-                depthWrite={part.opacity === null}
-                emissive={selected ? ACCENT : faultActive ? FAULT_RED : hovered ? color : '#000000'}
-                emissiveIntensity={selected ? 0.4 : faultActive ? 0.32 : hovered ? 0.18 : 0}
+                metalness={leak ? 0.1 : 0.35}
+                roughness={leak ? 0.75 : 0.55}
+                transparent={leak !== null || part.opacity !== null}
+                opacity={leak ? leak.opacity : (part.opacity ?? 1)}
+                depthWrite={leak ? !leak.ghost : part.opacity === null}
+                emissive={
+                  // in leak view the rank colour outranks the selection tint:
+                  // the map has to stay readable while you click through it
+                  leak && leak.glow > 0
+                    ? leak.color
+                    : selected
+                      ? ACCENT
+                      : faultActive
+                        ? FAULT_RED
+                        : hovered
+                          ? color
+                          : '#000000'
+                }
+                emissiveIntensity={
+                  leak
+                    ? selected
+                      ? Math.max(leak.glow, 0.55)
+                      : leak.glow
+                    : selected
+                      ? 0.4
+                      : faultActive
+                        ? 0.32
+                        : hovered
+                          ? 0.18
+                          : 0
+                }
               />
               {selected && <Outlines thickness={0.0035} color={ACCENT} />}
             </mesh>

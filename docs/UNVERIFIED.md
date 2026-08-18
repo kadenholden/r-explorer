@@ -175,3 +175,20 @@ corrected two of our assumptions (details in docs/research/R1-short-block.md):
 Still open: upper-sump-to-block aluminium-bolt torque; OEM plastic
 drain-plug torque (aftermarket steel = 30 Nm); filter housing / oil
 cooler numbers (R9 cooling brief territory).
+
+## Oil-leak map (added 2026-08-18 with the leak finder)
+
+- **Vacuum pump 06L145100K / M and its gasket 06H103121J** are
+  VENDOR-SOURCED (034Motorsport product listing), not erWin-verified.
+  Check against the car before ordering.
+- **Vacuum pump POSITION in the model is an estimate**: placed at the
+  offside (belt) end of the cylinder head, reasoning that the chain drive
+  and flywheel are at the gearbox end so the camshaft free ends are at the
+  belt end. NOT photo-confirmed on this car — operator to check with the
+  bonnet up. The part record says so in its own description.
+- **Oil filter housing / cooler gasket**: PN NONE FOUND (the housing
+  itself is family 06L117021, VIN-verify). No bolt torque captured.
+- **Upper timing cover seals**: sold separately from the cover per Alex's
+  Autohaus, but no part numbers captured — NONE FOUND so far.
+- Sources and the reasoning behind the suspect ranking:
+  docs/reference/oil-leak-notes.md.

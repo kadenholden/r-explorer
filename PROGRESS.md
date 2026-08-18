@@ -1,5 +1,41 @@
 # PROGRESS
 
+## Oil-leak finder — the whole oil system, ranked (2026-08-18)
+
+Operator is chasing an oil leak and asked to "highlight all pipes and
+seals and the whole system, to see where the highly likely oil leak is".
+Built as a diagnostic tool rather than a list, around the one thing that
+makes oil leaks hard: GRAVITY. Oil runs downhill and blows back down the
+block, so where you SEE it is almost never where it comes from.
+
+- **New "Oil leak" tab.** Opening it puts the 3D view into leak colours:
+  every joint that can leak is lit by likelihood (red "check first" →
+  blue "long shot"), the rest of the oil system is grey, and the whole
+  car ghosts back so the suspects still have context. Visual weight
+  tracks likelihood — otherwise physically big long shots like the head
+  gasket shout over small certainties.
+- **It asks where you see the oil.** Six zones; each of the 14 suspects
+  declares which zones its oil can physically reach. Pick "where engine
+  meets gearbox" — the rear-main-seal panic — and it returns 6 suspects
+  with the rear main seal LAST, behind the filter housing, vacuum pump
+  and cam bridge that all drip on that exact spot for a fraction of the
+  money. That is the whole point of the feature.
+- **The PCV is flagged as a cause, not just a suspect**: a torn diaphragm
+  pressurises the crankcase and pushes oil past seals that were coping,
+  so it gets checked before anything is bought.
+- **Three missing joints modelled** so the map has nothing to skip:
+  brake vacuum pump (position is an ESTIMATE — flagged, operator to
+  confirm), oil filter housing / cooler gasket, upper timing cover seals.
+  Part numbers are vendor-sourced with provenance recorded, never
+  invented; all flags in docs/UNVERIFIED.md.
+- **New guided job**: "Find where the oil is actually leaking from" — free
+  PCV test, degrease properly, drive, look top-down for the HIGHEST wet
+  point, UV dye if still unclear, then the top-end suspects, and only
+  then the rear main seal.
+
+Sources and ranking rationale: docs/reference/oil-leak-notes.md.
+Model at 278 parts.
+
 ## Engine dressing pack — the bit that makes it look real (2026-08-15)
 
 Operator: "the top of the engine doesn't remind me of what mine looks

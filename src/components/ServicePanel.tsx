@@ -4,6 +4,7 @@ import { JOBS, startJob } from '../data/jobs'
 import type { ServiceItem } from '../data/service'
 import { partById, partWorldDirection, partWorldPosition } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
+import { LeakFinderTab } from './LeakFinder'
 
 /**
  * The operator's service reference: everything routinely serviced on the
@@ -73,7 +74,7 @@ export function ServicePanel() {
   const open = useAppStore((s) => s.servicePanelOpen)
   const setOpen = useAppStore((s) => s.setServicePanelOpen)
   const clearIsolation = useAppStore((s) => s.clearIsolation)
-  const [tab, setTab] = useState<'service' | 'mot' | 'jobs'>('service')
+  const [tab, setTab] = useState<'service' | 'mot' | 'jobs' | 'leak'>('service')
   if (!open) return null
 
   const items = tab === 'mot' ? MOT_ITEMS : SERVICE_ITEMS
@@ -83,14 +84,16 @@ export function ServicePanel() {
     <aside className="service-panel" aria-label="Service and MOT reference">
       <div className="p2015-header">
         <span className="p2015-code">
-          {tab === 'service' ? 'SERVICE' : tab === 'mot' ? 'MOT' : 'JOBS'}
+          {tab === 'service' ? 'SERVICE' : tab === 'mot' ? 'MOT' : tab === 'leak' ? 'LEAK' : 'JOBS'}
         </span>
         <span className="p2015-title">
           {tab === 'service'
             ? 'Everything you routinely service — with real numbers'
             : tab === 'mot'
               ? 'Pre-MOT walk-round — this car\u2019s known weak points included'
-              : 'Guided jobs — the 3D car walks you through the work'}
+              : tab === 'leak'
+                ? 'Oil leak finder — every joint that can leak, ranked'
+                : 'Guided jobs — the 3D car walks you through the work'}
         </span>
         <button
           type="button"
@@ -132,14 +135,28 @@ export function ServicePanel() {
         >
           Guided jobs
         </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === 'leak'}
+          className={`avs-btn${tab === 'leak' ? ' is-large' : ''}`}
+          onClick={() => setTab('leak')}
+        >
+          Oil leak
+        </button>
       </div>
       <p className="plate-note service-disclaimer">
         {tab === 'service'
           ? 'Values come from the project\u2019s research with sources on each part; anything marked as a conflict or unverified must be confirmed in erWin/Bentley before real spanner work. "Show me" hides everything except the parts involved \u2014 the \u2715 or the "show all" chip brings the car back.'
+          : tab === 'leak'
+            ? 'Oil runs downhill and then blows back down the block, so where you SEE it is almost never where it comes from. Tell it where the oil shows up and it lists only what can physically put it there — cheapest and easiest checks first, so you rule things out before paying anyone.'
           : tab === 'mot'
             ? 'Work top to bottom the week before the test \u2014 most of these cost pennies to fix in advance and a retest if the tester finds them first. "Show me" flies the camera to the parts being checked.'
             : 'Each job steps the 3D car through the real procedure \u2014 the bonnet opens, the camera moves, parts lift off as you would lift them. Read every step once before touching the car.'}
       </p>
+      {tab === 'leak' ? (
+        <LeakFinderTab />
+      ) : (
       <div className="service-list">
         {tab === 'jobs'
           ? JOBS.map((job) => (
@@ -170,6 +187,7 @@ export function ServicePanel() {
             ))
           : items.map((item) => <ServiceCard key={item.id} item={item} ruleLabel={ruleLabel} />)}
       </div>
+      )}
     </aside>
   )
 }

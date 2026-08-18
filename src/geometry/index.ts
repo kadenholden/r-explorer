@@ -149,6 +149,7 @@ import {
   liftingEye,
   breatherHose,
 } from './dressing'
+import { vacuumPump, timingCoverSeals, housingGasket } from './seals'
 import {
   floorpan,
   frontStructure,
@@ -301,6 +302,9 @@ registerRecipe('rigidFuelLine', rigidFuelLine)
 registerRecipe('heatShield', heatShield)
 registerRecipe('liftingEye', liftingEye)
 registerRecipe('breatherHose', breatherHose)
+registerRecipe('vacuumPump', vacuumPump)
+registerRecipe('timingCoverSeals', timingCoverSeals)
+registerRecipe('housingGasket', housingGasket)
 registerRecipe('floorpan', floorpan)
 registerRecipe('frontStructure', frontStructure)
 registerRecipe('bulkhead', bulkhead)

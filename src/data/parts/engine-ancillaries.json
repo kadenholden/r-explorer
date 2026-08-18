@@ -1467,6 +1467,113 @@
         "PCV-diagnostic",
         "operator-confirmed"
       ]
+    },
+    {
+      "id": "vacuum-pump",
+      "name": "Brake vacuum pump",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": null,
+      "oemPartNumber": "06L145100K",
+      "description": "Camshaft-driven vacuum pump bolted to the end face of the cylinder head — it makes the vacuum your brake servo runs on, which is why a failing one gives a hard brake pedal as well as an oil leak. It shares engine oil, so its gasket (06H103121J) sits between pressurised oil and the outside world, and it appears in every EA888 Gen 3 reseal kit. POSITION IS AN ESTIMATE: placed at the offside (belt) end of the head because the chain and cam drive are at the gearbox end — not yet photo-confirmed on this car, so check yours before ordering (logged in docs/UNVERIFIED.md).",
+      "material": "Aluminium body, cam-driven vane",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Gasket weep runs down the back of the head and along the block — from below it looks exactly like a rear main seal leak, which is the expensive misdiagnosis.",
+        "A worn pump gives a hard/high brake pedal, especially on the first press after start."
+      ],
+      "explodeVector": {
+        "direction": [
+          1,
+          0.2,
+          -0.3
+        ],
+        "distance": 0.9
+      },
+      "geometryRef": "vacuumPump",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.252,
+            0.235,
+            -0.055
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 25,
+      "calloutOffset": [
+        0.16,
+        0.1,
+        -0.1
+      ],
+      "color": "#767b84",
+      "tags": [
+        "vacuum-pump",
+        "brake-servo",
+        "oil-leak",
+        "seal",
+        "position-unverified",
+        "reseal-kit"
+      ]
+    },
+    {
+      "id": "oil-filter-housing-gasket",
+      "name": "Oil filter housing / cooler gasket",
+      "system": "engine",
+      "assembly": "engine-ancillaries",
+      "subAssembly": "Lubrication",
+      "oemPartNumber": null,
+      "description": "The joint between the filter housing / oil cooler and the block: a perimeter gasket plus the O-rings around the oil feed and return ports. Full oil-pump pressure sits behind this face, so when it goes it does not weep, it runs — straight down the back of the block onto the bellhousing and the sump flange. Modelled as the seal itself rather than the metal so that highlighting it shows the actual leak path.",
+      "material": "Rubber-coated steel / nitrile O-rings",
+      "torqueSpec": null,
+      "knownIssues": [
+        "Runs down onto the bellhousing and gets mistaken for a rear main seal — always clean this joint and re-check before quoting a gearbox-out job.",
+        "The cooler side is oil-to-coolant: a failure here can also push oil into the coolant or coolant into the oil (mayonnaise under the filler cap)."
+      ],
+      "explodeVector": {
+        "direction": [
+          -0.9,
+          0.2,
+          0.3
+        ],
+        "distance": 0.9
+      },
+      "geometryRef": "housingGasket",
+      "geometryParams": {},
+      "transforms": [
+        {
+          "position": [
+            0.193,
+            0.105,
+            0.15
+          ],
+          "rotationDeg": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "callout": 26,
+      "calloutOffset": [
+        -0.14,
+        0.12,
+        0.1
+      ],
+      "color": "#c65b4a",
+      "tags": [
+        "gasket",
+        "oil-leak",
+        "seal",
+        "oil-cooler",
+        "misdiagnosis-suspect"
+      ]
     }
   ]
 }

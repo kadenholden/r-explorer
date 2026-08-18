@@ -8,6 +8,7 @@ import { PcvOverlay } from './components/PcvOverlay'
 import { ServicePanel } from './components/ServicePanel'
 import { JobOverlay } from './components/JobOverlay'
 import { HoverTag } from './components/HoverTag'
+import { LeakLegend } from './components/LeakFinder'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       <PcvOverlay />
       <ServicePanel />
       <JobOverlay />
+      <LeakLegend />
       <HoverTag />
     </div>
   )

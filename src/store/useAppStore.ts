@@ -107,6 +107,14 @@ interface AppState {
   showOrientation: boolean
   toggleOrientation: () => void
 
+  /** Oil-leak finder: ghosts the whole car and lights the oil system by
+   *  how likely each joint is to be the source (leaks.ts). */
+  leakMode: boolean
+  setLeakMode: (on: boolean) => void
+  /** Suspect currently being read about, so the 3D view can single it out. */
+  leakSuspectId: string | null
+  setLeakSuspect: (id: string | null) => void
+
   /** Guided-job mode (jobs.ts drives these). */
   activeJob: string | null
   jobStep: number
@@ -199,6 +207,11 @@ export const useAppStore = create<AppState>()(
 
       showOrientation: true,
       toggleOrientation: () => set((s) => ({ showOrientation: !s.showOrientation })),
+
+      leakMode: false,
+      setLeakMode: (on) => set({ leakMode: on, leakSuspectId: on ? null : null }),
+      leakSuspectId: null,
+      setLeakSuspect: (id) => set({ leakSuspectId: id }),
 
       activeJob: null,
       jobStep: 0,
