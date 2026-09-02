@@ -5,13 +5,14 @@ import { partNodePath } from '../data/loader'
 
 /**
  * App state. Only UI persistence-worthy bits (open tree nodes, last camera
- * preset) survive reloads; everything else is session state.
+ * view, display prefs) survive reloads; everything else is session state.
  */
 
 export type ColorMode = 'real' | 'system'
+export type InspectorTab = 'part' | 'service' | 'mot' | 'jobs' | 'leak'
 
-/** Presets whose cameras sit inside the bodywork; the shell auto-hides for
- *  these and returns for exterior views. */
+/** Views whose cameras sit inside or under the bodywork; the shell
+ *  auto-hides for these and returns for exterior views. */
 export const INTERIOR_PRESETS = new Set([
   'engine',
   'intake',
@@ -24,6 +25,7 @@ export const INTERIOR_PRESETS = new Set([
   'cabin',
   'rear-axle',
   'suspension',
+  'bottom',
 ])
 
 interface AppState {
@@ -37,6 +39,10 @@ interface AppState {
   /** 'real': realistic part colours; 'system': dossier system colour-coding. */
   colorMode: ColorMode
   setColorMode: (mode: ColorMode) => void
+
+  /** Ink edge lines on every part — the drawing look. */
+  showEdges: boolean
+  toggleEdges: () => void
 
   /** Global explode factor, 0..1. */
   explode: number
@@ -53,9 +59,15 @@ interface AppState {
   /** Replace the whole isolation set (used by the service tab's Show me). */
   setIsolation: (nodeIds: string[]) => void
 
-  /** Service reference panel. */
-  servicePanelOpen: boolean
-  setServicePanelOpen: (open: boolean) => void
+  /** Right-hand inspector: which tab, and whether it is open at all. */
+  inspectorTab: InspectorTab
+  setInspectorTab: (tab: InspectorTab) => void
+  inspectorOpen: boolean
+  setInspectorOpen: (open: boolean) => void
+
+  /** Left-hand parts navigator drawer. */
+  navOpen: boolean
+  setNavOpen: (open: boolean) => void
 
   /** Camera focus request: fly the orbit target to a world point,
    *  approaching from an optional world direction (the part's explode
@@ -73,10 +85,6 @@ interface AppState {
   /** Bumped so re-selecting the current preset still resets the camera. */
   presetNonce: number
   applyPreset: (name: string) => void
-
-  /** Mobile drawer for the tree panel. */
-  treeDrawerOpen: boolean
-  setTreeDrawerOpen: (open: boolean) => void
 
   /** AVS demo: false = small-lift lobes, true = large-lift (>~3,100 rpm). */
   avsLargeLobe: boolean
@@ -102,8 +110,8 @@ interface AppState {
   panMode: boolean
   togglePanMode: () => void
 
-  /** FRONT / DRIVER / PASSENGER / REAR labels floating around the car, so a
-   *  view can always be matched to the real thing. */
+  /** FRONT / DRIVER / PASSENGER / REAR markers on the ground, so a view can
+   *  always be matched to the real thing. */
   showOrientation: boolean
   toggleOrientation: () => void
 
@@ -122,17 +130,30 @@ interface AppState {
   jobLifts: Record<string, [number, number, number]>
 }
 
+/** The slice that survives a reload. */
+type PersistedUI = Pick<AppState, 'openNodes' | 'cameraPreset' | 'colorMode' | 'showEdges' | 'showOrientation'>
+
 export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
       selectedPartId: null,
-      select: (id) => set({ selectedPartId: id }),
+      // picking a part is the one action that always brings the inspector
+      // to its Part tab — that is what a click means in a CAD viewer
+      select: (id) =>
+        set((s) => ({
+          selectedPartId: id,
+          inspectorTab: id ? 'part' : s.inspectorTab,
+          inspectorOpen: id ? true : s.inspectorOpen,
+        })),
 
       hoveredPartId: null,
       setHoveredPart: (id) => set({ hoveredPartId: id }),
 
       colorMode: 'real',
       setColorMode: (mode) => set({ colorMode: mode }),
+
+      showEdges: true,
+      toggleEdges: () => set((s) => ({ showEdges: !s.showEdges })),
 
       explode: 0,
       setExplode: (v) => set({ explode: Math.min(1, Math.max(0, v)) }),
@@ -155,8 +176,13 @@ export const useAppStore = create<AppState>()(
       setIsolation: (nodeIds) =>
         set({ isolated: Object.fromEntries(nodeIds.map((n) => [n, true])) }),
 
-      servicePanelOpen: false,
-      setServicePanelOpen: (open) => set({ servicePanelOpen: open }),
+      inspectorTab: 'part',
+      setInspectorTab: (tab) => set({ inspectorTab: tab, inspectorOpen: true }),
+      inspectorOpen: true,
+      setInspectorOpen: (open) => set({ inspectorOpen: open }),
+
+      navOpen: false,
+      setNavOpen: (open) => set({ navOpen: open }),
 
       focusPoint: null,
       focusDir: null,
@@ -164,7 +190,7 @@ export const useAppStore = create<AppState>()(
       focusOn: (point, dir) =>
         set((s) => ({ focusPoint: point, focusDir: dir ?? null, focusNonce: s.focusNonce + 1 })),
 
-      openNodes: { brakes: true, 'brakes/front-brake-corner': true },
+      openNodes: { engine: true },
       toggleOpen: (nodeId) =>
         set((s) => ({ openNodes: { ...s.openNodes, [nodeId]: !s.openNodes[nodeId] } })),
       openAncestors: (nodeIds) =>
@@ -180,13 +206,10 @@ export const useAppStore = create<AppState>()(
         set((s) => ({
           cameraPreset: name,
           presetNonce: s.presetNonce + 1,
-          // interior presets sit inside the bodywork — auto-hide the shell so
-          // the view is never a white panel; exterior presets bring it back
+          // interior views sit inside the bodywork — auto-hide the shell so
+          // the view is never a white panel; exterior views bring it back
           hidden: { ...s.hidden, 'body/body-shell': INTERIOR_PRESETS.has(name) },
         })),
-
-      treeDrawerOpen: false,
-      setTreeDrawerOpen: (open) => set({ treeDrawerOpen: open }),
 
       avsLargeLobe: false,
       toggleAvs: () => set((s) => ({ avsLargeLobe: !s.avsLargeLobe })),
@@ -209,7 +232,7 @@ export const useAppStore = create<AppState>()(
       toggleOrientation: () => set((s) => ({ showOrientation: !s.showOrientation })),
 
       leakMode: false,
-      setLeakMode: (on) => set({ leakMode: on, leakSuspectId: on ? null : null }),
+      setLeakMode: (on) => set({ leakMode: on, leakSuspectId: null }),
       leakSuspectId: null,
       setLeakSuspect: (id) => set({ leakSuspectId: id }),
 
@@ -219,13 +242,19 @@ export const useAppStore = create<AppState>()(
     }),
     {
       name: 'r-explorer-ui',
+      version: 2,
+      // v1 → v2 was the light-technical rebuild; the persisted keys that
+      // survived (open nodes, view, colour mode) carry straight over
+      migrate: (persisted) => persisted as PersistedUI,
       partialize: (s) => ({
         openNodes: s.openNodes,
         cameraPreset: s.cameraPreset,
         colorMode: s.colorMode,
+        showEdges: s.showEdges,
+        showOrientation: s.showOrientation,
       }),
       // hidden isn't persisted, so re-derive the shell rule for the restored
-      // preset — otherwise reloading inside an interior view starts you
+      // view — otherwise reloading inside an interior view starts you
       // staring at the inside of a white panel
       onRehydrateStorage: () => (state) => {
         if (state) {

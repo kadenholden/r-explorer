@@ -1,44 +1,23 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useThree } from '@react-three/fiber'
-import { ContactShadows, Grid, Html, OrbitControls } from '@react-three/drei'
+import { ContactShadows, GizmoHelper, GizmoViewcube, Grid, Html, OrbitControls } from '@react-three/drei'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import { ASSEMBLIES } from '../data/loader'
+import { VIEWS } from '../data/views'
 import { useAppStore } from '../store/useAppStore'
 import { PartMesh } from './PartMesh'
 
-interface CameraPreset {
-  label: string
-  position: [number, number, number]
-  target: [number, number, number]
-}
-
-export const CAMERA_PRESETS: Record<string, CameraPreset> = {
-  'front-three-quarter': { label: 'Overview', position: [3.1, 1.3, 2.9], target: [0, 0.1, -1.0] },
-  engine: { label: 'Engine', position: [0.7, 0.42, 0.95], target: [0, 0.12, 0] },
-  intake: { label: 'Intake', position: [0.55, 0.5, 1.3], target: [0, 0.1, 0.22] },
-  'engine-top': { label: 'Engine top', position: [0.02, 1.45, 0.06], target: [0, 0.1, 0] },
-  'chain-end': { label: 'Chain end', position: [-0.6, 0.9, 0.55], target: [-0.28, 0.14, 0] },
-  transmission: { label: 'Gearbox', position: [-0.9, -0.12, 1.05], target: [-0.45, -0.05, 0] },
-  driveline: { label: 'Driveline', position: [1.35, 0.05, -0.55], target: [-0.05, -0.28, -1.5] },
-  suspension: { label: 'Suspension', position: [1.6, 0.1, 1.15], target: [0.55, -0.08, 0.03] },
-  'rear-axle': { label: 'Rear axle', position: [2.3, 0.45, -4.1], target: [0.2, -0.15, -2.55] },
-  'exhaust-line': { label: 'Exhaust', position: [1.3, 0.2, -2.9], target: [0, -0.3, -1.8] },
-  'brake-corner': { label: 'Brake corner', position: [1.75, 0.38, 0.72], target: [0.95, 0.05, 0.05] },
-  cabin: { label: 'Cabin', position: [1.1, 1.7, 0.5], target: [0.15, 0.1, -0.75] },
-  sump: { label: 'Sump', position: [0.72, -0.62, 0.62], target: [0, -0.22, 0] },
-}
-
-/** Standing labels so any view can be matched to the real car. UK terms:
+/** Ground markers so any view can be matched to the real car. UK terms:
  *  nearside = passenger/kerb side, offside = driver's side on a RHD car. */
-function OrientationLabels() {
+function OrientationMarkers() {
   const show = useAppStore((s) => s.showOrientation)
   if (!show) return null
   const marks: [string, string, [number, number, number]][] = [
-    ['FRONT', 'radiator end', [0, -0.1, 1.45]],
-    ['REAR', 'tailgate end', [0, -0.1, -4.05]],
-    ["DRIVER'S SIDE", 'offside · right', [1.45, -0.1, -1.2]],
-    ['PASSENGER SIDE', 'nearside · left', [-1.45, -0.1, -1.2]],
+    ['FRONT', 'radiator end', [0, -0.3, 1.9]],
+    ['REAR', 'tailgate end', [0, -0.3, -4.5]],
+    ["DRIVER'S SIDE", 'offside · right', [1.7, -0.3, -1.3]],
+    ['PASSENGER SIDE', 'nearside · left', [-1.7, -0.3, -1.3]],
   ]
   return (
     <>
@@ -72,9 +51,9 @@ function CameraRig() {
   }, [controls])
 
   useEffect(() => {
-    const p = CAMERA_PRESETS[preset]
+    const p = VIEWS[preset]
     if (!p || !controls) return
-    // presets are authored in CAR space (+x = car's right); the scene is
+    // views are authored in CAR space (+x = car's right); the scene is
     // mirrored for display, so flip x on the way to the camera
     camera.position.set(-p.position[0], p.position[1], p.position[2])
     controls.target.set(-p.target[0], p.target[1], p.target[2])
@@ -101,61 +80,82 @@ function CameraRig() {
   return null
 }
 
+/** True below the mobile breakpoint (kept in sync with styles.css). */
+function useNarrow(): boolean {
+  const [narrow, setNarrow] = useState(() => window.matchMedia('(max-width: 900px)').matches)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)')
+    const on = () => setNarrow(mq.matches)
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  return narrow
+}
+
 export function Viewport() {
   const select = useAppStore((s) => s.select)
   const panMode = useAppStore((s) => s.panMode)
-  const initial = CAMERA_PRESETS['front-three-quarter']
+  const inspectorOpen = useAppStore((s) => s.inspectorOpen)
+  const narrow = useNarrow()
+  const initial = VIEWS['front-three-quarter']
+  // the view cube sits in the bottom-right corner of the VISIBLE viewport —
+  // i.e. left of the inspector when that is open, and above the bottom sheet
+  // on a phone
+  const gizmoMargin: [number, number] = narrow ? [60, 60] : [inspectorOpen ? 390 + 70 : 70, 84]
 
   return (
     <Canvas
       dpr={[1, 2]}
-      camera={{ position: initial?.position, fov: 35, near: 0.01, far: 50 }}
+      camera={{ position: initial?.position, fov: 35, near: 0.01, far: 60 }}
       onPointerMissed={() => select(null)}
+      gl={{ antialias: true }}
     >
-      <color attach="background" args={['#141619']} />
-      <hemisphereLight args={['#cfd6e4', '#25282e', 0.6]} />
-      <directionalLight position={[2.5, 3, 2]} intensity={1.5} />
-      <directionalLight position={[-2, 1.5, -2.5]} intensity={0.55} />
+      {/* light technical viewport: pale neutral ground, soft even light, so
+          real part colours and ink edge lines read like a drawing */}
+      <color attach="background" args={['#e7e9ec']} />
+      <hemisphereLight args={['#ffffff', '#b9bec7', 1.0]} />
+      <directionalLight position={[2.5, 4, 2]} intensity={1.05} />
+      <directionalLight position={[-2, 1.5, -2.5]} intensity={0.4} />
       {/* underside fill — the sump/driveline views look up from below */}
-      <directionalLight position={[0.6, -2.2, 1.2]} intensity={0.5} />
+      <directionalLight position={[0.6, -2.2, 1.2]} intensity={0.4} />
       <Grid
         position={[0, -0.33, 0]}
         infiniteGrid
         cellSize={0.1}
         sectionSize={0.5}
-        cellThickness={0.5}
-        sectionThickness={1}
-        cellColor="#272b33"
-        sectionColor="#343a45"
-        fadeDistance={5}
-        fadeStrength={2.5}
+        cellThickness={0.45}
+        sectionThickness={0.9}
+        cellColor="#d5d8de"
+        sectionColor="#c0c5cd"
+        fadeDistance={8}
+        fadeStrength={2}
       />
-      <ContactShadows position={[0, -0.325, 0]} opacity={0.5} scale={3.4} blur={2.4} far={0.9} resolution={512} />
+      <ContactShadows position={[0, -0.325, 0]} opacity={0.32} scale={3.4} blur={2.4} far={0.9} resolution={512} />
       {/* MIRROR (2026-08-15, operator photo-verified): part data is authored
           in CAR space where +x is the car's RIGHT (driver's side, RHD) — but
           with +z as the nose and +y up, that axis renders on the car's left.
           One mirror here puts every part on its true side, so the bonnet-up
           view matches the operator's own photos. */}
       <group scale={[-1, 1, 1]}>
-      <OrientationLabels />
-      {ASSEMBLIES.map((a) => (
-        <group
-          key={a.assembly.id}
-          position={a.assembly.origin}
-          rotation={a.assembly.rotationDeg.map((d) => (d * Math.PI) / 180) as [number, number, number]}
-        >
-          {a.parts.map((p) => (
-            <PartMesh key={p.id} part={p} />
-          ))}
-        </group>
-      ))}
+        <OrientationMarkers />
+        {ASSEMBLIES.map((a) => (
+          <group
+            key={a.assembly.id}
+            position={a.assembly.origin}
+            rotation={a.assembly.rotationDeg.map((d) => (d * Math.PI) / 180) as [number, number, number]}
+          >
+            {a.parts.map((p) => (
+              <PartMesh key={p.id} part={p} />
+            ))}
+          </group>
+        ))}
       </group>
       <OrbitControls
         makeDefault
         enableDamping
         dampingFactor={0.08}
         minDistance={0.08}
-        maxDistance={5}
+        maxDistance={12}
         zoomToCursor
         screenSpacePanning
         panSpeed={1.1}
@@ -170,6 +170,21 @@ export function Viewport() {
         }}
         target={initial?.target}
       />
+      {/* the view cube: faces are labelled in CAR terms. World +x is the
+          car's LEFT because of the mirror above, so the face order
+          (+x, −x, +y, −y, +z, −z) reads LEFT, RIGHT, TOP, BOTTOM, FRONT, REAR */}
+      <GizmoHelper alignment={narrow ? 'top-right' : 'bottom-right'} margin={gizmoMargin}>
+        <group scale={1.35}>
+          <GizmoViewcube
+            faces={['LEFT', 'RIGHT', 'TOP', 'UNDER', 'FRONT', 'REAR']}
+            color="#ffffff"
+            hoverColor="#cfdcf8"
+            textColor="#1b1f27"
+            strokeColor="#3a404c"
+            opacity={1}
+          />
+        </group>
+      </GizmoHelper>
       <CameraRig />
     </Canvas>
   )

@@ -54,15 +54,24 @@ describes.** Geometry upgrades must never require viewer-code changes.
 
 ## Design direction
 
-VW workshop-manual / ETKA exploded-diagram vernacular: index-numbered
-callout leader lines on exploded parts, plate-style info panel,
-engineering-drawing typography (one characterful condensed display face for
-headings, a clean grotesk for body/data). Dark neutral canvas so
-system colour-coding reads; one restrained accent — **Lapiz Blue**, the R's
-launch colour — for selection and interactive states. The signature element
-is the exploded view with numbered callouts; everything else stays quiet.
-Must work well on a phone as well as desktop; keyboard focus visible;
-`prefers-reduced-motion` respected. Avoid generic AI-dashboard styling.
+**Light technical, CAD-like** (operator's choice, 2026-08-18 rebuild): a
+pale neutral viewport with ink edge lines on every part (`EdgesGeometry`,
+30° threshold), matte shading, a labelled view cube, standard views
+(Iso/Top/Front/Rear/Driver's/Passenger/Underside) plus "Go to" bookmarks —
+the model should read like a drawing the operator can match to the real
+bay. Dark chrome frames it: one toolbar (navigator · search · View ·
+Real/System · task tabs) and one status bar (orbit/pan · explode · bonnet ·
+edges · sides · isolation). White panels: a collapsible parts **Navigator**
+on the left, a breadcrumb over the viewport, and one right-hand
+**Inspector** with tabs Part / Service / MOT / Jobs / Oil leak — the Part
+tab is a title block (part no., qty, torque, material, where-on-the-car,
+provenance) before any prose. One bottom-left **context slot** carries
+whichever card is driving the scene (guided job, fault demo, leak key), so
+cards never stack. ETKA vernacular stays: balloon callout numbers,
+engineering-drawing type (Barlow Condensed / Barlow), one accent — **Lapiz
+Blue** — for selection. Must work on a phone (inspector becomes a bottom
+sheet); keyboard focus visible; `prefers-reduced-motion` respected. Avoid
+generic AI-dashboard styling.
 
 ## Deployment
 

@@ -5,9 +5,10 @@ import { SYSTEMS } from '../data/taxonomy'
 import { ALL_PARTS, ASSEMBLIES, partById, partNodePath } from '../data/loader'
 import { useAppStore } from '../store/useAppStore'
 
-/** Hierarchy tree mirroring dossier Section 10: all ten systems always
- *  listed (empty ones carry their build-phase tag), populated ones expand
- *  system → assembly → sub-assembly → part. */
+/** The parts navigator: a drawer on the left that mirrors dossier
+ *  Section 10 — system → assembly → sub-assembly → part — with hide and
+ *  isolate on every row. Closed by default; the toolbar button, the
+ *  breadcrumb, or selecting a part with it open reveal rows. */
 
 function EyeIcon({ off }: { off: boolean }) {
   return (
@@ -42,7 +43,6 @@ interface RowProps {
   label: ReactNode
   count?: number
   expandable?: boolean
-  selectable?: boolean
   onActivate?: () => void
   isSelected?: boolean
   swatch?: string
@@ -59,15 +59,10 @@ function TreeRow({ nodeId, depth, label, count, expandable, onActivate, isSelect
   return (
     <div
       className={`tree-row${isSelected ? ' is-selected' : ''}${hiddenState ? ' is-hidden' : ''}`}
-      style={{ paddingLeft: `${8 + depth * 14}px` }}
+      style={{ paddingLeft: `${6 + depth * 14}px` }}
     >
       {expandable ? (
-        <button
-          type="button"
-          className="tree-disclose"
-          aria-expanded={open}
-          onClick={() => toggleOpen(nodeId)}
-        >
+        <button type="button" className="tree-disclose" aria-expanded={open} onClick={() => toggleOpen(nodeId)}>
           {open ? '▾' : '▸'}
         </button>
       ) : (
@@ -118,9 +113,7 @@ function PartRow({ part, depth }: { part: PartRecord; depth: number }) {
       label={
         <>
           <span className="tree-callout">{part.callout}</span> {part.name}
-          {part.transforms.length > 1 && (
-            <span className="tree-qty">×{part.transforms.length}</span>
-          )}
+          {part.transforms.length > 1 && <span className="tree-qty">×{part.transforms.length}</span>}
         </>
       }
     />
@@ -172,67 +165,6 @@ function SubBranch({ nodeId, name, parts }: { nodeId: string; name: string; part
   )
 }
 
-export function TreePanel() {
-  const drawerOpen = useAppStore((s) => s.treeDrawerOpen)
-  const setDrawerOpen = useAppStore((s) => s.setTreeDrawerOpen)
-  const selectedPartId = useAppStore((s) => s.selectedPartId)
-  const openAncestors = useAppStore((s) => s.openAncestors)
-
-  // Selecting a part (from the viewport or search-to-come) reveals it here.
-  useEffect(() => {
-    if (!selectedPartId) return
-    const part = partById(selectedPartId)
-    if (part) openAncestors(partNodePath(part).slice(0, -1))
-  }, [selectedPartId, openAncestors])
-
-  const bySystem = useMemo(() => {
-    const map = new Map<string, AssemblyFile[]>()
-    for (const a of ASSEMBLIES) {
-      const list = map.get(a.assembly.system) ?? []
-      list.push(a)
-      map.set(a.assembly.system, list)
-    }
-    return map
-  }, [])
-
-  return (
-    <aside className={`tree-panel${drawerOpen ? ' is-open' : ''}`} aria-label="Component hierarchy">
-      <div className="panel-header">
-        <span>Components</span>
-        <span className="panel-header-meta">{ALL_PARTS.length} parts</span>
-        <button
-          type="button"
-          className="panel-close"
-          aria-label="Close component tree"
-          onClick={() => setDrawerOpen(false)}
-        >
-          ✕
-        </button>
-      </div>
-      <div className="tree-scroll">
-        {SYSTEMS.map((sys) => {
-          const assemblies = bySystem.get(sys.id) ?? []
-          if (assemblies.length === 0) {
-            return (
-              <div key={sys.id} className="tree-row tree-row--empty" style={{ paddingLeft: '8px' }}>
-                <span className="tree-disclose tree-disclose--leaf" aria-hidden="true" />
-                <span className="tree-swatch" style={{ background: sys.color }} aria-hidden="true" />
-                <span className="tree-label tree-label--muted">
-                  {sys.name}
-                  <span className="tree-phase">{sys.phase}</span>
-                </span>
-              </div>
-            )
-          }
-          return (
-            <SystemBranch key={sys.id} systemId={sys.id} name={sys.name} color={sys.color} assemblies={assemblies} />
-          )
-        })}
-      </div>
-    </aside>
-  )
-}
-
 function SystemBranch({
   systemId,
   name,
@@ -251,5 +183,61 @@ function SystemBranch({
       <TreeRow nodeId={systemId} depth={0} label={name} count={count} expandable swatch={color} />
       {open && assemblies.map((a) => <AssemblyBranch key={a.assembly.id} file={a} />)}
     </>
+  )
+}
+
+export function Navigator() {
+  const open = useAppStore((s) => s.navOpen)
+  const setOpen = useAppStore((s) => s.setNavOpen)
+  const selectedPartId = useAppStore((s) => s.selectedPartId)
+  const openAncestors = useAppStore((s) => s.openAncestors)
+
+  // selecting a part (viewport, search, breadcrumb) reveals it here
+  useEffect(() => {
+    if (!selectedPartId) return
+    const part = partById(selectedPartId)
+    if (part) openAncestors(partNodePath(part).slice(0, -1))
+  }, [selectedPartId, openAncestors])
+
+  const bySystem = useMemo(() => {
+    const map = new Map<string, AssemblyFile[]>()
+    for (const a of ASSEMBLIES) {
+      const list = map.get(a.assembly.system) ?? []
+      list.push(a)
+      map.set(a.assembly.system, list)
+    }
+    return map
+  }, [])
+
+  if (!open) return null
+
+  return (
+    <aside className="nav" aria-label="Parts navigator">
+      <div className="panel-head">
+        <span>Parts</span>
+        <span className="panel-head-meta">{ALL_PARTS.length}</span>
+        <button type="button" className="panel-close" aria-label="Close navigator" onClick={() => setOpen(false)}>
+          ✕
+        </button>
+      </div>
+      <div className="tree-scroll">
+        {SYSTEMS.map((sys) => {
+          const assemblies = bySystem.get(sys.id) ?? []
+          if (assemblies.length === 0) {
+            return (
+              <div key={sys.id} className="tree-row tree-row--empty" style={{ paddingLeft: '6px' }}>
+                <span className="tree-disclose tree-disclose--leaf" aria-hidden="true" />
+                <span className="tree-swatch" style={{ background: sys.color }} aria-hidden="true" />
+                <span className="tree-label tree-label--muted">
+                  {sys.name}
+                  <span className="tree-phase">{sys.phase}</span>
+                </span>
+              </div>
+            )
+          }
+          return <SystemBranch key={sys.id} systemId={sys.id} name={sys.name} color={sys.color} assemblies={assemblies} />
+        })}
+      </div>
+    </aside>
   )
 }

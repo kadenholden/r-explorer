@@ -28,6 +28,12 @@ export function PartMesh({ part }: { part: PartRecord }) {
 
   useEffect(() => () => geometry?.dispose(), [geometry])
 
+  // ink edge lines, computed once per part and shared by every instance —
+  // creases sharper than 30° become drawn lines, which is what turns a
+  // shaded lump into something you can read like a diagram
+  const edges = useMemo(() => (geometry ? new THREE.EdgesGeometry(geometry, 30) : null), [geometry])
+  useEffect(() => () => edges?.dispose(), [edges])
+
   const hidden = useAppStore((s) => s.hidden)
   const isolated = useAppStore((s) => s.isolated)
   if (!isPartVisible(part, hidden, isolated)) return null
@@ -40,6 +46,7 @@ export function PartMesh({ part }: { part: PartRecord }) {
           part={part}
           transform={t}
           geometry={geometry}
+          edges={edges}
           isGlb={isGlb}
           withCallout={i === 0}
         />
@@ -52,11 +59,12 @@ interface InstanceProps {
   part: PartRecord
   transform: PartTransform
   geometry: THREE.BufferGeometry | null
+  edges: THREE.BufferGeometry | null
   isGlb: boolean
   withCallout: boolean
 }
 
-function PartInstance({ part, transform, geometry, isGlb, withCallout }: InstanceProps) {
+function PartInstance({ part, transform, geometry, edges, isGlb, withCallout }: InstanceProps) {
   const group = useRef<THREE.Group>(null)
   const spinGroup = useRef<THREE.Group>(null)
   const [hovered, setHovered] = useState(false)
@@ -188,10 +196,11 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
         ghost: false,
       }
     }
-    if (inSystem) return { color: '#7d8797', opacity: 0.75, glow: 0.08, ghost: false }
+    if (inSystem) return { color: '#7a8290', opacity: 0.85, glow: 0.05, ghost: false }
     // ghosts stay just visible enough to give the suspects context
-    return { color: '#59616e', opacity: 0.16, glow: 0, ghost: true }
+    return { color: '#aeb4bd', opacity: 0.2, glow: 0, ghost: true }
   }, [leakMode, leakSuspectId, part.id])
+  const showEdges = useAppStore((s) => s.showEdges)
 
   const color =
     leak?.color ??
@@ -252,8 +261,10 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
               <meshStandardMaterial
                 color={color}
                 side={THREE.DoubleSide}
-                metalness={leak ? 0.1 : 0.35}
-                roughness={leak ? 0.75 : 0.55}
+                // matte, drawing-like shading: form comes from the edge
+                // lines, not from specular highlights
+                metalness={leak ? 0.05 : 0.12}
+                roughness={leak ? 0.8 : 0.72}
                 transparent={leak !== null || part.opacity !== null}
                 opacity={leak ? leak.opacity : (part.opacity ?? 1)}
                 depthWrite={leak ? !leak.ghost : part.opacity === null}
@@ -284,6 +295,18 @@ function PartInstance({ part, transform, geometry, isGlb, withCallout }: Instanc
                           : 0
                 }
               />
+              {/* ink edge lines — the single biggest step toward reading
+                  like a drawing; ghosted leak-view parts stay edge-free */}
+              {showEdges && edges && !leak?.ghost && (
+                <lineSegments geometry={edges} raycast={() => null}>
+                  <lineBasicMaterial
+                    color={selected ? ACCENT : leak ? leak.color : '#2b3038'}
+                    transparent
+                    opacity={selected ? 0.9 : 0.5}
+                    depthWrite={false}
+                  />
+                </lineSegments>
+              )}
               {selected && <Outlines thickness={0.0035} color={ACCENT} />}
             </mesh>
           ) : null}

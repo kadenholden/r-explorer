@@ -15,27 +15,23 @@ export function P2015Overlay() {
   const specified = flapsOpen ? '99%' : '0%'
 
   return (
-    <aside className="p2015-overlay" role="status" aria-label="P2015 fault demonstration">
-      <div className="p2015-header">
-        <span className="p2015-code">P2015</span>
-        <span className="p2015-title">
-          Intake Manifold Flap Position Sensor (Bank 1): Implausible Signal
-        </span>
+    <aside className="context-card context-card--fault" role="status" aria-label="P2015 fault demonstration">
+      <div className="context-head">
+        <span className="context-code">P2015</span>
+        <span className="context-title">Intake manifold flap position sensor (bank 1): implausible signal</span>
         <button type="button" className="panel-close" aria-label="Clear fault" onClick={toggleP2015}>
           ✕
         </button>
       </div>
-      <div className="p2015-body">
-        <div className="p2015-mvb">
-          <span className="plate-label">VCDS measuring block 142</span>
-          <div className="p2015-readouts">
-            <span>
-              Specified <strong>{specified}</strong>
-            </span>
-            <span className="p2015-bad">
-              Actual <strong>37% — stuck</strong>
-            </span>
-          </div>
+      <div className="context-body">
+        <div className="readouts">
+          <span className="readout-label">VCDS measuring block 142</span>
+          <span>
+            Specified <strong>{specified}</strong>
+          </span>
+          <span className="bad">
+            Actual <strong>37% — stuck</strong>
+          </span>
         </div>
         <ol>
           <li>
@@ -48,12 +44,11 @@ export function P2015Overlay() {
             Linkage intact but signal implausible → sensor alone: <strong>06K907386D</strong>.
           </li>
           <li>
-            Flap arm worn/detached → complete manifold: <strong>06L133201FP</strong> (V157 is
-            not sold separately).
+            Flap arm worn/detached → complete manifold: <strong>06L133201FP</strong> (V157 is not sold separately).
           </li>
           <li>
-            After any swap: <strong>Basic Settings, Group 142</strong> adaptation (re-teach
-            end-stops); "ERROR" status = fault persists.
+            After any swap: <strong>Basic Settings, Group 142</strong> adaptation (re-teach end-stops); "ERROR"
+            status = fault persists.
           </li>
         </ol>
       </div>

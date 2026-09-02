@@ -1,7 +1,7 @@
 import { exitJob, jobById, stepJob } from '../data/jobs'
 import { useAppStore } from '../store/useAppStore'
 
-/** The guided-job stepper: one card, Prev/Next, the 3D scene follows. */
+/** The guided-job stepper: one card, Back/Next, the 3D scene follows. */
 export function JobOverlay() {
   const activeJob = useAppStore((s) => s.activeJob)
   const jobStep = useAppStore((s) => s.jobStep)
@@ -13,34 +13,29 @@ export function JobOverlay() {
   const last = jobStep === job.steps.length - 1
 
   return (
-    <aside className="job-overlay" role="status" aria-label="Guided job">
-      <div className="p2015-header">
-        <span className="p2015-code">
+    <aside className="context-card context-card--job" role="status" aria-label="Guided job">
+      <div className="context-head">
+        <span className="context-code">
           {jobStep + 1}/{job.steps.length}
         </span>
-        <span className="p2015-title">{job.title}</span>
+        <span className="context-title">{job.title}</span>
         <button type="button" className="panel-close" aria-label="Exit job" onClick={exitJob}>
           ✕
         </button>
       </div>
-      <div className="p2015-body">
-        <h3 className="job-step-title">{step.title}</h3>
-        <p className="job-step-text">{step.text}</p>
-        <div className="p2015-readouts job-controls">
-          <button
-            type="button"
-            className="avs-btn"
-            onClick={() => stepJob(-1)}
-            disabled={jobStep === 0}
-          >
+      <div className="context-body">
+        <h3 className="step-title">{step.title}</h3>
+        <p className="step-text">{step.text}</p>
+        <div className="btn-row">
+          <button type="button" className="btn" onClick={() => stepJob(-1)} disabled={jobStep === 0}>
             ‹ Back
           </button>
           {last ? (
-            <button type="button" className="avs-btn avs-btn--fault" onClick={exitJob}>
-              Finish job ✓
+            <button type="button" className="btn btn--primary" onClick={exitJob}>
+              Finish ✓
             </button>
           ) : (
-            <button type="button" className="avs-btn is-large" onClick={() => stepJob(1)}>
+            <button type="button" className="btn btn--primary" onClick={() => stepJob(1)}>
               Next ›
             </button>
           )}

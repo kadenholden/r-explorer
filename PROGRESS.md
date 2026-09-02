@@ -1,5 +1,42 @@
 # PROGRESS
 
+## UI rebuilt as a light technical / CAD viewer (2026-08-18)
+
+Operator: "lots of things seem bulky or a little hard to use… think about
+UI almost as if it were a CAD drawing… a real digital car we inspect
+first." Chose the light-technical direction over dark. Everything
+user-facing was rebuilt; the data, geometry and store logic were not.
+
+- **Viewport reads like a drawing.** Pale neutral ground, matte shading,
+  and ink edge lines on every part (30° crease threshold) — the single
+  biggest change to how the model is read. A labelled **view cube**
+  (LEFT / RIGHT / TOP / UNDER / FRONT / REAR in car terms, mirror
+  accounted for) sits bottom-right; clicking a face is a standard view.
+  Balloon callout numbers as on a parts diagram.
+- **One toolbar** replaces the wall of 13 preset buttons: parts navigator,
+  find-a-part search (`/` focuses it; name, part number, tag or assembly),
+  a View menu (standard views + "Go to" bookmarks), Real/System, and the
+  inspector's task tabs.
+- **Navigator** is a collapsible left drawer, closed by default, with a
+  breadcrumb over the viewport that opens it at the right node.
+- **Inspector** replaces the info panel AND the service panel: one white
+  panel, tabs Part / Service / MOT / Jobs / Oil leak. The Part tab is a
+  **title block** — part no., qty, torque, material, a plain-English
+  "where" line derived from the model position (engine bay · driver's
+  side · high), and a provenance tag (photo-verified / operator-confirmed
+  / position estimated / from research) — with prose folded away under
+  Notes. Service, MOT, job and leak entries are compact disclosure rows.
+- **Bottom status bar**: orbit/pan, explode, bonnet, edges, sides, and the
+  isolation state in one strip. **Context slot** bottom-left holds whichever
+  card drives the scene (job stepper, P2015, PCV, leak key) — never two.
+- Mobile: inspector becomes a bottom sheet, navigator a full drawer; the
+  Inspector button in the status bar reopens a closed panel.
+
+Verified in the browser: default iso view with the white shell; engine
+view with edges; search → title block; Service rows; leak finder in the
+new palette; a guided job with the navigator open (breadcrumb, card and
+gizmo all move out of its way); phone layout.
+
 ## Oil-leak finder — the whole oil system, ranked (2026-08-18)
 
 Operator is chasing an oil leak and asked to "highlight all pipes and
