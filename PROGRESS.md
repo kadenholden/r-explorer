@@ -1,5 +1,38 @@
 # PROGRESS
 
+## Ground clearance QA — nothing hangs below the tyres any more (2026-08-18)
+
+Operator, on the new light viewport: "the exhaust and some of the
+underneath sit lower than the tyres." Correct, and worse than it looked:
+a new audit (`node scripts/audit-clearance.mjs`, which evaluates every
+procedural part's real geometry in Node and measures its lowest point
+against the tyre contact patch) found 14 parts BELOW ground level and 91
+under 14 cm. The wheels and the photographic shell were right — the
+shell's sills sit 19 cm off the deck — but the whole schematic underside
+had been authored 8–28 cm too low.
+
+- **Powertrain + bay** (engine, head, ancillaries, intake, fuel, exhaust,
+  cooling, gearbox, driveline, electrical, brake hydraulics, tank) lifted
+  8 cm as one group; the **schematic body** 13 cm so its sills now match
+  the real shell. Subframes, arms, springs, rear drive unit and fuel tank
+  lifted further so each sits at a believable height.
+- **Lower sump pan** redrawn shallower — it is the car's lowest point at
+  11.7 cm, exactly as on the real thing; drain plug 10.7 cm.
+- **Exhaust rebuilt under the floor**: rerouted to the DRIVER'S side of
+  the tunnel (it ran through the propshaft on the centreline), kept low
+  under the tank, kicks up over the rear driveshaft, rear box tucked under
+  the boot floor, tips at the valance's lower edge. Post-cat lambda
+  re-seated on the moved pipe.
+- **Rear propshaft stopped 1.1 m short of the rear drive unit** — left
+  over from before the real wheelbase — now reaches the flex disc.
+- Camera bookmarks re-aimed for the new heights.
+
+Verified numerically (`scripts/audit-bbox.mjs` for joins: downpipe →
+link → resonator → tail → box → tips all meet; propshaft clear of the
+exhaust by 11 cm) and visually from the driver's side, iso, rear,
+underside, exhaust and driveline views. Both audit scripts are kept in
+`scripts/` for future sessions.
+
 ## UI rebuilt as a light technical / CAD viewer (2026-08-18)
 
 Operator: "lots of things seem bulky or a little hard to use… think about

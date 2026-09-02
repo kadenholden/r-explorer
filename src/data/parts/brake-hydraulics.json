@@ -5,7 +5,7 @@
     "system": "brakes",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "The braking system's control side (dossier §6): vacuum booster + tandem master cylinder (~1.2 L DOT4, 2–3 year change), the Bosch MK-class ABS/ESC unit integrating ABS, ESC, EDS, XDS+, hill-hold and the AWD brake-vectoring logic, hard lines to all four corners, wheel-speed sensors, and the EPB control unit. RHD placement assumed."

@@ -70,14 +70,16 @@ export function lowerSump(_params: GeometryParams): THREE.BufferGeometry {
   const flange = new THREE.BoxGeometry(0.43, 0.01, 0.205)
   flange.translate(0, 0.03, 0)
   parts.push(flange)
-  const body = new THREE.BoxGeometry(0.4, 0.045, 0.19)
-  body.translate(0, 0.003, 0)
+  // shallower than first drawn: the real pan is the car's lowest point at
+  // ~12 cm off the deck, not something that hangs level with the tyres
+  const body = new THREE.BoxGeometry(0.4, 0.035, 0.19)
+  body.translate(0, 0.008, 0)
   parts.push(body)
-  const deep = new THREE.BoxGeometry(0.22, 0.05, 0.165)
-  deep.translate(-0.07, -0.04, 0)
+  const deep = new THREE.BoxGeometry(0.22, 0.024, 0.165)
+  deep.translate(-0.07, -0.02, 0)
   parts.push(deep)
   const drainBoss = new THREE.CylinderGeometry(0.014, 0.014, 0.012, 12)
-  drainBoss.translate(-0.07, -0.068, 0)
+  drainBoss.translate(-0.07, -0.037, 0)
   parts.push(drainBoss)
   return mergeParts(parts)
 }

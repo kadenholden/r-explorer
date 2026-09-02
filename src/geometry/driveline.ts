@@ -17,8 +17,8 @@ export function propshaftFront(_params: GeometryParams): THREE.BufferGeometry {
     tubeThrough(
       [
         [-0.51, -0.16, -0.16],
-        [-0.35, -0.24, -0.35],
-        [-0.12, -0.28, -0.58],
+        [-0.35, -0.18, -0.35],
+        [-0.12, -0.19, -0.58],
       ],
       0.019,
     ),
@@ -26,7 +26,7 @@ export function propshaftFront(_params: GeometryParams): THREE.BufferGeometry {
   // flex-joint discs at both ends
   for (const [x, y, z] of [
     [-0.51, -0.16, -0.16],
-    [-0.12, -0.28, -0.58],
+    [-0.12, -0.19, -0.58],
   ] as const) {
     const disc = new THREE.CylinderGeometry(0.038, 0.038, 0.016, 16)
     disc.rotateX(Math.PI / 2)
@@ -53,16 +53,20 @@ export function propshaftRear(_params: GeometryParams): THREE.BufferGeometry {
   parts.push(
     tubeThrough(
       [
-        [-0.08, -0.28, -0.64],
-        [-0.02, -0.28, -1.0],
-        [0, -0.27, -1.32],
+        [-0.08, -0.19, -0.64],
+        [-0.02, -0.19, -1.0],
+        [0, -0.175, -1.32],
+        // …all the way back to the flex disc on the rear drive unit; this
+        // section used to stop 1.1 m short, left over from before the rear
+        // axle was moved to its real wheelbase
+        [0, -0.175, -2.4],
       ],
       0.019,
     ),
   )
   const flange = new THREE.CylinderGeometry(0.04, 0.04, 0.016, 16)
   flange.rotateX(Math.PI / 2)
-  flange.translate(0, -0.27, -1.32)
+  flange.translate(0, -0.175, -2.4)
   parts.push(flange)
   return mergeParts(parts)
 }

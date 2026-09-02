@@ -5,7 +5,7 @@
     "system": "drivetrain",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "Haldex Gen 5 AWD. R6's architecture correction: Gen 5 DELETED the accumulator, the serviceable filter AND the pressure-control valve of earlier generations — one centrifugal electro-hydraulic pump (6-piston axial, BLDC) applies the wet clutch directly; motor speed IS the pressure setpoint, and the only filtration is an inlet strainer gauze. Fluid G 060 175 A2, ~850 ml dry / ~650–700 ml refill, ~3 yr/30k service WITH the strainer cleaned every time (VW's book says fluid only — the strainer is why pumps die). See docs/research/R6-haldex.md."
@@ -85,7 +85,7 @@
         {
           "position": [
             -0.1,
-            -0.28,
+            -0.19,
             -0.61
           ],
           "rotationDeg": [
@@ -182,7 +182,7 @@
         {
           "position": [
             0,
-            -0.27,
+            -0.17,
             -2.56
           ],
           "rotationDeg": [
@@ -232,7 +232,7 @@
         {
           "position": [
             0,
-            -0.27,
+            -0.17,
             -2.49
           ],
           "rotationDeg": [
@@ -287,7 +287,7 @@
         {
           "position": [
             -0.1,
-            -0.31,
+            -0.21,
             -2.54
           ],
           "rotationDeg": [
@@ -338,7 +338,7 @@
         {
           "position": [
             -0.07,
-            -0.315,
+            -0.215,
             -2.52
           ],
           "rotationDeg": [
@@ -387,7 +387,7 @@
         {
           "position": [
             0.05,
-            -0.2,
+            -0.1,
             -2.56
           ],
           "rotationDeg": [
@@ -435,7 +435,7 @@
         {
           "position": [
             0,
-            -0.27,
+            -0.17,
             -2.6
           ],
           "rotationDeg": [
@@ -488,25 +488,25 @@
         {
           "position": [
             0.12,
-            -0.27,
+            -0.17,
             -2.57
           ],
           "rotationDeg": [
             0,
             0,
-            22
+            8
           ]
         },
         {
           "position": [
             -0.12,
-            -0.27,
+            -0.17,
             -2.57
           ],
           "rotationDeg": [
             0,
             180,
-            22
+            8
           ]
         }
       ],
@@ -651,7 +651,7 @@
         {
           "position": [
             0,
-            -0.275,
+            -0.175,
             -2.43
           ],
           "rotationDeg": [

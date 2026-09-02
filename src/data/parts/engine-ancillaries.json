@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "The dossier §2 items the coverage audit caught, plus the lubrication area built out after the operator's car developed an upper-sump oil leak (2026-08) and then corrected against the R1 research return: the structural aluminium upper sump (which also clamps the main-bearing caps), the RUBBER-gasketed joint to the plastic lower pan, the two-stage oil pump, pickup, bayonet drain plug, G266 sensor and the filter housing/oil cooler above — the leak paths that look identical once oil has run down the block. Also the FEAD belt driving alternator and A/C (the coolant pump is balance-shaft driven), starter, valve cover with the failure-prone PCV diaphragm, coil-on-plug ignition, and the three-point engine mounting."
@@ -967,7 +967,7 @@
         {
           "position": [
             -0.07,
-            -0.316,
+            -0.285,
             0
           ],
           "rotationDeg": [

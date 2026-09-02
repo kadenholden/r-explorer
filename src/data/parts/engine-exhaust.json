@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "Turbo (integrated manifold) → cast downpipe with primary catalyst → link pipe → centre resonator → rear silencer with electronically-actuated flaps → the R's signature quad tips, two chrome twin-tip outlets per side (dossier §2). A GPF appears on later Euro-6d cars, not the earliest pre-facelift R — verify by build date."
@@ -231,7 +231,7 @@
         {
           "position": [
             -0.12,
-            -0.25,
+            -0.02,
             -2.72
           ],
           "rotationDeg": [
@@ -243,7 +243,7 @@
         {
           "position": [
             0.12,
-            -0.25,
+            -0.02,
             -2.72
           ],
           "rotationDeg": [
@@ -292,7 +292,7 @@
         {
           "position": [
             -0.17,
-            -0.34,
+            -0.11,
             -3.02
           ],
           "rotationDeg": [
@@ -304,7 +304,7 @@
         {
           "position": [
             0.17,
-            -0.34,
+            -0.11,
             -3.02
           ],
           "rotationDeg": [
@@ -404,8 +404,8 @@
       "transforms": [
         {
           "position": [
-            0.045,
-            -0.24,
+            0.165,
+            -0.19,
             -0.44
           ],
           "rotationDeg": [

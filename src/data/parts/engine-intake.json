@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "The air/boost path (dossier §2): airbox → IHI IS38 turbo with motorised wastegate → front-mount intercooler → throttle body → the plastic variable-runner intake manifold (06L133201FP) with its V157 flap motor and G336 position sensor — the assembly behind the P2015 fault this project set out to explain. Select the manifold, flaps, V157 or G336 and use the flap/fault controls in the panel. ORIENTATION (operator + FCP Euro verified, 2026-08-15): the intake manifold faces the FRONT (you see it when the bonnet opens) and the TURBO hangs at the BACK against the bulkhead — reached from behind the cylinder head, which is why turbo work on these cars is cramped."

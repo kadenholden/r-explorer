@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "EA888 Gen 3 (CJXC) short block: closed-deck grey cast iron block (82.5 mm bore × 92.8 mm stroke, 1,984 cc, firing order 1-3-4-2), forged flat-plane crankshaft on five 48 mm mains, cracked-cap rods with floating DLC wrist pins, 9.3:1 pistons with N522-gated oil-jet cooling, and twin counter-rotating balance shafts. R1 research (2026-08): there is NO one-piece ladder frame — five discrete main caps are cross-bolted at the sides and clamped from below by the structural aluminium upper sump. Torques here were resolved against erWin/Bentley-derived sources (see docs/research/R1-short-block.md) — still confirm in a licensed manual before real work."

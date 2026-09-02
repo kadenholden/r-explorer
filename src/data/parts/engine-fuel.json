@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "Demand-controlled DUAL-injection fuel system — R4's headline: the EU/UK CJXC left the factory with direct injection PLUS a low-pressure port/MPI rail (200 cc port injectors); DI-only applies to North American cars, whose HPFP has a brass plug where the ROW pump feeds the MPI circuit (five agreeing sources; overturns R2's provisional DI-only claim). Single Hitachi Gen III HPFP at up to 200 bar feeds both rails, driven by a four-lobe exhaust-cam lobe via roller tappet."

@@ -5,7 +5,7 @@
     "system": "electrical",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "The car's nervous system (dossier §7): Bosch MED 17.5.2 engine ECU (verify against SIMOS 18 on the actual car's label), the J533 gateway bridging powertrain CAN-C / comfort CAN-B / infotainment / LIN / diagnostic CAN, EFB/AGM battery with recuperation, fuse box, and the main harness runs. Lighting units live in the body shell parts."

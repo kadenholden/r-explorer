@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "The dressing on top of the engine: the plastic cover, the wiring conduit, the rigid fuel line, the heat shield, the lifting eyes and the breather hose. These are what you actually SEE with the bonnet up — the mechanicals underneath were modelled first, which is why the engine top didn't look like the real thing until now. Hide this whole branch with the eye icon to get back to the bare mechanicals."

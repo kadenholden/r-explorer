@@ -5,7 +5,7 @@
     "system": "cooling-hvac",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "Cooling & fluids per R9: coolant G13 (TL-VW 774 J), 10.0 L total — superseded by mixable G12evo; engine oil VW 502 00, 5.7 L with filter; A/C refrigerant R134a at 500 ±15 g (NOT R1234yf on this pre-facelift car), PAG oil differing by compressor brand (Sanden G 052 154 A2 75 cc vs Denso G 052 300 A2 110 cc — their N280 valves don't interchange). There is NO radiator drain screw on the Mk7: VW fills under vacuum with VAS 6096. See docs/research/R9-cooling-fluids.md."

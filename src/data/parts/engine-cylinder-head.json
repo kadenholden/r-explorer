@@ -5,7 +5,7 @@
     "system": "engine",
     "origin": [
       0,
-      0,
+      0.08,
       0
     ],
     "description": "EA888 Gen 3 cylinder head: aluminium cross-flow casting with the exhaust manifold cast INTO the head inside coolant jackets (fast warm-up, cooled exhaust gas, no full-load enrichment), DOHC 16v with roller-finger followers on hydraulic lash adjusters (no valve-clearance service), vane-type phasers on BOTH cams and Audi valvelift (AVS) two-stage lift on the EXHAUST cam. R2 research (2026-08-14) resolved the head-bolt procedure: 40 Nm → 80 Nm → slacken 180° → 50 Nm → +90° → +90°, new TTY bolts — both previously circulating figures were aggregator errors. See docs/research/R2-head-valvetrain.md."

@@ -16,16 +16,19 @@ export function downpipeCat(_params: GeometryParams): THREE.BufferGeometry {
   const pipe = tubeThrough(
     [
       [0.045, -0.045, -0.318],
-      [0.04, -0.16, -0.36],
-      [0.015, -0.26, -0.40],
-      [0, -0.30, -0.47],
+      [0.06, -0.13, -0.36],
+      [0.11, -0.19, -0.40],
+      [0.16, -0.22, -0.47],
     ],
     0.03,
   )
   parts.push(pipe)
+  // under-floor run sits ~14 cm off the deck, like the real car's lowest
+  // exhaust point (it used to hang below the tyres), and keeps to the
+  // driver's side of the tunnel — the propshaft owns the centreline
   const cat = new THREE.CylinderGeometry(0.055, 0.055, 0.19, 20)
   cat.rotateX(Math.PI / 2)
-  cat.translate(0, -0.305, -0.57)
+  cat.translate(0.16, -0.22, -0.57)
   parts.push(cat)
   const flange = new THREE.CylinderGeometry(0.042, 0.042, 0.012, 16)
   flange.rotateX(Math.PI / 2)
@@ -38,9 +41,9 @@ export function downpipeCat(_params: GeometryParams): THREE.BufferGeometry {
 export function linkPipe(_params: GeometryParams): THREE.BufferGeometry {
   return tubeThrough(
     [
-      [0, -0.305, -0.67],
-      [0, -0.325, -0.92],
-      [0, -0.33, -1.18],
+      [0.16, -0.22, -0.67],
+      [0.18, -0.23, -0.92],
+      [0.18, -0.23, -1.18],
     ],
     0.027,
   )
@@ -51,12 +54,12 @@ export function resonator(_params: GeometryParams): THREE.BufferGeometry {
   const parts: THREE.BufferGeometry[] = []
   const body = new THREE.CylinderGeometry(0.052, 0.052, 0.26, 20)
   body.rotateX(Math.PI / 2)
-  body.translate(0, -0.33, -1.32)
+  body.translate(0.18, -0.23, -1.32)
   parts.push(body)
   for (const z of [-1.46, -1.18]) {
     const stub = new THREE.CylinderGeometry(0.027, 0.027, 0.05, 14)
     stub.rotateX(Math.PI / 2)
-    stub.translate(0, -0.33, z)
+    stub.translate(0.18, -0.23, z)
     parts.push(stub)
   }
   return mergeParts(parts)
@@ -69,27 +72,32 @@ export function rearSilencer(_params: GeometryParams): THREE.BufferGeometry {
   // tail pipe from the resonator outlet, over the rear axle, to the box —
   // this whole section used to stop under the middle of the car, left over
   // from before the chassis was re-based to real dimensions
+  // the tail pipe climbs over the rear axle to a box tucked up under the
+  // boot floor, with the tips at the valance's lower edge — nothing here
+  // hangs lower than ~14 cm off the deck
   const tail = tubeThrough(
     [
-      [0, -0.33, -1.46],
-      [0, -0.335, -1.9],
-      [0, -0.345, -2.35],
-      [0, -0.35, -2.6],
+      // stays low under the tank, then kicks up over the rear driveshaft
+      [0.18, -0.23, -1.46],
+      [0.18, -0.23, -2.1],
+      [0.18, -0.05, -2.4],
+      [0.18, -0.02, -2.57],
+      [0.18, -0.09, -2.61],
     ],
     0.027,
   )
   parts.push(tail)
-  const body = new THREE.BoxGeometry(0.52, 0.17, 0.26)
-  body.translate(0, -0.35, -2.78)
+  const body = new THREE.BoxGeometry(0.52, 0.15, 0.26)
+  body.translate(0, -0.12, -2.78)
   parts.push(body)
   const inlet = new THREE.CylinderGeometry(0.027, 0.027, 0.08, 14)
   inlet.rotateX(Math.PI / 2)
-  inlet.translate(0, -0.35, -2.63)
+  inlet.translate(0.18, -0.09, -2.63)
   parts.push(inlet)
   for (const x of [-0.17, 0.17]) {
     const outlet = new THREE.CylinderGeometry(0.024, 0.024, 0.06, 14)
     outlet.rotateX(Math.PI / 2)
-    outlet.translate(x, -0.34, -2.95)
+    outlet.translate(x, -0.11, -2.95)
     parts.push(outlet)
   }
   return mergeParts(parts)
